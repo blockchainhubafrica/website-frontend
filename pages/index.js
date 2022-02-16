@@ -10,7 +10,7 @@ function IndexPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="Blockchain Hub Africa." />
-        <meta name="keywords" content="Blockchain Hub Africa"></meta>
+        <meta name="keywords" content="Blockchain Hub Africa, Blockchain, Smart Contract, Africa, Talent, Cryptocurrency"></meta>
         <title>Blockchain Hub Africa | Home</title>
       </Head>
       <main className={`${styles["container"]} container`}>
