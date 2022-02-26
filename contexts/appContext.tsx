@@ -1,8 +1,12 @@
 import { createContext, useContext } from "react";
 
-const AppContext = createContext();
+type appContextType = null;
 
-export function AppProvider({ children }) {
+const appContextDefaultValues: appContextType = null;
+
+const AppContext = createContext<appContextType>(appContextDefaultValues);
+
+export function AppProvider({ children }: { children: React.ReactNode }) {
   return <AppContext.Provider value={null}>{children}</AppContext.Provider>;
 }
 
