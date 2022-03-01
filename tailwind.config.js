@@ -9,10 +9,25 @@ module.exports = {
       padding: {
         DEFAULT: "1.20rem",
         sm: "1.20rem",
-        lg: "5rem",
-        xl: "8rem",
+        lg: "4rem",
+        xl: "6rem",
         "2xl": "10rem",
       },
+    },
+    colors: {
+      "green-200": "#00cf8e",
+      "blue-200": "#00bdff",
+      "blue-400": "#0043ff",
+      "blue-600": "#11163b",
+      "blue-800": "#00081f",
+      "gray-100": "#f8f8f8",
+      "gray-400": "#cfcfcf",
+      "pink-100": "#d0c4c4",
+      orange: "#ff9900",
+    },
+    fontFamily: {
+      coolvetica: ["Coolvetica", "sans-serif"],
+      "open-sans": ["Open sans", "helvetica"],
     },
   },
   variants: {
@@ -34,6 +49,9 @@ module.exports = {
           },
           "@screen xl": {
             maxWidth: "1800px",
+          },
+          "@screen 2xl": {
+            maxWidth: "2160px",
           },
         },
       });
