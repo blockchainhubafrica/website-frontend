@@ -15,16 +15,16 @@ function Header({}) {
 
   return (
     <header
-      className={`container ${styles.container} flex justify-items-stretch items-center py-5`}
+      className={`container ${styles.container} justify-between flex items-center py-5`}
     >
       <Link href="/" passHref>
         <a>
           <LogoIcon />
         </a>
       </Link>
-      <ul className="ml-auto lg:flex items-center hidden">
+      <ul className="lg:flex items-center hidden">
         <li className={activeRouteClass("/about")}>
-          <Link href="/about">About Us</Link>
+          <Link href="/components">About Us</Link>
         </li>
         <li className={activeRouteClass("/work")}>
           <Link href="/work">Our work</Link>
