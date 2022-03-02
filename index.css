@@ -5,7 +5,7 @@
 @tailwindcss /utilities;
 
 @import url("https://fonts.googleapis.com/css?family=Open Sans:300,400,500,550,600,900");
-@import url('http://fonts.cdnfonts.com/css/coolvetica-2');
+@import url("http://fonts.cdnfonts.com/css/coolvetica-2");
 
 :root {
   --app-green-200: #00cf8e;
@@ -20,7 +20,7 @@
   --app-pink-100: #d0c4c4;
   --app-orange: #ff9900;
   --app-primary-font: "Open sans", helvetica;
-  --app-secondary-font: 'Coolvetica', sans-serif;
+  --app-secondary-font: "Coolvetica", sans-serif;
   --app-border-radius-sm: 10px;
   --header-z-index: 1000;
   --sidebar-z-index: 1500;
@@ -64,4 +64,9 @@ ol {
 
 li {
   list-style: none;
+}
+
+a:focus {
+  border: none;
+  outline: none
 }
