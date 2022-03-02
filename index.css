@@ -5,7 +5,13 @@
 @tailwindcss /utilities;
 
 @import url("https://fonts.googleapis.com/css?family=Open Sans:300,400,500,550,600,900");
-@import url("http://fonts.cdnfonts.com/css/coolvetica-2");
+/* @import url("http://fonts.cdnfonts.com/css/coolvetica-2"); */
+
+@font-face {
+  font-family: "Coolvetica";
+  src: local("Coolvetica"),
+    url(./fonts/coolvetica_rg.otf) format("truetype");
+}
 
 :root {
   --app-green-200: #00cf8e;

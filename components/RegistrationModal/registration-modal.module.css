@@ -60,6 +60,15 @@
   font-family: var(--app-secondary-font);
 }
 
+.container .circle-close-icon svg {
+  transform: scale(0.8, 0.8);
+}
+@media screen and (min-width: 768px) {
+  .container .circle-close-icon svg {
+    transform: scale(1, 1);
+  }
+}
+
 .container .circle-close-icon svg path {
   transition: all 0.1s ease-in-out !important;
 }
@@ -87,6 +96,6 @@
   color: var(--app-white);
 }
 
-.container button.submit svg path{
+.container button.submit svg path {
   fill: var(--app-white);
 }

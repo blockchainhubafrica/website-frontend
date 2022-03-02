@@ -43,7 +43,7 @@ function RegistrationModal({ isActive, setIsActive }: ModalProps) {
 
   useEffect(() => {
     if (containerRef.current !== null) {
-      document.body.style.overflow = isActive ? "hidden" : "auto";
+      // document.body.style.overflow = isActive ? "hidden" : "auto";
       if (isActive && !containerClass.includes(styles["active"])) {
         containerRef.current.style.display = "flex";
         setTimeout(() => {
@@ -76,13 +76,12 @@ function RegistrationModal({ isActive, setIsActive }: ModalProps) {
   return (
     <div ref={containerRef} className={containerClass} onClick={closeModal}>
       <div
-        className={`${styles["modal-body"]} p-16 `}
+        className={`${styles["modal-body"]} p-8 lg:p-16 `}
         onClick={(e) => e.stopPropagation()}
       >
         <form action="" className="" onSubmit={formik.handleSubmit}>
-          <div className="flex justify-between items-center flex-wrap">
-            <h3 className={`${styles["spaced-heading"]}`}>Registration Form</h3>
-
+          <div className="flex justify-between items-center">
+            <h3 className={`${styles["spaced-heading"]} text-base`}>Registration Form</h3>
             <button
               onClick={closeModal}
               title="Close Registration Form"
@@ -91,8 +90,8 @@ function RegistrationModal({ isActive, setIsActive }: ModalProps) {
               <CircleCloseIcon />
             </button>
           </div>
-          <div className="py-16">
-            <h3 className={`mb-4 text-5xl font-coolvetica text-blue-600`}>
+          <div className="py-8 lg:py-16">
+            <h3 className={`mb-4 text-3xl md:text-5xl font-coolvetica text-blue-600`}>
               Blockchain Developer's Conference, 2022
             </h3>
             <div className={`${styles["subtitle"]} font-open-sans`}>
