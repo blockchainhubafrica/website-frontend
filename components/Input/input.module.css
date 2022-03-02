@@ -1,0 +1,48 @@
+.container {
+  position: relative;
+}
+
+.container input {
+  width: 100%;
+  padding: 0px 0px 10px 0px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--app-pink-100);
+  /* min-height: 46px; */
+}
+
+.container label {
+  background-color: transparent;
+  color: var(--app-pink-100);
+  font-size: 30px;
+  font-weight: 500;
+  font-family: Coolvetica;
+}
+
+.container label.active {
+  color: var(--app-blue-400);
+}
+
+.container input:focus {
+  border-bottom: 1px solid var(--app-blue-400);
+}
+
+@media screen and (min-width: 400px) {
+  .container input {
+    padding: 0px 0px 10px 0px;
+  }
+}
+
+.container input:focus {
+  outline: none;
+}
+
+.container.error input {
+  border-bottom: 1px solid var(--app-red);
+}
+
+.error-message {
+  position: absolute;
+  margin-top: 3px;
+  color: red;
+  font-size: 0.8rem;
+}

@@ -15,6 +15,10 @@
   /* color: #000; */
 }
 
+.container ul li a:focus {
+  color: var(--app-orange);
+}
+
 .container ul li.active {
   color: var(--app-orange);
 }

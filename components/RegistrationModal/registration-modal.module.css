@@ -1,0 +1,92 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--modal-z-index);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.container * {
+  transition: all 0.3s ease-in-out;
+}
+
+.container.active {
+  opacity: 1;
+  display: flex;
+}
+
+.container .modal-body {
+  opacity: 0;
+  margin: auto;
+  background-color: var(--app-white);
+  border-radius: var(--app-border-radius-sm);
+  width: 100%;
+  max-width: 730px;
+  margin-top: 0px;
+  position: relative;
+  /* height: 300px; */
+}
+
+.container.active .modal-body {
+  opacity: 1;
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 640px) {
+  .modal-body {
+    /* width: 450px; */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container.active .modal-body {
+    opacity: 1;
+    margin-top: 110px;
+  }
+}
+
+.container .spaced-heading {
+  letter-spacing: var(--app-letter-spacing-lg);
+  text-transform: uppercase;
+  color: var(--app-blue-400);
+  font-family: var(--app-secondary-font);
+}
+
+.container .circle-close-icon svg path {
+  transition: all 0.1s ease-in-out !important;
+}
+
+.container .circle-close-icon:hover svg path,
+.container .circle-close-icon:focus svg path {
+  fill: var(--app-orange);
+  cursor: pointer;
+}
+
+.container .event-heading {
+}
+
+.container form .subtitle span:first-child {
+  color: #565658;
+}
+.container form .subtitle span:last-child {
+  color: #565658;
+}
+
+.container button.submit {
+  width: 100%;
+  background-color: var(--app-orange);
+  border-radius: var(--app-border-radius-sm);
+  color: var(--app-white);
+}
+
+.container button.submit svg path{
+  fill: var(--app-white);
+}

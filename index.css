@@ -19,9 +19,11 @@
   --app-gray-400: #cfcfcf;
   --app-pink-100: #d0c4c4;
   --app-orange: #ff9900;
+  --app-red: #f84550;
   --app-primary-font: "Open sans", helvetica;
   --app-secondary-font: "Coolvetica", sans-serif;
   --app-border-radius-sm: 10px;
+  --app-letter-spacing-lg: 0.5rem;
   --header-z-index: 1000;
   --sidebar-z-index: 1500;
   --form-z-index: 2000;
@@ -67,6 +69,15 @@ li {
 }
 
 a:focus {
-  border: none;
-  outline: none
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.spaced-heading {
+  letter-spacing: var(--app-letter-spacing-lg);
+  text-transform: uppercase;
+  font-family: var(--app-secondary-font);
 }
