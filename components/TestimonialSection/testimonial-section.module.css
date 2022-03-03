@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+}
+
+.container .spaced-heading {
+  letter-spacing: var(--app-letter-spacing-lg);
+  text-transform: uppercase;
+  color: var(--app-blue-400);
+  font-family: var(--app-secondary-font);
+}
+
+.container .navigation button {
+  width: 60px;
+  height: 60px;
+  background: #B3C7FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.container .navigation .left-arrow {
+  transform: rotate(-180deg);
+}
+
+.container .navigation .left-arrow {
+
+}
