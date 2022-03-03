@@ -80,7 +80,6 @@ function TestimonialSection() {
           options={flickityOptions} // takes flickity options {}
           disableImagesLoaded={false} // default false
           reloadOnUpdate // default false
-          static // default false
         >
           {testimonials.map(({ name, role, title, desc, headshot }, i) => (
             <TestimonyCard

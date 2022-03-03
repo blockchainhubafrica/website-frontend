@@ -13,7 +13,7 @@ function TestimonyCard({ name, role, title, desc, headshot }: CardProps) {
   return (
     <div className={`${styles["container"]} p-10 flex items-center mx-3`}>
       <div className="p-5 pl-10">
-        <h3 className={styles["heading"]}>“{title}”</h3>
+        <h3 className={styles["heading"]}>&ldquo;{title}&rdquo;</h3>
         <p className="pt-5">{desc}</p>
 
         <div className="flex items-center pt-10">

@@ -1,19 +1,8 @@
 .container {
-  width: 100%;
+  width: 90%;
   height: 350px;
   background: #FFFFFF;
   border-radius: 10px;
-}
-
-@media screen and (min-width: 640px) {
-  
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    width: 699px;
-    height: 400px;
-  }
 }
 
 .container > div {
@@ -31,8 +20,8 @@
 .container p {
   color: var(--app-blue-800);
   font-weight: 300;
-  font-size: 20px;
-  line-height: 27px;
+  font-size: 16px;
+  line-height: 18px;
 }
 
 .container strong {
@@ -49,4 +38,22 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
+}
+
+@media screen and (min-width: 640px) {
+  
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 699px;
+    height: 400px;
+  }
+
+  .container p {
+    color: var(--app-blue-800);
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 27px;
+  }
 }
