@@ -2,31 +2,38 @@
   position: sticky;
   top: 0;
   z-index: var(--header-z-index);
-  background-color: var(--app-bg-light);
+  background-color: var(--app-blue-600);
   backdrop-filter: blur(10px);
-  height: 70px;
+  height: 100px;
 }
 
 .logo {
   height: 40px;
 }
 
-
 .container ul li {
-  color: #000;
+  /* color: #000; */
 }
 
+.container ul li a:focus {
+  color: var(--app-orange);
+}
 
-.container ul li a {
-  color: #000;
+.container ul li.active {
+  color: var(--app-orange);
+}
+
+.container ul li a,
+.container ul li span {
+  font-family: var(--app-secondary-font);
   transition: all 0.1s ease-in-out;
 }
 
-
 .container ul li a:hover {
-  background: -webkit-linear-gradient(45deg, #09009f, #ec4899 80%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1.1rem;
+  color: var(--app-orange);
+}
+
+.container .cta {
+  border: 2px solid var(--app-orange);
+  border-radius: var(--app-border-radius-sm);
 }
