@@ -2,3 +2,4 @@ export * from "./Header";
 export * from "./RegistrationModal";
 export * from "./Input";
 export * from "./Loader";
+export * from "./Marquee";

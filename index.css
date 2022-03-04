@@ -48,6 +48,7 @@
 
 body {
   /* background: var(--app-bg-light); */
+  overflow-x: hidden;
 }
 
 *:not(*:hover, *:hover *) {
