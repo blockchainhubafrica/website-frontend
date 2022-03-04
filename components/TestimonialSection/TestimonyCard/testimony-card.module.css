@@ -5,23 +5,19 @@
   border-radius: 10px;
 }
 
-.container > div {
-  border-left: 1px solid var(--app-blue-400);
-}
-
 .container .heading {
   color: var(--app-blue-600);
   font-family: var(--app-primary-font);
   font-weight: bold;
-  font-size: 20px;
-  line-height: 27px;
+  font-size: 14px;
+  line-height: 19.07px;
 }
 
 .container p {
   color: var(--app-blue-800);
   font-weight: 300;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 19.07px;
 }
 
 .container strong {
@@ -29,15 +25,15 @@
   font-family: var(--app-secondary-font);
   font-style: normal;
   font-weight: normal;
-  font-size: 28px;
-  line-height: 34px;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .container span {
   color: var(--app-gray-400);
   font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 12.95px;
+  line-height: 17.64px;
 }
 
 @media screen and (min-width: 640px) {
@@ -50,10 +46,29 @@
     height: 400px;
   }
 
+  .container > div {
+    border-left: 1px solid var(--app-blue-400);
+  }
+
+  .container .heading {
+    font-size: 20px;
+    line-height: 27px;
+  }
+
   .container p {
     color: var(--app-blue-800);
     font-weight: 300;
     font-size: 20px;
     line-height: 27px;
+  }
+
+  .container strong {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .container span {
+    font-size: 16px;
+    line-height: 22px;
   }
 }

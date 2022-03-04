@@ -1,9 +1,10 @@
 import React, { createRef, Ref, useState } from "react";
 import styles from "./testimonial-section.module.css";
-import { RightArrowIcon, TestimonialHeadshot1, TestimonialHeadshot2 } from "../../assets/images/svgs"
+import { RightArrowIcon } from "../../assets/images/svgs"
 import { TestimonyCard } from "./TestimonyCard";
 import Flickity from "react-flickity-component";
 import "flickity/css/flickity.css";
+import { testimonials } from "../../data/testimonials";
 
 const flickityOptions = {
   initialIndex: 1,
@@ -17,31 +18,6 @@ const flickityOptions = {
 
 function TestimonialSection() {
   const flickityRef: Ref<any> = createRef();
-
-  // constants
-  const testimonials = [
-    {
-      name: "Jonathan Newman",
-      role: "Chairman of App Finance",
-      title: "Generated Over $100M+ from our App",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros ipsum adipiscing mattis ultricies ornare malesuada placerat. Urna ipsum nulla ac nibh id vel placerat. Cursus morbi tellus ultricies egestas ut pharetra.",
-      headshot: <TestimonialHeadshot1 />
-    },
-    {
-      name: "Katherine Jenna",
-      role: "Chairman of App Finance",
-      title: "Generated Over $100M+ from our App",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros ipsum adipiscing mattis ultricies ornare malesuada placerat. Urna ipsum nulla ac nibh id vel placerat. Cursus morbi tellus ultricies egestas ut pharetra.",
-      headshot: <TestimonialHeadshot1 />
-    },
-    {
-      name: "Bruce  Barner",
-      role: "Chairman of App Finance",
-      title: "Generated Over $100M+ from our App",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros ipsum adipiscing mattis ultricies ornare malesuada placerat. Urna ipsum nulla ac nibh id vel placerat. Cursus morbi tellus ultricies egestas ut pharetra.",
-      headshot: <TestimonialHeadshot2 />
-    },
-  ]
 
   // Handlers
   const handleNext = () => {
@@ -62,7 +38,7 @@ function TestimonialSection() {
           </h3>
         </div>
 
-        <div className={`${styles["navigation"]} flex items-center`}>
+        <div className={`${styles["navigation"]} items-center hidden md:flex`}>
           <button className={`${styles["left-arrow"]} mr-3`} onClick={handlePrevious}>
             <RightArrowIcon />
           </button>
