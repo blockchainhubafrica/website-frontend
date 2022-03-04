@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { RegistrationModal } from "../../components";
+import { RegistrationModal, TestimonialSection } from "../../components";
 
 export default function ComponentsPage() {
   const [modalIsActive, setModalIsActive] = useState(false);
@@ -19,6 +19,9 @@ export default function ComponentsPage() {
             Open Modal
           </button>
         </div>
+      </section>
+      <section>
+          <TestimonialSection />
       </section>
     </main>
   );
