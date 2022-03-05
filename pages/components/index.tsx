@@ -1,11 +1,22 @@
-import React, { useState } from "react";
-import { RegistrationModal } from "../../components";
+import React, { useEffect, useState } from "react";
+import { Loader, Marquee, Products, RegistrationModal } from "../../components";
 
 export default function ComponentsPage() {
   const [modalIsActive, setModalIsActive] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <main className="container">
-      <section>
+    <main>
+      {showLoader ? <Loader /> : ""}
+      <section className="container">
         <RegistrationModal
           isActive={modalIsActive}
           setIsActive={setModalIsActive}
@@ -19,6 +30,12 @@ export default function ComponentsPage() {
             Open Modal
           </button>
         </div>
+      </section>
+      <section className="container">
+        <Products />
+      </section>
+      <section>
+        <Marquee />
       </section>
     </main>
   );

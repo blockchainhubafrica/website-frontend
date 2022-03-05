@@ -2,12 +2,12 @@
   width: 100vw;
   color: #efeff0;
   overflow: hidden;
-  font-family: var(--app-secondary-font);
   font-size: 2.5rem;
 }
 
 .container div {
   height: 100%;
+  font-family: var(--app-secondary-font);
   white-space: nowrap;
   animation: scrolling 20s linear infinite;
 }
