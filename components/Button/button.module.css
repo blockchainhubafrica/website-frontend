@@ -1,0 +1,16 @@
+/** @format */
+
+.container.primary {
+	border-radius: var(--app-border-radius-sm);
+	background-color: var(--app-orange);
+	color: white;
+}
+
+.container.primary svg path {
+	fill: var(--app-white);
+}
+
+.container.secondary {
+	border: 2px solid var(--app-orange);
+	border-radius: var(--app-border-radius-sm);
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Loader, Marquee, Products, RegistrationModal } from "../../components";
+import Button from "../../components/Button";
 
 export default function ComponentsPage() {
   const [modalIsActive, setModalIsActive] = useState(false);
@@ -29,6 +30,15 @@ export default function ComponentsPage() {
           >
             Open Modal
           </button>
+        </div>
+      </section>
+      <section className="container">
+        <div className="py-10">
+          <p className="text-xl mb-3">Button component</p>
+          <div className="flex gap-x-5">
+            <Button buttonType="primary" text="Learn More" />
+            <Button buttonType="secondary" text="Hire Us" />
+          </div>
         </div>
       </section>
       <section className="container">
