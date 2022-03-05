@@ -14,9 +14,12 @@ export default function ComponentsPage() {
     return () => clearTimeout(timer);
   }, []);
 
+  if (showLoader) {
+    return <Loader />;
+  }
+
   return (
     <main>
-      {showLoader ? <Loader /> : ""}
       <section className="container">
         <RegistrationModal
           isActive={modalIsActive}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SmallLogoIcon } from "../../assets/images";
 
 import styles from "./styles.module.css";
