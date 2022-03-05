@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { RegistrationModal } from "../../components";
+import { RegistrationModal, TestimonialSection } from "../../components";
 import Button from "../../components/Button";
 
 export default function ComponentsPage() {
@@ -29,6 +29,9 @@ export default function ComponentsPage() {
 					</div>
 				</div>
 			</section>
+      <section>
+          <TestimonialSection />
+      </section>
 		</main>
 	);
 
