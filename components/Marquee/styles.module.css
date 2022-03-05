@@ -1,0 +1,41 @@
+.container {
+  width: 100vw;
+  color: #efeff0;
+  overflow: hidden;
+  font-size: 2.5rem;
+}
+
+.container div {
+  height: 100%;
+  font-family: var(--app-secondary-font);
+  white-space: nowrap;
+  animation: scrolling 20s linear infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0vw);
+  }
+
+  100% {
+    transform: translateX(-500vw);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    font-size: 6.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    font-size: 9.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    font-size: 12.5rem;
+  }
+}

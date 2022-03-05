@@ -1,0 +1,44 @@
+.container {
+  z-index: var(--loader-z-index);
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border: 3px solid var(--app-blue-400);
+  border-radius: 50%;
+}
+
+.circle svg {
+  width: 80px;
+  height: 80px;
+}
+
+.circle svg * {
+  fill: var(--app-white);
+  transform: scale(1.6) translate(10%, 0%);
+}
+
+.circle:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  border: 3px solid transparent;
+  border-top: 3px solid var(--app-orange);
+  border-radius: 50%;
+  transform: rotate(0deg);
+  animation: spanLoading 2s linear infinite;
+}
+
+@keyframes spanLoading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

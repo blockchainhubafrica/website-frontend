@@ -1,0 +1,146 @@
+.intro h1,
+.intro h2,
+.project h1,
+.foot {
+  font-family: var(--app-secondary-font);
+  font-weight: 400;
+}
+
+.intro h1 {
+  letter-spacing: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.intro h2 {
+  font-size: 1.9375rem;
+  line-height: 34px;
+}
+
+.intro h2 span {
+  font-family: var(--app-secondary-font);
+}
+
+.project .image-container span:first-of-type {
+  box-shadow: rgba(0, 0, 252, 0.4) 0px 0px 40px 0px;
+  border-radius: 10px;
+}
+
+.project h1 {
+  font-size: 1.9375rem;
+}
+
+.project p {
+  font-family: var(--app-primary-font);
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.9375rem;
+}
+
+.project span {
+  display: inline-block;
+  font-family: var(--app-secondary-font);
+  color: var(--app-orange);
+  border-bottom: 3px solid var(--app-orange);
+  line-height: 40px;
+}
+
+.project a svg {
+  display: inline;
+  margin-left: 15px;
+}
+
+.foot {
+  color: var(--app-blue-400);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.foot p span {
+  display: inline-block;
+  color: var(--app-orange);
+  font-family: var(--app-secondary-font);
+  border-bottom: 3px solid var(--app-orange);
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.foot svg {
+  display: none;
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .intro h1 {
+    letter-spacing: 0.25rem;
+    font-size: 1rem;
+  }
+
+  .intro h2 {
+    font-size: 3rem;
+    line-height: 73px;
+  }
+
+  .project h1 {
+    font-size: 2.25rem;
+  }
+
+  .project p {
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+  }
+
+  .intro h2 span {
+    display: inline-block;
+    border-bottom: 2px solid var(--app-black);
+    line-height: 50px;
+  }
+
+  .foot {
+    border: 1px solid var(--app-blue-400);
+    border-radius: 10px;
+    font-size: 1.2rem;
+  }
+
+  .foot p span {
+    line-height: 30px;
+  }
+
+  .foot svg {
+    display: inline;
+    margin-top: -5px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .intro h2 {
+    font-size: 4rem;
+    line-height: 83px;
+  }
+
+  .intro h2 span {
+    line-height: 60px;
+  }
+
+  .project h1 {
+    font-size: 3.625rem;
+  }
+
+  .project p {
+    font-size: 1.75rem;
+    line-height: 2.75rem;
+  }
+
+  .foot {
+    border: 1px solid var(--app-blue-400);
+    border-radius: 10px;
+    font-size: 2rem;
+  }
+
+  .foot p span {
+    line-height: 40px;
+  }
+
+  .foot svg {
+    margin-top: -10px;
+  }
+}

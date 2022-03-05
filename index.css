@@ -9,8 +9,7 @@
 
 @font-face {
   font-family: "Coolvetica";
-  src: local("Coolvetica"),
-    url(./fonts/coolvetica_rg.otf) format("truetype");
+  src: local("Coolvetica"), url(./fonts/coolvetica_rg.otf) format("truetype");
 }
 
 :root {
@@ -42,13 +41,14 @@
 * {
   padding: 0px;
   margin: 0px;
-  font-family: var(--app-primary-text), -apple-system, BlinkMacSystemFont,
+  font-family: var(--app-primary-font), -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
 }
 
 body {
   /* background: var(--app-bg-light); */
+  overflow-x: hidden !important;
 }
 
 *:not(*:hover, *:hover *) {
