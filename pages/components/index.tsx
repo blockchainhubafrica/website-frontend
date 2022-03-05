@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Loader, Marquee, Products, RegistrationModal } from "../../components";
+import {
+  Loader,
+  Marquee,
+  Products,
+  RegistrationModal,
+  TestimonialSection,
+} from "../../components";
 import Button from "../../components/Button";
 
 export default function ComponentsPage() {

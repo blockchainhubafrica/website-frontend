@@ -3,6 +3,7 @@ import SmallLogoIcon from "./logo.svg";
 import CircleCloseIcon from "./circle-close-icon.svg";
 import TopRightArrowIcon from "./top-right-arrow.svg";
 import ArrowTilt from "./arrowTilt.svg";
+import RightArrowIcon from "./right-arrow.svg";
 
 export {
   LogoIcon,
@@ -10,4 +11,5 @@ export {
   TopRightArrowIcon,
   CircleCloseIcon,
   ArrowTilt,
+  RightArrowIcon,
 };
