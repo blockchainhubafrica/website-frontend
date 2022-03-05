@@ -79,7 +79,7 @@ function RegistrationModal({ isActive, setIsActive }: ModalProps) {
         className={`${styles["modal-body"]} p-8 lg:p-16 `}
         onClick={(e) => e.stopPropagation()}
       >
-        <form action="" className="" onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit}>
           <div className="flex justify-between items-center">
             <h3 className={`${styles["spaced-heading"]} text-base`}>Registration Form</h3>
             <button

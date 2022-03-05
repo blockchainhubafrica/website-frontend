@@ -29,10 +29,9 @@
   background-color: var(--app-white);
   border-radius: var(--app-border-radius-sm);
   width: 100%;
-  max-width: 730px;
+  max-width: 360px;
   margin-top: 0px;
   position: relative;
-  /* height: 300px; */
 }
 
 .container.active .modal-body {
@@ -41,18 +40,26 @@
 }
 
 @media screen and (min-width: 640px) {
-  .modal-body {
-    /* width: 450px; */
+  .container .modal-body {
+    max-width: 600px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container.active .modal-body {
     opacity: 1;
-    margin-top: 110px;
+    margin-top: 90px;
+  }
+  .container .modal-body {
+    max-width: 650px;
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .container .modal-body {
+    max-width: 730px;
+  }
+}
 .container .spaced-heading {
   letter-spacing: var(--app-letter-spacing-lg);
   text-transform: uppercase;
