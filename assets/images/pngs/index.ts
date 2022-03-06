@@ -3,6 +3,7 @@ import productsDemoImg2 from "./productsDemoImg2.png";
 import TestimonialHeadshot1 from "./headshots/testimonial1.png";
 import TestimonialHeadshot2 from "./headshots/testimonial2.png";
 import TestimonialHeadshot3 from "./headshots/testimonial3.png";
+import eventTestImage from "./eventTestImage.png";
 
 export {
   productsDemoImg1,
@@ -10,4 +11,5 @@ export {
   TestimonialHeadshot1,
   TestimonialHeadshot2,
   TestimonialHeadshot3,
+  eventTestImage,
 };

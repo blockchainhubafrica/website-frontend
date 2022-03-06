@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { demoEventsData } from "../../assets/images";
 import {
+  Events,
   Loader,
   Marquee,
   Products,
@@ -55,6 +57,11 @@ export default function ComponentsPage() {
       </section>
       <section>
         <Marquee />
+      </section>
+      <section className="my-14">
+        <div className="container ">
+          <Events eventList={demoEventsData} />
+        </div>
       </section>
     </main>
   );

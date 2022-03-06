@@ -5,3 +5,4 @@ export * from "./Loader";
 export * from "./Marquee";
 export * from "./Products";
 export * from "./TestimonialSection";
+export * from "./Events";
