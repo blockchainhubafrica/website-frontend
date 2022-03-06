@@ -15,29 +15,30 @@
 }
 
 :root {
-	--app-green-200: #00cf8e;
-	--app-blue-200: #00bdff;
-	--app-blue-400: #0043ff;
-	--app-blue-600: #11163b;
-	--app-blue-800: #00081f;
-	--app-black: #000;
-	--app-white: #fff;
-	--app-gray-100: #f8f8f8;
-	--app-gray-400: #cfcfcf;
-	--app-pink-100: #d0c4c4;
-	--app-orange: #ff9900;
-	--app-red: #f84550;
-	--app-primary-font: 'Open sans', helvetica;
-	--app-secondary-font: 'Coolvetica', sans-serif;
-	--app-border-radius-sm: 10px;
-	--app-letter-spacing-lg: 0.5rem;
-	--header-z-index: 1000;
-	--sidebar-z-index: 1500;
-	--form-z-index: 2000;
-	--overlay-z-index: 2000;
-	--modal-z-index: 2000;
-	--loader-z-index: 2500;
-	--toast-z-index: 2500;
+  --app-green-200: #00cf8e;
+  --app-blue-200: #00bdff;
+  --app-blue-400: #0043ff;
+  --app-blue-600: #11163b;
+  --app-blue-800: #00081f;
+  --app-black: #000;
+  --app-white: #fff;
+  --app-gray-100: #f8f8f8;
+  --app-gray-400: #cfcfcf;
+  --app-pink-100: #d0c4c4;
+  --app-orange: #ff9900;
+  --app-red: #f84550;
+  --app-purple: #764afd;
+  --app-primary-font: "Open sans", helvetica;
+  --app-secondary-font: "Coolvetica", sans-serif;
+  --app-border-radius-sm: 10px;
+  --app-letter-spacing-lg: 0.5rem;
+  --header-z-index: 1000;
+  --sidebar-z-index: 1500;
+  --form-z-index: 2000;
+  --overlay-z-index: 2000;
+  --modal-z-index: 2000;
+  --loader-z-index: 2500;
+  --toast-z-index: 2500;
 }
 
 * {

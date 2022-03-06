@@ -42,7 +42,7 @@ export default function ComponentsPage() {
 				</div>
 				<p className='text-xl mb-3'>Toast component</p>
 			</section>
-			<section className='container'>
+			<section>
 				<RegistrationModal
 					isActive={modalIsActive}
 					setIsActive={setModalIsActive}
@@ -70,6 +70,9 @@ export default function ComponentsPage() {
 			</section>
 			<section>
 				<Marquee />
+			</section>
+			<section>
+				<TestimonialSection />
 			</section>
 		</main>
 	);

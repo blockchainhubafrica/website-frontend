@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  background-color: var(--app-gray-100);
 }
 
 .container .spaced-heading {

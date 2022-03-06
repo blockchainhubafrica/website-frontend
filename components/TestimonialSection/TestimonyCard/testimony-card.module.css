@@ -13,6 +13,31 @@
   line-height: 19.07px;
 }
 
+.container .image-holder img {
+  border-radius: 50%;
+  border: solid 3px !important;
+}
+
+.container:nth-child(odd) .image-holder img {  
+  border-color: var(--app-purple) !important;
+}
+
+.container:first-child .image-holder img, .container:nth-child(3n+1) .image-holder img {
+  border-color: var(--app-blue-400) !important;
+}
+
+.container:nth-child(even) .image-holder img {  
+  border-color: var(--app-orange) !important;
+}
+
+/* .container:nth-child(3n) .image-holder img {  
+  border-color: var(--app-purple) !important;
+} */
+
+/* .container:nth-child() .image-holder img {
+  border-color: var(--app-purple) !important;
+} */
+
 .container p {
   color: var(--app-blue-800);
   font-weight: 300;
