@@ -33,14 +33,15 @@ export default function ComponentsPage() {
           isActive={modalIsActive}
           setIsActive={setModalIsActive}
         />
-        <div className="py-10 gap-x-10 flex items-center ">
-          <p className="text-xl">Click to open the registration modal</p>
-          <button
+        <div className="py-10 gap-x-10 flex flex-wrap items-center ">
+          <p className="text-xl mb-3 sm:mb-0">
+            Click to open the registration modal
+          </p>
+          <Button
             onClick={() => setModalIsActive(true)}
-            className="btn border px-5 py-3 border-orange"
-          >
-            Open Modal
-          </button>
+            buttonType="secondary"
+            text="Open Modal"
+          />
         </div>
       </section>
       <section className="container">
@@ -57,6 +58,9 @@ export default function ComponentsPage() {
       </section>
       <section>
         <Marquee />
+      </section>
+      <section>
+        <TestimonialSection />
       </section>
       <section className="my-14">
         <div className="container ">
