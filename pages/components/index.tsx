@@ -7,6 +7,7 @@ import {
   Products,
   RegistrationModal,
   TestimonialSection,
+  Toast,
 } from "../../components";
 import Button from "../../components/Button";
 
@@ -29,19 +30,30 @@ export default function ComponentsPage() {
   return (
     <main>
       <section className="container">
+        <div className="py-10">
+          <div>
+            <Toast
+              text="Our Annual Internship Program Kicks Off This Summer, 
+							30 July, 2022. To Register Click Join The Web3 Internship 2022"
+              isActive={true}
+            />
+          </div>
+        </div>
+        <p className="text-xl mb-3">Toast component</p>
+      </section>
+      <section className="container">
         <RegistrationModal
           isActive={modalIsActive}
           setIsActive={setModalIsActive}
         />
-        <div className="py-10 gap-x-10 flex flex-wrap items-center ">
-          <p className="text-xl mb-3 sm:mb-0">
-            Click to open the registration modal
-          </p>
-          <Button
+        <div className="py-10 gap-x-10 flex items-center ">
+          <p className="text-xl">Click to open the registration modal</p>
+          <button
             onClick={() => setModalIsActive(true)}
-            buttonType="secondary"
-            text="Open Modal"
-          />
+            className="btn border px-5 py-3 border-orange"
+          >
+            Open Modal
+          </button>
         </div>
       </section>
       <section className="container">
@@ -59,9 +71,6 @@ export default function ComponentsPage() {
       <section>
         <Marquee />
       </section>
-      <section>
-        <TestimonialSection />
-      </section>
       <section className="my-14">
         <div className="container ">
           <Events eventList={demoEventsData} />
@@ -70,3 +79,4 @@ export default function ComponentsPage() {
     </main>
   );
 }
+/** @format */
