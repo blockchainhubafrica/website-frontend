@@ -27,6 +27,7 @@ export default function ComponentsPage() {
 		return <Loader />;
 	}
 
+
 	return (
 		<main>
 			<section className='container'>
