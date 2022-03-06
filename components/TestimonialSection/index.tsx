@@ -1,4 +1,4 @@
-import React, { createRef, Ref, useState } from "react";
+import React, { createRef, Ref, useEffect, useState } from "react";
 import styles from "./testimonial-section.module.css";
 import { RightArrowIcon } from "../../assets/images/svgs"
 import { TestimonyCard } from "./TestimonyCard";
@@ -27,6 +27,10 @@ function TestimonialSection() {
   const handlePrevious = () => {
     flickityRef.current.flkty.previous()
   }
+
+  useEffect(() => {
+    console.log(flickityRef?.current)
+  })
 
   return (
     <div className={`${styles["container"]} py-8 lg:py-16`}>

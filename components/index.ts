@@ -6,3 +6,5 @@ export * from "./Marquee";
 export * from "./Products";
 export * from "./TestimonialSection";
 export * from "./Toast";
+export * from "./StorySection";
+export * from "./Button";

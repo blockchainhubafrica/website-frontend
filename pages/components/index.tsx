@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import {
-	Loader,
-	Marquee,
-	Products,
-	RegistrationModal,
-	TestimonialSection,
-	Toast,
-} from '../../components';
-import Button from '../../components/Button';
+  Loader,
+  Marquee,
+  Products,
+  RegistrationModal,
+  StorySection,
+  TestimonialSection,
+  Button,
+} from "../../components";
 
 export default function ComponentsPage() {
 	const [modalIsActive, setModalIsActive] = useState(false);
@@ -18,7 +18,7 @@ export default function ComponentsPage() {
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setShowLoader(false);
-		}, 2000);
+		}, 500);
 
 		return () => clearTimeout(timer);
 	}, []);
@@ -26,11 +26,10 @@ export default function ComponentsPage() {
 	if (showLoader) {
 		return <Loader />;
 	}
-
-
-	return (
-		<main>
-			<section className='container'>
+ 
+  return (
+    <main>
+      	<section className='container'>
 				<div className='py-10'>
 					<div>
 						<Toast
@@ -42,36 +41,44 @@ export default function ComponentsPage() {
 				</div>
 				<p className='text-xl mb-3'>Toast component</p>
 			</section>
-			<section className='container'>
-				<RegistrationModal
-					isActive={modalIsActive}
-					setIsActive={setModalIsActive}
-				/>
-				<div className='py-10 gap-x-10 flex items-center '>
-					<p className='text-xl'>Click to open the registration modal</p>
-					<button
-						onClick={() => setModalIsActive(true)}
-						className='btn border px-5 py-3 border-orange'>
-						Open Modal
-					</button>
-				</div>
-			</section>
-			<section className='container'>
-				<div className='py-10'>
-					<p className='text-xl mb-3'>Button component</p>
-					<div className='flex gap-x-5'>
-						<Button buttonType='primary' text='Learn More' />
-						<Button buttonType='secondary' text='Hire Us' />
-					</div>
-				</div>
-			</section>
-			<section className='container'>
-				<Products />
-			</section>
-			<section>
-				<Marquee />
-			</section>
-		</main>
-	);
+      <section className="container">
+        <RegistrationModal
+          isActive={modalIsActive}
+          setIsActive={setModalIsActive}
+        />
+        <div className="py-10 gap-x-10 flex flex-wrap items-center ">
+          <p className="text-xl mb-3 sm:mb-0">
+            Click to open the registration modal
+          </p>
+          <Button
+            onClick={() => setModalIsActive(true)}
+            buttonType="secondary"
+            text="Open Modal"
+          />
+        </div>
+      </section>
+      <section className="container">
+        <div className="py-10">
+          <p className="text-xl mb-3">Button component</p>
+          <div className="flex gap-x-5">
+            <Button buttonType="primary" text="Learn More" />
+            <Button buttonType="secondary" text="Hire Us" />
+          </div>
+        </div>
+      </section>
+      <section className="container">
+        <Products />
+      </section>
+      <section>
+        <Marquee />
+      </section>
+      <section>
+        <TestimonialSection />
+      </section>
+      <section>
+        <StorySection />
+      </section>
+    </main>
+  );
 }
 /** @format */
