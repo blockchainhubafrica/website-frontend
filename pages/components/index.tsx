@@ -29,10 +29,9 @@ export default function ComponentsPage() {
 
 	return (
 		<main>
-			<section>
+			<section className='container'>
 				<div className='py-10'>
-					<p className='text-xl mb-3'>Toast component</p>
-					<div className='flex gap-x-5'>
+					<div>
 						<Toast
 							text='Our Annual Internship Program Kicks Off This Summer, 
 							30 July, 2022. To Register Click Join The Web3 Internship 2022'
@@ -40,6 +39,7 @@ export default function ComponentsPage() {
 						/>
 					</div>
 				</div>
+				<p className='text-xl mb-3'>Toast component</p>
 			</section>
 			<section className='container'>
 				<RegistrationModal
