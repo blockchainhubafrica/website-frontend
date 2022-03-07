@@ -17,7 +17,7 @@ const Banner: React.FC<Props> = ({ children, isActive, onBannerIsActive }) => {
       <div className="lg:hidden relative">
         <Ticker offset={40} mode="chain">
           {({ index }) => (
-            <div className={`${styles.container} py-4 container`}>
+            <div className={`${styles.container} py-4 text-sm`}>
               {children}
             </div>
           )}

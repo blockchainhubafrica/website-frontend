@@ -10,9 +10,12 @@ import {
   TestimonialSection,
   Button,
 } from "../../components";
+import { useAppContext } from "../../contexts/appContext";
 
 export default function ComponentsPage() {
-  const [modalIsActive, setModalIsActive] = useState(false);
+  const { isRegistrationFormActive, setIsRegistrationFormActive } =
+    useAppContext();
+
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
@@ -31,15 +34,15 @@ export default function ComponentsPage() {
     <main>
       <section className="container">
         <RegistrationModal
-          isActive={modalIsActive}
-          setIsActive={setModalIsActive}
+          isActive={isRegistrationFormActive}
+          setIsActive={setIsRegistrationFormActive}
         />
         <div className="py-10 gap-x-10 flex flex-wrap items-center ">
           <p className="text-xl mb-3 sm:mb-0">
             Click to open the registration modal
           </p>
           <Button
-            onClick={() => setModalIsActive(true)}
+            onClick={() => setIsRegistrationFormActive(true)}
             buttonType="secondary"
             text="Open Modal"
           />
@@ -63,9 +66,7 @@ export default function ComponentsPage() {
       <section>
         <TestimonialSection />
       </section>
-      <section>
-        {/* <StorySection /> */}
-      </section>
+      <section>{/* <StorySection /> */}</section>
     </main>
   );
 }

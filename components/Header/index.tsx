@@ -6,8 +6,9 @@ import React, { useState } from "react";
 import { Banner } from "../../components";
 import { LogoIcon, MenuIcon, TopRightArrowIcon } from "../../assets/images";
 import styles from "./header.module.css";
-
+import { useAppContext } from "../../contexts/appContext";
 function Header({}) {
+  const { setIsRegistrationFormActive } = useAppContext();
   const activeRoute = useRouter().asPath;
   const [bannerIsActive, setBannerIsActive] = useState<boolean>(true);
 
@@ -61,6 +62,12 @@ function Header({}) {
         <Banner onBannerIsActive={setBannerIsActive} isActive={bannerIsActive}>
           Our Annual Internship Program Kicks Off This Summer, 30 July, 2022. To
           Register Click Join The Web3 Internship 2022
+          <button
+            className={`${styles["register-btn"]} pl-2`}
+            onClick={() => setIsRegistrationFormActive(true)}
+          >
+            Join The Web3 Internship 2022
+          </button>
         </Banner>
       )}
     </header>

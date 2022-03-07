@@ -1,15 +1,9 @@
 /** @format */
 
-.container {
-  /* position: absolute; */
-  /* width: 100%; */
-  /* height: 65px; */
-  /* left: 0px; */
-  /* background-color: #ff9900; */
-  /* z-index: var(--header-z-index); */
-  /* text-align: center;
-  overflow: hidden;
-  white-space: nowrap; */
+.container, .container * {
+  text-transform: uppercase;
+  font-family: var(--app-secondary-font);
+  letter-spacing: 4px;
 }
 
 .close-btn:hover svg {

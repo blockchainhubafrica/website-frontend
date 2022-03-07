@@ -1,13 +1,28 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
-type appContextType = null;
+type appContextType = {
+  isRegistrationFormActive: boolean;
+  setIsRegistrationFormActive: (formState: boolean) => void;
+};
 
-const appContextDefaultValues: appContextType = null;
+const appContextDefaultValues: appContextType = {
+  isRegistrationFormActive: false,
+  setIsRegistrationFormActive: () => null,
+};
 
 const AppContext = createContext<appContextType>(appContextDefaultValues);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  return <AppContext.Provider value={null}>{children}</AppContext.Provider>;
+  const [isRegistrationFormActive, setIsRegistrationFormActive] =
+    useState<boolean>(false);
+
+  return (
+    <AppContext.Provider
+      value={{ isRegistrationFormActive, setIsRegistrationFormActive }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 }
 
 export function useAppContext() {
