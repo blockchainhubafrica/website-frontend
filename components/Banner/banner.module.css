@@ -1,0 +1,29 @@
+/** @format */
+
+.container {
+  /* position: absolute; */
+  /* width: 100%; */
+  /* height: 65px; */
+  /* left: 0px; */
+  /* background-color: #ff9900; */
+  /* z-index: var(--header-z-index); */
+  /* text-align: center;
+  overflow: hidden;
+  white-space: nowrap; */
+}
+
+.close-btn:hover svg {
+  fill: var(--app-red);
+  stroke: var(--app-white);
+}
+
+.close-btn svg {
+  transform: scale(0.6);
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
