@@ -6,7 +6,7 @@ import {
   Marquee,
   Products,
   RegistrationModal,
-  StorySection,
+  // StorySection,
   TestimonialSection,
   Button,
 } from "../../components";
