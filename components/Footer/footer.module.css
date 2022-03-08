@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+}
+
+.container .social-heading {
+  letter-spacing: var(--app-letter-spacing-lg);
+  color: var(--app-blue-400);
+  font-family: var(--app-secondary-font);
+}
+
+.container .footer-section {
+  background: var(--app-blue-800);
+  color: var(--app-white);
+}
+
+.container .footer-section h3 {
+  color: var(--app-blue-100);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+  }
+}
