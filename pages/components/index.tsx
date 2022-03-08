@@ -69,7 +69,7 @@ export default function ComponentsPage() {
         <TestimonialSection />
       </section>
       <section>
-        <div className="container">
+        <div className="container my-10">
           <Events eventList={demoEventsData} />
         </div>
       </section>
