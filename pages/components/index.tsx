@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import {
+	Footer,
 	Loader,
 	Marquee,
 	Products,
@@ -73,6 +74,9 @@ export default function ComponentsPage() {
 			</section>
 			<section>
 				<TestimonialSection />
+			</section>
+			<section>
+				<Footer />
 			</section>
 		</main>
 	);
