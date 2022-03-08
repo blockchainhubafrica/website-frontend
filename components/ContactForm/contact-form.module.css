@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.container * {
+  transition: all 0.3s ease-in-out;
+}
+
+.container form .subtitle span:first-child {
+  color: #565658;
+}
+.container form .subtitle span:last-child {
+  color: #565658;
+}
+
+.container button.submit {
+  width: fit-content;
+  background-color: var(--app-orange);
+  border-radius: var(--app-border-radius-sm);
+  color: var(--app-white);
+}
+
+.container button.submit svg path {
+  fill: var(--app-white);
+}
