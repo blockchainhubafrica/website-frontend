@@ -6,86 +6,90 @@
 
 @tailwindcss /utilities;
 
-@import url('https://fonts.googleapis.com/css?family=Open Sans:300,400,500,550,600,900');
+@import url("https://fonts.googleapis.com/css?family=Open Sans:300,400,500,550,600,900");
 /* @import url("http://fonts.cdnfonts.com/css/coolvetica-2"); */
 
 @font-face {
-	font-family: 'Coolvetica';
-	src: local('Coolvetica'), url(./fonts/coolvetica_rg.otf) format('truetype');
+  font-family: "Coolvetica";
+  src: local("Coolvetica"), url(./fonts/coolvetica_rg.otf) format("truetype");
 }
 
 :root {
-	--app-green-200: #00cf8e;
-	--app-blue-200: #00bdff;
-	--app-blue-400: #0043ff;
-	--app-blue-600: #11163b;
-	--app-blue-800: #00081f;
-	--app-black: #000;
-	--app-white: #fff;
-	--app-gray-100: #f8f8f8;
-	--app-gray-400: #cfcfcf;
-	--app-pink-100: #d0c4c4;
-	--app-orange: #ff9900;
-	--app-red: #f84550;
-	--app-primary-font: 'Open sans', helvetica;
-	--app-secondary-font: 'Coolvetica', sans-serif;
-	--app-border-radius-sm: 10px;
-	--app-letter-spacing-lg: 0.5rem;
-	--header-z-index: 1000;
-	--sidebar-z-index: 1500;
-	--form-z-index: 2000;
-	--overlay-z-index: 2000;
-	--modal-z-index: 2000;
-	--loader-z-index: 2500;
-	--toast-z-index: 2500;
+  --app-green-200: #00cf8e;
+  --app-blue-200: #00bdff;
+  --app-blue-400: #0043ff;
+  --app-blue-600: #11163b;
+  --app-blue-800: #00081f;
+  --app-black: #000;
+  --app-white: #fff;
+  --app-gray-100: #f8f8f8;
+  --app-gray-400: #cfcfcf;
+  --app-pink-100: #d0c4c4;
+  --app-orange: #ff9900;
+  --app-red: #f84550;
+  --app-primary-font: "Open sans", helvetica;
+  --app-secondary-font: "Coolvetica", sans-serif;
+  --app-border-radius-sm: 10px;
+  --app-letter-spacing-lg: 0.5rem;
+  --header-z-index: 1000;
+  --sidebar-z-index: 1500;
+  --form-z-index: 2000;
+  --overlay-z-index: 2000;
+  --modal-z-index: 2000;
+  --loader-z-index: 2500;
+  --toast-z-index: 2500;
 }
 
 * {
-	padding: 0px;
-	margin: 0px;
-	font-family: var(--app-primary-font), -apple-system, BlinkMacSystemFont,
-		'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-		sans-serif;
+  padding: 0px;
+  margin: 0px;
+  font-family: var(--app-primary-font), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 body {
-	/* background: var(--app-bg-light); */
-	overflow-x: hidden !important;
+  /* background: var(--app-bg-light); */
+  overflow-x: hidden !important;
 }
 
 *:not(*:hover, *:hover *) {
-	-webkit-transition: 0.1s all ease-in-out;
-	-o-transition: 0.1s all ease-in-out;
-	transition: 0.1s all ease-in-out;
+  -webkit-transition: 0.1s all ease-in-out;
+  -o-transition: 0.1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
 }
 
 *:focus {
-	transition: 0.1s all ease-in-out;
-	outline: 2px dotted;
-	outline-color: #000;
-	opacity: 1 !important;
+  transition: 0.1s all ease-in-out;
+  outline: 2px dotted;
+  outline-color: #000;
+  opacity: 1 !important;
 }
 
 ul,
 ol {
-	padding: 0px;
-	margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 li {
-	list-style: none;
+  list-style: none;
 }
 
 a:focus {
-	outline: none;
+  outline: none;
 }
 
 button:focus {
-	outline: none;
+  outline: none;
 }
 
 .spaced-heading {
-	letter-spacing: var(--app-letter-spacing-lg);
-	text-transform: uppercase;
-	font-family: var(--app-secondary-font);
+  letter-spacing: var(--app-letter-spacing-lg);
+  text-transform: uppercase;
+  font-family: var(--app-secondary-font);
+}
+
+.ticker {
+  white-space: nowrap;
 }
