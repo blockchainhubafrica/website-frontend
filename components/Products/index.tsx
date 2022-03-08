@@ -9,7 +9,7 @@ const Products = () => {
     <section className={`py-9 md:py-12  lg:py-14 ${styles.container}`}>
       <div className={`${styles.intro} w-full md:w-3/5 lg:w-2/4 xl:w-5/12`}>
         <h1 className="text-base text-blue-400 uppercase">Our work</h1>
-        <h2>
+        <h2 className="text-blue-600">
           <span>Products</span> that will change the <span>world.</span>
         </h2>
       </div>
