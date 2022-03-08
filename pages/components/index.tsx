@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
+import { demoEventsData } from "../../assets/images";
 import {
   Loader,
   Marquee,
@@ -9,6 +10,7 @@ import {
   // StorySection,
   TestimonialSection,
   Button,
+  Events,
 } from "../../components";
 import { useAppContext } from "../../contexts/appContext";
 
@@ -65,6 +67,11 @@ export default function ComponentsPage() {
       </section>
       <section>
         <TestimonialSection />
+      </section>
+      <section>
+        <div className="container my-10">
+          <Events eventList={demoEventsData} />
+        </div>
       </section>
       <section>{/* <StorySection /> */}</section>
     </main>
