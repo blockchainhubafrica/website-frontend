@@ -1,9 +1,11 @@
 /** @format */
 
-.container, .container * {
+.container,
+.container * {
   text-transform: uppercase;
   font-family: var(--app-secondary-font);
   letter-spacing: 4px;
+  white-space: nowrap;
 }
 
 .close-btn:hover svg {
@@ -20,4 +22,13 @@
   top: 0;
   right: 0;
   height: 100%;
+}
+
+@media screen and (min-width: 1440px) {
+  .close-btn {
+    position: static;
+    top: 0;
+    right: 0;
+    height: auto
+  }
 }
