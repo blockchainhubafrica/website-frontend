@@ -1,0 +1,23 @@
+/** @format */
+
+.container, .container * {
+  text-transform: uppercase;
+  font-family: var(--app-secondary-font);
+  letter-spacing: 4px;
+}
+
+.close-btn:hover svg {
+  fill: var(--app-red);
+  stroke: var(--app-white);
+}
+
+.close-btn svg {
+  transform: scale(0.6);
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
