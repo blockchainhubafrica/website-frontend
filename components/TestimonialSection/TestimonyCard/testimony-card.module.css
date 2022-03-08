@@ -30,14 +30,6 @@
   border-color: var(--app-orange) !important;
 }
 
-/* .container:nth-child(3n) .image-holder img {  
-  border-color: var(--app-purple) !important;
-} */
-
-/* .container:nth-child() .image-holder img {
-  border-color: var(--app-purple) !important;
-} */
-
 .container p {
   color: var(--app-blue-800);
   font-weight: 300;
