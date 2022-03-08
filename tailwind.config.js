@@ -25,6 +25,9 @@ module.exports = {
         coolvetica: ["Coolvetica", "sans-serif"],
         "open-sans": ["Open sans", "helvetica"],
       },
+      screens: {
+        xmd: "1440px",
+      },
     },
     container: {
       center: true,
@@ -50,6 +53,9 @@ module.exports = {
           },
           "@screen md": {
             maxWidth: "1024px",
+          },
+          "@screen xmd": {
+            maxWidth: "1440px",
           },
           "@screen lg": {
             maxWidth: "1536px",
