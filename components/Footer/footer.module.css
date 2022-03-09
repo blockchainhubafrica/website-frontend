@@ -51,6 +51,18 @@
 	fill: var(--app-gray-600);
 }
 
+.container .footer-section .links .active a {
+  color: var(--app-orange);
+}
+
+.container .links a:focus {
+  color: var(--app-orange);
+}
+
+.container .links a:hover {
+  color: var(--app-orange);
+}
+
 .container .footer-section .back-to-top button {
 	background-color: var(--app-blue-400);
 }

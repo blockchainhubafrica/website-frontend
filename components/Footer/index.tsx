@@ -1,9 +1,14 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { LogoIcon, DiscordIcon, InstagramIcon, TwitterIcon, TelegramIcon, YoutubeIcon, RightArrowIcon } from "../../assets/images";
+import { activeRouteClass } from "../../helpers";
 import styles from "./footer.module.css";
 
 
 function Footer() {
+  const activeRoute = useRouter().asPath;
+
   // Handler
   const scrollToTop = () => {
     if (typeof window !== "undefined") {
@@ -29,7 +34,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className={`${styles["footer-section"]} pb-8 pt-16 lg:pt-24 px-5 lg:px-32`}>
+      <div className={`${styles["footer-section"]} pb-8 pt-16 lg:pt-24 px-5 lg:px-24 xl:px-32`}>
         <div className="flex flex-col md:flex-row items-center lg:mb-20">
           <h3 className={`text-3xl md:text-4xl lg:text-6xl font-coolvetica text-blue-600 md:w-1/2`}>
             Let’s bring that idea to life. 😎
@@ -41,17 +46,29 @@ function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-center justify-between py-5">
-          <div className="grid grid-cols-2 md:flex gap-6">
-            <a href="#" className="col-span-1 md:mr-5">About Us</a>
-            <a href="#" className="col-span-1 md:mr-5">Our work</a>
-            <a href="#" className="col-span-1 md:mr-5">Events</a>
-            <a href="#" className="col-span-1 md:mr-5">Blog</a>
-            <a href="#" className="col-span-1 md:mr-5">Contact Us</a>
-            <a href="#" className="col-span-1 md:mr-5">Careers</a>
+        <div className="flex flex-col md:flex-row md:flex-wrap gap-10 md:items-center justify-between py-5">
+          <div className={`${styles["links"]} grid grid-cols-2 md:flex gap-6`}>
+            <span className={`${activeRouteClass("/about", activeRoute, styles)} col-span-1 md:mr-5`}>
+              <Link href="/components">About Us</Link>
+            </span>
+            <span className={`${activeRouteClass("/work", activeRoute, styles)} col-span-1 md:mr-5`}>
+              <Link href="/work">Our work</Link>
+            </span>
+            <span className={`${activeRouteClass("/events", activeRoute, styles)} col-span-1 md:mr-5`}>
+              <Link href="/events">Events</Link>
+            </span>
+            <span className={`${activeRouteClass("/blog", activeRoute, styles)} col-span-1 md:mr-5`}>
+              <Link href="/blog">Blog</Link>
+            </span>
+            <span className={`${activeRouteClass("/contact", activeRoute, styles)} col-span-1 md:mr-5`}>
+              <Link href="/contact">Contact Us</Link>
+            </span>
+            <span className={`${activeRouteClass("/careers", activeRoute, styles)} col-span-1 md:mr-5`}>
+              <Link href="/careers">Careers</Link>
+            </span>
           </div>
 
-          <div className={`${styles["social-icons"]} items-center justify-center flex pt-10 mt-10 md:pt-0 md:mt-0`}>
+          <div className={`${styles["social-icons"]} items-center justify-center flex pt-10 mt-10 md:pt-0 md:mt-0 md:ml-auto`}>
             <a href="#" target="_blank" className="mr-3"><DiscordIcon /></a>
             <a href="#" target="_blank" className="mr-3"><TwitterIcon /></a>
             <a href="#" target="_blank" className="mr-3"><YoutubeIcon /></a>

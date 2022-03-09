@@ -7,17 +7,12 @@ import { Banner } from "../../components";
 import { LogoIcon, MenuIcon, TopRightArrowIcon } from "../../assets/images";
 import styles from "./header.module.css";
 import { useAppContext } from "../../contexts/appContext";
+import { activeRouteClass } from "../../helpers";
+
 function Header({}) {
   const { setIsRegistrationFormActive } = useAppContext();
   const activeRoute = useRouter().asPath;
   const [bannerIsActive, setBannerIsActive] = useState<boolean>(true);
-
-  const activeRouteClass = (route: string) => {
-    if (activeRoute.includes(route))
-      return `px-3 text-lg text-white ${styles["active"]} }`;
-
-    return `px-3 text-lg text-white`;
-  };
 
   return (
     <header className={`${styles.container} `}>
@@ -27,23 +22,23 @@ function Header({}) {
             <LogoIcon />
           </a>
         </Link>
-        <ul className="items-center hidden lg:flex ">
-          <li className={activeRouteClass("/about")}>
+        <ul className={`${styles["links"]} items-center hidden lg:flex `}>
+          <li className={activeRouteClass("/about", activeRoute, styles)}>
             <Link href="/components">About Us</Link>
           </li>
-          <li className={activeRouteClass("/work")}>
+          <li className={activeRouteClass("/work", activeRoute, styles)}>
             <Link href="/work">Our work</Link>
           </li>
-          <li className={activeRouteClass("/events")}>
+          <li className={activeRouteClass("/events", activeRoute, styles)}>
             <Link href="/events">Events</Link>
           </li>
-          <li className={activeRouteClass("/blog")}>
+          <li className={activeRouteClass("/blog", activeRoute, styles)}>
             <Link href="/blog">Blog</Link>
           </li>
-          <li className={activeRouteClass("/contact")}>
+          <li className={activeRouteClass("/contact", activeRoute, styles)}>
             <Link href="/contact">Contact Us</Link>
           </li>
-          <li className={`${activeRouteClass("/hire-us")} pr-0`}>
+          <li className={`${activeRouteClass("/hire-us", activeRoute, styles)} pr-0`}>
             <Link href="/hire-us" passHref>
               <a className={`${styles.cta} flex items-center py-3 px-6`}>
                 <span className="mr-3">Hire Us</span>
