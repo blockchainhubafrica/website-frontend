@@ -10,10 +10,6 @@
   height: 40px;
 }
 
-.container ul li {
-  /* color: #000; */
-}
-
 .container ul li a:focus {
   color: var(--app-orange);
 }
@@ -35,4 +31,8 @@
 .container .cta {
   border: 2px solid var(--app-orange);
   border-radius: var(--app-border-radius-sm);
+}
+
+.register-btn {
+  border-bottom: 1px solid #a05f00;
 }

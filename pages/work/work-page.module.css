@@ -1,2 +1,35 @@
 .container {
 }
+
+.ellipse {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background: var(--app-orange);
+  border-radius: 50%;
+  right: 1rem;
+  filter: blur(200px);
+  box-shadow: -99px 0px 218px 60px rgba(255, 153, 0, 0.9);
+  -webkit-box-shadow: -99px 0px 218px 60px rgba(255, 153, 0, 0.9);
+  -moz-box-shadow: -99px 0px 218px 60px rgba(255, 153, 0, 0.9);
+}
+
+.events h2,
+.events h3 {
+  font-family: var(--app-secondary-font);
+  font-weight: 400;
+}
+
+.events h2 {
+  letter-spacing: 0.25rem;
+  font-size: 1rem;
+  letter-spacing: var(--app-letter-spacing-lg);
+}
+
+@media screen and (min-width: 768px) {
+  .ellipse {
+    box-shadow: 42px 10px 128px 115px rgba(255, 153, 0, 0.9);
+    -webkit-box-shadow: 42px 10px 128px 115px rgba(255, 153, 0, 0.9);
+    -moz-box-shadow: 42px 10px 128px 115px rgba(255, 153, 0, 0.9);
+  }
+}
