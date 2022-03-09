@@ -87,7 +87,7 @@ function ContactForm() {
       <div className={`${styles["topics"]} flex mb-20 flex-wrap gap-6`}>
         {availableTopics.map(topic => (
           <div key={topic.value} className={`${topicIsSelected(topic.value) ? styles["active"] : ""} flex items-center`}>
-            <button onClick={() => handleClick(topic.value)}><span className="block"></span></button>
+            <button type="button" autoFocus={false} onClick={() => handleClick(topic.value)}><span className="block"></span></button>
             <span className="ml-2">{topic.title}</span>
           </div>
         ))}
