@@ -126,6 +126,7 @@ function ContactForm() {
       </div>
       <div className="mt-28">
         <button
+          type="submit"
           className={`${styles.submit} font-coolvetica justify-center flex items-center py-3 px-6`}
         >
           <span className="mr-3">Register</span>
