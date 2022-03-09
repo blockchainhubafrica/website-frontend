@@ -1,18 +1,32 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import React from "react";
+import React, { useState } from "react";
 import { TopRightArrowIcon } from "../../assets/images";
 
 import styles from "./contact-form.module.css";
-import { Input } from "..";
+import { Input, TextArea } from "..";
 
 
 type ValuesType = {
   name: string;
   email: string;
   phone: string;
+  message: string;
 };
+
+declare module "yup" {
+  interface StringSchema {
+    validMessage(message: string): Yup.StringSchema;
+  }
+}
+
+Yup.addMethod(Yup.string, "validMessage", function (errorMessage) {
+  return this.test("message", errorMessage, function (value) {
+    const { path, createError } = this;
+    return (value && getWordsLength(value) >= 3 && getWordsLength(value) <= 300) || createError({ path, message: errorMessage })
+  })
+});
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -20,7 +34,8 @@ const validationSchema = Yup.object({
     .email("Invalid Email Address")
     .required("Email is required"),
   phone: Yup.string().required("Phone Number is required"),
-  message: Yup.string().required("Message is required").min(5, "Message must be a minimum of 5 characters"),
+  message: Yup.string().required("Message is required")
+    .validMessage("Message must be a minimum of 3 words and maximum of 300 words"),
 });
 
 const initialValues = {
@@ -30,8 +45,36 @@ const initialValues = {
   message: "",
 };
 
+const getWordsLength = (words: string) => words.match(/(\w+)/g)?.length || 0;
+
+const intialTopics: string[] = [];
+
+const availableTopics = [
+  { title: "Web3 Product Design UI/UX", value: "web3" },
+  { title: "Blockchain Apps", value: "bapps" },
+  { title: "DApp Front End Dev.", value: "dapp" },
+  { title: "Smart Contract Dev.", value: "smart_contract" },
+  { title: "Others", value: "others" },
+]
+
 function ContactForm() {
+  // State management
+  const [topics, setTopics] = useState(intialTopics);
+
+  // Handlers
   const handleSubmit = (values: ValuesType) => void {};
+
+  const topicIsSelected = (value: string) => topics.includes(value);
+
+  const handleClick = (value: string) => {
+    let topicsClone = Array.from(topics);
+
+    if (topicsClone.includes(value)) {
+      topicsClone = topicsClone.filter(topic => topic !== value);
+    } else topicsClone.push(value);
+
+    setTopics(topicsClone);
+  };
 
   const formik = useFormik({
     initialValues,
@@ -40,7 +83,15 @@ function ContactForm() {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} className={styles["container"]}>
+    <form onSubmit={formik.handleSubmit} className={`${styles["container"]} md:px-10`}>
+      <div className={`${styles["topics"]} flex mb-20 flex-wrap gap-6`}>
+        {availableTopics.map(topic => (
+          <div key={topic.value} className={`${topicIsSelected(topic.value) ? styles["active"] : ""} flex items-center`}>
+            <button onClick={() => handleClick(topic.value)}><span className="block"></span></button>
+            <span className="ml-2">{topic.title}</span>
+          </div>
+        ))}
+      </div>
       <div>
         <Input
           name="name"
@@ -66,7 +117,7 @@ function ContactForm() {
         />
       </div>
       <div>
-        <Input
+        <TextArea
           name="message"
           formik={formik}
           label="Message"

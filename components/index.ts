@@ -7,3 +7,4 @@ export * from "./Products";
 export * from "./TestimonialSection";
 export * from "./Toast";
 export * from "./ContactForm";
+export * from "./TextArea";
