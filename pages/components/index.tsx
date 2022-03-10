@@ -6,7 +6,7 @@ import {
   Marquee,
   Products,
   RegistrationModal,
-  // StorySection,
+  StorySection,
   TestimonialSection,
   Button,
 } from "../../components";
@@ -51,7 +51,7 @@ export default function ComponentsPage() {
       <section className="container">
         <div className="py-10">
           <p className="text-xl mb-3">Button component</p>
-          <div className="flex gap-x-5">
+          <div className="flex flex-wrap gap-x-5">
             <Button buttonType="primary" text="Learn More" />
             <Button buttonType="secondary" text="Hire Us" />
           </div>
@@ -66,7 +66,9 @@ export default function ComponentsPage() {
       <section>
         <TestimonialSection />
       </section>
-      <section>{/* <StorySection /> */}</section>
+      <section>
+        <StorySection />
+      </section>
     </main>
   );
 }

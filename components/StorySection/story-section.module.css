@@ -1,0 +1,9 @@
+.container img {
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.container .story-description {
+  font-size: 22px;
+  font-weight: 300;
+}
