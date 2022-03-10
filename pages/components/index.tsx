@@ -12,6 +12,7 @@ import {
   Button,
   Events,
 } from "../../components";
+import { CircleBanner } from "../../components/CircleBanner";
 import { useAppContext } from "../../contexts/appContext";
 
 export default function ComponentsPage() {
@@ -74,6 +75,7 @@ export default function ComponentsPage() {
         </div>
       </section>
       <section>{/* <StorySection /> */}</section>
+      <section className="py-10 flex justify-center bg-blue-900"><CircleBanner /></section>
     </main>
   );
 }
