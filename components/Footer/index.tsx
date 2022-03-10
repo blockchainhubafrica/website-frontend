@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { LogoIcon, DiscordIcon, InstagramIcon, TwitterIcon, TelegramIcon, YoutubeIcon, RightArrowIcon } from "../../assets/images";
-import { activeRouteClass } from "../../helpers";
 import styles from "./footer.module.css";
 
 
@@ -10,6 +9,13 @@ function Footer() {
   const activeRoute = useRouter().asPath;
 
   // Handler
+  const activeRouteClass = (route: string) => {
+    if (activeRoute.includes(route))
+      return `px-3 text-lg text-white ${styles["active"]}`;
+  
+    return `px-3 text-lg text-white`;
+  };
+
   const scrollToTop = () => {
     if (typeof window !== "undefined") {
       window.scrollTo({
@@ -48,22 +54,22 @@ function Footer() {
 
         <div className="flex flex-col md:flex-row md:flex-wrap gap-10 md:items-center justify-between py-5">
           <div className={`${styles["links"]} grid grid-cols-2 md:flex gap-6`}>
-            <span className={`${activeRouteClass("/about", activeRoute, styles)} col-span-1 md:mr-5`}>
+            <span className={`${activeRouteClass("/about")} col-span-1 md:mr-5`}>
               <Link href="/components">About Us</Link>
             </span>
-            <span className={`${activeRouteClass("/work", activeRoute, styles)} col-span-1 md:mr-5`}>
+            <span className={`${activeRouteClass("/work")} col-span-1 md:mr-5`}>
               <Link href="/work">Our work</Link>
             </span>
-            <span className={`${activeRouteClass("/events", activeRoute, styles)} col-span-1 md:mr-5`}>
+            <span className={`${activeRouteClass("/events")} col-span-1 md:mr-5`}>
               <Link href="/events">Events</Link>
             </span>
-            <span className={`${activeRouteClass("/blog", activeRoute, styles)} col-span-1 md:mr-5`}>
+            <span className={`${activeRouteClass("/blog")} col-span-1 md:mr-5`}>
               <Link href="/blog">Blog</Link>
             </span>
-            <span className={`${activeRouteClass("/contact", activeRoute, styles)} col-span-1 md:mr-5`}>
+            <span className={`${activeRouteClass("/contact")} col-span-1 md:mr-5`}>
               <Link href="/contact">Contact Us</Link>
             </span>
-            <span className={`${activeRouteClass("/careers", activeRoute, styles)} col-span-1 md:mr-5`}>
+            <span className={`${activeRouteClass("/careers")} col-span-1 md:mr-5`}>
               <Link href="/careers">Careers</Link>
             </span>
           </div>
