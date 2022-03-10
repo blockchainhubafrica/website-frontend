@@ -3,7 +3,7 @@
 }
 
 .container svg:first-child {
-    animation: rotation 20s linear infinite;
+    animation: rotation 15s linear infinite;
 }
 
 .container svg:nth-child(2) {
