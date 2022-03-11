@@ -14,10 +14,16 @@
   src: local("Coolvetica"), url(./fonts/coolvetica_rg.otf) format("truetype");
 }
 
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans"), url(./fonts/OpenSans-Light-webfont.woff) format("truetype");
+}
+
 :root {
   --app-green-200: #00cf8e;
   --app-blue-200: #00bdff;
   --app-blue-400: #0043ff;
+  --app-blue-500: #001e73;
   --app-blue-600: #11163b;
   --app-blue-800: #00081f;
   --app-black: #000;
@@ -28,7 +34,7 @@
   --app-orange: #ff9900;
   --app-red: #f84550;
   --app-purple: #764afd;
-  --app-primary-font: "Open sans", helvetica;
+  --app-primary-font: "Open Sans", helvetica;
   --app-secondary-font: "Coolvetica", sans-serif;
   --app-border-radius-sm: 10px;
   --app-letter-spacing-lg: 0.5rem;

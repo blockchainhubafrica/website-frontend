@@ -9,5 +9,5 @@ export * from "./ContactForm";
 export * from "./TextArea";
 export * from "./Events";
 export * from "./Banner";
-// export * from "./StorySection";
+export * from "./StorySection";
 export * from "./Button";

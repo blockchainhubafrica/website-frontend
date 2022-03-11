@@ -7,7 +7,7 @@ import {
   Marquee,
   Products,
   RegistrationModal,
-  // StorySection,
+  StorySection,
   TestimonialSection,
   Button,
   Events,
@@ -46,7 +46,7 @@ export default function ComponentsPage() {
           </p>
           <Button
             onClick={() => setIsRegistrationFormActive(true)}
-            buttonType="secondary"
+            buttonType="tertiary"
             text="Open Modal"
           />
         </div>
@@ -54,9 +54,9 @@ export default function ComponentsPage() {
       <section className="container">
         <div className="py-10">
           <p className="text-xl mb-3">Button component</p>
-          <div className="flex gap-x-5">
+          <div className="flex flex-wrap gap-x-5">
             <Button buttonType="primary" text="Learn More" />
-            <Button buttonType="secondary" text="Hire Us" />
+            <Button buttonType="tertiary" text="Hire Us" />
           </div>
         </div>
       </section>
@@ -70,12 +70,16 @@ export default function ComponentsPage() {
         <TestimonialSection />
       </section>
       <section>
+        <StorySection />
+      </section>
+      <section>
         <div className="container my-10">
           <Events eventList={demoEventsData} />
         </div>
       </section>
-      <section>{/* <StorySection /> */}</section>
-      <section className="py-10 flex justify-center bg-blue-900"><CircleBanner /></section>
+      <section className="py-10 flex justify-center bg-blue-600">
+        <CircleBanner />
+      </section>
     </main>
   );
 }

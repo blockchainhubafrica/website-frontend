@@ -26,7 +26,6 @@ const Button: React.FC<Props> = ({
   if (containerClass)
     containerClass += ` ${className} flex items-center py-3 px-6`;
   containerClass += ` ${styles[buttonType]}`;
-  console.log(containerClass);
 
   return (
     <button type={type} onClick={onClick} className={containerClass} {...rest}>

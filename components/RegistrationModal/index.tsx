@@ -43,7 +43,7 @@ function RegistrationModal({ isActive, setIsActive }: ModalProps) {
 
   useEffect(() => {
     if (containerRef.current !== null) {
-      // document.body.style.overflow = isActive ? "hidden" : "auto";
+      document.body.style.overflow = isActive ? "hidden" : "auto";
       if (isActive && !containerClass.includes(styles["active"])) {
         containerRef.current.style.display = "flex";
         setTimeout(() => {

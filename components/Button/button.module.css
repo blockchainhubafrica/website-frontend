@@ -1,16 +1,34 @@
 /** @format */
 
+.container * {
+  font-family: var(--app-secondary-font);
+}
+
+.container {
+  transition: 0.3s all ease-in-out;
+}
+
 .container.primary {
-	border-radius: var(--app-border-radius-sm);
-	background-color: var(--app-orange);
-	color: white;
+  border-radius: var(--app-border-radius-sm);
+  background-color: var(--app-orange);
+  color: white;
+}
+
+.container:hover {
+  box-shadow: 0px 4px 34px rgba(255, 153, 0, 0.5);
 }
 
 .container.primary svg path {
-	fill: var(--app-white);
+  fill: var(--app-white);
 }
 
 .container.secondary {
-	border: 2px solid var(--app-orange);
-	border-radius: var(--app-border-radius-sm);
+  border: 2px solid var(--app-orange);
+  border-radius: var(--app-border-radius-sm);
+}
+
+.container.tertiary {
+  color: var(--app-orange);
+  border: 2px solid var(--app-orange);
+  border-radius: var(--app-border-radius-sm);
 }
