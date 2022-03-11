@@ -39,7 +39,7 @@ function StorySection() {
       className={`container px-0 xmd:pr-40 ${styles["container"]} py-32`}
     >
       <div className="grid grid-cols-1 xmd:grid-cols-5 gap-y-20">
-        <div className="col-span-3 order-2 xmd:order-1 story-section-swiper">
+        <div className="col-span-3 smd:container xmd:px-0 order-2 xmd:order-1 story-section-swiper">
           <Swiper
             modules={[Autoplay]}
             breakpoints={breakpoints}
