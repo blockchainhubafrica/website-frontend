@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Swiper, SwiperProps, SwiperSlide, useSwiper } from "swiper/react";
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 
 import "swiper/css";
@@ -13,33 +13,22 @@ import {
 } from "../../assets/images/jpgs";
 
 function StorySection() {
-  const swiper = useSwiper();
-  const [currentProgress, setcurrentProgress] = useState<number>(0.5);
-  const ref1 = useRef<HTMLDivElement>(null);
-  const ref2 = useRef<HTMLDivElement>(null);
-  const ref3 = useRef<HTMLDivElement>(null);
+  const [activeIndex, setactiveIndex] = useState<number>(1);
 
-  const onProgress = (swiper: any, progress: number) => {
-    progress = parseFloat(progress.toFixed(2));
-    if (progress === 0.83) progress = 0.84;
-    let slide1 = ref1.current;
-    let slide2 = ref2.current;
-    let slide3 = ref3.current;
-    if (slide1 && slide2 && slide3) {
-      const sliderIndex = swiper.realIndex;
-      //   const currentHeight = slide2.clientHeight;
-      //   const newHeight = (currentHeight + 2).toString() + "px";
-      slide2.style.transform = `scale(1,0.8)`;
-      //   console.log({ progress, currentHeight, newHeight });
-    }
+  const slideClass = (className: string) => {
+    if (className.includes(activeIndex.toString()))
+      return `${className} slide-item active`;
+
+    return `${className} slide-item`;
   };
+
   const onSlideChange = (swiper: any) => {
-    setcurrentProgress(swiper.progress);
-  };
+    const breakpoint = swiper.currentBreakpoint;
+    const indexes: number[] = breakpoint < 1280 ? [1, 2, 3] : [2, 3, 1];
 
-  useEffect(() => {
-    // console.log({ ref1 });
-  });
+    const realIndex = swiper.realIndex;
+    setactiveIndex(indexes[realIndex]);
+  };
 
   const breakpoints = {
     "280": { slidesPerView: 2, spaceBetween: 15, centeredSlides: true },
@@ -50,21 +39,18 @@ function StorySection() {
       className={`container px-0 xmd:pr-40 ${styles["container"]} py-32`}
     >
       <div className="grid grid-cols-1 xmd:grid-cols-5 gap-y-20">
-        <div className="col-span-3 order-2 xmd:order-1">
+        <div className="col-span-3 order-2 xmd:order-1 story-section-swiper">
           <Swiper
-            // modules={[Autoplay]}
-            // onSliderMove={onSliderMove}
+            modules={[Autoplay]}
             breakpoints={breakpoints}
             spaceBetween={15}
             slidesPerView={3}
             autoplay={{ delay: 3000 }}
-            onProgress={onProgress}
             loop={true}
             onSlideChange={onSlideChange}
-            // onSwiper={(swiper) => console.log(swiper)}
           >
             <SwiperSlide>
-              <div ref={ref1} className="slide-1">
+              <div className={slideClass("slide-1")}>
                 <Image
                   objectFit="cover"
                   unoptimized={true}
@@ -76,7 +62,7 @@ function StorySection() {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div ref={ref2} className="slide-2">
+              <div className={slideClass("slide-2")}>
                 <Image
                   objectFit="cover"
                   unoptimized={true}
@@ -88,7 +74,7 @@ function StorySection() {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div ref={ref1} className="slide-3">
+              <div className={slideClass("slide-3")}>
                 <Image
                   objectFit="cover"
                   unoptimized={true}

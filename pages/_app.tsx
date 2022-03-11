@@ -4,6 +4,8 @@ import Head from "next/head";
 import "tailwindcss/tailwind.css";
 
 import "../index.css";
+import "../story-section.css";
+
 import { Header } from "../components";
 import { AppProvider } from "../contexts/appContext";
 

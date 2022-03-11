@@ -1,0 +1,49 @@
+/* Tweaked the swiper slider for the story section here: */
+.story-section-swiper .swiper-wrapper .slide-item span,
+.story-section-swiper .swiper-wrapper .slide-item img {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.story-section-swiper .swiper-wrapper .slide-item span {
+  border-radius: 10px;
+}
+
+.story-section-swiper .slide-item {
+  transition: 0.5s all ease-in-out;
+  width: 100%;
+  height: 400px;
+}
+.story-section-swiper .slide-item.active,
+.story-section-swiper .swiper {
+  height: 450px;
+}
+
+@media screen and (min-width: 1280px) {
+  .story-section-swiper .slide-item {
+    height: 500px;
+  }
+  .story-section-swiper .slide-item.active,
+  .story-section-swiper .swiper {
+    height: 550px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .story-section-swiper .slide-item {
+    height: 550px;
+  }
+
+  .story-section-swiper .slide-item.active,
+  .story-section-swiper .swiper {
+    height: 600px;
+  }
+}
+
+.story-section-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  cursor: grab;
+}
+
+/* End of Tweak */
