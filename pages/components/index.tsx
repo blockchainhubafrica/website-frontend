@@ -77,7 +77,7 @@ export default function ComponentsPage() {
           <Events eventList={demoEventsData} />
         </div>
       </section>
-      <section className="py-10 flex justify-center bg-blue-900">
+      <section className="py-10 flex justify-center bg-blue-600">
         <CircleBanner />
       </section>
     </main>
