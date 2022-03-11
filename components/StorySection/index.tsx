@@ -99,7 +99,7 @@ function StorySection() {
             non nunc eu. Adipiscing in neque mi nunc euismod morbi interdum.
           </p>
           <div>
-            <Button buttonType="secondary" text="Learn more" />
+            <Button buttonType="tertiary" text="Learn more" />
           </div>
         </div>
       </div>

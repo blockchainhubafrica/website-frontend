@@ -6,9 +6,9 @@
 }
 
 .container .heading {
-  color: var(--app-blue-600);
+  color: var(--app-blue-500);
   font-family: var(--app-primary-font);
-  font-weight: bold;
+  font-weight: 600;
   font-size: 14px;
   line-height: 19.07px;
 }

@@ -46,7 +46,7 @@ export default function ComponentsPage() {
           </p>
           <Button
             onClick={() => setIsRegistrationFormActive(true)}
-            buttonType="secondary"
+            buttonType="tertiary"
             text="Open Modal"
           />
         </div>
@@ -56,7 +56,7 @@ export default function ComponentsPage() {
           <p className="text-xl mb-3">Button component</p>
           <div className="flex flex-wrap gap-x-5">
             <Button buttonType="primary" text="Learn More" />
-            <Button buttonType="secondary" text="Hire Us" />
+            <Button buttonType="tertiary" text="Hire Us" />
           </div>
         </div>
       </section>
