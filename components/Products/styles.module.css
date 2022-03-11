@@ -7,7 +7,7 @@
 }
 
 .intro h1 {
-  letter-spacing: 0.25rem;
+  letter-spacing: var(--app-letter-spacing-lg);
   font-size: 0.75rem;
 }
 
@@ -21,7 +21,6 @@
 }
 
 .project .image-container span:first-of-type {
-  box-shadow: rgba(0, 0, 252, 0.4) 0px 0px 40px 0px;
   border-radius: 10px;
 }
 
@@ -69,9 +68,12 @@
   margin-left: 5px;
 }
 
+.project .image-container:hover span:first-of-type {
+  box-shadow: rgba(0, 0, 252, 0.4) 0px 0px 40px 0px;
+}
+
 @media screen and (min-width: 768px) {
   .intro h1 {
-    letter-spacing: 0.25rem;
     font-size: 1rem;
   }
 

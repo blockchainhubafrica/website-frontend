@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
+import { demoEventsData } from "../../assets/images";
 import {
   Loader,
   Marquee,
@@ -9,7 +10,9 @@ import {
   StorySection,
   TestimonialSection,
   Button,
+  Events,
 } from "../../components";
+import { CircleBanner } from "../../components/CircleBanner";
 import { useAppContext } from "../../contexts/appContext";
 
 export default function ComponentsPage() {
@@ -68,6 +71,14 @@ export default function ComponentsPage() {
       </section>
       <section>
         <StorySection />
+      </section>
+      <section>
+        <div className="container my-10">
+          <Events eventList={demoEventsData} />
+        </div>
+      </section>
+      <section className="py-10 flex justify-center bg-blue-900">
+        <CircleBanner />
       </section>
     </main>
   );
