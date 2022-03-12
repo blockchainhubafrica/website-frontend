@@ -56,4 +56,4 @@ function Video() {
   );
 }
 
-export { Video };
+export default Video;
