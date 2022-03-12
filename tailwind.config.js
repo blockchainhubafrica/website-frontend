@@ -7,7 +7,10 @@ module.exports = {
       colors: {
         blue: {
           200: "#00bdff",
+          300: "#668eff",
           400: "#0043ff",
+          450: "#00268F",
+          500: "#001e73",
           600: "#11163b",
           800: "#00081f",
         },
@@ -27,6 +30,7 @@ module.exports = {
       },
       screens: {
         xmd: "1440px",
+        xlg: "1720px",
       },
     },
     container: {
@@ -59,6 +63,9 @@ module.exports = {
           },
           "@screen lg": {
             maxWidth: "1536px",
+          },
+          "@screen xlg": {
+            maxWidth: "1720px",
           },
           "@screen xl": {
             maxWidth: "1800px",
