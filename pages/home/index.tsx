@@ -21,8 +21,8 @@ import {
   StorySection,
 } from "../../components";
 
-import { Video } from "./components";
-import { WhatWeOffer } from "./components/WhatWeOffer";
+import Video from "./components/Video";
+import WhatWeOffer  from "./components/WhatWeOffer";
 import styles from "./home-page.module.css";
 
 function HomePage() {
@@ -39,7 +39,7 @@ function HomePage() {
   if (showLoader) {
     return <Loader />;
   }
-  
+
   return (
     <>
       <main className={`${styles["container"]} `}>

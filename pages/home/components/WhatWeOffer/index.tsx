@@ -101,4 +101,4 @@ function WhatWeOffer() {
   );
 }
 
-export { WhatWeOffer };
+export default WhatWeOffer;
