@@ -11,3 +11,4 @@ export * from "./Banner";
 export * from "./StorySection";
 export * from "./Button";
 export * from "./Loader";
+export * from "./Achievements";

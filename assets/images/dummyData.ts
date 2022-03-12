@@ -1,5 +1,5 @@
 import { productsDemoImg1, productsDemoImg2 } from ".";
-import { eventTestImage } from "./pngs";
+import { achievementImage, eventTestImage } from "./pngs";
 
 export const demoProductsData = [
   {
@@ -78,5 +78,29 @@ export const demoEventsData = [
     image: eventTestImage,
     name: "Blockchain Conference '29",
     link: "https://www.google.com",
+  },
+];
+
+export const achievementData = [
+  {
+    name: "1st position at Binance Hackathon, 2020",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam veritatis aperiam sapiente aut officia, facilis vitae perspiciatis rerum unde quaerat! Officiis, sunt tenetur est",
+    link: "/",
+    image: achievementImage,
+  },
+  {
+    name: "2nd-Runner up at Xend Finance Hackathon, 2021",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam veritatis aperiam sapiente aut officia, facilis vitae perspiciatis rerum unde quaerat! Officiis, sunt tenetur est",
+    link: "/",
+    image: achievementImage,
+  },
+  {
+    name: "1st position Polygon Hackathon, 2022",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam veritatis aperiam sapiente aut officia, facilis vitae perspiciatis rerum unde quaerat! Officiis, sunt tenetur est",
+    link: "/",
+    image: achievementImage,
   },
 ];

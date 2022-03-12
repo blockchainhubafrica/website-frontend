@@ -11,6 +11,7 @@ import {
   TestimonialSection,
   Button,
   Events,
+  Achievements,
 } from "../../components";
 import { CircleBanner } from "../../components/CircleBanner";
 import { useAppContext } from "../../contexts/appContext";
@@ -79,6 +80,9 @@ export default function ComponentsPage() {
       </section>
       <section className="py-10 flex justify-center bg-blue-600">
         <CircleBanner />
+      </section>
+      <section className="mt-8">
+        <Achievements />
       </section>
     </main>
   );
