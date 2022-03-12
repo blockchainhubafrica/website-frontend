@@ -44,19 +44,25 @@ export default function ComponentsPage() {
           <p className="text-xl mb-3 sm:mb-0">
             Click to open the registration modal
           </p>
-          <Button
-            onClick={() => setIsRegistrationFormActive(true)}
-            buttonType="tertiary"
-            text="Open Modal"
-          />
+          <div className="flex w-full sm:w-auto">
+            <Button
+              onClick={() => setIsRegistrationFormActive(true)}
+              buttonType="tertiary"
+              text="Open Modal"
+            />
+          </div>
         </div>
       </section>
       <section className="container">
         <div className="py-10">
           <p className="text-xl mb-3">Button component</p>
-          <div className="flex flex-wrap gap-x-5">
-            <Button buttonType="primary" text="Learn More" />
-            <Button buttonType="tertiary" text="Hire Us" />
+          <div className="flex flex-wrap justify-between sm:justify-start gap-5">
+            <div className="w-full sm:w-auto">
+              <Button buttonType="primary" text="Learn More" />
+            </div>
+            <div className="w-full sm:w-auto">
+              <Button buttonType="tertiary" text="Hire Us" />
+            </div>
           </div>
         </div>
       </section>
