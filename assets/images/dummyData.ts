@@ -1,9 +1,9 @@
+import { NduImageSrc, BeimaImageSrc } from "./cloudinary";
 import { eventTestImage } from "./pngs";
 
 export const demoProductsData = [
   {
-    image:
-      "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647006558/Company-website/productsDemoImg1_n7ctjc.png",
+    image: NduImageSrc,
     title: "Ndu",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam volutpat nibh nulla donec rutrum morbi. Sapien pulvinar eget",
@@ -11,8 +11,7 @@ export const demoProductsData = [
     size: { width: 862, height: 752 },
   },
   {
-    image:
-      "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647006557/Company-website/productsDemoImg2_w4sblz.png",
+    image: BeimaImageSrc,
     title: "Beima",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam volutpat nibh nulla donec rutrum morbi. Sapien pulvinar eget",
