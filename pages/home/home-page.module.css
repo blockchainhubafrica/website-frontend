@@ -1,0 +1,184 @@
+.container .page-1 {
+  background-color: var(--app-blue-600);
+  color: var(--app-white);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container h1 * {
+  font-family: var(--app-secondary-font);
+}
+
+@media screen and (min-width: 640px) {
+  .container h1 {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container h1 {
+    max-width: 75%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container h1 {
+    max-width: 100%;
+  }
+}
+
+.container .underlined-text {
+  border-bottom: 2px solid var(--app-white);
+}
+
+.container .people-svg {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: -165px;
+  margin-top: -10px;
+}
+
+.container .people-svg svg {
+  position: relative;
+  right: 20px;
+  margin-top: 20px;
+  transform: rotate(18deg);
+}
+
+@media screen and (min-width: 640px) {
+  .container .people-svg svg {
+    right: 40px;
+    margin-top: 20px;
+    transform: rotate(0deg);
+    transform: scale(1.2);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container .people-svg svg {
+    position: relative;
+    right: 70px;
+    margin-top: 60px;
+    transform: scale(1.5);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container .people-svg {
+    display: flex;
+    align-items: center;
+    position: static;
+    right: auto;
+    margin-top: -0px;
+  }
+  .container .people-svg svg {
+    position: absolute;
+    right: 110px;
+    margin-top: 20px;
+    transform: scale(1.6);
+  }
+  .container .circle-banner {
+    position: relative;
+    bottom: 90px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container .people-svg svg {
+    position: absolute;
+    right: 180px;
+    margin-top: 50px;
+    transform: scale(2);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container .circle-banner {
+    position: relative;
+    bottom: 180px;
+  }
+  .container .people-svg svg {
+    position: absolute;
+    right: 300px;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .container .people-svg svg {
+    transform: scale(2.2);
+  }
+}
+
+.container .people-svg svg g {
+  animation: goUpAndDown 1.5s linear infinite;
+}
+
+@keyframes goUpAndDown {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.container .partners img {
+  min-height: 70px;
+  object-fit: contain !important;
+  min-width: 140px;
+}
+
+@media screen and (min-width: 1440px) {
+  .container .partners img {
+    min-height: auto;
+    object-fit: contain !important;
+    min-width: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container .what-we-offer .glowing-ellipse {
+    content: "";
+    position: absolute;
+    top: 120px;
+    right: 180px;
+    width: 100px;
+    height: 100px;
+    background: #ff9900;
+    filter: blur(202px);
+    border-radius: 100%;
+    box-shadow: 42px 10px 128px 115px rgb(255 153 0 / 90%);
+  }
+}
+
+.container .offer-card {
+  font-family: var(--app-secondary-font);
+  color: var(--app-white);
+  outline: 1px solid var(--app-blue-300);
+  border-radius: 10px;
+}
+
+.offer-card.active {
+  cursor: pointer;
+  background-color: var(--app-blue-400);
+  outline: none;
+  box-shadow: rgba(0, 67, 255, 0.6) 0px 0px 100px 0px;
+}
+
+.offer-card:nth-child(1) img,
+.offer-card:nth-child(3) img {
+  min-width: 160px;
+  min-height: 138px;
+}
+
+.offer-card:nth-child(2) img,
+.offer-card:nth-child(4) img {
+  min-width: 161px;
+  min-height: 161px;
+}

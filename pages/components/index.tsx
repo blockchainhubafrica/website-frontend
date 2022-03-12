@@ -19,7 +19,7 @@ export default function ComponentsPage() {
   const { isRegistrationFormActive, setIsRegistrationFormActive } =
     useAppContext();
 
-  const [showLoader, setShowLoader] = useState(true);
+  const [showLoader, setShowLoader] = useState<boolean>(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {

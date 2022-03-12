@@ -1,0 +1,44 @@
+@media screen and (min-width: 768px) {
+  .container .glowing-ellipse {
+    content: "";
+    position: absolute;
+    top: 120px;
+    right: 180px;
+    width: 100px;
+    height: 100px;
+    background: #ff9900;
+    filter: blur(202px);
+    border-radius: 100%;
+    box-shadow: 42px 10px 128px 115px rgb(255 153 0 / 90%);
+  }
+}
+
+.container .offer-card {
+  font-family: var(--app-secondary-font);
+  color: var(--app-white);
+  border: 1px solid var(--app-blue-300);
+  border-radius: 10px;
+}
+
+.container .offer-card.active {
+  cursor: pointer;
+  background-color: var(--app-blue-400);
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: rgba(0, 67, 255, 0.6) 0px 0px 100px 0px;
+}
+
+@media screen and (min-width: 1280px) {
+}
+
+.offer-card:nth-child(1) img,
+.offer-card:nth-child(4) img {
+  min-width: 160px;
+  min-height: 138px;
+}
+
+.offer-card:nth-child(2) img,
+.offer-card:nth-child(3) img {
+  min-width: 161px;
+  min-height: 161px;
+}
