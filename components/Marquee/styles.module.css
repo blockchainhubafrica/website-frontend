@@ -1,27 +1,19 @@
 .container {
-  width: 100vw;
+  /* width: 100vw; */
   color: #efeff0;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-size: 2.5rem;
+  /* letter-spacing: 4px; */
+  white-space: nowrap;
 }
 
 .container div {
-  height: 100%;
+  /* height: 100%; */
   font-family: var(--app-secondary-font);
-  white-space: nowrap;
-  animation: scrolling 20s linear infinite;
+  /* white-space: nowrap; */
+  /* animation: scrolling 20s linear infinite; */
 }
-
-@keyframes scrolling {
-  0% {
-    transform: translateX(0vw);
-  }
-
-  100% {
-    transform: translateX(-500vw);
-  }
-}
-
+ 
 @media screen and (min-width: 768px) {
   .container {
     font-size: 6.5rem;

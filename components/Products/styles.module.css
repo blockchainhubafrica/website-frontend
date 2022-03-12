@@ -7,7 +7,7 @@
 }
 
 .intro h1 {
-  letter-spacing: 0.25rem;
+  letter-spacing: var(--app-letter-spacing-lg);
   font-size: 0.75rem;
 }
 
@@ -74,7 +74,6 @@
 
 @media screen and (min-width: 768px) {
   .intro h1 {
-    letter-spacing: 0.25rem;
     font-size: 1rem;
   }
 

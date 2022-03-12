@@ -18,7 +18,9 @@ function TestimonyCard({ name, role, title, desc, headshot }: CardProps) {
         <p className="pt-5">{desc}</p>
 
         <div className="flex items-center pt-10">
-          <div><Image src={headshot} width={74} height={74} /> </div>
+          <div className={`${styles["image-holder"]} ${styles["border-color"]}`}>
+            <Image src={headshot} width={74} height={74} />
+          </div>
           <div className="flex flex-col pl-3">
             <strong>{name}</strong>
             <span>{role}</span>

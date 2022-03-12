@@ -6,11 +6,28 @@
 }
 
 .container .heading {
-  color: var(--app-blue-600);
+  color: var(--app-blue-500);
   font-family: var(--app-primary-font);
-  font-weight: bold;
+  font-weight: 600;
   font-size: 14px;
   line-height: 19.07px;
+}
+
+.container .image-holder img {
+  border-radius: 50%;
+  border: solid 3px !important;
+}
+
+.container:nth-child(odd) .image-holder img {  
+  border-color: var(--app-purple) !important;
+}
+
+.container:first-child .image-holder img, .container:nth-child(3n+1) .image-holder img {
+  border-color: var(--app-blue-400) !important;
+}
+
+.container:nth-child(even) .image-holder img {  
+  border-color: var(--app-orange) !important;
 }
 
 .container p {
