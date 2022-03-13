@@ -1,16 +1,6 @@
 import React from "react";
-import styles from "./index-page.module.css";
+import HomePage from "./home";
 
-function IndexPage() {
-  return (
-    <>
-      <main className={`${styles["container"]} container`}>
-        <section>
-          <h3 className="py-4">With 💘 from Chidi 😉</h3>
-        </section>
-      </main>
-    </>
-  );
+export default function IndexPage() {
+  return <HomePage />;
 }
-
-export default IndexPage;
