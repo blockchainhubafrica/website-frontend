@@ -1,11 +1,22 @@
 .arrow-button {
+  position: absolute;
+  top: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border: 1px solid #b3c7ff;
   border-radius: 50%;
+  z-index: 100;
+}
+
+.arrow-button:first-of-type {
+  left: -50px;
+}
+
+.arrow-button:last-of-type {
+  right: -50px;
 }
 
 .arrow-button:hover {
@@ -41,27 +52,9 @@
   line-height: 1.6125rem;
 }
 
-.current-display {
-  animation: slide-in 10s forwards;
-  -webkit-animation: slide-in 10s forwards;
-}
-
-.buttons-container {
-  text-align: center;
-}
-
-.buttons-container button {
-  width: 10px;
-  height: 10px;
-  background: var(--app-white);
-  border-radius: 50%;
-  margin-right: 5px;
-}
-
-.buttons-container .active {
-  width: 50px;
-  border-radius: 5px;
-  background: var(--app-orange);
+.action-button {
+  width: 150px;
+  height: 50px;
 }
 
 @keyframes slide-in {
@@ -95,5 +88,20 @@
   .display p {
     font-size: 1.175rem;
     line-height: 1.6125rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .arrow-button {
+    width: 80px;
+    height: 80px;
+  }
+
+  .arrow-button:first-of-type {
+    left: -80px;
+  }
+
+  .arrow-button:last-of-type {
+    right: -80px;
   }
 }

@@ -24,28 +24,29 @@ function StorySection() {
 
   const onSlideChange = (swiper: any) => {
     const breakpoint = swiper.currentBreakpoint;
-    const indexes: number[] = breakpoint < 1280 ? [1, 2, 3] : [2, 3, 1];
+    const indexes: number[] = breakpoint >= 1024 ? [1, 2, 3] : [2, 3, 1];
 
     const realIndex = swiper.realIndex;
     setactiveIndex(indexes[realIndex]);
   };
 
   const breakpoints = {
-    "280": { slidesPerView: 2, spaceBetween: 15, centeredSlides: true },
-    "1280": { slidesPerView: 3, spaceBetween: 15, centeredSlides: false },
+    "280": { slidesPerView: 2, spaceBetween: 15 },
+    "1024": { slidesPerView: 3, spaceBetween: 15 },
   };
   return (
-    <section
-      className={`container px-0 xmd:pr-40 ${styles["container"]} py-32`}
+    <div
+      className={`container px-0 xmd:pr-40 ${styles["container"]} `}
     >
       <div className="grid grid-cols-1 xmd:grid-cols-5 gap-y-20">
         <div className="col-span-3 smd:container xmd:px-0 order-2 xmd:order-1 story-section-swiper">
           <Swiper
             modules={[Autoplay]}
             breakpoints={breakpoints}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
             spaceBetween={15}
+            centeredSlides={true}
             slidesPerView={3}
-            autoplay={{ delay: 3000 }}
             loop={true}
             onSlideChange={onSlideChange}
           >
@@ -98,12 +99,12 @@ function StorySection() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, odio
             non nunc eu. Adipiscing in neque mi nunc euismod morbi interdum.
           </p>
-          <div>
+          <div style={{ maxWidth: "180px" }}>
             <Button buttonType="tertiary" text="Learn more" />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

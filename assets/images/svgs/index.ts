@@ -7,6 +7,9 @@ import ArrowTilt from "./arrowTilt.svg";
 import RightArrowIcon from "./right-arrow.svg";
 import CircleTextIcon from "./circle-text.svg";
 import CircleArrowIcon from "./circle-arrow.svg";
+import PeopleMapSvg from "./people-map.svg";
+import PlayIcon from "./play-icon.svg";
+import NearLogo from "./near-logo.svg";
 
 export {
   LogoIcon,
@@ -17,5 +20,8 @@ export {
   RightArrowIcon,
   MenuIcon,
   CircleTextIcon,
-  CircleArrowIcon
+  CircleArrowIcon,
+  PeopleMapSvg,
+  PlayIcon,
+  NearLogo,
 };

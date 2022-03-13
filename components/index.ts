@@ -12,3 +12,5 @@ export * from "./StorySection";
 export * from "./Button";
 export * from "./Loader";
 export * from "./Achievements";
+export * from "./CircleBanner";
+export * from "./CloudinaryImage";

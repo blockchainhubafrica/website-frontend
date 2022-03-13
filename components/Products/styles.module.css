@@ -53,8 +53,11 @@
   text-align: center;
   font-size: 0.875rem;
 }
+.foot p > span {
+  font-family: var(--app-secondary-font);
+}
 
-.foot p span {
+.foot p a span {
   display: inline-block;
   color: var(--app-orange);
   font-family: var(--app-secondary-font);
@@ -103,7 +106,7 @@
     font-size: 1.2rem;
   }
 
-  .foot p span {
+  .foot p a span {
     line-height: 30px;
   }
 
@@ -138,7 +141,7 @@
     font-size: 2rem;
   }
 
-  .foot p span {
+  .foot p a span {
     line-height: 40px;
   }
 

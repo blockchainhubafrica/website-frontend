@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowTilt, demoProductsData } from "../../assets/images";
 
 import styles from "./styles.module.css";
+import { CloudinaryImage } from "../../components";
 
 const Products = () => {
   return (
@@ -24,7 +25,7 @@ const Products = () => {
                 index % 2 === 0 ? "md:order-1" : "md:order-2"
               }`}
             >
-              <Image src={data.image} alt={`${data.title}-img`} />
+              <CloudinaryImage {...data.size} src={data.image} alt={`${data.title}-img`} />
             </div>
             <div
               className={`flex flex-col justify-center md:px-12 lg:px:15 xl:px-20 w-full lg:w-2/4 ${
@@ -47,8 +48,8 @@ const Products = () => {
         ))}
       </div>
       <div className={`${styles.foot} py-4 mt-10 md:mt-14 lg:mt-20`}>
-        <p>
-          Need to know more about our work?{" "}
+        <p className="text-3xl ">
+          <span className="font-coolvetica fonte">Need to know more about our work? </span>
           <a href="mailto:blockchainhubafrica@gmail.com ">
             <span className="ml-1 md:ml-2">
               Shoot us a mail <ArrowTilt />

@@ -16,13 +16,16 @@
 
 @font-face {
   font-family: "Open Sans";
-  src: local("Open Sans"), url(./fonts/OpenSans-Light-webfont.woff) format("truetype");
+  src: local("Open Sans"),
+    url(./fonts/OpenSans-Light-webfont.woff) format("truetype");
 }
 
 :root {
   --app-green-200: #00cf8e;
   --app-blue-200: #00bdff;
+  --app-blue-300: #668eff;
   --app-blue-400: #0043ff;
+  --app-blue-450: #00268f;
   --app-blue-500: #001e73;
   --app-blue-600: #11163b;
   --app-blue-800: #00081f;
@@ -99,4 +102,31 @@ button:focus {
 
 .ticker {
   white-space: nowrap;
+}
+
+/* achievement slider slick */
+.achievements-button-container {
+  text-align: center;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.achievements-button-container li {
+  width: 10px;
+  height: 10px;
+  background: var(--app-white);
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.achievements-button-container li button {
+  opacity: 0 !important;
+}
+
+.achievements-button-container .slick-active {
+  width: 50px;
+  border-radius: 5px;
+  background: var(--app-orange);
 }
