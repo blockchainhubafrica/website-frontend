@@ -10,7 +10,8 @@ type InputType = {
   name: string;
   formik: FormikProps<any>;
   placeholder?: string | "";
-  rows?: number
+  rows?: number;
+  maxWords?: number;
 };
 
 const getWordsLength = (words: string) => words.match(/(\w+)/g)?.length || 0;
@@ -24,12 +25,11 @@ function TextArea({
   name,
   formik,
   rows = 6,
+  maxWords = 300,
   ...rest
 }: InputType) {
-  const maxWords = 300;
-
   // State management
-  const [remainingWords, setRemainingWords] = useState(maxWords);
+  const [wordsCount, setWordsCount] = useState(0);
   const [isFocused, setIsFocused] = useState(false);
 
   const error = formik.touched[name] && formik.errors?.[name];
@@ -40,7 +40,7 @@ function TextArea({
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (formik) formik?.handleChange(e);
 
-    setRemainingWords(maxWords - getWordsLength(e.target.value));
+    setWordsCount(getWordsLength(e.target.value));
   }
 
   if (error) classes += styles["error"];
@@ -67,7 +67,7 @@ function TextArea({
           {label}
         </label>
       )}
-      <span className={`${styles["remaining-words"]} ${remainingWords < 0 ? styles["words-completed"] : ""}`}>{Math.abs(remainingWords)} word{Math.abs(remainingWords) > 1 ? "s" : ""}</span>
+      <span className={`${styles["remaining-words"]} ${wordsCount > maxWords ? styles["words-completed"] : ""}`}>{Math.abs(wordsCount)} word{Math.abs(wordsCount) > 1 ? "s" : ""}</span>
       <textarea
         id={id ?? name}
         name={name}

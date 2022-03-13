@@ -24,7 +24,7 @@ declare module "yup" {
 Yup.addMethod(Yup.string, "validMessage", function (errorMessage) {
   return this.test("message", errorMessage, function (value) {
     const { path, createError } = this;
-    return (value && getWordsLength(value) >= 3 && getWordsLength(value) <= 300) || createError({ path, message: errorMessage })
+    return (value && getWordsLength(value) >= 1 && getWordsLength(value) <= 300) || createError({ path, message: errorMessage })
   })
 });
 
@@ -35,7 +35,7 @@ const validationSchema = Yup.object({
     .required("Email is required"),
   phone: Yup.string().required("Phone Number is required"),
   message: Yup.string().required("Message is required")
-    .validMessage("Message must be a minimum of 3 words and maximum of 300 words"),
+    .validMessage("Message must be a minimum of 1 word and maximum of 300 words"),
 });
 
 const initialValues = {
@@ -88,7 +88,7 @@ function ContactForm() {
         {availableTopics.map(topic => (
           <div key={topic.value} className={`${topicIsSelected(topic.value) ? styles["active"] : ""} flex items-center`}>
             <button type="button" autoFocus={false} onClick={() => handleClick(topic.value)}><span className="block"></span></button>
-            <span className="ml-2">{topic.title}</span>
+            <span className="ml-2 md:text-2xl">{topic.title}</span>
           </div>
         ))}
       </div>
