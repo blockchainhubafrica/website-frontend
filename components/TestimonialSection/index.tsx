@@ -29,7 +29,7 @@ function TestimonialSection() {
   };
 
   return (
-    <div className={`${styles["container"]} py-8 lg:py-16`}>
+    <div className={`${styles["container"]} py-8 lg:py-24`}>
       <div className="flex justify-between items-center px-5 md:px-10 lg:px-20">
         <div className="md:w-1/2 lg:w-1/3">
           <h3 className={`${styles["spaced-heading"]} text-base`}>
@@ -58,7 +58,7 @@ function TestimonialSection() {
         </div>
       </div>
 
-      <div className={`${styles["cards-container"]} py-8 lg:py-16`}>
+      <div className={`${styles["cards-container"]} pt-8 lg:pt-16`}>
         <Flickity
           ref={flickityRef}
           className={"carousel"} // default ''

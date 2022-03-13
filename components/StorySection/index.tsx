@@ -24,7 +24,7 @@ function StorySection() {
 
   const onSlideChange = (swiper: any) => {
     const breakpoint = swiper.currentBreakpoint;
-    const indexes: number[] = breakpoint >= 1024 ? [1, 2, 3] : [2, 3, 1];
+    const indexes: number[] = breakpoint < 1024 ? [1, 2, 3] : [1, 2, 3];
 
     const realIndex = swiper.realIndex;
     setactiveIndex(indexes[realIndex]);

@@ -5,6 +5,7 @@ import {
   AcexLogoSrc,
   CasperLogoSrc,
   CrevatalLogoSrc,
+  demoEventsData,
   NearLogoSrc,
   PeopleMapSvg,
   VestHubLogoSrc,
@@ -15,14 +16,16 @@ import {
   Button,
   CircleBanner,
   CloudinaryImage,
+  Events,
   Loader,
   Marquee,
   Products,
   StorySection,
+  TestimonialSection,
 } from "../../components";
 
 import Video from "./components/Video";
-import WhatWeOffer  from "./components/WhatWeOffer";
+import WhatWeOffer from "./components/WhatWeOffer";
 import styles from "./home-page.module.css";
 
 function HomePage() {
@@ -204,6 +207,30 @@ function HomePage() {
         </section>
         <section className="container">
           <Products />
+        </section>
+
+        <section className="">
+          <TestimonialSection />
+        </section>
+        <section className={`${styles["events"]} my-8 md:my-12 lg:my-14`}>
+          <div className="container">
+            <div>
+              <h2 className="spaced-heading text-blue-400 uppercase">
+                UPCOMING EVENTS
+              </h2>
+              <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-blue-600 w-full md:w-1/2 lg:w-1/3">
+                What we have planned this year.
+              </h3>
+              <div style={{ width: "250px" }}>
+                <Button
+                  buttonType="secondary"
+                  text="View All Events"
+                  className="text-orange my-10"
+                />
+              </div>
+            </div>
+            <Events eventList={demoEventsData.slice(0, 2)} />
+          </div>
         </section>
       </main>
     </>
