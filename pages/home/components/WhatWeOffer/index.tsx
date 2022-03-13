@@ -16,7 +16,7 @@ function WhatWeOffer() {
   };
 
   return (
-    <div className={`${styles["container"]} py-28 bg-blue-800 relative`}>
+    <div className={`${styles["container"]} py-28 bg-blue-800`}>
       <div className={`${styles["glowing-ellipse"]}`}></div>
       <div className={`container`}>
         <h2 className="spaced-heading text-blue-300 mb-6">What we offer</h2>
