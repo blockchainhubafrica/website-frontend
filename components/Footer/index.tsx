@@ -34,14 +34,14 @@ function Footer() {
           </h3>
 
         <div className={`${styles["social-icons"]} flex w-full md:w-2/5 md:pl-10 my-10 pt-10 md:pt-0 md:ml-auto`}>
-          <a href="#"><DiscordIcon /></a>
-          <a href="#" className="mx-3 md:mx-5"><TwitterIcon /></a>
-          <a href="#"><TelegramIcon /></a>
+          <a href="https://discord.gg/hdBkVnXBZV"><DiscordIcon /></a>
+          <a href="https://twitter.com/blockhubafrica" className="mx-3 md:mx-5"><TwitterIcon /></a>
+          <a href="https://t.me/blockchainhubafrica"><TelegramIcon /></a>
         </div>
       </div>
 
-      <div className={`${styles["footer-section"]} pb-8 pt-16 lg:pt-24 px-5 lg:px-24 xl:px-48`}>
-        <div className="flex flex-col md:flex-row md:items-center lg:mb-28">
+      <div className={`${styles["footer-section"]} pb-8 pt-16 md:pt-20 lg:pt-24 px-5 lg:px-24 xl:px-48`}>
+        <div className="flex flex-col md:flex-row md:items-center md:mb-10 lg:mb-28">
           <h3 className={`text-3xl md:text-4xl lg:text-7xl text-blue-600 md:w-1/2`}>
             Let’s bring that idea to life. 😎
           </h3>
@@ -54,19 +54,19 @@ function Footer() {
 
         <div className="flex flex-col md:flex-row md:flex-wrap md:gap-10 md:items-center justify-between py-5">
           <div className={`${styles["links"]} grid grid-cols-2 md:flex gap-1`}>
-            <span className={`${activeRouteClass("/about")} col-span-1 px-0`}>
+            <span className={`${activeRouteClass("/about")} col-span-1 px-0 md:pr-6`}>
               <Link href="/components">About Us</Link>
             </span>
-            <span className={`${activeRouteClass("/work")} col-span-1 px-0`}>
+            <span className={`${activeRouteClass("/work")} col-span-1 px-0 md:pr-6`}>
               <Link href="/work">Our work</Link>
             </span>
-            <span className={`${activeRouteClass("/events")} col-span-1 px-0`}>
+            <span className={`${activeRouteClass("/events")} col-span-1 px-0 md:pr-6`}>
               <Link href="/events">Events</Link>
             </span>
-            <span className={`${activeRouteClass("/blog")} col-span-1 px-0`}>
+            <span className={`${activeRouteClass("/blog")} col-span-1 px-0 md:pr-6`}>
               <Link href="/blog">Blog</Link>
             </span>
-            <span className={`${activeRouteClass("/contact")} col-span-1 px-0`}>
+            <span className={`${activeRouteClass("/contact")} col-span-1 px-0 md:pr-6`}>
               <Link href="/contact">Contact Us</Link>
             </span>
             <span className={`${activeRouteClass("/careers")} col-span-1 px-0`}>
@@ -75,10 +75,10 @@ function Footer() {
           </div>
 
           <div className={`${styles["social-icons"]} items-center justify-center flex pt-14 pb-4 mt-10 md:pt-0 md:mt-0 md:ml-auto`}>
-            <a href="#" target="_blank" className="mr-3"><DiscordIcon /></a>
-            <a href="#" target="_blank" className="mr-3"><TwitterIcon /></a>
-            <a href="#" target="_blank" className="mr-3"><YoutubeIcon /></a>
-            <a href="#" target="_blank"><InstagramIcon /></a>
+            <a href="https://discord.gg/hdBkVnXBZV" target="_blank" className="mr-3"><DiscordIcon /></a>
+            <a href="https://twitter.com/blockhubafrica" target="_blank" className="mr-3"><TwitterIcon /></a>
+            <a href="https://youtube.com/c/BlockchainHubAfrica" target="_blank" className="mr-3"><YoutubeIcon /></a>
+            <a href="https://instagram.com/blockchainhubafrica" target="_blank"><InstagramIcon /></a>
           </div>
         </div>
 
