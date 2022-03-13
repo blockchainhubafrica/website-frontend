@@ -27,7 +27,7 @@ export default function OurWorkPage() {
             <Button
               buttonType="secondary"
               text="View All Events"
-              className="text-orange my-10"
+              className={`text-orange my-10 ${styles["events-button"]}`}
             />
           </div>
           <Events eventList={demoEventsData.slice(0, 2)} />
