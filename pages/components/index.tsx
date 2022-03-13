@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { demoEventsData } from "../../assets/images";
 import {
-	Footer,
   Loader,
   Marquee,
   Products,
@@ -87,9 +86,6 @@ export default function ComponentsPage() {
       <section className="py-10 flex justify-center bg-blue-600">
         <CircleBanner />
       </section>
-			<section>
-				<Footer />
-			</section>
     </main>
   );
 }

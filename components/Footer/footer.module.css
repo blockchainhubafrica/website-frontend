@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+.container * {
+  font-family: var(--app-secondary-font);
+}
+
 .container .social-section .social-icons svg path {
 	fill: var(--app-orange);
 }
@@ -49,6 +53,7 @@
 
 .container .footer-section .logo svg path {
 	fill: var(--app-gray-600);
+  transform: scale(0.8);
 }
 
 .container .footer-section .links .active a {
