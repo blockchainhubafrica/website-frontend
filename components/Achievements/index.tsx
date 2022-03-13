@@ -40,7 +40,6 @@ const Achievements = () => {
       <div className={`container ${styles["sub-container"]}`}>
         <div className={`${styles.display}`}>
           <div className={`${styles["current-display"]}`}>
-            <h1 className="mb-6 lg:mx-14">Achievements</h1>
             <Slider
               dots={true}
               infinite={true}
@@ -56,9 +55,10 @@ const Achievements = () => {
             >
               {sliderData.map((item, index) => (
                 <div
-                  className={`!grid !grid-cols-1 lg:!grid-cols-2 ml-1 lg:px-14 `}
+                  className={`!grid !grid-cols-1 lg:!grid-cols-2 !justify-items-end ml-1 lg:px-14 `}
                 >
                   <div key={item.name + index}>
+                    <h1 className="mb-6">Achievements</h1>
                     <h2>{item.name}</h2>
                     <p className="my-8">{item.description}</p>
                     <Link href={item.link}>
