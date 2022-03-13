@@ -42,7 +42,6 @@ const Achievements = () => {
           <div className={`${styles["current-display"]}`}>
             <h1 className="mb-6 lg:mx-14">Achievements</h1>
             <Slider
-              arrow={false}
               dots={true}
               infinite={true}
               slidesToShow={1}
