@@ -34,9 +34,9 @@ function Footer() {
           </h3>
 
         <div className={`${styles["social-icons"]} flex w-full md:w-2/5 md:pl-10 my-10 pt-10 md:pt-0 md:ml-auto`}>
-          <a href="https://discord.gg/hdBkVnXBZV"><DiscordIcon /></a>
-          <a href="https://twitter.com/blockhubafrica" className="mx-3 md:mx-5"><TwitterIcon /></a>
-          <a href="https://t.me/blockchainhubafrica"><TelegramIcon /></a>
+          <a href="https://discord.gg/hdBkVnXBZV" target="_blank"><DiscordIcon /></a>
+          <a href="https://twitter.com/blockhubafrica" target="_blank" className="mx-3 md:mx-5"><TwitterIcon /></a>
+          <a href="https://t.me/blockchainhubafrica" target="_blank"><TelegramIcon /></a>
         </div>
       </div>
 
