@@ -106,3 +106,30 @@ button:focus {
 .ticker {
   white-space: nowrap;
 }
+
+/* achievement slider slick */
+.achievements-button-container {
+  text-align: center;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.achievements-button-container li {
+  width: 10px;
+  height: 10px;
+  background: var(--app-white);
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.achievements-button-container li button {
+  opacity: 0 !important;
+}
+
+.achievements-button-container .slick-active {
+  width: 50px;
+  border-radius: 5px;
+  background: var(--app-orange);
+}

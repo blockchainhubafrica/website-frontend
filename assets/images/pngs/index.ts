@@ -4,6 +4,7 @@ import TestimonialHeadshot1 from "./headshots/testimonial1.png";
 import TestimonialHeadshot2 from "./headshots/testimonial2.png";
 import TestimonialHeadshot3 from "./headshots/testimonial3.png";
 import eventTestImage from "./eventTestImage.png";
+import achievementImage from "./achievement.png";
 
 export {
   productsDemoImg1,
@@ -12,4 +13,5 @@ export {
   TestimonialHeadshot2,
   TestimonialHeadshot3,
   eventTestImage,
+  achievementImage,
 };
