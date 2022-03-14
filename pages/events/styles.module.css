@@ -1,0 +1,69 @@
+.events h2,
+.events h3 {
+  font-family: var(--app-secondary-font);
+  font-weight: 400;
+}
+
+.events h2 {
+  letter-spacing: 0.25rem;
+  font-size: 1rem;
+  letter-spacing: var(--app-letter-spacing-lg);
+}
+
+.dropdown {
+  position: relative;
+  padding: 15px 30px 15px 30px;
+  border: 2px solid var(--app-black);
+  color: var(--app-black);
+  font-family: var(--app-secondary-font);
+  border-radius: 10px;
+  word-spacing: 0.5rem;
+}
+
+.dropdown svg {
+  display: inline;
+}
+
+.dropdown span {
+  font-family: var(--app-secondary-font);
+}
+
+.dropdown span:first-of-type {
+  color: var(--app-gray-600);
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--app-white);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  max-height: 200px;
+  overflow-y: scroll;
+  z-index: 20;
+}
+
+.dropdown-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-list::-webkit-scrollbar-track {
+  background: var(--app-white);
+}
+
+.dropdown-list::-webkit-scrollbar-thumb {
+  background: var(--app-orange);
+}
+
+.dropdown-list::-webkit-scrollbar-thumb:hover {
+  background: var(--app-orange);
+}
+
+.dropdown-list li {
+  font-family: var(--app-secondary-font);
+  margin: 0.85rem 0rem;
+}
+
+@media screen and (min-width: 768px) {
+}
