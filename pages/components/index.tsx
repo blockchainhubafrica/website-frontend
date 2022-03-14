@@ -11,9 +11,9 @@ import {
   TestimonialSection,
   Button,
   Events,
-  Achievements,
+  CircleBanner,
+  Achievements
 } from "../../components";
-import { CircleBanner } from "../../components/CircleBanner";
 import { useAppContext } from "../../contexts/appContext";
 
 export default function ComponentsPage() {

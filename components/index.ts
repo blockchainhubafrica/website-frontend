@@ -4,6 +4,7 @@ export * from "./Input";
 export * from "./Marquee";
 export * from "./Products";
 export * from "./TestimonialSection";
+export * from "./Footer";
 export * from "./ContactForm";
 export * from "./TextArea";
 export * from "./Events";

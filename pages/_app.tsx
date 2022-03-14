@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../index.css";
 import "../story-section.css";
 
-import { Header } from "../components";
+import { Footer, Header } from "../components";
 import { AppProvider } from "../contexts/appContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -29,6 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Head>
         <Header />
         <Component {...pageProps} />
+				<Footer />
       </AppProvider>
     </>
   );

@@ -8,6 +8,8 @@ import { LogoIcon, MenuIcon, TopRightArrowIcon } from "../../assets/images";
 import styles from "./header.module.css";
 import { useAppContext } from "../../contexts/appContext";
 import { RegistrationModal } from "../RegistrationModal";
+
+
 function Header({}) {
   const { isRegistrationFormActive, setIsRegistrationFormActive } =
     useAppContext();
@@ -17,8 +19,8 @@ function Header({}) {
 
   const activeRouteClass = (route: string) => {
     if (activeRoute.includes(route))
-      return `px-3 text-lg text-white ${styles["active"]} }`;
-
+      return `px-3 text-lg text-white ${styles["active"]}`;
+  
     return `px-3 text-lg text-white`;
   };
 

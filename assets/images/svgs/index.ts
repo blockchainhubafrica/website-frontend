@@ -5,6 +5,11 @@ import CircleCloseIcon from "./circle-close-icon.svg";
 import TopRightArrowIcon from "./top-right-arrow.svg";
 import ArrowTilt from "./arrowTilt.svg";
 import RightArrowIcon from "./right-arrow.svg";
+import DiscordIcon from "./discord.svg";
+import InstagramIcon from "./instagram.svg";
+import TelegramIcon from "./telegram.svg";
+import TwitterIcon from "./twitter.svg";
+import YoutubeIcon from "./youtube.svg";
 import CircleTextIcon from "./circle-text.svg";
 import CircleArrowIcon from "./circle-arrow.svg";
 import PeopleMapSvg from "./people-map.svg";
@@ -19,6 +24,11 @@ export {
   ArrowTilt,
   RightArrowIcon,
   MenuIcon,
+  DiscordIcon,
+  InstagramIcon,
+  TelegramIcon,
+  TwitterIcon,
+  YoutubeIcon,
   CircleTextIcon,
   CircleArrowIcon,
   PeopleMapSvg,

@@ -1,0 +1,127 @@
+.container {
+  width: 100%;
+}
+
+.container * {
+  font-family: var(--app-secondary-font);
+}
+
+.container .social-section .social-icons svg path {
+	fill: var(--app-orange);
+}
+
+.container .social-section .social-icons a {
+  display: block;
+  /* width: fit-content; */
+  width: 100%;
+}
+
+.container .social-section .social-icons svg {
+  transform: scale(3);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container .footer-section .social-icons {
+  border-top: 1px var(--app-blue-100) solid;
+}
+
+.container .footer-section .social-icons svg path {
+	fill: var(--app-blue-100);
+}
+
+.container .social-heading {
+  letter-spacing: var(--app-letter-spacing-md);
+  color: var(--app-blue-400);
+  font-family: var(--app-secondary-font);
+}
+
+.container .footer-section {
+  background: var(--app-blue-800);
+  color: var(--app-white);
+}
+
+.container .footer-section h3 {
+  color: var(--app-blue-100);
+}
+
+.container .footer-section > div:first-child a {
+	text-decoration: underline;
+	text-decoration-color: var(--app-blue-100);
+	text-decoration-thickness: 0.6px;
+}
+
+.container .footer-section .logo svg path {
+	fill: var(--app-gray-600);
+  transform: scale(0.8);
+}
+
+.container .footer-section .links .active a {
+  color: var(--app-orange);
+}
+
+.container .links a:focus {
+  color: var(--app-orange);
+}
+
+.container .links a:hover {
+  color: var(--app-orange);
+}
+
+.container .footer-section .back-to-top button {
+	background-color: var(--app-blue-400);
+}
+
+.container .footer-section .back-to-top button svg {
+  transform: rotate(-90deg);
+}
+
+.container .footer-section .back-to-top button svg path {
+  fill: var(--app-white);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+  }
+
+  .container .social-section {
+    border: var(--app-blue-400) 0.6px solid;
+    /* border-top: 60px; */
+    border-right: none;
+    border-left: none;
+  }
+
+  .container .footer-section .social-icons {
+    border-top: none;
+  }
+
+  .container .footer-section > div:last-child {
+    border-top: 1px var(--app-blue-100) solid;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container .social-section .social-icons svg {
+    transform: scale(2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container .social-section .social-icons {
+    justify-content: center;
+  }
+
+  .container .social-section .social-icons a {
+    width: 150px;
+  }
+
+  .container .social-section .social-icons svg {
+    transform: scale(3);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container .social-section .social-icons svg {
+    transform: scale(2.5);
+  }
+}

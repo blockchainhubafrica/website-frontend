@@ -22,6 +22,7 @@
 
 :root {
   --app-green-200: #00cf8e;
+  --app-blue-100: #E5ECFF;
   --app-blue-200: #00bdff;
   --app-blue-300: #668eff;
   --app-blue-400: #0043ff;
@@ -33,6 +34,7 @@
   --app-white: #fff;
   --app-gray-100: #f8f8f8;
   --app-gray-400: #cfcfcf;
+  --app-gray-600: #9E9E9E;
   --app-pink-100: #d0c4c4;
   --app-orange: #ff9900;
   --app-red: #f84550;
@@ -41,6 +43,7 @@
   --app-secondary-font: "Coolvetica", sans-serif;
   --app-border-radius-sm: 10px;
   --app-letter-spacing-lg: 0.5rem;
+  --app-letter-spacing-md: 0.2rem;
   --header-z-index: 1000;
   --sidebar-z-index: 1500;
   --form-z-index: 2000;
