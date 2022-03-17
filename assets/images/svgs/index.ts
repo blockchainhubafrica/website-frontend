@@ -15,6 +15,7 @@ import CircleArrowIcon from "./circle-arrow.svg";
 import PeopleMapSvg from "./people-map.svg";
 import PlayIcon from "./play-icon.svg";
 import NearLogo from "./near-logo.svg";
+import LinkIcon from "./link.svg";
 
 export {
   LogoIcon,
@@ -34,4 +35,5 @@ export {
   PeopleMapSvg,
   PlayIcon,
   NearLogo,
+  LinkIcon
 };
