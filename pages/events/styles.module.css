@@ -63,6 +63,11 @@
 .dropdown-list li {
   font-family: var(--app-secondary-font);
   margin: 0.85rem 0rem;
+  padding: 5px 0px;
+}
+
+.dropdown-list li:hover {
+  background: var(--app-gray-400);
 }
 
 @media screen and (min-width: 768px) {

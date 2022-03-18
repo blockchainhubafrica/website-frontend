@@ -12,7 +12,7 @@ import {
   Button,
   Events,
   CircleBanner,
-  Achievements
+  Achievements,
 } from "../../components";
 import { useAppContext } from "../../contexts/appContext";
 

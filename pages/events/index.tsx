@@ -1,10 +1,30 @@
-import React, { useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import { Calendar, demoEventsData } from "../../assets/images";
-import { Events } from "../../components";
+import { EventList, Events } from "../../components";
+import { useOnClickOutside } from "../../hooks";
 import styles from "./styles.module.css";
 
 export default function EventsPage() {
-  const [showFilterDropDown, setShowFilterDropDown] = useState(false);
+  const [showFilterDropDown, setShowFilterDropDown] = useState<boolean>(false);
+  const [currentFilterYear, setCurrentFilterYear] = useState<number | null>(
+    new Date().getFullYear()
+  );
+  const [eventsData] = useState<EventList[]>(demoEventsData);
+
+  const eventsDropdownRef = useRef<HTMLButtonElement | null>(null);
+
+  useOnClickOutside(eventsDropdownRef, () => setShowFilterDropDown(false));
+
+  const filteredEvents = useMemo(
+    () =>
+      eventsData.filter(
+        (currentItem, index) =>
+          eventsData.findIndex(
+            (indexedItem) => currentItem.year === indexedItem.year
+          ) === index
+      ),
+    []
+  );
 
   return (
     <main className={styles["container"]}>
@@ -25,19 +45,25 @@ export default function EventsPage() {
               </span>
               <button
                 className={styles.dropdown}
-                onClick={() => setShowFilterDropDown(true)}
+                onClick={() => setShowFilterDropDown(!showFilterDropDown)}
+                ref={eventsDropdownRef}
               >
-                <Calendar /> <span>Years</span> | <span>2020</span>
+                <Calendar /> <span>Years</span> |{" "}
+                <span>{currentFilterYear}</span>
                 {showFilterDropDown ? (
                   <div className={styles["dropdown-list"]}>
                     <ul>
-                      <li>2020</li>
-                      <li>2021</li>
-                      <li>2022</li>
-                      <li>2023</li>
-                      <li>2024</li>
-                      <li>2025</li>
-                      <li>2026</li>
+                      {filteredEvents.map((item, index) => (
+                        <li
+                          key={index + item.name}
+                          onClick={() => {
+                            setShowFilterDropDown(false);
+                            setCurrentFilterYear(parseInt(item.year));
+                          }}
+                        >
+                          {item.year}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 ) : (
@@ -46,7 +72,15 @@ export default function EventsPage() {
               </button>
             </div>
           </div>
-          <Events eventList={demoEventsData} />
+          <Events
+            eventList={useMemo(
+              () =>
+                eventsData.filter(
+                  (event) => parseInt(event.year) === currentFilterYear
+                ),
+              [currentFilterYear]
+            )}
+          />
         </div>
       </section>
     </main>
