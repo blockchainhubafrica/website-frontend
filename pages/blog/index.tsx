@@ -14,7 +14,7 @@ type Article = {
   headshot: StaticImageData,
   status: string,
   date: string,
-  duration: string,
+  duration: number,
 };
 
 export default function BlogPage() {
@@ -64,21 +64,26 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-12 py-10 md:px-10 lg:px-20">
           {articles
             .slice(currentSlide[0], currentSlide[1])
-            .map((article: Article, index: number) => (
-              <div className={`${styles["article"]} mb-10`} key={`${article.title}+${index}`}>
-                <div className="mb-5"><Image src={article.headshot} layout="fill" /></div>
-                <div className={`${styles["body-text"]} ${styles["latest"]} flex flex-col`}>
-                  <small className="py-1 px-5">{article.status} ARTICLE</small>
-                  <Link href={`/blog/${article._id}`}>{article.title}</Link>
-                  <span>{article.date} <strong>{article.duration}</strong></span>
-                  {/* <a href={article.link}>
+            .map((article: Article, index: number) => {
+              const status = article.status && typeof article.status === "string" ? article.status.toUpperCase() : "";
+
+              return (
+                <div className={`${styles["article"]} mb-10`} key={`${article.title}+${index}`}>
+                  <div className="mb-5"><Image src={article.headshot} layout="fill" /></div>
+                  <div className={`${styles["body-text"]} ${styles["latest"]} flex flex-col`}>
+                    {status && <small className={`${styles[status.toLowerCase()]} py-2 px-4 text-center my-2`}>{status} {status === "LATEST" ? "ARTICLE" : "READ"}</small>}
+                    <Link href={`/blog/${article._id}`}>{article.title}</Link>
+                    <span>{article.date} <strong>{article.duration} min Read</strong></span>
+                    {/* <a href={article.link}>
                     <span>
                       Register For Events <ArrowTilt className="ml-2" />
                     </span>
                   </a> */}
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            }
+            )}
         </div>
         {articles.length > 6 ? (
           <div className={`${styles["button-container"]} mt-8 md-mt-14`}>
