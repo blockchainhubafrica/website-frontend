@@ -129,7 +129,7 @@ function ContactForm() {
           type="submit"
           className={`${styles.submit} font-coolvetica justify-center flex items-center py-3 px-6`}
         >
-          <span className="mr-3">Register</span>
+          <span className="mr-3">Send Message</span>
           <span>
             <TopRightArrowIcon />
           </span>
