@@ -4,10 +4,11 @@ import { ArrowTilt, RightArrowIcon } from "../../assets/images";
 
 import styles from "./styles.module.css";
 
-interface EventList {
+export interface EventList {
   name: string;
   link: string;
   image: StaticImageData;
+  year: string;
 }
 
 const Events: React.FC<{ eventList: EventList[] }> = ({ eventList }) => {
