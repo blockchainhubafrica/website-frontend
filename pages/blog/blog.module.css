@@ -109,6 +109,12 @@
     justify-content: flex-end;
 }
 
+.button-container button {
+    padding: 25px;
+    background: #b3c7ff;
+    border-radius: 50%;
+}
+
 
 
 .detail-container * {
@@ -144,17 +150,17 @@
     width: 100%;
 }
 
-
-
-.button-container button {
+.detail-container .button-container button {
     padding: 25px;
     border: 1px solid var(--app-blue-400);
     border-radius: 50%;
+    background: transparent;
 }
 
-.button-container button svg path {
+.detail-container .button-container button svg path {
     fill: var(--app-blue-400);
 }
+
 
 .button-container button:hover {
     transform: scale(1.15);
