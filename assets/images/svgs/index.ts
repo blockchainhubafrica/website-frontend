@@ -18,6 +18,7 @@ import NearLogo from "./near-logo.svg";
 import Calendar from "./calendar.svg";
 import TangledArrow from "./tangledArrow.svg";
 import Ellipse from "./ellipse.svg";
+import LinkIcon from "./link.svg";
 
 export {
   LogoIcon,
@@ -40,4 +41,5 @@ export {
   Calendar,
   TangledArrow,
   Ellipse,
+  LinkIcon,
 };
