@@ -16,6 +16,8 @@ import PeopleMapSvg from "./people-map.svg";
 import PlayIcon from "./play-icon.svg";
 import NearLogo from "./near-logo.svg";
 import Calendar from "./calendar.svg";
+import TangledArrow from "./tangledArrow.svg";
+import Ellipse from "./ellipse.svg";
 
 export {
   LogoIcon,
@@ -36,4 +38,6 @@ export {
   PlayIcon,
   NearLogo,
   Calendar,
+  TangledArrow,
+  Ellipse,
 };
