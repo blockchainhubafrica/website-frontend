@@ -5,7 +5,7 @@
 .container svg {
   position: absolute;
   top: -10px;
-  transform: scale(0.75, 0.7);
+  transform: scale(0.75, 0.7) !important;
 }
 
 .black * {
@@ -40,7 +40,7 @@
 }
 
 .container p {
-  color: var(--app-gray-300);
+  color: rgba(131, 131, 132, 1);
   font-family: var(--app-primary-font);
   font-size: 1.125rem;
   line-height: 1.4125rem;
@@ -74,6 +74,6 @@
   }
 
   .container svg {
-    transform: scaleX(0.88);
+    transform: scaleX(0.88) !important;
   }
 }
