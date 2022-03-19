@@ -9,7 +9,6 @@ import styles from "./header.module.css";
 import { useAppContext } from "../../contexts/appContext";
 import { RegistrationModal } from "../RegistrationModal";
 
-
 function Header({}) {
   const { isRegistrationFormActive, setIsRegistrationFormActive } =
     useAppContext();
@@ -20,7 +19,7 @@ function Header({}) {
   const activeRouteClass = (route: string) => {
     if (activeRoute.includes(route))
       return `px-3 text-lg text-white ${styles["active"]}`;
-  
+
     return `px-3 text-lg text-white`;
   };
 
@@ -39,7 +38,7 @@ function Header({}) {
           </Link>
           <ul className="items-center hidden lg:flex ">
             <li className={activeRouteClass("/about")}>
-              <Link href="/components">About Us</Link>
+              <Link href="/about">About Us</Link>
             </li>
             <li className={activeRouteClass("/work")}>
               <Link href="/work">Our work</Link>

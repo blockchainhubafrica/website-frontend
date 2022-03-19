@@ -1,0 +1,234 @@
+.first-section h1 {
+  font-family: var(--app-secondary-font);
+  font-size: 1.9375rem;
+  line-height: 34px;
+}
+
+.first-section h1 span {
+  display: inline-block;
+  font-family: var(--app-secondary-font);
+  border-bottom: 2px solid var(--app-blue-600);
+}
+
+.vision-mission-card,
+.stats-card {
+  border: 1px solid var(--app-gray-400);
+  border-radius: 5px;
+}
+
+.stats-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.stats-card h5,
+.stats-card h6 {
+  font-family: var(--app-secondary-font);
+  color: var(--app-gray-400);
+}
+
+.stats-card h5 {
+  font-size: 2.5rem;
+}
+
+.stats-card h6 {
+  font-size: 1rem;
+}
+
+.vision-mission-card h3 {
+  font-size: 1rem;
+  color: var(--app-gray-600);
+  text-transform: uppercase;
+  font-family: var(--app-secondary-font);
+  letter-spacing: var(--app-letter-spacing-lg);
+}
+
+.vision-mission-card p {
+  font-size: 1rem;
+  color: var(--app-gray-600);
+  font-family: var(--app-primary-font);
+  font-size: 1rem;
+}
+
+.vision-mission-card:hover,
+.stats-card:hover {
+  background: var(--app-blue-400);
+  transition: 0.9s;
+  box-shadow: rgba(0, 0, 252, 0.4) 0px 0px 40px 0px;
+}
+
+.vision-mission-card:hover h3 {
+  color: var(--app-orange);
+}
+
+.vision-mission-card:hover p,
+.stats-card:hover * {
+  color: var(--app-white);
+}
+
+.second-section h3 {
+  color: var(--app-blue-400);
+  font-family: var(--app-secondary-font);
+  font-size: 1rem;
+  letter-spacing: var(--app-letter-spacing-lg);
+  text-transform: uppercase;
+}
+
+.third-section h3 {
+  color: var(--app-black);
+  font-family: var(--app-secondary-font);
+  font-size: 1rem;
+  letter-spacing: var(--app-letter-spacing-lg);
+  text-transform: uppercase;
+}
+
+.second-section h4 {
+  color: var(--app-black);
+  font-family: var(--app-secondary-font);
+  font-size: 1.9375rem;
+  line-height: 1.8125rem;
+}
+
+.third-section h4 {
+  color: var(--app-blue-400);
+  font-family: var(--app-secondary-font);
+  font-size: 1.7375rem;
+  line-height: 1.5125rem;
+}
+
+.second-section p,
+.third-section p {
+  color: var(--app-black);
+  font-family: var(--app-primary-font);
+  font-size: 1rem;
+  line-height: 1.575rem;
+}
+
+.values {
+  position: relative;
+}
+
+.values svg {
+  position: relative;
+  top: 60px;
+  left: -30px;
+  transform: scale(0.5);
+}
+
+.events h2,
+.events h3,
+.gallery h2,
+.gallery h3,
+.values h2,
+.values h3 {
+  font-family: var(--app-secondary-font);
+  font-weight: 400;
+}
+
+.events h2,
+.gallery h2,
+.values h2 {
+  letter-spacing: 0.25rem;
+  font-size: 1rem;
+  letter-spacing: var(--app-letter-spacing-lg);
+}
+
+.events-button {
+  width: 200px;
+}
+
+@media screen and (min-width: 768px) {
+  .first-section h1 {
+    font-size: 3rem;
+    line-height: 53px;
+  }
+
+  .vision-mission-card p {
+    font-size: 1rem;
+    color: var(--app-gray-600);
+    font-family: var(--app-primary-font);
+    font-size: 1.375rem;
+    line-height: 2.15rem;
+  }
+
+  .second-section h4 {
+    font-size: 3.125rem;
+    line-height: 3.5rem;
+  }
+
+  .third-section h4 {
+    font-size: 2.525rem;
+    line-height: 2.8rem;
+  }
+
+  .second-section p,
+  .third-section p {
+    font-size: 1.175rem;
+    line-height: 1.75rem;
+  }
+
+  .ellipse {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background: var(--app-orange);
+    border-radius: 50%;
+    right: 1rem;
+    top: 300px;
+    filter: blur(200px);
+    box-shadow: 42px 10px 128px 115px rgba(255, 153, 0, 0.9);
+    -webkit-box-shadow: 42px 10px 128px 115px rgba(255, 153, 0, 0.9);
+    -moz-box-shadow: 42px 10px 128px 115px rgba(255, 153, 0, 0.9);
+  }
+
+  .stats-card h5 {
+    font-size: 3rem;
+  }
+
+  .stats-card h6 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .first-section h1 {
+    font-size: 5rem;
+    line-height: 80px;
+  }
+
+  .vision-mission-card p {
+    font-size: 1rem;
+    color: var(--app-gray-600);
+    font-family: var(--app-primary-font);
+    font-size: 2.375rem;
+    line-height: 3.375rem;
+  }
+
+  .second-section h4 {
+    font-size: 4.125rem;
+    line-height: 5rem;
+  }
+
+  .third-section h4 {
+    font-size: 3.125rem;
+    line-height: 3.5rem;
+  }
+
+  .second-section p,
+  .third-section p {
+    font-size: 1.275rem;
+    line-height: 2.175rem;
+  }
+
+  .stats-card h5 {
+    font-size: 3.5rem;
+  }
+
+  .stats-card h6 {
+    font-size: 1.25rem;
+  }
+}

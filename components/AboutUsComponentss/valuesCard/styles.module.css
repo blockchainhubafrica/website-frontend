@@ -1,0 +1,79 @@
+.container {
+  position: relative;
+}
+
+.container svg {
+  position: absolute;
+  top: -10px;
+  transform: scale(0.75, 0.7) !important;
+}
+
+.black * {
+  stroke: #000000;
+}
+
+.blue * {
+  stroke: #0043ff;
+}
+
+.green * {
+  stroke: #00cf8e;
+}
+
+.orange * {
+  stroke: #ff9900;
+}
+
+.purple * {
+  stroke: #764afd;
+}
+
+.skyBlue * {
+  stroke: #00bdff;
+}
+
+.container h4 {
+  position: relative;
+  color: var(--app-black);
+  font-family: var(--app-secondary-font);
+  font-size: 1.75rem;
+}
+
+.container p {
+  color: rgba(131, 131, 132, 1);
+  font-family: var(--app-primary-font);
+  font-size: 1.125rem;
+  line-height: 1.4125rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container h4 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container h4 {
+    font-size: 2rem;
+  }
+
+  .container p {
+    font-size: 1.175rem;
+    line-height: 1.6125rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container h4 {
+    font-size: 2.25rem;
+  }
+
+  .container p {
+    font-size: 1.375rem;
+    line-height: 1.8125rem;
+  }
+
+  .container svg {
+    transform: scaleX(0.88) !important;
+  }
+}

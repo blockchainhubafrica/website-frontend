@@ -15,3 +15,4 @@ export * from "./Loader";
 export * from "./Achievements";
 export * from "./CircleBanner";
 export * from "./CloudinaryImage";
+export * from "./AboutUsComponentss";
