@@ -1,65 +1,60 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./blog.module.css";
-import { ContactForm } from "../../components";
-import Link from "next/link";
+import { Loader } from "../../components";
 import Image from "next/image";
-import { achievementImage } from "../../assets/images/pngs";
 import { RightArrowIcon } from "../../assets/images";
 import { articles } from "../../data/blog";
 import { useRouter } from "next/router";
 import { DiscordIcon, LinkIcon, TwitterIcon, TelegramIcon } from "../../assets/images";
 
-type Article = {
-  title: string,
-  body: string,
-  headshot: StaticImageData,
-  status: string,
-  date: string,
-  duration: string,
-  author: string,
-};
+const subtract = (curr: any, num: number, min: number = 0) => parseInt(curr) === min ? curr : parseInt(curr) - num;
 
-const subtract = (curr: number, num: number, min: number = 0) => curr === min ? curr : curr - num;
+const add = (curr: any, num: number, max: number = 6) => parseInt(curr) === max ? curr : parseInt(curr) + num;
 
-const add = (curr: number, num: number, max: number = 6) => curr === max ? curr : curr + num;
+const getArticleDetail = (articlesList: any[], articleId: string) => articlesList.find(article => article._id === articleId) || articlesList[0];
 
 
 export default function BlogDetailPage() {
-  const { query }: any = useRouter();
-  const [initialArticle] = useState(query?.bid && !isNaN(Number(query?.bid)) ? subtract(parseInt(query?.bid), 1) : 0);
-  console.log(query, initialArticle)
-  const [currentSlide, setCurrentSlide] = useState<number[]>([0, 1]);
+  const router = useRouter();
+  const { query }: any = router;
+
+  const [article, setArticle] = useState(query?.bid ? getArticleDetail(articles, query?.bid) : {});
+  const [showLoader, setShowLoader] = useState<boolean>(true);
+
   const containerRef = useRef<HTMLElement | null>(null);
 
 
+  // Handlers
   const goRight = () => {
-    setCurrentSlide([add(currentSlide[0], 1), add(currentSlide[1], 1)]);
-    containerRef?.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    router.push(`/blog/${add(query?.bid, 1, articles.length)}`)
   };
 
   const goLeft = () => {
-    setCurrentSlide([subtract(currentSlide[0], 1), subtract(currentSlide[1], 1)]);
-    containerRef?.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    router.push(`/blog/${subtract(query?.bid, 1)}`)
   };
 
-  // console.log(currentSlide, initialArticle, articles
-  //   .slice(currentSlide[0], currentSlide[1]))
-  // useEffect(() => {
-  //   setCurrentSlide([initialArticle, 1])
-  // }, [initialArticle])
+
+  useEffect(() => {
+    setArticle(getArticleDetail(articles, query?.bid))
+
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+    }, 500);
+
+
+    return () => clearTimeout(timer);
+  }, [query?.bid]);
+
+  if (showLoader) {
+    return <Loader />;
+  }
 
 
   return (
     <main className={`${styles["detail-container"]} md:py-5 px-5 md:px-10 lg:px-20`}>
       {articles.length > 1 ? (
         <div className={`${styles["button-container"]} flex mt-8 md-mt-14 w-full`}>
-          {currentSlide[0] !== 0 ? (
+          {parseInt(query?.bid) > 1 ? (
             <div className="flex items-center">
               <button id="article-slider-btn-1" className="" onClick={goLeft}>
                 <RightArrowIcon style={{ transform: "rotate(180deg)" }} />
@@ -70,7 +65,7 @@ export default function BlogDetailPage() {
             ""
           )}
 
-          {currentSlide[1] < articles.length ? (
+          {parseInt(query?.bid) < articles.length ? (
             <div className="flex items-center ml-auto">
               <h3 className={`spaced-heading text-base font-coolvetica mx-5`}>NEXT</h3>
               <button id="article-slider-btn-2" onClick={goRight}>
@@ -84,53 +79,51 @@ export default function BlogDetailPage() {
       ) : (
         ""
       )}
+
       <section className={`${styles["articles-container"]} pt-10`} ref={containerRef}>
         <div className="md:py-10">
-          {articles
-            .slice(currentSlide[0], currentSlide[1])
-            .map((article: Article, index: number) => (
-              <div className={`${styles["article"]} mb-10`} key={`${article.title}+${index}`}>
-                <h3 className={`mb-4 pb-5 md:pb-10 text-3xl md:text-7xl font-coolvetica text-blue-600 lg:w-3/4`}>
-                  {article.title}
-                </h3>
+          <div className={`${styles["article"]} mb-10`}>
+            <h3 className={`mb-4 pb-5 md:pb-10 text-3xl md:text-7xl font-coolvetica text-blue-600 lg:w-3/4`}>
+              {article.title}
+            </h3>
 
-                <div className="flex py-5">
-                  {/* Article menu */}
-                  <div className={`${styles["menu"]} hidden md:block p-10 py-16`}>
-                    <div className="flex flex-col mb-8">
-                      <span className="mb-3">Article written by</span>
-                      <strong>{article.author}</strong>
-                    </div>
-                    <div className="flex flex-col mb-8">
-                      <span className="mb-3">Time of read</span>
-                      <strong>12 Minutes</strong>
-                    </div>
-                    <div className="flex flex-col mb-8">
-                      <span className="mb-3">Date posted</span>
-                      <strong>December 22, 2021</strong>
-                    </div>
-                    <div className="flex flex-col mb-8">
-                      <span className="mb-3">Share</span>
-                      <div className={`${styles["share-icons"]} flex`}>
-                        <span className="mr-3"><DiscordIcon /></span>
-                        <span className="mr-3"><TwitterIcon /></span>
-                        <span className="mr-3"><TelegramIcon /></span>
-                        <span className=""><LinkIcon /></span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Article body */}
-                  <div className={`${styles["body"]} md:px-24`}>
-                    <p>{article.body}</p>
-                    <p>{article.body}</p>
-                    <Image className={styles["img"]} src={article.headshot} />
-                    <p>{article.body}</p>
-                    <p>{article.body}</p>
+            <div className="flex py-5">
+              {/* Article menu */}
+              <div className={`${styles["menu"]} sticky top-40 hidden md:block p-10 py-16`}>
+                <div className="flex flex-col mb-8">
+                  <span className="mb-3">Article written by</span>
+                  <strong>{article.author}</strong>
+                </div>
+                <div className="flex flex-col mb-8">
+                  <span className="mb-3">Time of read</span>
+                  <strong>{article.duration} Minutes</strong>
+                </div>
+                <div className="flex flex-col mb-8">
+                  <span className="mb-3">Date posted</span>
+                  <strong>December 22, 2021</strong>
+                </div>
+                <div className="flex flex-col mb-8">
+                  <span className="mb-3">Share</span>
+                  <div className={`${styles["share-icons"]} flex`}>
+                    <span className="mr-3"><DiscordIcon /></span>
+                    <span className="mr-3"><TwitterIcon /></span>
+                    <span className="mr-3"><TelegramIcon /></span>
+                    <span className=""><LinkIcon /></span>
                   </div>
                 </div>
               </div>
-            ))}
+
+              {/* Article body */}
+              <div className={`${styles["body"]} md:px-24`}>
+                <p>{article.body}</p>
+                <Image className={styles["img"]} src={article.headshot} />
+                <h3 className={`mb-5 md:mb-8 md:mt-6 text-3xl md:text-5xl font-coolvetica text-blue-600 lg:w-3/4`}>
+                  Title for a new section
+                    </h3>
+                <p>{article.body}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
