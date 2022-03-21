@@ -1,2 +1,14 @@
 .container {
 }
+
+.container .social-accounts * {
+	font-family: var(--app-secondary-font);
+}
+
+.container .social-icons svg {
+	transform: scale(0.7);
+}
+
+.container .social-icons svg path {
+	fill: var(--app-blue-400);
+}

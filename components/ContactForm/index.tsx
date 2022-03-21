@@ -83,7 +83,7 @@ function ContactForm() {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} className={`${styles["container"]} md:px-10`}>
+    <form onSubmit={formik.handleSubmit} className={`${styles["container"]} container md:px-10`}>
       <div className={`${styles["topics"]} flex mb-20 flex-wrap gap-6`}>
         {availableTopics.map(topic => (
           <div key={topic.value} className={`${topicIsSelected(topic.value) ? styles["active"] : ""} flex items-center`}>
