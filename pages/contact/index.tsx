@@ -28,7 +28,7 @@ export default function ContactUsPage() {
       </div>
 
       <div className="md:w-3/4">
-        <ContactForm />
+        <ContactForm showTopics={false} />
       </div>
     </main>
   );
