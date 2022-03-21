@@ -37,7 +37,7 @@ function Footer() {
   return (
     <div className={`${styles["container"]}`}>
       <div
-        className={`${styles["social-section"]} flex flex-col md:flex-row justify-between items-center my-20 lg:my-36 md:mx-10 lg:mx-28 lg:py-28 px-5 md:px-14 lg:px-32`}
+        className={`${styles["social-section"]} container flex flex-col md:flex-row justify-between items-center my-20 lg:my-36 lg:py-28 2xl:px-52`}
       >
         <h3
           className={`${styles["social-heading"]} md:py-4 text-3xl md:text-4xl lg:text-7xl text-blue-600 md:w-1/2`}
@@ -69,19 +69,31 @@ function Footer() {
       >
         <div className="grid md:grid-cols-2 md:items-center md:mb-10 lg:mb-32">
           <div className="inline-block items-center">
-            <h3 className={`text-3xl md:text-5xl lg:text-7xl 2xl:text-8xl text-blue-100 inline`}>
+            <h3
+              className={`text-3xl md:text-5xl lg:text-7xl 2xl:text-8xl text-blue-100 inline`}
+            >
               Let’s bring that idea to life.
             </h3>
-            <div className={`${styles["cool-emoji"]} inline fix-img-height ml-8 mt-2`}>
+            <div
+              className={`${styles["cool-emoji"]} inline fix-img-height ml-8 mt-2`}
+            >
               <Image quality={100} src={coolEmoji} width={65} height={65} />
             </div>
           </div>
 
           <div className="flex flex-col py-10 md:py-0 md:ml-auto mt-auto md:text-xl">
-            <a className="lg:text-2xl mb-3" href="https://wa.me/2349087654321" target="_blank">
+            <a
+              className="lg:text-2xl mb-3"
+              href="https://wa.me/2349087654321"
+              target="_blank"
+            >
               Call &amp; whatsapp: +234(0)908 7654 321
             </a>
-            <a className="lg:text-2xl" href="mailto:info@blockchainhubafrica.com" target="_blank">
+            <a
+              className="lg:text-2xl"
+              href="mailto:info@blockchainhubafrica.com"
+              target="_blank"
+            >
               Email: info@blockchainhubafrica.com
             </a>
           </div>
@@ -164,7 +176,10 @@ function Footer() {
             className={`${styles["back-to-top"]} items-center hidden md:flex`}
           >
             <span className="text-xl">Back To Top</span>
-            <button className={`${styles["scroll-to-top"]} py-3 px-6 ml-6 shadow-sm`} onClick={scrollToTop}>
+            <button
+              className={`${styles["scroll-to-top"]} py-3 px-6 ml-6 shadow-sm`}
+              onClick={scrollToTop}
+            >
               <RightArrowIcon />
             </button>
           </div>
