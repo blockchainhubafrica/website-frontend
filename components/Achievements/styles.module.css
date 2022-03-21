@@ -9,6 +9,7 @@
   border: 1px solid #b3c7ff;
   border-radius: 50%;
   z-index: 100;
+  transition: 0.3s;
 }
 
 .arrow-button:first-of-type {
@@ -20,7 +21,7 @@
 }
 
 .arrow-button:hover {
-  transform: scale(1.05);
+  transform: scale(0.9);
 }
 
 .arrow-button svg * {
