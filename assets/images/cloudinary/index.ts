@@ -26,10 +26,10 @@ const Shapes2Src =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647102398/Company-website/shapes-2_v5ktbs.png";
 
 const NduImageSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647006558/Company-website/productsDemoImg1_n7ctjc.png";
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647705237/Company-website/ndu_xkivd1.png";
 
 const BeimaImageSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647006557/Company-website/productsDemoImg2_w4sblz.png";
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647705081/Company-website/beima_jndjti.png";
 
 export {
   VideoBackdropSrc,

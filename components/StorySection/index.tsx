@@ -35,9 +35,7 @@ function StorySection() {
     "1024": { slidesPerView: 3, spaceBetween: 15 },
   };
   return (
-    <div
-      className={`container px-0 xmd:pr-40 ${styles["container"]} `}
-    >
+    <div className={`container px-0 xmd:pr-40 ${styles["container"]} `}>
       <div className="grid grid-cols-1 xmd:grid-cols-5 gap-y-20">
         <div className="col-span-3 smd:container xmd:px-0 order-2 xmd:order-1 story-section-swiper">
           <Swiper
@@ -95,9 +93,15 @@ function StorySection() {
           >
             Leading blockchain innovations from Africa
           </h3>
-          <p className={`${styles["story-description"]} mb-12`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, odio
-            non nunc eu. Adipiscing in neque mi nunc euismod morbi interdum.
+          <p className={`${styles["story-description"]} text-sm mb-12`}>
+            Every idea begins with a problem. For us, it was simple: As web3
+            expands, Africa is at a disadvantage of being left behind. As early
+            adopters of blockchain, we have had a first hand experience of the
+            liberating power that blockchain possesses. We know what immense
+            human capital Africa has, and we have set out to expand Africa's
+            web3 talent pipeline, all the while building intuitive web3 products
+            that simplify and drive blockchain adoption for our clients. We are
+            made in Africa for the world.
           </p>
           <div style={{ maxWidth: "180px" }}>
             <Button buttonType="tertiary" text="Learn more" />

@@ -7,7 +7,7 @@
 }
 
 .container .social-section .social-icons svg path {
-	fill: var(--app-orange);
+  fill: var(--app-orange);
 }
 
 .container .social-section .social-icons a {
@@ -27,11 +27,11 @@
 }
 
 .container .footer-section .social-icons svg path {
-	fill: var(--app-blue-100);
+  fill: var(--app-blue-100);
 }
 
 .container .social-heading {
-  letter-spacing: var(--app-letter-spacing-md);
+  /* letter-spacing: var(--app-letter-spacing-md); */
   color: var(--app-blue-400);
   font-family: var(--app-secondary-font);
 }
@@ -41,19 +41,15 @@
   color: var(--app-white);
 }
 
-.container .footer-section h3 {
-  color: var(--app-blue-100);
-}
-
 .container .footer-section > div:first-child a {
-	text-decoration: underline;
-	text-decoration-color: var(--app-blue-100);
-	text-decoration-thickness: 0.6px;
+  text-decoration: underline;
+  text-decoration-color: var(--app-blue-100);
+  text-decoration-thickness: 0.8px;
+  letter-spacing: 0.6px;
 }
 
 .container .footer-section .logo svg path {
-	fill: var(--app-gray-600);
-  transform: scale(0.8);
+  fill: var(--app-gray-600);
 }
 
 .container .footer-section .links .active a {
@@ -69,7 +65,7 @@
 }
 
 .container .footer-section .back-to-top button {
-	background-color: var(--app-blue-400);
+  background-color: var(--app-blue-400);
 }
 
 .container .footer-section .back-to-top button svg {
@@ -123,5 +119,36 @@
 @media screen and (max-width: 425px) {
   .container .social-section .social-icons svg {
     transform: scale(2.5);
+  }
+}
+
+button.scroll-to-top:focus,
+button.scroll-to-top:hover {
+  transition: 0.2s ease-in-out;
+  /* background-color: var(--app-orange) !important; */
+  box-shadow: rgb(0 67 255 / 60%) 0px 0px 100px 0px;
+}
+
+.container .footer-section .social-icons a:hover svg path,
+.container .footer-section .social-icons a:focus svg path {
+  fill: var(--app-orange) !important;
+}
+
+.container .footer-section .cool-emoji {
+  position: relative;
+  bottom: -5px;
+}
+
+.container .footer-section .cool-emoji img,
+.container .footer-section .cool-emoji span {
+  height: 40px !important;
+  width: 40px !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .container .footer-section .cool-emoji img,
+  .container .footer-section .cool-emoji span {
+    height: 65px !important;
+    width: 65px !important;
   }
 }
