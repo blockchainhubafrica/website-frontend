@@ -1,7 +1,9 @@
 import React, { useMemo, useRef, useState } from "react";
 import Image from "next/image";
+
 import {
   Calendar,
+  Close,
   demoEventsData,
   featuredEventsImg1,
   featuredEventsImg2,
@@ -9,13 +11,26 @@ import {
   featuredEventsImg4,
   featuredEventsImg5,
   RightArrowIcon,
+  VideoBackdropSrc,
 } from "../../assets/images";
-import { EventList, Events } from "../../components";
+
+import { EventList, Events, Video } from "../../components";
+
 import { useOnClickOutside } from "../../hooks";
+
 import styles from "./styles.module.css";
 
 export default function EventsPage() {
   const [showFilterDropDown, setShowFilterDropDown] = useState<boolean>(false);
+  const [showSlider, setShowSlider] = useState<boolean>(false);
+  const [imageSliderData] = useState<StaticImageData[]>([
+    featuredEventsImg1,
+    featuredEventsImg2,
+    featuredEventsImg3,
+    featuredEventsImg4,
+    featuredEventsImg5,
+  ]);
+  const [sliderIndex, setSliderIndex] = useState<any>(0);
   const [currentFilterYear, setCurrentFilterYear] = useState<number | null>(
     new Date().getFullYear()
   );
@@ -24,6 +39,32 @@ export default function EventsPage() {
   const eventsDropdownRef = useRef<HTMLButtonElement | null>(null);
 
   useOnClickOutside(eventsDropdownRef, () => setShowFilterDropDown(false));
+
+  const handleOpenSlider = (index: number) => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+    setSliderIndex(index);
+    setShowSlider(true);
+  };
+
+  const goRight = () => {
+    if (sliderIndex === imageSliderData.length - 1) {
+      return setSliderIndex(0);
+    }
+    setSliderIndex(sliderIndex + 1);
+  };
+
+  const goLeft = () => {
+    if (sliderIndex === 0) {
+      return setSliderIndex(imageSliderData.length - 1);
+    }
+
+    setSliderIndex(sliderIndex - 1);
+  };
 
   const filteredEvents = useMemo(
     () =>
@@ -44,29 +85,62 @@ export default function EventsPage() {
         <div className={`${styles["featured-events-header"]}`}>
           <div className="container">
             <div
-              className={`py-12 md:py-20 lg:py-24 flex flex-col lg:flex-row lg:items-center lg:justify-between`}
+              className={`py-12 md:py-20 lg:py-24 relative flex flex-col lg:flex-row lg:items-center lg:justify-between`}
             >
+              <div
+                className={`${styles["image-slider"]} ${
+                  !showSlider ? "hidden" : ""
+                }`}
+              >
+                <Close
+                  className={styles.close}
+                  onClick={() => setShowSlider(false)}
+                />
+                <button
+                  className={`${styles["arrow-button"]} mr-8`}
+                  onClick={goLeft}
+                >
+                  <RightArrowIcon style={{ transform: "rotate(180deg)" }} />
+                </button>
+                <Image
+                  src={imageSliderData[sliderIndex]}
+                  alt="featured-events-img-1"
+                  layout="fill"
+                  height={500}
+                />
+                <button
+                  className={`${styles["arrow-button"]}`}
+                  onClick={goRight}
+                >
+                  <RightArrowIcon />
+                </button>
+              </div>
               <div className="xl:w-2/3">
                 <h1 className="uppercase">Featured Events</h1>
                 <h2 className="capitailize mt-4">
                   Blockchain Developers Conference, 2021
                 </h2>
               </div>
-              <div className="flex mt-8 lg:mt-0">
+              {/* <div className="flex mt-8 lg:mt-0">
                 <button className={`${styles["arrow-button"]} mr-8`}>
                   <RightArrowIcon style={{ transform: "rotate(180deg)" }} />
                 </button>
                 <button className={`${styles["arrow-button"]}`}>
                   <RightArrowIcon />
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
         <div className="container mb-20">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 xl:gap-20">
-            <div className="bg-orange"></div>
-            <div>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10 xl:gap-20">
+            <div className={`bg-orange ${styles["video-container"]}`}>
+              <Video
+                videoUrl="https://www.youtube.com/embed/bU9DysEVTFU"
+                imageUrl={VideoBackdropSrc}
+              />
+            </div>
+            <div className="bg-blackd">
               <h3 className="mb-4">About the event</h3>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam
@@ -96,46 +170,17 @@ export default function EventsPage() {
         </div>
         <div className="container">
           <div className={`${styles["featured-images-container"]}`}>
-            <div>
-              <Image
-                src={featuredEventsImg1}
-                alt="featured-events-img-1"
-                width={342}
-                height={255}
-              />
-            </div>
-            <div>
-              <Image
-                src={featuredEventsImg2}
-                alt="featured-events-img-1"
-                width={342}
-                height={255}
-              />
-            </div>
-            <div>
-              <Image
-                src={featuredEventsImg3}
-                alt="featured-events-img-1"
-                width={342}
-                height={255}
-              />
-            </div>
-            <div>
-              <Image
-                src={featuredEventsImg4}
-                alt="featured-events-img-1"
-                width={342}
-                height={255}
-              />
-            </div>
-            <div>
-              <Image
-                src={featuredEventsImg5}
-                alt="featured-events-img-1"
-                width={342}
-                height={255}
-              />
-            </div>
+            {imageSliderData.map((image, index) => (
+              <div key={index + "img"}>
+                <Image
+                  src={image}
+                  alt={`featured-events-img-${index + 1}`}
+                  onClick={() => handleOpenSlider(index)}
+                  width={342}
+                  height={255}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

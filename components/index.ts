@@ -16,3 +16,4 @@ export * from "./Achievements";
 export * from "./CircleBanner";
 export * from "./CloudinaryImage";
 export * from "./AboutUsComponentss";
+export * from "./Video";

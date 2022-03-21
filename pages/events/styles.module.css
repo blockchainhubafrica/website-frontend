@@ -17,6 +17,49 @@
   background-size: cover;
 }
 
+.image-slider {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  z-index: 20;
+}
+
+.image-slider .close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 30;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.image-slider .close:hover {
+  transform: scale(1.15);
+}
+
+.image-slider img {
+  object-fit: cover;
+}
+.image-slider button {
+  position: absolute;
+  top: 45%;
+  z-index: 30;
+}
+
+.image-slider button:first-of-type {
+  left: -15px;
+}
+
+.image-slider button:last-of-type {
+  right: -15px;
+}
+
+.video-container > div {
+  height: 250;
+}
+
 .featured-events h1,
 .featured-events h2,
 .featured-events h5,
@@ -83,16 +126,24 @@
   display: flex;
   margin: 0 auto;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .featured-images-container > div {
   flex-shrink: 0;
   display: inline-block;
   margin-right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.featured-images-container > div:hover {
+  transform: scale(1.05);
 }
 
 .featured-images-container img {
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .dropdown {
@@ -163,6 +214,15 @@
 }
 
 @media screen and (min-width: 768px) {
+  .video-container > div {
+    height: 100%;
+  }
+
+  .image-slider {
+    top: 30px;
+    height: 500px;
+  }
+
   .featured-events h2 {
     font-size: 4.5rem;
     line-height: 4.16rem;
@@ -191,6 +251,14 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .image-slider button:first-of-type {
+    left: -20px;
+  }
+
+  .image-slider button:last-of-type {
+    right: -20px;
+  }
+
   .featured-images-container > div {
     margin-right: 10px;
   }
@@ -205,6 +273,14 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .image-slider button:first-of-type {
+    left: -40px;
+  }
+
+  .image-slider button:last-of-type {
+    right: -40px;
+  }
+
   .featured-events h2 {
     font-size: 5.2rem;
     line-height: 4.6rem;
