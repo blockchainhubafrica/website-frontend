@@ -67,7 +67,7 @@ function TextArea({
           {label}
         </label>
       )}
-      <span className={`${styles["remaining-words"]} ${wordsCount > maxWords ? styles["words-completed"] : ""}`}>{Math.abs(wordsCount)} word{Math.abs(wordsCount) > 1 ? "s" : ""}</span>
+      <span className={`${styles["remaining-words"]}`}>{Math.abs(wordsCount)} word{Math.abs(wordsCount) > 1 ? "s" : ""}</span>
       <textarea
         id={id ?? name}
         name={name}
