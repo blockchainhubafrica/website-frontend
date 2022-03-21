@@ -201,6 +201,14 @@ export default function EventsPage() {
               </span>
               <button
                 className={styles.dropdown}
+                style={
+                  showFilterDropDown
+                    ? {
+                        borderBottomLeftRadius: "0px",
+                        borderBottomRightRadius: "0px",
+                      }
+                    : {}
+                }
                 onClick={() => setShowFilterDropDown(!showFilterDropDown)}
                 ref={eventsDropdownRef}
               >
