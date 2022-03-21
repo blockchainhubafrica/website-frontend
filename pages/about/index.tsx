@@ -39,9 +39,11 @@ export default function AboutUs() {
               >
                 <h3>Our Mission</h3>
                 <p className="mt-6">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Assumenda tempora inventore maiores fuga. Deleniti odio vero
-                  nam
+                  Blockchain Hub Africa, has set out to build Africa’s web3
+                  talents, to become part of those building the Future of the
+                  internet. We also build innovative blockchain based solutions
+                  that aim to increase the adoption of the Blockchain technology
+                  in Africa.
                 </p>
               </div>
               <div
@@ -49,9 +51,9 @@ export default function AboutUs() {
               >
                 <h3>Our Vision</h3>
                 <p className="mt-6">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Assumenda tempora inventore maiores fuga. Deleniti odio vero
-                  nam
+                  To build Africa’s web3 talent pipeline and bridge the gap of
+                  transitioning into the web3 space to foster blockchain
+                  adoption in Africa.
                 </p>
               </div>
             </div>
@@ -73,16 +75,16 @@ export default function AboutUs() {
               </div>
               <div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-                  suspendisse tristique aenean nunc, urna scelerisque. Dignissim
-                  ultrices quam at nunc, massa. Ultricies orci viverra in nulla
-                  sapien. Laoreet lectus augue pretium lorem blandit
-                  pellentesque vulputate enim. Pretium aenean metus, egestas at
-                  lorem at. Duis nibh aliquet phasellus interdum elementum
-                  venenatis. Massa viverra at ipsum, egestas. Id turpis
-                  suspendisse elementum vulputate est cum amet. Morbi id id
-                  euismod urna sed. Et nunc, risus, magnis velit posuere. Vitae
-                  enim venenatis faucibus mattis.
+                  Africa has always been consumers of technology, and over the
+                  years, we contribute less to emerging technologies. Blockchain
+                  technology, as an emerging tech, has seen interest increase
+                  over the years and there is a high demand for
+                  talents(developers, designers, community managers, etc) to
+                  help build the tech and solutions on it, but there seems to be
+                  little to no supply of these talents from Africa. We set out
+                  to Build Blockchain Hub Africa to tackle this problem and
+                  build web3 talent pipeline, to make Africa become frontiers in
+                  the adoption of blockchain technology.
                 </p>
               </div>
             </div>
@@ -117,8 +119,8 @@ export default function AboutUs() {
                   We are not just individuals but a community.
                 </h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-                  suspendisse tristique aenean nunc, urna scelerisque. Dignissim
+                  We believe in the power of community as a web3 company and
+                  that is why we value and believe in our Community.
                 </p>
               </div>
             </div>

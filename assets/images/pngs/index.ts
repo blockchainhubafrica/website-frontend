@@ -5,6 +5,7 @@ import TestimonialHeadshot2 from "./headshots/testimonial2.png";
 import TestimonialHeadshot3 from "./headshots/testimonial3.png";
 import eventTestImage from "./eventTestImage.png";
 import achievementImage from "./achievement.png";
+import coolEmoji from "./cool-emoji.png";
 
 export {
   productsDemoImg1,
@@ -14,4 +15,5 @@ export {
   TestimonialHeadshot3,
   eventTestImage,
   achievementImage,
+  coolEmoji,
 };
