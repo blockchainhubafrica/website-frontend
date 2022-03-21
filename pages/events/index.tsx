@@ -41,14 +41,14 @@ export default function EventsPage() {
   useOnClickOutside(eventsDropdownRef, () => setShowFilterDropDown(false));
 
   const handleOpenSlider = (index: number) => {
-    if (typeof window !== "undefined") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-    setSliderIndex(index);
-    setShowSlider(true);
+    // if (typeof window !== "undefined") {
+    //   window.scrollTo({
+    //     top: 0,
+    //     behavior: "smooth",
+    //   });
+    // }
+    // setSliderIndex(index);
+    setShowSlider(false);
   };
 
   const goRight = () => {
@@ -107,6 +107,7 @@ export default function EventsPage() {
                   alt="featured-events-img-1"
                   layout="fill"
                   height={500}
+                  priority={true}
                 />
                 <button
                   className={`${styles["arrow-button"]}`}
@@ -178,6 +179,7 @@ export default function EventsPage() {
                   onClick={() => handleOpenSlider(index)}
                   width={342}
                   height={255}
+                  priority={true}
                 />
               </div>
             ))}

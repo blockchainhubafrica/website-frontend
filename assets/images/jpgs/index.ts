@@ -6,7 +6,7 @@ import chidiebere from "./chidiebere.jpg";
 import ernest from "./ernest.jpg";
 import gospel from "./gospel.jpg";
 import richmond from "./richmond.jpg";
-import joshua from "./joshua.jpg";
+import joshua from "./joshua.jpeg";
 import atoms from "./atoms.jpeg";
 import chukky from "./chukky.jpg";
 import featuredEventsImg1 from "./featuredEventsImg1.jpg";
