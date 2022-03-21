@@ -24,7 +24,7 @@ declare module "yup" {
 Yup.addMethod(Yup.string, "validMessage", function (errorMessage) {
   return this.test("message", errorMessage, function (value) {
     const { path, createError } = this;
-    return (value && getWordsLength(value) >= 1 && getWordsLength(value) <= 300) || createError({ path, message: errorMessage })
+    return (value && getWordsLength(value) >= 1) || createError({ path, message: errorMessage })
   })
 });
 
@@ -35,7 +35,7 @@ const validationSchema = Yup.object({
     .required("Email is required"),
   phone: Yup.string().required("Phone Number is required"),
   message: Yup.string().required("Message is required")
-    .validMessage("Message must be a minimum of 1 word and maximum of 300 words"),
+    .validMessage("Message must be a minimum of 1 word"),
 });
 
 const initialValues = {
@@ -129,7 +129,7 @@ function ContactForm() {
           type="submit"
           className={`${styles.submit} font-coolvetica justify-center flex items-center py-3 px-6`}
         >
-          <span className="mr-3">Register</span>
+          <span className="mr-3">Send Message</span>
           <span>
             <TopRightArrowIcon />
           </span>

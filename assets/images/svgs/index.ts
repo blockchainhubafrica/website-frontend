@@ -19,6 +19,7 @@ import Calendar from "./calendar.svg";
 import TangledArrow from "./tangledArrow.svg";
 import Ellipse from "./ellipse.svg";
 import LinkIcon from "./link.svg";
+import Close from "./close.svg";
 
 export {
   LogoIcon,
@@ -42,4 +43,5 @@ export {
   TangledArrow,
   Ellipse,
   LinkIcon,
+  Close,
 };

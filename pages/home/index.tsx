@@ -10,6 +10,7 @@ import {
   PeopleMapSvg,
   VestHubLogoSrc,
   XendLogoSrc,
+  VideoBackdropSrc,
 } from "../../assets/images";
 
 import {
@@ -22,9 +23,9 @@ import {
   Products,
   StorySection,
   TestimonialSection,
+  Video,
 } from "../../components";
 
-import Video from "./components/Video";
 import WhatWeOffer from "./components/WhatWeOffer";
 import styles from "./home-page.module.css";
 
@@ -85,8 +86,13 @@ function HomePage() {
           </div>
         </section>
         <section className={``}>
-          <div className="container pt-5 lg:pt-0">
-            <Video />
+          <div
+            className={`container pt-5 lg:pt-0 ${styles["video-container"]}`}
+          >
+            <Video
+              videoUrl="https://www.youtube.com/embed/cM2odHdOkfw"
+              imageUrl={VideoBackdropSrc}
+            />
           </div>
         </section>
         <section className="md:container py-28 lg:pt-0">
