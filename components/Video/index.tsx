@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import { PlayIcon, VideoBackdropSrc } from "../../../../assets/images";
+import { PlayIcon } from "../../assets/images";
 import styles from "./video.module.css";
-import { CloudinaryImage } from "../../../../components";
+import { CloudinaryImage } from "..";
 
-function Video() {
-  const [hasLoaded, setHasLoaded] = useState(false);
-  const [hasClicked, setHasClicked] = useState(false);
+const Video: React.FC<{ videoUrl: string; imageUrl: string }> = ({
+  videoUrl,
+  imageUrl,
+}) => {
+  const [hasLoaded, setHasLoaded] = useState<boolean>(false);
+  const [hasClicked, setHasClicked] = useState<boolean>(false);
 
   let loadingClass = styles["loader-circle"];
   if (hasClicked) loadingClass += ` ${styles["loading"]}`;
@@ -17,7 +20,7 @@ function Video() {
       <div className={styles["loader-body"]}>
         {!hasLoaded && (
           <>
-            <CloudinaryImage src={VideoBackdropSrc} width={1500} height={756} />
+            <CloudinaryImage src={imageUrl} width={1500} height={756} />
             <div className={styles["loader"]}>
               <div className={loadingClass}></div>
               <button
@@ -43,7 +46,7 @@ function Video() {
             }
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/cM2odHdOkfw"
+            src={videoUrl}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -54,6 +57,6 @@ function Video() {
       </div>
     </div>
   );
-}
+};
 
-export default Video;
+export { Video };
