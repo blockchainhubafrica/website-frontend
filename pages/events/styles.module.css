@@ -169,7 +169,7 @@
 
 .dropdown-list {
   position: absolute;
-  top: 100%;
+  top: 107%;
   left: -1.5px;
   right: -1.5px;
   background: var(--app-white);
@@ -177,6 +177,7 @@
   max-height: 200px;
   overflow-y: scroll;
   z-index: 20;
+  border-radius: 0px 10px;
 }
 
 .dropdown-list::-webkit-scrollbar {

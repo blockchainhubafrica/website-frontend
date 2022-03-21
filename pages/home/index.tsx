@@ -104,10 +104,9 @@ function HomePage() {
             </div>
             <div>
               <p className="text-base  lg:text-xl 2xl:text-2xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus,
-                odio non nunc eu. Adipiscing in neque mi nunc euismod morbi
-                interdum. Vel orci est sodales in interdum quisque. Purus leo
-                porta volutpat adipiscing scelerisque id porttitor arcu.
+                The web3 space in Africa, is in dire need of talent and there is
+                little or no supply to match the demand of web3 talents in
+                africa. This is what we are trying to solve.
               </p>
             </div>
           </div>

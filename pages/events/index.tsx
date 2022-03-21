@@ -137,17 +137,21 @@ export default function EventsPage() {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-10 xl:gap-20">
             <div className={`bg-orange ${styles["video-container"]}`}>
               <Video
-                videoUrl="https://www.youtube.com/embed/bU9DysEVTFU"
+                videoUrl="https://www.youtube.com/embed/oTnTX0tdohA"
                 imageUrl={VideoBackdropSrc}
               />
             </div>
             <div className="bg-blackd">
               <h3 className="mb-4">About the event</h3>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam
-                odio quas nemo eius, dicta distinctio dolorem repellat incidunt
-                optio unde odit suscipit dolore fugiat, provident officia
-                commodi ducimus, voluptas nihil!
+                Blockchain developers Conference 2021 was our first dev
+                conference, and the first blockchain developers conference in
+                Nigeria, that aimed at introducing a lot of web2 developers into
+                the web3 ecosystem. The event was held in Coal City, Enugu
+                State, Nigeria; attracted more than 300 persons from more than
+                three continents learning and connecting for about eight hours.
+                It was so successful and has led to more projects that will be
+                shared here over time.
               </p>
               <div className="mt-10">
                 <h3 className="mb-4">Event breakdown</h3>

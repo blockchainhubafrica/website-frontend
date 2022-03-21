@@ -85,12 +85,34 @@
 
 .container .article .body-text small {
     color: var(--app-white);
-    /* font-size: 0.25rem; */
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 10px;
+    letter-spacing: 0.5em;
+}
+
+.container .article .body-text.latest small.latest {
+    background-color: var(--app-blue-400);
+}
+
+.container .article .body-text.latest small.popular {
+    color: var(--app-blue-600);
+    background-color: var(--app-green-200);
+}
+
+.container .article .body-text.latest small.casual {
+    background-color: var(--app-blue-200);
 }
 
 .container .button-container {
     display: flex;
     justify-content: flex-end;
+}
+
+.button-container button {
+    padding: 25px;
+    background: #b3c7ff;
+    border-radius: 50%;
 }
 
 
@@ -121,20 +143,24 @@
 .detail-container .body .img {
     height: 354px !important;
     width: 100% !important;
-    padding: 50px 0 !important;
+    padding: 60px 0 !important;
 }
 
 .detail-container .button-container {
     width: 100%;
 }
 
-
-
-.button-container button {
+.detail-container .button-container button {
     padding: 25px;
-    background: #b3c7ff;
+    border: 1px solid var(--app-blue-400);
     border-radius: 50%;
+    background: transparent;
 }
+
+.detail-container .button-container button svg path {
+    fill: var(--app-blue-400);
+}
+
 
 .button-container button:hover {
     transform: scale(1.15);

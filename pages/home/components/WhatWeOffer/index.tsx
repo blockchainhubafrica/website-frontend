@@ -20,13 +20,13 @@ function WhatWeOffer() {
       <div className={`${styles["glowing-ellipse"]}`}></div>
       <div className={`container`}>
         <h2 className="spaced-heading text-blue-300 mb-6">What we offer</h2>
-        <h3 className="text-3xl md:text-5xl text-white font-coolvetica md:w-2/5 mb-10">
+        <h3 className="text-3xl md:text-5xl text-white font-coolvetica md:w-3/5 lg:w-4/5 xl:w-3/5 2xl:w-2/5 mb-10">
           World class Web3 Services from World class Web3 Talents.
         </h3>
         <div style={{ maxWidth: "160px" }}>
           <Button buttonType="tertiary" text="Hire Us" />
         </div>
-        <div className="grid md:grid-cols-2 gap-12 mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
           <div onMouseEnter={() => setactiveCard(1)} className={cardClass(1)}>
             <div className="flex gap-x-5 xmd:gap-x-10 items-center">
               <div className="">
@@ -34,9 +34,8 @@ function WhatWeOffer() {
                   Web 3 Product design UI/UX
                 </h4>
                 <p className="text-base ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lacus, odio non nunc eu. Adipiscing in neque mi nunc euismod
-                  morbi interdum.
+                  With adoption as our main goal, we offer clean, simple and
+                  easy to use interfaces for your web3 products.
                 </p>
               </div>
               <div className="hidden md:block">
@@ -51,9 +50,8 @@ function WhatWeOffer() {
                   Blockchain Apps
                 </h4>
                 <p className="text-base ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lacus, odio non nunc eu. Adipiscing in neque mi nunc euismod
-                  morbi interdum.
+                  We build full scale blockchain Dapps that are customised for
+                  each clients purpose.
                 </p>
               </div>
               <div className="hidden md:block">
@@ -68,9 +66,8 @@ function WhatWeOffer() {
                   Dapp Frontend Dev.
                 </h4>
                 <p className="text-base ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lacus, odio non nunc eu. Adipiscing in neque mi nunc euismod
-                  morbi interdum.
+                  We offer Front end implementation or scaling of Dapps that are
+                  customised for each clients purposes.
                 </p>
               </div>
               <div className="hidden md:block">
@@ -85,9 +82,8 @@ function WhatWeOffer() {
                   Smart Contract Dev.
                 </h4>
                 <p className="text-base ">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lacus, odio non nunc eu. Adipiscing in neque mi nunc euismod
-                  morbi interdum.
+                  We write Immutable smart contracts that are foul proof and
+                  secure.
                 </p>
               </div>
               <div className="hidden md:block">
