@@ -12,7 +12,6 @@
 
 .container .social-section .social-icons a {
   display: block;
-  /* width: fit-content; */
   width: 100%;
 }
 
@@ -31,7 +30,6 @@
 }
 
 .container .social-heading {
-  /* letter-spacing: var(--app-letter-spacing-md); */
   color: var(--app-blue-400);
   font-family: var(--app-secondary-font);
 }
@@ -46,6 +44,13 @@
   text-decoration-color: var(--app-blue-100);
   text-decoration-thickness: 0.8px;
   letter-spacing: 0.6px;
+}
+
+.container .footer-section > div > div:first-child a {
+  /* text-decoration: underline;
+  text-decoration-color: var(--app-blue-100);
+  text-decoration-thickness: 0.8px;
+  letter-spacing: 0.6px; */
 }
 
 .container .footer-section .logo svg path {
@@ -77,12 +82,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-  }
-
   .container .social-section {
     border: var(--app-blue-400) 0.6px solid;
-    /* border-top: 60px; */
     border-right: none;
     border-left: none;
   }
@@ -125,7 +126,6 @@
 button.scroll-to-top:focus,
 button.scroll-to-top:hover {
   transition: 0.2s ease-in-out;
-  /* background-color: var(--app-orange) !important; */
   box-shadow: rgb(0 67 255 / 60%) 0px 0px 100px 0px;
 }
 

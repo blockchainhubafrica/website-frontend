@@ -93,7 +93,7 @@ function StorySection() {
           >
             Leading blockchain innovations from Africa
           </h3>
-          <p className={`${styles["story-description"]} text-sm mb-12`}>
+          <p className={`${styles["story-description"]} text-base lg:text-xl mb-12`}>
             Every idea begins with a problem. For us, it was simple: As web3
             expands, Africa is at a disadvantage of being left behind. As early
             adopters of blockchain, we have had a first hand experience of the
