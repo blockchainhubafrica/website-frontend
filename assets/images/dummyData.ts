@@ -85,17 +85,18 @@ export const theTeam = [
     image: joshua,
   },
   // { name: "Emmanuel", title: "Co-founder & Blockchain Business Developer", image: "" },
-  {
-    name: "Atoms",
-    title: "Senior Mobile Developer & Design Lead",
-    image: atoms,
-  },
+  { name: "Chukky", title: "CTO & Senior Blockchain Engr.", image: chukky },
   {
     name: "Chidiebere",
     title: "Ass. CTO & Blockchain Developer",
     image: chidiebere,
   },
-  { name: "Chukky", title: "CTO & Senior Blockchain Engr.", image: chukky },
+  { name: "Deborah", title: "Visual Creative Designer", image: deborah },
+  {
+    name: "Atoms",
+    title: "Mobile Developer Lead",
+    image: atoms,
+  },
   {
     name: "Chiemezie",
     title: "Senior Product Designer",
@@ -103,7 +104,6 @@ export const theTeam = [
   },
   { name: "Ernest", title: "Frontend Engineer", image: ernest },
   { name: "Gospel", title: "Frontend Engineer", image: gospel },
-  { name: "Deborah", title: "Visual Creative Designer", image: deborah },
   { name: "Ifeoma", title: "Web3 Content Strategist", image: ifeoma },
 ];
 
