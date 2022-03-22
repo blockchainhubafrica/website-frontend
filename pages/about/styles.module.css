@@ -54,19 +54,24 @@
   font-size: 1rem;
 }
 
+.vision-mission-card.active,
 .vision-mission-card:hover,
-.stats-card:hover {
+.stats-card:hover,
+.stats-card.active {
   background: var(--app-blue-400);
   transition: 0.9s;
   box-shadow: rgba(0, 0, 252, 0.4) 0px 0px 40px 0px;
 }
 
-.vision-mission-card:hover h3 {
+.vision-mission-card:hover h3,
+.vision-mission-card.active h3 {
   color: var(--app-orange);
 }
 
 .vision-mission-card:hover p,
-.stats-card:hover * {
+.vision-mission-card.active p,
+.stats-card:hover *,
+.stats-card.active * {
   color: var(--app-white);
 }
 

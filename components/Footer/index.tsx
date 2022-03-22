@@ -132,9 +132,9 @@ function Footer() {
             >
               <Link href="/contact">Contact Us</Link>
             </span>
-            <span className={`${activeRouteClass("/careers")} col-span-1 px-0`}>
+            {/* <span className={`${activeRouteClass("/careers")} col-span-1 px-0`}>
               <Link href="/careers">Careers</Link>
-            </span>
+            </span> */}
           </div>
 
           <div
