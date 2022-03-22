@@ -12,7 +12,6 @@ import TwitterIcon from "./twitter.svg";
 import YoutubeIcon from "./youtube.svg";
 import CircleTextIcon from "./circle-text.svg";
 import CircleArrowIcon from "./circle-arrow.svg";
-import PeopleMapSvg from "./people-map.svg";
 import PlayIcon from "./play-icon.svg";
 import NearLogo from "./near-logo.svg";
 import Calendar from "./calendar.svg";
@@ -36,7 +35,6 @@ export {
   YoutubeIcon,
   CircleTextIcon,
   CircleArrowIcon,
-  PeopleMapSvg,
   PlayIcon,
   NearLogo,
   Calendar,
