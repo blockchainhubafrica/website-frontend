@@ -31,6 +31,10 @@ const NduImageSrc =
 const BeimaImageSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647705081/Company-website/beima_jndjti.png";
 
+  const PeopleImageSrc =
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647705081/Company-website/beima_jndjti.png";
+
+
 export {
   VideoBackdropSrc,
   XendLogoSrc,

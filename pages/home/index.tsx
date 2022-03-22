@@ -11,6 +11,7 @@ import {
   VestHubLogoSrc,
   XendLogoSrc,
   VideoBackdropSrc,
+  peopleGif,
 } from "../../assets/images";
 
 import {
@@ -75,8 +76,9 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            <div className={`md:col-span-2 ${styles["people-svg"]}`}>
-              <PeopleMapSvg />
+            <div className={`md:col-span-2 ${styles["people-svg"]} fix-img-height`}>
+              <CloudinaryImage src={peopleGif.src} width={731} height={695} />
+              {/* <PeopleMapSvg /> */}
             </div>
           </div>
           <div

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   demoEventsData,
   TangledArrow,
   theTeam,
   values,
 } from "../../assets/images";
+
 import {
   Achievements,
   Button,
@@ -14,9 +15,27 @@ import {
   Marquee,
   ValuesCard,
 } from "../../components";
+
 import styles from "./styles.module.css";
 
 export default function AboutUs() {
+  const [activeVisionCard, setactiveVisionCard] = useState<number>(1);
+  const [activeStatsCard, setactiveStatsCard] = useState<number>(1);
+
+  const visionCardClass = (currentCard: number) => {
+    if (activeVisionCard === currentCard)
+      return `${styles["vision-mission-card"]} ${styles["active"]} py-8 px-6 md:py-10 md:px-8 xl:py-20 xl:px-12`;
+
+    return `${styles["vision-mission-card"]} py-8 px-6 md:py-10 md:px-8 xl:py-20 xl:px-12`;
+  };
+
+  const statsCardClass = (currentCard: number) => {
+    if (activeStatsCard === currentCard)
+      return `${styles["stats-card"]} ${styles["active"]}`;
+
+    return `${styles["stats-card"]}`;
+  };
+
   return (
     <main className={styles["container"]}>
       <section className={`${styles["first-section"]} mb-12 md:mb-24 xl:mb-32`}>
@@ -25,7 +44,7 @@ export default function AboutUs() {
             <div className="flex justify-between my-12 md:my-16 lg:my-20">
               <div className="md:w-8/12 lg:w-7/12 xl:w-8/12">
                 <h1 className="text-blue-600">
-                  Building Web3 <span>Talents</span> and{" "}
+                  Building Web3 <span>Talents</span> and
                   <span>Innovations</span>
                 </h1>
               </div>
@@ -35,7 +54,8 @@ export default function AboutUs() {
             </div>
             <div className="grid md:grid-cols-2 gap-10 md:gap-3">
               <div
-                className={`${styles["vision-mission-card"]} py-8 px-6 md:py-10 md:px-8 xl:py-20 xl:px-12`}
+                onMouseEnter={() => setactiveVisionCard(1)}
+                className={visionCardClass(1)}
               >
                 <h3>Our Mission</h3>
                 <p className="mt-6">
@@ -47,7 +67,8 @@ export default function AboutUs() {
                 </p>
               </div>
               <div
-                className={`${styles["vision-mission-card"]} py-8 px-6 md:py-10 md:px-8 xl:py-20 xl:px-12`}
+                onMouseEnter={() => setactiveVisionCard(2)}
+                className={visionCardClass(2)}
               >
                 <h3>Our Vision</h3>
                 <p className="mt-6">
@@ -96,19 +117,31 @@ export default function AboutUs() {
           <div className="pb-12 md:pb-16 xl:pb-20">
             <div className="grid md:grid-cols-2 gap-10 md:gap-8 lg:gap-14 xl:gap-24">
               <div className="grid grid-cols-2 gap-y-5 gap-x-3">
-                <div className={styles["stats-card"]}>
+                <div
+                  onMouseEnter={() => setactiveStatsCard(1)}
+                  className={statsCardClass(1)}
+                >
                   <h5>200</h5>
                   <h6>People Trained</h6>
                 </div>
-                <div className={styles["stats-card"]}>
+                <div
+                  onMouseEnter={() => setactiveStatsCard(2)}
+                  className={statsCardClass(2)}
+                >
                   <h5>$12M+</h5>
                   <h6>Assets Managed</h6>
                 </div>
-                <div className={styles["stats-card"]}>
+                <div
+                  onMouseEnter={() => setactiveStatsCard(3)}
+                  className={statsCardClass(3)}
+                >
                   <h5>50+</h5>
                   <h6>Clubs Raised</h6>
                 </div>
-                <div className={styles["stats-card"]}>
+                <div
+                  onMouseEnter={() => setactiveStatsCard(4)}
+                  className={statsCardClass(4)}
+                >
                   <h5>10+</h5>
                   <h6>Apps Developed</h6>
                 </div>
