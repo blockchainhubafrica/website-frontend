@@ -37,29 +37,31 @@
   position: absolute;
   right: -165px;
   margin-top: -10px;
+  width: 307px;
+  height: 321px;
 }
 
-.container .people-svg svg {
+.container .people-svg > span {
   position: relative;
   right: 20px;
-  margin-top: 20px;
+  margin-top: 20px !important;
   transform: rotate(18deg);
 }
 
 @media screen and (min-width: 640px) {
-  .container .people-svg svg {
+  .container .people-svg > span {
     right: 40px;
-    margin-top: 20px;
+    margin-top: 20px !important;
     transform: rotate(0deg);
     transform: scale(1.2);
   }
 }
 
 @media screen and (min-width: 768px) {
-  .container .people-svg svg {
+  .container .people-svg > span {
     position: relative;
     right: 70px;
-    margin-top: 60px;
+    margin-top: 60px !important;
     transform: scale(1.5);
   }
 }
@@ -67,11 +69,10 @@
   .container .people-svg {
     display: flex;
     align-items: center;
-    position: static;
-    right: auto;
-    margin-top: -0px;
+    position: relative;
+    margin-top: 25px;
   }
-  .container .people-svg svg {
+  .container .people-svg > span {
     position: absolute;
     right: 110px;
     margin-top: 20px;
@@ -84,10 +85,10 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .container .people-svg svg {
+  .container .people-svg > span {
     position: absolute;
-    right: 180px;
-    margin-top: 50px;
+    right: 60px;
+    margin-top: 130px !important;
     transform: scale(2);
   }
 }
@@ -97,15 +98,24 @@
     position: relative;
     bottom: 180px;
   }
-  .container .people-svg svg {
+  .container .people-svg > span {
     position: absolute;
-    right: 300px;
-    margin-top: 50px;
+    right: 20px;
+    margin-top: 140px !important ;
   }
 }
 
 @media screen and (min-width: 1536px) {
-  .container .people-svg svg {
+  .container .people-svg > span {
+    transform: scale(2.2);
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .container .people-svg > span {
+    position: absolute;
+    right: -80px;
+    margin-top: 140px !important ;
     transform: scale(2.2);
   }
 }
@@ -114,26 +124,8 @@
   .container .people-svg {
     justify-content: flex-end;
   }
-  .container .people-svg svg {
+  .container .people-svg > span {
     position: static;
-  }
-}
-
-.container .people-svg svg g {
-  animation: goUpAndDown 1.5s linear infinite;
-}
-
-@keyframes goUpAndDown {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-15px);
-  }
-
-  100% {
-    transform: translateY(0px);
   }
 }
 

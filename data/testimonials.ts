@@ -21,17 +21,17 @@ export const testimonials: Testimonial = [
     headshot: TestimonialHeadshot1,
   },
   {
-    name: "Katherine Jenna",
-    role: "Chairman of App Finance",
+    name: "Clement Hugbo",
+    role: "CEO/Co-Founder Crevatal",
     title: "Generated Over $100M+ from our App",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros ipsum adipiscing mattis ultricies ornare malesuada placerat. Urna ipsum nulla ac nibh id vel placerat. Cursus morbi tellus ultricies egestas ut pharetra.",
+    desc: "I love what the amazing team at Blockchain Hub is building, tackling one of the major issues in the blockchain space. I have had the opportunity to work/speak with the team, and I must say that the team is on fire.",
     headshot: TestimonialHeadshot2,
   },
   {
-    name: "Bruce  Barner",
-    role: "Chairman of App Finance",
+    name: "Mr. Tony Emeka",
+    role: "CEO, CryptoTvPlus.",
     title: "Generated Over $100M+ from our App",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros ipsum adipiscing mattis ultricies ornare malesuada placerat. Urna ipsum nulla ac nibh id vel placerat. Cursus morbi tellus ultricies egestas ut pharetra.",
+    desc: "We were part of the sponsors for the last Blockchain Developers Conference that was organised by Blockchain Hub Africa, and were honestly impressed with the team, and what they are building.",
     headshot: TestimonialHeadshot3,
   },
 ];

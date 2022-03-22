@@ -21,16 +21,16 @@ export const demoProductsData = [
     image: NduImageSrc,
     title: "Ndu",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam volutpat nibh nulla donec rutrum morbi. Sapien pulvinar eget",
-    link: "https://www.google.com",
+      "Ndu combines the decentralized power of the Blockchain to eradicate fake and counterfeit drugs. Users can be able to check counterfeit drugs and earn while doing that.",
+    link: "http://local-ndu.vercel.app",
     size: { width: 862, height: 752 },
   },
   {
     image: BeimaImageSrc,
     title: "Beima",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam volutpat nibh nulla donec rutrum morbi. Sapien pulvinar eget",
-    link: "https://www.google.com",
+      "Beima helps users secure their future with a transparent and high yielding interest pension plan that is truly theirs. Beima is the Future of Personal and Corporate finance",
+    link: "https://beima.app",
     size: { width: 868, height: 752 },
   },
 ];
@@ -52,9 +52,9 @@ export const demoEventsData = [
 
 export const achievementData = [
   {
-    name: "1st position at Binance Hackathon, 2020",
+    name: "Partnership with Buildspace to run a Web3 Internship",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam veritatis aperiam sapiente aut officia, facilis vitae perspiciatis rerum unde quaerat! Officiis, sunt tenetur est",
+      "Blockchain Hub is Proud to announce a partnership with BuildSpace to grow web3 developers in Africa",
     link: "/",
     image: achievementImage,
   },
@@ -66,9 +66,9 @@ export const achievementData = [
     image: achievementImage,
   },
   {
-    name: "1st position Polygon Hackathon, 2022",
+    name: "Hosted the first blockchain conference in the south-east",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam veritatis aperiam sapiente aut officia, facilis vitae perspiciatis rerum unde quaerat! Officiis, sunt tenetur est",
+      "Blockchain developers Conference 2021 was our first dev conference, and the first blockchain developers conference in Nigeria, that aimed at introducing a lot of web2 developers into the web3 ecosystem",
     link: "/",
     image: achievementImage,
   },
@@ -96,15 +96,19 @@ export const theTeam = [
     title: "Ass. CTO & Blockchain Developer",
     image: chidiebere,
   },
+  { name: "Deborah", title: "Visual Creative Designer", image: deborah },
+  {
+    name: "Atoms",
+    title: "Mobile Developer Lead",
+    image: atoms,
+  },
   {
     name: "Chiemezie",
     title: "Senior Product Designer",
     image: richmond,
   },
-  { name: "Deborah", title: "Visual Creative Designer", image: deborah },
-  { name: "Atoms", title: "Mobile Engineer", image: atoms },
-  { name: "Ernest", title: "Front-end Engineer", image: ernest },
-  { name: "Gospel", title: "Fron-end Engineer", image: gospel },
+  { name: "Ernest", title: "Frontend Engineer", image: ernest },
+  { name: "Gospel", title: "Frontend Engineer", image: gospel },
   { name: "Ifeoma", title: "Web3 Content Strategist", image: ifeoma },
 ];
 

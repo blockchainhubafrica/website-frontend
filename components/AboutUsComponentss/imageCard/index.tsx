@@ -21,6 +21,7 @@ const ImageCard: React.FC<{
           height={455}
           width={323}
           objectFit="cover"
+          quality={100}
         />
       ) : (
         ""

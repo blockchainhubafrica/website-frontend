@@ -57,7 +57,7 @@ const availableTopics = [
   { title: "Others", value: "others" },
 ]
 
-function ContactForm() {
+function ContactForm({ showTopics = true }) {
   // State management
   const [topics, setTopics] = useState(intialTopics);
 
@@ -84,14 +84,14 @@ function ContactForm() {
 
   return (
     <form onSubmit={formik.handleSubmit} className={`${styles["container"]} md:px-10`}>
-      <div className={`${styles["topics"]} flex mb-20 flex-wrap gap-6`}>
+      {showTopics && <div className={`${styles["topics"]} flex mb-20 flex-wrap gap-6`}>
         {availableTopics.map(topic => (
           <div key={topic.value} className={`${topicIsSelected(topic.value) ? styles["active"] : ""} flex items-center`}>
             <button type="button" autoFocus={false} onClick={() => handleClick(topic.value)}><span className="block"></span></button>
             <span className="ml-2 md:text-2xl">{topic.title}</span>
           </div>
         ))}
-      </div>
+      </div>}
       <div>
         <Input
           name="name"
