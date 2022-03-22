@@ -7,6 +7,9 @@ module.exports = {
 
     return config;
   },
+  env: {
+    BACKEND_URL: process.env.NEXT_PUBLIC_BACKEND_BASE_URL,
+  },
   images: {
     domains: ["res.cloudinary.com"],
   },

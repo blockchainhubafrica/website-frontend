@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
+
+
 type appContextType = {
   isRegistrationFormActive: boolean;
   setIsRegistrationFormActive: (formState: boolean) => void;
