@@ -1,10 +1,11 @@
-import { achievementImage, eventTestImage } from "./pngs";
+import { achievementImage } from "./pngs";
 import { NduImageSrc, BeimaImageSrc } from "./cloudinary";
 import {
   atoms,
   chidiebere,
   chukky,
   deborah,
+  emmanuel,
   ernest,
   event2022A,
   event2022B,
@@ -84,7 +85,11 @@ export const theTeam = [
     title: "Co-founder & Product Manager - Blockchain Dev.",
     image: joshua,
   },
-  // { name: "Emmanuel", title: "Co-Founder, Money magnet", image: "" },
+  {
+    name: "Emmanuel",
+    title: "Co-founder & Blockchain Business Developer",
+    image: emmanuel,
+  },
   { name: "Chukky", title: "CTO & Senior Blockchain Engr.", image: chukky },
   {
     name: "Chidiebere",
