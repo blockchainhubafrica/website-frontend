@@ -4,8 +4,12 @@ import {
   atoms,
   chidiebere,
   chukky,
+  deborah,
   ernest,
+  event2022A,
+  event2022B,
   gospel,
+  ifeoma,
   joshua,
   richmond,
   uchenna,
@@ -32,94 +36,16 @@ export const demoProductsData = [
 
 export const demoEventsData = [
   {
-    image: eventTestImage,
-    name: "Blockchain Conference '18",
-    link: "https://www.google.com",
-    year: "2018",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (2) '18",
-    link: "https://www.google.com",
-    year: "2018",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (3) '18",
-    link: "https://www.google.com",
-    year: "2018",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '19",
-    link: "https://www.google.com",
-    year: "2019",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (2) '19",
-    link: "https://www.google.com",
-    year: "2019",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '20",
-    link: "https://www.google.com",
-    year: "2020",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (2) '20",
-    link: "https://www.google.com",
-    year: "2020",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '21",
-    link: "https://www.google.com",
-    year: "2021",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (2) '21",
-    link: "https://www.google.com",
-    year: "2021",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (3) '21",
-    link: "https://www.google.com",
-    year: "2021",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '22",
-    link: "https://www.google.com",
+    image: event2022B,
+    name: "Web3 dev. Bootcamp '22",
+    link: "",
     year: "2022",
   },
   {
-    image: eventTestImage,
-    name: "Blockchain Conference (2) '22",
-    link: "https://www.google.com",
+    image: event2022A,
+    name: "Developer Conference '22",
+    link: "",
     year: "2022",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '23",
-    link: "https://www.google.com",
-    year: "2023",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (2)'23",
-    link: "https://www.google.com",
-    year: "2023",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '24",
-    link: "https://www.google.com",
-    year: "2024",
   },
 ];
 
@@ -148,22 +74,28 @@ export const achievementData = [
 ];
 
 export const theTeam = [
-  { name: "Uchenna", title: "Co-founder & CEO - Smart Contract Engr.", image: uchenna },
+  {
+    name: "Uchenna",
+    title: "Co-founder & CEO - Smart Contract Engr.",
+    image: uchenna,
+  },
   {
     name: "Joshua",
     title: "Co-founder & Product Manager - Blockchain Dev.",
     image: joshua,
   },
   // { name: "Emmanuel", title: "Co-founder & Blockchain Business Developer", image: "" },
-  { name: "Atoms", title: "Senior Mobile Developer & Design Lead", image: atoms },
-  // { name: "Deborah", title: "Visual Creative Designer", image: "" },
+  {
+    name: "Atoms",
+    title: "Senior Mobile Developer & Design Lead",
+    image: atoms,
+  },
   {
     name: "Chidiebere",
     title: "Ass. CTO & Blockchain Developer",
     image: chidiebere,
   },
   { name: "Chukky", title: "CTO & Senior Blockchain Engr.", image: chukky },
-  // { name: "Ifeoma", title: "Web3 Content Strategist", image: "" },
   {
     name: "Chiemezie",
     title: "Senior Product Designer",
@@ -171,6 +103,8 @@ export const theTeam = [
   },
   { name: "Ernest", title: "Frontend Engineer", image: ernest },
   { name: "Gospel", title: "Frontend Engineer", image: gospel },
+  { name: "Deborah", title: "Visual Creative Designer", image: deborah },
+  { name: "Ifeoma", title: "Web3 Content Strategist", image: ifeoma },
 ];
 
 export const values = [

@@ -41,9 +41,18 @@ const Events: React.FC<{ eventList: EventList[] }> = ({ eventList }) => {
               <Image src={event.image} layout="fill" />
               <div className={`${styles["text-container"]}`}>
                 <h1>{event.name}</h1>
-                <a href={event.link}>
+                <a
+                  href={event.link !== "" ? event.link : "javascript:void(0)"}
+                  style={event.link === "" ? { cursor: "not-allowed" } : {}}
+                >
                   <span>
-                    Register For Events <ArrowTilt className="ml-2" />
+                    {event.link !== "" ? (
+                      <span>
+                        Register For Events <ArrowTilt className="ml-2" />
+                      </span>
+                    ) : (
+                      "Coming Soon ♥"
+                    )}
                   </span>
                 </a>
               </div>

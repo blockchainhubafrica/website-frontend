@@ -24,6 +24,7 @@
   height: 300px;
   margin: 0 auto;
   z-index: 20;
+  background: var(--app-gray-600);
 }
 
 .image-slider .close {
@@ -137,13 +138,11 @@
   transition: 0.3s;
 }
 
-.featured-images-container > div:hover {
-  transform: scale(1.05);
-}
-
 .featured-images-container img {
+  display: block;
   object-fit: cover;
   border-radius: 5px;
+  background: var(--app-gray-600);
 }
 
 .dropdown {
@@ -178,7 +177,6 @@
   max-height: 200px;
   overflow-y: scroll;
   z-index: 20;
-  border-radius: 0px 10px;
 }
 
 .dropdown-list::-webkit-scrollbar {
@@ -280,6 +278,10 @@
 
   .image-slider button:last-of-type {
     right: -40px;
+  }
+
+  .featured-images-container > div:hover {
+    transform: scale(1.05);
   }
 
   .featured-events h2 {
