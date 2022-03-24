@@ -95,64 +95,67 @@ export default function BlogDetailPage() {
       ) : (
         ""
       )}
-
-      <section
-        className={`${styles["articles-container"]} pt-10`}
-        ref={containerRef}
-      >
-        <div className="md:py-10">
-          <div className={`${styles["article"]} mb-10`}>
-            <h3
-              className={`mb-4 pb-5 md:pb-10 text-3xl md:text-7xl font-coolvetica text-blue-600 lg:w-3/4`}
-            >
-              {article.title}
-            </h3>
-
-            <div className="flex py-5">
-              {/* Article menu */}
-              <div
-                className={`${styles["menu"]} sticky top-40 hidden md:block p-10 py-16`}
+      {articles.length ? (
+        <section
+          className={`${styles["articles-container"]} pt-10`}
+          ref={containerRef}
+        >
+          <div className="md:py-10">
+            <div className={`${styles["article"]} mb-10`}>
+              <h3
+                className={`mb-4 pb-5 md:pb-10 text-3xl md:text-7xl font-coolvetica text-blue-600 lg:w-3/4`}
               >
-                <div className="flex flex-col mb-8">
-                  <span className="mb-3">Article written by</span>
-                  <strong>{article.author}</strong>
-                </div>
-                <div className="flex flex-col mb-8">
-                  <span className="mb-3">Time of read</span>
-                  <strong>{article.readingTime} Minutes</strong>
-                </div>
-                <div className="flex flex-col mb-8">
-                  <span className="mb-3">Date posted</span>
-                  <strong>{formatDate(article.publishDate)}</strong>
-                </div>
-                <div className="flex flex-col mb-8">
-                  <span className="mb-3">Share</span>
-                  <div className={`${styles["share-icons"]} flex`}>
-                    <span className="mr-3">
-                      <DiscordIcon />
-                    </span>
-                    <span className="mr-3">
-                      <TwitterIcon />
-                    </span>
-                    <span className="mr-3">
-                      <TelegramIcon />
-                    </span>
-                    <span className="">
-                      <LinkIcon />
-                    </span>
+                {article.title}
+              </h3>
+
+              <div className="flex py-5">
+                {/* Article menu */}
+                <div
+                  className={`${styles["menu"]} sticky top-40 hidden md:block p-10 py-16`}
+                >
+                  <div className="flex flex-col mb-8">
+                    <span className="mb-3">Article written by</span>
+                    <strong>{article.author}</strong>
+                  </div>
+                  <div className="flex flex-col mb-8">
+                    <span className="mb-3">Time of read</span>
+                    <strong>{article.readingTime} Minutes</strong>
+                  </div>
+                  <div className="flex flex-col mb-8">
+                    <span className="mb-3">Date posted</span>
+                    <strong>{formatDate(article.publishDate)}</strong>
+                  </div>
+                  <div className="flex flex-col mb-8">
+                    <span className="mb-3">Share</span>
+                    <div className={`${styles["share-icons"]} flex`}>
+                      <span className="mr-3">
+                        <DiscordIcon />
+                      </span>
+                      <span className="mr-3">
+                        <TwitterIcon />
+                      </span>
+                      <span className="mr-3">
+                        <TelegramIcon />
+                      </span>
+                      <span className="">
+                        <LinkIcon />
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Article body */}
-              <div
-                className={`${styles["body"]} md:px-24`}
-                dangerouslySetInnerHTML={{ __html: article.content }}
-              ></div>
+                {/* Article body */}
+                <div
+                  className={`${styles["body"]} md:px-24`}
+                  dangerouslySetInnerHTML={{ __html: article.content }}
+                ></div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        ""
+      )}
     </main>
   );
 }

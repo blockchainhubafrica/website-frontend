@@ -10,6 +10,10 @@ async function UpdateBlogPost(body, id) {
   });
 }
 
+async function AddViewToBlogPost(id) {
+  return await httpService.post(`${route}/${id}`);
+}
+
 async function CreateBlogPost(body) {
   let bodyFormData = new FormData();
   for (let eachKey in body) bodyFormData.append(eachKey, body[eachKey]);
@@ -23,4 +27,4 @@ async function DeleteBlogPost(id) {
   return await httpService.delete(`${route}/${id}`);
 }
 
-export { UpdateBlogPost, CreateBlogPost, DeleteBlogPost };
+export { UpdateBlogPost, CreateBlogPost, AddViewToBlogPost, DeleteBlogPost };
