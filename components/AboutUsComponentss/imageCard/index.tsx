@@ -18,8 +18,8 @@ const ImageCard: React.FC<{
         <Image
           src={image}
           alt={name}
-          height={455}
-          width={323}
+          height={379}
+          width={269}
           objectFit="cover"
           quality={100}
         />
