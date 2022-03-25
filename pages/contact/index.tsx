@@ -24,13 +24,13 @@ export default function ContactUsPage() {
 
           <div className={`${styles["social-accounts"]} ml-auto pt-5`}>
             <p className="mb-3">
-              <span className="text-blue-400">Call &amp; whatsapp:</span>{" "}
-              <a target="_blank" href="https://wa.me/2349876543210">
-                +234(0)987 654 3210
+              <span className="text-blue-400">Call &amp; whatsapp:</span><br />
+              <a target="_blank" href="https://wa.me/23490876543210">
+                +234(0)9087 654 3210
               </a>
             </p>
             <p className="mb-3">
-              <span className="text-blue-400">Email:</span>{" "}
+              <span className="text-blue-400">Email:</span><br />
               <a target="_blank" href="mailto:info@blockchainhubafrica.com">
                 info@blockchainhubafrica.com
               </a>
