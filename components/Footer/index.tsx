@@ -106,7 +106,7 @@ function Footer() {
                 "/about"
               )} col-span-1 px-0 md:pr-6`}
             >
-              <Link href="/components">About Us</Link>
+              <Link href="/work">About Us</Link>
             </span>
             <span
               className={`${activeRouteClass("/work")} col-span-1 px-0 md:pr-6`}

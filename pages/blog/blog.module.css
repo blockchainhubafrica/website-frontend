@@ -1,4 +1,5 @@
 .container {
+  font-weight: 300 !important;
 }
 
 .container .featured-article {
@@ -187,5 +188,50 @@
 @media screen and (min-width: 1200px) {
   .container .article {
     height: 500px;
+  }
+}
+
+.detail-container h1 *,
+.detail-container h2 *,
+.detail-container h3 *,
+.detail-container h4 *,
+.detail-container h5 *,
+.detail-container h6 * {
+  font-family: var(--app-secondary-font) !important;
+}
+
+.detail-container .article .body p * {
+  font-weight: 400 !important;
+  font-size: 16px;
+}
+@media screen and (min-width: 640px) {
+  .detail-container h2 * {
+    font-weight: 400 !important;
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .detail-container h2 * {
+    font-weight: 400 !important;
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .detail-container h2 * {
+    font-weight: 400 !important;
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .detail-container .article .body p * {
+    font-weight: 400 !important;
+    font-size: 18px;
+  }
+  .detail-container h2 * {
+    font-weight: 400 !important;
+    font-size: 40px;
   }
 }

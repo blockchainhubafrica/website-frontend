@@ -22,7 +22,7 @@ export const demoProductsData = [
     title: "Ndu",
     description:
       "Ndu combines the decentralized power of the Blockchain to eradicate fake and counterfeit drugs. Users can be able to check counterfeit drugs and earn while doing that.",
-    link: "http://local-ndu.vercel.app",
+    link: "https://local-ndu.vercel.app",
     size: { width: 862, height: 752 },
   },
   {
