@@ -36,20 +36,21 @@ export default function BlogDetailPage() {
   const router = useRouter();
   console.log({ router, articles });
   const currentArticleSlug = router.query.bid;
-  
+
   // const currentArticle = articles.find(
   //   (article: ArticleType) => article.slug === currentArticleSlug
   //   )();
-    // if (isLoading || isError) return "";
-  const [activeArticle, setactiveArticle] =
-    useState<ArticleType>(articles[0]);
+  // if (isLoading || isError) return "";
+  const [activeIndex, setactiveIndex] = useState<number>(0);
 
+  const [activeArticle, setactiveArticle] = useState<ArticleType>(
+    articles[activeIndex]
+  );
   const subtract = (curr: any, num: number, min: number = 0) =>
     parseInt(curr) === min ? curr : parseInt(curr) - num;
 
   const add = (curr: any, num: number, max: number = 6) =>
     parseInt(curr) === max ? curr : parseInt(curr) + num;
-
 
   const [showLoader, setShowLoader] = useState<boolean>(true);
 
