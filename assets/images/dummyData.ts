@@ -1,5 +1,19 @@
 import { achievementImage, eventTestImage } from "./pngs";
-import { NduImageSrc, BeimaImageSrc } from "./cloudinary";
+import {
+  NduImageSrc,
+  BeimaImageSrc,
+  UcheNFTSrc,
+  JoshuaNFTSrc,
+  EmmanuelNFTSrc,
+  ChukkyNFTSrc,
+  ChidiNFTSrc,
+  AtomsNFTSrc,
+  IfeomaNFTSrc,
+  ErnestNFTSrc,
+  GospelNFTSrc,
+  DeborahNFTSrc,
+  ChimezieNFTSrc,
+} from "./cloudinary";
 import {
   atoms,
   chidiebere,
@@ -77,34 +91,42 @@ export const theTeam = [
   {
     name: "Uchenna",
     title: "Co-founder & CEO - Smart Contract Engr.",
-    image: uchenna,
+    image: UcheNFTSrc,
   },
   {
     name: "Joshua",
     title: "Co-founder & Product Manager - Blockchain Dev.",
-    image: joshua,
+    image: JoshuaNFTSrc,
   },
-  // { name: "Emmanuel", title: "Co-founder & Blockchain Business Developer", image: "" },
-  { name: "Chukky", title: "CTO & Senior Blockchain Engr.", image: chukky },
+  {
+    name: "Emmanuel",
+    title: "Co-founder & Blockchain Business Developer",
+    image: EmmanuelNFTSrc,
+  },
+  {
+    name: "Chukky",
+    title: "CTO & Senior Blockchain Engr.",
+    image: ChukkyNFTSrc,
+  },
   {
     name: "Chidiebere",
     title: "Ass. CTO & Blockchain Developer",
-    image: chidiebere,
+    image: ChidiNFTSrc,
   },
-  { name: "Deborah", title: "Visual Creative Designer", image: deborah },
+  { name: "Deborah", title: "Visual Creative Designer", image: DeborahNFTSrc },
   {
     name: "Atoms",
     title: "Mobile Developer Lead",
-    image: atoms,
+    image: AtomsNFTSrc,
   },
   {
     name: "Chiemezie",
     title: "Senior Product Designer",
-    image: richmond,
+    image: ChimezieNFTSrc,
   },
-  { name: "Ernest", title: "Frontend Engineer", image: ernest },
-  { name: "Gospel", title: "Frontend Engineer", image: gospel },
-  { name: "Ifeoma", title: "Web3 Content Strategist", image: ifeoma },
+  { name: "Ernest", title: "Frontend Engineer", image: ErnestNFTSrc },
+  { name: "Gospel", title: "Frontend Engineer", image: GospelNFTSrc },
+  { name: "Ifeoma", title: "Web3 Content Strategist", image: IfeomaNFTSrc },
 ];
 
 export const values = [
