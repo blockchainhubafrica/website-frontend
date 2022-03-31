@@ -14,7 +14,7 @@ interface Props {
 const Banner: React.FC<Props> = ({ children, isActive, onBannerIsActive }) => {
   return (
     <div className="bg-orange">
-      <div className="xmd:hidden relative">
+      {/* <div className="xmd:hidden relative">
         <Ticker offset={40} mode="chain">
           {({ index }) => (
             <div className={`${styles.container} py-4 text-sm`}>{children}</div>
@@ -26,7 +26,7 @@ const Banner: React.FC<Props> = ({ children, isActive, onBannerIsActive }) => {
         >
           <CircleCloseIcon />
         </button>
-      </div>
+      </div> */}
       <div className="hidden xmd:block relative">
         <div
           className={`${styles.container} py-2 container flex justify-center items-center gap-x-10 xmd:gap-x-0`}

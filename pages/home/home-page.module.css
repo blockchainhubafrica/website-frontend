@@ -79,6 +79,7 @@
   }
   .container .circle-banner {
     position: relative;
+    z-index: 0;
     bottom: 90px;
   }
 }

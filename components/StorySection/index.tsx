@@ -11,6 +11,7 @@ import {
   storySectionSlide2,
   storySectionSlide3,
 } from "../../assets/images/jpgs";
+import Link from "next/link";
 
 function StorySection() {
   const [activeIndex, setactiveIndex] = useState<number>(1);
@@ -95,13 +96,21 @@ function StorySection() {
           >
             Leading blockchain innovations from Africa
           </h3>
-          <p className={`${styles["story-description"]} mb-12`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, odio
-            non nunc eu. Adipiscing in neque mi nunc euismod morbi interdum.
+          <p
+            className={`${styles["story-description"]} text-base lg:text-xl mb-12`}
+          >
+            Every idea begins with a problem. <br /> For us, it was simple:{" "}
+            <br />
+            As web3 expands, Africa is at a disadvantage of being left behind.
+            This is why we have set out to expand Africa's web3 talent pipeline,
+            while building intuitive web3 products that simplify and drive
+            blockchain adoption for our clients.
           </p>
-          <div style={{ maxWidth: "180px" }}>
-            <Button buttonType="tertiary" text="Learn more" />
-          </div>
+          <Link href="/about" passHref>
+            <a style={{ maxWidth: "180px" }}>
+              <Button buttonType="tertiary" text="Learn more" />
+            </a>
+          </Link>
         </div>
       </div>
     </div>

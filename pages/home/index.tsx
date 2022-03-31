@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Ticker from "react-ticker";
 
@@ -48,7 +49,7 @@ function HomePage() {
       <main className={`${styles["container"]} `}>
         <section className={`${styles["page-1"]} pb-24 lg:pb-10`}>
           <div className="pl-5 lg:container grid   lg:grid-cols-5 py-10 md:py-20 lg:py-32">
-            <div className="w-4/5 md:w-full md:col-span-4 lg:col-span-3">
+            <div className="w-4/5 md:w-full md:col-span-4 lg:col-span-3 relative z-10">
               <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl xlg:text-8xl whitespace-nowrap gap-x-3 flex flex-wrap">
                 <span>Blockchain adoption </span>
                 <span className="px">through</span>
@@ -66,16 +67,22 @@ function HomePage() {
                 innovative blockchain-based solutions in Africa.
               </p>
               <div className="flex gap-x-5">
-                <div>
-                  <Button buttonType="primary" text="Learn More" />
-                </div>
-                <div>
-                  <Button buttonType="tertiary" text="Hire Us" />
-                </div>
+                <Link href="/about" passHref>
+                  <a>
+                    <Button buttonType="primary" text="Learn More" />
+                  </a>
+                </Link>
+                <Link href="/hire-us" passHref>
+                  <a>
+                    <Button buttonType="tertiary" text="Hire Us" />
+                  </a>
+                </Link>
               </div>
             </div>
-            <div className={`md:col-span-2 ${styles["people-svg"]}`}>
-              <PeopleMapSvg />
+            <div
+              className={`md:col-span-2 ${styles["people-svg"]} fix-img-height`}
+            >
+              <CloudinaryImage src={peopleGif.src} width={731} height={695} />
             </div>
           </div>
           <div
@@ -197,7 +204,7 @@ function HomePage() {
           </div>
         </section>
         <section className="pt-32 pb-16">
-          <StorySection />
+          {/* <StorySection /> */}
         </section>
         <section className="mb-20">
           <Marquee />
