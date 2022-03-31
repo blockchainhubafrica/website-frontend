@@ -66,7 +66,7 @@ export default function BlogPage() {
         <div className="flex flex-col col-span-2">
           <span className="font-coolvetica py-2 px-5">FEATURED ARTICLE</span>
           <h3 className="text-3xl md:text-5xl my-5 md:my-10">
-            {blogs.length && <Link href="#">{blogs[0].title}</Link>}
+            {blogs.length && <Link href={`/blog/${blogs[0].slug}`}>{blogs[0].title}</Link>}
           </h3>
           <span className="">
             {blogs.length && formatDate(blogs[0].publishDate)}{" "}

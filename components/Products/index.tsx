@@ -41,7 +41,7 @@ const Products = () => {
               </h1>
               <p className="">{data.description}</p>
               <div className="mt-6 lg:mt-12">
-                <a href={data.link}>
+                <a target={"_blank"} href={data.link}>
                   <span className="ml-1 md:ml-2">
                     View Project <ArrowTilt />
                   </span>
