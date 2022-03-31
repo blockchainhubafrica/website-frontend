@@ -7,8 +7,7 @@ const dataContext = createContext();
 
 export function DataProvider({ children }) {
   const router = useRouter();
-  const route = router.route;
- 
+  
   const { mutate, allData, isLoading, isError, isEmpty } = useData("token");
 
   return (

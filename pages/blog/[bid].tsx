@@ -12,51 +12,57 @@ import {
 } from "../../assets/images";
 import { useDataContext } from "../../contexts/dataContext";
 import { formatDate } from "../../utils/formatDate";
-import tinymce from "tinymce";
+
+type ArticleType = {
+  noOfViews: number;
+  altText: string;
+  _id: string;
+  title: string;
+  author: string;
+  readingTime: number;
+  content: string;
+  publishDate: string;
+  status: "draft" | "published";
+  url: string;
+  createdAt: string;
+  updatedAt: string;
+  slug: string;
+  type: string;
+};
+
 export default function BlogDetailPage() {
-  const { allData } = useDataContext();
-  const articles = allData.blog;
+  const { allData, isLoading, isError } = useDataContext();
+  const articles: ArticleType[] = allData.blog || [];
+  const router = useRouter();
+  console.log({ router, articles });
+  const currentArticleSlug = router.query.bid;
+  
+  // const currentArticle = articles.find(
+  //   (article: ArticleType) => article.slug === currentArticleSlug
+  //   )();
+    // if (isLoading || isError) return "";
+  const [activeArticle, setactiveArticle] =
+    useState<ArticleType>(articles[0]);
+
   const subtract = (curr: any, num: number, min: number = 0) =>
     parseInt(curr) === min ? curr : parseInt(curr) - num;
 
   const add = (curr: any, num: number, max: number = 6) =>
     parseInt(curr) === max ? curr : parseInt(curr) + num;
 
-  const getArticleDetail = (articlesList: any[], articleId: string) =>
-    articlesList.find((article) => article._id === articleId) ||
-    articlesList[0];
-  const router = useRouter();
-  const { query }: any = router;
 
-  const [article, setArticle] = useState(
-    query?.bid ? getArticleDetail(articles, query?.bid) : {}
-  );
   const [showLoader, setShowLoader] = useState<boolean>(true);
 
   const containerRef = useRef<HTMLElement | null>(null);
 
   // Handlers
   const goRight = () => {
-    router.push(`/blog/${add(query?.bid, 1, articles.length)}`);
+    // router.push(`/blog/${add(query?.bid, 1, articles.length)}`);
   };
 
   const goLeft = () => {
-    router.push(`/blog/${subtract(query?.bid, 1)}`);
+    // router.push(`/blog/${subtract(query?.bid, 1)}`);
   };
-
-  useEffect(() => {
-    setArticle(getArticleDetail(articles, query?.bid));
-
-    const timer = setTimeout(() => {
-      setShowLoader(false);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, [query?.bid]);
-
-  if (showLoader) {
-    return <Loader />;
-  }
 
   return (
     <main
@@ -66,7 +72,7 @@ export default function BlogDetailPage() {
         <div
           className={`${styles["button-container"]} flex mt-8 md-mt-14 w-full`}
         >
-          {parseInt(query?.bid) > 1 ? (
+          {articles.length > 1 ? (
             <div className="flex items-center">
               <button id="article-slider-btn-1" className="" onClick={goLeft}>
                 <RightArrowIcon style={{ transform: "rotate(180deg)" }} />
@@ -79,7 +85,7 @@ export default function BlogDetailPage() {
             ""
           )}
 
-          {parseInt(query?.bid) < articles.length ? (
+          {parseInt("1") < articles.length ? (
             <div className="flex items-center ml-auto">
               <h3 className={`spaced-heading text-base font-coolvetica mx-5`}>
                 NEXT
@@ -105,7 +111,7 @@ export default function BlogDetailPage() {
               <h3
                 className={`mb-4 pb-5 md:pb-10 text-3xl md:text-7xl font-coolvetica text-blue-600 lg:w-3/4`}
               >
-                {article.title}
+                {activeArticle.title}
               </h3>
 
               <div className="flex py-5">
@@ -115,15 +121,15 @@ export default function BlogDetailPage() {
                 >
                   <div className="flex flex-col mb-8">
                     <span className="mb-3">Article written by</span>
-                    <strong>{article.author}</strong>
+                    <strong>{activeArticle.author}</strong>
                   </div>
                   <div className="flex flex-col mb-8">
                     <span className="mb-3">Time of read</span>
-                    <strong>{article.readingTime} Minutes</strong>
+                    <strong>{activeArticle.readingTime} Minutes</strong>
                   </div>
                   <div className="flex flex-col mb-8">
                     <span className="mb-3">Date posted</span>
-                    <strong>{formatDate(article.publishDate)}</strong>
+                    <strong>{formatDate(activeArticle.publishDate)}</strong>
                   </div>
                   <div className="flex flex-col mb-8">
                     <span className="mb-3">Share</span>
@@ -147,7 +153,7 @@ export default function BlogDetailPage() {
                 {/* Article body */}
                 <div
                   className={`${styles["body"]} md:px-24`}
-                  dangerouslySetInnerHTML={{ __html: article.content }}
+                  dangerouslySetInnerHTML={{ __html: activeArticle.content }}
                 ></div>
               </div>
             </div>
