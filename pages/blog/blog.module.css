@@ -111,9 +111,9 @@
   justify-content: flex-end;
 }
 
-.button-container button {
+.button-container .article-btn {
   padding: 25px;
-  background: #b3c7ff;
+  cursor: pointer;
   border-radius: 50%;
   transition: 0.3s;
 }
@@ -122,12 +122,25 @@
   color: var(--app-blue-600);
 }
 
+.detail-container a {
+  color: var(--app-orange);
+}
+.detail-container h3 {
+  font-weight: 400 !important;
+}
+
+.detail-container a:hover {
+  text-decoration: underline;
+  color: var(--app-orange);
+}
+
 .detail-container .menu {
   width: 356px;
   min-width: 356px;
   height: fit-content;
   background-color: var(--app-gray-100);
   border-radius: 10px;
+  top: 12rem;
 }
 
 .detail-container .menu strong {
@@ -149,20 +162,23 @@
 
 .detail-container .button-container {
   width: 100%;
+  position: sticky;
+  top: 10rem;
+  z-index: 100;
 }
 
-.detail-container .button-container button {
+.detail-container .button-container .article-btn {
   padding: 25px;
   border: 1px solid var(--app-blue-400);
   border-radius: 50%;
-  background: transparent;
+  background: var(--app-white);
 }
 
-.detail-container .button-container button svg path {
+.detail-container .button-container .article-btn svg path {
   fill: var(--app-blue-400);
 }
 
-.button-container button:hover {
+.button-container .article-btn:hover {
   transform: scale(0.9);
 }
 

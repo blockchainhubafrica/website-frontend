@@ -5,10 +5,10 @@ const XendLogoSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648736454/Company-website/xend_y5nde2.png";
 
 const NearLogoSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648736370/Company-website/near_o9vstg.png";
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648761725/Company-website/near_gwidgk.png";
 
 const AcexLogoSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648736272/Company-website/acex_saegzo.png";
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648761726/Company-website/acex_h3vzls.png";
 
 const CasperLogoSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647059957/Company-website/casper-logo_wv1t84.png";
@@ -47,7 +47,7 @@ const ChukkyNFTSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648732454/Company-website/lucky_wlrge2.png";
 
 const ChidiNFTSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648737486/Company-website/chidi_orebhl.png";
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648737796/Company-website/chidi_rvkti5.jpg";
 
 const AtomsNFTSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648732450/Company-website/Haze_qolqqh.png";
@@ -66,6 +66,11 @@ const DeborahNFTSrc =
 
 const GospelNFTSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648732450/Company-website/Emmanuel3_gztwdi.png";
+const TonyCryptoTVSrc =
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648786164/Company-website/FB_IMG_1646037401121_bbzwwv.jpg";
+
+const CodemathicsSrc =
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648786163/Company-website/codemathics_cd9hbo.jpg";
 
 export {
   VideoBackdropSrc,
@@ -90,4 +95,6 @@ export {
   ErnestNFTSrc,
   DeborahNFTSrc,
   GospelNFTSrc,
+  TonyCryptoTVSrc,
+  CodemathicsSrc,
 };

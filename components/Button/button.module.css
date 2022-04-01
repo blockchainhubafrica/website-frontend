@@ -22,7 +22,8 @@
   color: white;
 }
 
-.container:hover {
+.container:hover,
+.container:focus {
   box-shadow: 0px 4px 34px rgba(255, 153, 0, 0.5);
 }
 

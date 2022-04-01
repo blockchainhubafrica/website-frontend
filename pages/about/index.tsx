@@ -121,28 +121,28 @@ export default function AboutUs() {
                   onMouseEnter={() => setactiveStatsCard(1)}
                   className={statsCardClass(1)}
                 >
-                  <h5>200</h5>
+                  <h5>20+</h5>
                   <h6>People Trained</h6>
                 </div>
                 <div
                   onMouseEnter={() => setactiveStatsCard(2)}
                   className={statsCardClass(2)}
                 >
-                  <h5>$12M+</h5>
+                  <h5>$20K+</h5>
                   <h6>Assets Managed</h6>
                 </div>
                 <div
                   onMouseEnter={() => setactiveStatsCard(3)}
                   className={statsCardClass(3)}
                 >
-                  <h5>50+</h5>
-                  <h6>Clubs Raised</h6>
+                  <h5>500+</h5>
+                  <h6>Community Members</h6>
                 </div>
                 <div
                   onMouseEnter={() => setactiveStatsCard(4)}
                   className={statsCardClass(4)}
                 >
-                  <h5>10+</h5>
+                  <h5>2+</h5>
                   <h6>Apps Developed</h6>
                 </div>
               </div>

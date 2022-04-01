@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Shapes1Src, Shapes2Src } from "../../../../assets/images";
 import { Button, CloudinaryImage } from "../../../../components";
 import styles from "./what-we-offer.module.css";
+import Link from "next/link";
 
 function WhatWeOffer() {
   const [activeCard, setactiveCard] = useState<number>(1);
@@ -23,8 +24,10 @@ function WhatWeOffer() {
         <h3 className="text-3xl md:text-5xl text-white font-coolvetica md:w-3/5 lg:w-4/5 xl:w-3/5 2xl:w-2/5 mb-10">
           World class Web3 Services from World class Web3 Talents.
         </h3>
-        <div style={{ maxWidth: "160px" }}>
-          <Button buttonType="tertiary" text="Hire Us" />
+        <div className="inline-flex">
+          <Link href="/hire-us" passHref>
+            <Button buttonType="tertiary" text="Hire Us" />
+          </Link>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
           <div onMouseEnter={() => setactiveCard(1)} className={cardClass(1)}>
