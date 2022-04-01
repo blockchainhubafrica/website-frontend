@@ -19,7 +19,6 @@ import {
   CircleBanner,
   CloudinaryImage,
   Events,
-  Loader,
   Marquee,
   Products,
   StorySection,
@@ -31,20 +30,6 @@ import WhatWeOffer from "./components/WhatWeOffer";
 import styles from "./home-page.module.css";
 
 function HomePage() {
-  const [showLoader, setShowLoader] = useState<boolean>(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLoader(false);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (showLoader) {
-    return <Loader />;
-  }
-
   return (
     <>
       <main className={`${styles["container"]} `}>

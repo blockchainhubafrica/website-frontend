@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import router from 'next/router';
+import router from "next/router";
 
 function useRouteChangeHandler() {
   const [routeChanging, setRouteChanging] = useState(false);
@@ -21,4 +21,4 @@ function useRouteChangeHandler() {
   return { routeChanging };
 }
 
-export default useRouteChangeHandler;
+export { useRouteChangeHandler };
