@@ -72,6 +72,9 @@ const TonyCryptoTVSrc =
 const CodemathicsSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648786163/Company-website/codemathics_cd9hbo.jpg";
 
+const PeopleGifSrc =
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647914843/Company-website/people_t4i1ml.gif";
+
 export {
   VideoBackdropSrc,
   XendLogoSrc,
@@ -97,4 +100,5 @@ export {
   GospelNFTSrc,
   TonyCryptoTVSrc,
   CodemathicsSrc,
+  PeopleGifSrc,
 };

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Ticker from "react-ticker";
 
 import {
@@ -11,7 +11,7 @@ import {
   VestHubLogoSrc,
   XendLogoSrc,
   VideoBackdropSrc,
-  peopleGif,
+  PeopleGifSrc,
 } from "../../assets/images";
 
 import {
@@ -68,7 +68,12 @@ function HomePage() {
             <div
               className={`md:col-span-2 ${styles["people-svg"]} fix-img-height`}
             >
-              <CloudinaryImage src={peopleGif.src} width={731} height={695} />
+              <CloudinaryImage
+                src={PeopleGifSrc}
+                width={731}
+                height={695}
+                quality={100}
+              />
             </div>
           </div>
           <div
