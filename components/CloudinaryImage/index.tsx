@@ -8,6 +8,7 @@ type ComponentProps = {
   priority?: boolean;
   width: number;
   height: number;
+  quality?: number;
 };
 
 function CloudinaryImage({
@@ -16,6 +17,7 @@ function CloudinaryImage({
   priority,
   width,
   height,
+  quality,
 }: ComponentProps) {
   return (
     <Image
@@ -23,6 +25,7 @@ function CloudinaryImage({
       priority={priority || false}
       alt={alt || ""}
       src={src}
+      quality={quality}
       width={width}
       height={height}
       placeholder="blur"
