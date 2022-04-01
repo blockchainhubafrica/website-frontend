@@ -69,6 +69,7 @@ function HomePage() {
               className={`md:col-span-2 ${styles["people-svg"]} fix-img-height`}
             >
               <CloudinaryImage
+                unoptimized={true}
                 src={PeopleGifSrc}
                 width={731}
                 height={695}
