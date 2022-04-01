@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 import styles from "./blog.module.css";
 import { Loader } from "../../components";
-import Image from "next/image";
 import { RightArrowIcon } from "../../assets/images";
-import { useRouter } from "next/router";
 import {
   DiscordIcon,
   LinkIcon,
@@ -12,7 +14,6 @@ import {
 } from "../../assets/images";
 import { useDataContext } from "../../contexts/dataContext";
 import { formatDate } from "../../utils/formatDate";
-import Link from "next/link";
 
 type ArticleType = {
   noOfViews: number;
@@ -39,15 +40,9 @@ export default function BlogDetailPage() {
 
   const getActiveIndex = () => {
     if (!articles.length) return 0;
-    const article = articles.find((x) => x.slug === currentArticleSlug);
-    const index = () => {
-      if (article) {
-        return articles.indexOf(article);
-      }
-      return 0;
-    };
-
-    return index();
+    const index = articles.findIndex((x) => x.slug === currentArticleSlug);
+    
+    return index !== -1 ? index : 0;
   };
 
   const [activeIndex, setactiveIndex] = useState<number>(getActiveIndex() || 0);
@@ -61,9 +56,9 @@ export default function BlogDetailPage() {
   console.log({ prevArticle, nextArticle });
 
   useEffect(() => {
-    if (!isLoading && articles.length && !activeArticle)
-      router.replace("/blog");
-      
+    // if (!isLoading && articles.length && !activeArticle)
+    //   router.replace("/blog");
+
     if (articles.length) {
       setactiveIndex(getActiveIndex());
       setactiveArticle(articles[activeIndex]);

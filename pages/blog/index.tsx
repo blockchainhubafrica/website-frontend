@@ -21,9 +21,9 @@ type Article = {
 
 export default function BlogPage() {
   const { allData } = useDataContext();
-  const blogs = allData.blog;
+  const articles = allData.blog;
   let latestDate: string;
-  if (blogs.length) latestDate = blogs[0].publishDate;
+  if (articles.length) latestDate = articles[0].publishDate;
   const [currentSlide, setCurrentSlide] = useState<number[]>([0, 6]);
   const containerRef = useRef<HTMLElement | null>(null);
 
@@ -64,11 +64,13 @@ export default function BlogPage() {
         <div className="flex flex-col col-span-2">
           <span className="font-coolvetica py-2 px-5">FEATURED ARTICLE</span>
           <h3 className="text-3xl md:text-5xl my-5 md:my-10">
-            {blogs.length && <Link href={`/blog/${blogs[0].slug}`}>{blogs[0].title}</Link>}
+            {articles.length && (
+              <Link href={`/blog/${articles[0].slug}`}>{articles[0].title}</Link>
+            )}
           </h3>
           <span className="">
-            {blogs.length && formatDate(blogs[0].publishDate)}{" "}
-            {blogs.length && <strong>{blogs[0].readingTime} min Read</strong>}
+            {articles.length && formatDate(articles[0].publishDate)}{" "}
+            {articles.length && <strong>{articles[0].readingTime} min Read</strong>}
           </span>
         </div>
         <div className={`hidden lg:block col-span-1`}>
@@ -81,7 +83,7 @@ export default function BlogPage() {
         ref={containerRef}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-12 py-10 md:px-10 lg:px-20">
-          {blogs
+          {articles
             .slice(currentSlide[0], currentSlide[1])
             .map((article: Article, index: number) => {
               const date = formatDate(article.publishDate);
