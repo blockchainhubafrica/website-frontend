@@ -54,12 +54,12 @@ function HomePage() {
               </p>
               <div className="flex gap-x-5">
                 <Link href="/about" passHref>
-                  <a>
+                  <a tabIndex={-1}>
                     <Button buttonType="primary" text="Learn More" />
                   </a>
                 </Link>
                 <Link href="/hire-us" passHref>
-                  <a>
+                  <a tabIndex={-1}>
                     <Button buttonType="tertiary" text="Hire Us" />
                   </a>
                 </Link>
