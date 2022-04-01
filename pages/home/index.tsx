@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Ticker from "react-ticker";
 
 import {
@@ -11,7 +11,7 @@ import {
   VestHubLogoSrc,
   XendLogoSrc,
   VideoBackdropSrc,
-  peopleGif,
+  PeopleGifSrc,
 } from "../../assets/images";
 
 import {
@@ -19,7 +19,6 @@ import {
   CircleBanner,
   CloudinaryImage,
   Events,
-  Loader,
   Marquee,
   Products,
   StorySection,
@@ -31,20 +30,6 @@ import WhatWeOffer from "./components/WhatWeOffer";
 import styles from "./home-page.module.css";
 
 function HomePage() {
-  const [showLoader, setShowLoader] = useState<boolean>(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLoader(false);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (showLoader) {
-    return <Loader />;
-  }
-
   return (
     <>
       <main className={`${styles["container"]} `}>
@@ -83,7 +68,13 @@ function HomePage() {
             <div
               className={`md:col-span-2 ${styles["people-svg"]} fix-img-height`}
             >
-              <CloudinaryImage src={peopleGif.src} width={731} height={695} />
+              <CloudinaryImage
+                unoptimized={true}
+                src={PeopleGifSrc}
+                width={731}
+                height={695}
+                quality={100}
+              />
             </div>
           </div>
           <div
