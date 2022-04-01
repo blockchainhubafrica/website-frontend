@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { achievementImage } from "../../assets/images/pngs";
 import { RightArrowIcon } from "../../assets/images";
-import { articles } from "../../data/blog";
 import { useDataContext } from "../../contexts/dataContext";
 import { formatDate } from "../../utils/formatDate";
 
@@ -23,7 +22,6 @@ type Article = {
 export default function BlogPage() {
   const { allData } = useDataContext();
   const blogs = allData.blog;
-  console.log(blogs);
   let latestDate: string;
   if (blogs.length) latestDate = blogs[0].publishDate;
   const [currentSlide, setCurrentSlide] = useState<number[]>([0, 6]);

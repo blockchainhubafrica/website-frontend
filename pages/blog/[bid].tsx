@@ -33,9 +33,8 @@ type ArticleType = {
 
 export default function BlogDetailPage() {
   const { allData, isLoading, isError } = useDataContext();
-  const articles: any[] = allData.blog || [];
+  const articles: ArticleType[] = allData.blog || [];
   const router = useRouter();
-  console.log({ router, articles });
   const currentArticleSlug = router.query.bid;
 
   const getActiveIndex = () => {
@@ -62,7 +61,9 @@ export default function BlogDetailPage() {
   console.log({ prevArticle, nextArticle });
 
   useEffect(() => {
-    // if (articles.length && !activeArticle) return router.replace("/blog");
+    if (!isLoading && articles.length && !activeArticle)
+      router.replace("/blog");
+      
     if (articles.length) {
       setactiveIndex(getActiveIndex());
       setactiveArticle(articles[activeIndex]);
