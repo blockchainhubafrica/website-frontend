@@ -15,7 +15,7 @@ import {
   ChimezieNFTSrc,
 } from "./cloudinary";
 import { event2022A, event2022B } from "./jpgs";
-
+ 
 export const demoProductsData = [
   {
     image: NduImageSrc,

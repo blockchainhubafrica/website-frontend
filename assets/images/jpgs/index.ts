@@ -11,6 +11,7 @@ import atoms from "./atoms.jpeg";
 import chukky from "./chukky.jpg";
 import deborah from "./deborah.jpg";
 import ifeoma from "./ifeoma.jpg";
+import emmanuel from "./emmanuel.jpg";
 import featuredEventsImg1 from "./featuredEventsImg1.jpg";
 import featuredEventsImg2 from "./featuredEventsImg2.jpg";
 import featuredEventsImg3 from "./featuredEventsImg3.jpg";
@@ -33,6 +34,7 @@ export {
   chukky,
   deborah,
   ifeoma,
+  emmanuel,
   featuredEventsImg1,
   featuredEventsImg2,
   featuredEventsImg3,

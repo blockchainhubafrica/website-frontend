@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import {
   demoEventsData,
   TangledArrow,
@@ -21,6 +22,8 @@ import styles from "./styles.module.css";
 export default function AboutUs() {
   const [activeVisionCard, setactiveVisionCard] = useState<number>(1);
   const [activeStatsCard, setactiveStatsCard] = useState<number>(1);
+
+  const router = useRouter();
 
   const visionCardClass = (currentCard: number) => {
     if (activeVisionCard === currentCard)
@@ -227,6 +230,7 @@ export default function AboutUs() {
               buttonType="secondary"
               text="View All Events"
               className={`text-orange my-10 ${styles["events-button"]}`}
+              onClick={() => router.push("/events")}
             />
           </div>
           <Events eventList={demoEventsData.slice(0, 2)} />
