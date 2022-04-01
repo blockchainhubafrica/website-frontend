@@ -9,6 +9,7 @@ type ComponentProps = {
   width: number;
   height: number;
   quality?: number;
+  unoptimized?: boolean;
 };
 
 function CloudinaryImage({
@@ -18,9 +19,11 @@ function CloudinaryImage({
   width,
   height,
   quality,
+  unoptimized,
 }: ComponentProps) {
   return (
     <Image
+      unoptimized={unoptimized || false}
       objectFit="cover"
       priority={priority || false}
       alt={alt || ""}
