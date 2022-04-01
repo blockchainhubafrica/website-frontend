@@ -1,7 +1,9 @@
 import {
+  CodemathicsSrc,
   TestimonialHeadshot1,
   TestimonialHeadshot2,
   TestimonialHeadshot3,
+  TonyCryptoTVSrc,
 } from "../assets/images";
 
 type Testimonial = {
@@ -9,7 +11,7 @@ type Testimonial = {
   role: string;
   title: string;
   desc: string;
-  headshot: StaticImageData;
+  headshot: StaticImageData | string;
 }[];
 
 export const testimonials: Testimonial = [
@@ -23,15 +25,15 @@ export const testimonials: Testimonial = [
   {
     name: "Clement Hugbo",
     role: "CEO/Co-Founder Crevatal",
-    title: "Generated Over $100M+ from our App",
+    title: "Glad to be part of what BHA is Building",
     desc: "I love what the amazing team at Blockchain Hub is building, tackling one of the major issues in the blockchain space. I have had the opportunity to work/speak with the team, and I must say that the team is on fire.",
-    headshot: TestimonialHeadshot2,
+    headshot: CodemathicsSrc,
   },
   {
     name: "Mr. Tony Emeka",
     role: "CEO, CryptoTvPlus.",
-    title: "Generated Over $100M+ from our App",
+    title: "Part of the Sponsors of 2021 Blockchain Developer's Conf.",
     desc: "We were part of the sponsors for the last Blockchain Developers Conference that was organised by Blockchain Hub Africa, and were honestly impressed with the team, and what they are building.",
-    headshot: TestimonialHeadshot3,
+    headshot: TonyCryptoTVSrc,
   },
 ];

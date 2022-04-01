@@ -52,6 +52,7 @@ function StorySection() {
             <SwiperSlide>
               <div className={slideClass("slide-1")}>
                 <Image
+                  priority={true}
                   objectFit="cover"
                   unoptimized={true}
                   alt=""
@@ -64,6 +65,7 @@ function StorySection() {
             <SwiperSlide>
               <div className={slideClass("slide-2")}>
                 <Image
+                  priority={true}
                   objectFit="cover"
                   unoptimized={true}
                   alt=""
@@ -76,6 +78,7 @@ function StorySection() {
             <SwiperSlide>
               <div className={slideClass("slide-3")}>
                 <Image
+                  priority={true}
                   objectFit="cover"
                   unoptimized={true}
                   alt=""

@@ -17,4 +17,3 @@ export * from "./CircleBanner";
 export * from "./CloudinaryImage";
 export * from "./AboutUsComponentss";
 export * from "./Video";
-// export * from "./CustomMarquee";
