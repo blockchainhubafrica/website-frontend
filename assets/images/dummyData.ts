@@ -1,4 +1,4 @@
-import { achievementImage, eventTestImage } from "./pngs";
+import { achievementImage } from "./pngs";
 import {
   NduImageSrc,
   BeimaImageSrc,
@@ -14,20 +14,7 @@ import {
   DeborahNFTSrc,
   ChimezieNFTSrc,
 } from "./cloudinary";
-import {
-  atoms,
-  chidiebere,
-  chukky,
-  deborah,
-  ernest,
-  event2022A,
-  event2022B,
-  gospel,
-  ifeoma,
-  joshua,
-  richmond,
-  uchenna,
-} from "./jpgs";
+import { event2022A, event2022B } from "./jpgs";
 
 export const demoProductsData = [
   {
