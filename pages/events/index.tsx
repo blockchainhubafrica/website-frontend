@@ -10,6 +10,10 @@ import {
   featuredEventsImg3,
   featuredEventsImg4,
   featuredEventsImg5,
+  featuredEventsImg6,
+  featuredEventsImg7,
+  featuredEventsImg8,
+  featuredEventsImg9,
   RightArrowIcon,
   VideoBackdropSrc,
 } from "../../assets/images";
@@ -29,6 +33,10 @@ export default function EventsPage() {
     featuredEventsImg3,
     featuredEventsImg4,
     featuredEventsImg5,
+    featuredEventsImg6,
+    featuredEventsImg7,
+    featuredEventsImg8,
+    featuredEventsImg9,
   ]);
   const [sliderIndex, setSliderIndex] = useState<any>(0);
   const [currentFilterYear, setCurrentFilterYear] = useState<number | null>(

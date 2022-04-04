@@ -73,13 +73,13 @@ function Header({}) {
             isActive={bannerIsActive}
           >
             Our Annual Internship Program Kicks off in May, 2022.
-            To Register Click
+            {/* To Register Click
             <button
               className={`${styles["register-btn"]} pl-2`}
               onClick={() => setIsRegistrationFormActive(true)}
             >
               Join The Web3 Internship 2022
-            </button>
+            </button> */}
           </Banner>
         )}
       </header>

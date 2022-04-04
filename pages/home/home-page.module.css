@@ -152,6 +152,7 @@
   min-height: 70px;
   object-fit: contain !important;
   min-width: 140px;
+  filter: grayscale(100%);
 }
 
 @media screen and (min-width: 1440px) {

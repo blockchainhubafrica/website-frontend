@@ -3,7 +3,6 @@ import React from "react";
 import Ticker from "react-ticker";
 
 import {
-  AcexLogoSrc,
   CasperLogoSrc,
   CrevatalLogoSrc,
   demoEventsData,
@@ -12,6 +11,7 @@ import {
   XendLogoSrc,
   VideoBackdropSrc,
   PeopleGifSrc,
+  BuildSpaceLogoSrc,
 } from "../../assets/images";
 
 import {
@@ -88,7 +88,7 @@ function HomePage() {
             className={`container pt-5 lg:pt-0 ${styles["video-container"]}`}
           >
             <Video
-              videoUrl="https://www.youtube.com/embed/cM2odHdOkfw"
+              videoUrl="https://www.youtube.com/embed/92YhcyN1rH8"
               imageUrl={VideoBackdropSrc}
             />
           </div>
@@ -152,7 +152,7 @@ function HomePage() {
                     </div>
                     <div className={`${styles["img-container"]}`}>
                       <CloudinaryImage
-                        src={AcexLogoSrc}
+                        src={BuildSpaceLogoSrc}
                         width={191}
                         height={77}
                       />
@@ -191,7 +191,11 @@ function HomePage() {
                 <CloudinaryImage src={VestHubLogoSrc} width={121} height={79} />
               </div>
               <div>
-                <CloudinaryImage src={AcexLogoSrc} width={191} height={77} />
+                <CloudinaryImage
+                  src={BuildSpaceLogoSrc}
+                  width={191}
+                  height={77}
+                />
               </div>
               <div>
                 <CloudinaryImage src={NearLogoSrc} width={174} height={58} />

@@ -41,9 +41,11 @@ export default function BlogDetailPage() {
   const getActiveIndex = () => {
     if (!articles.length) return 0;
     const index = articles.findIndex((x) => x.slug === currentArticleSlug);
-    
+
     return index !== -1 ? index : 0;
   };
+
+  const [copied, setCopied] = useState<boolean>(false);
 
   const [activeIndex, setactiveIndex] = useState<number>(getActiveIndex() || 0);
 
@@ -68,6 +70,13 @@ export default function BlogDetailPage() {
   const [showLoader, setShowLoader] = useState<boolean>(true);
 
   const containerRef = useRef<HTMLElement | null>(null);
+
+  const handleCopy = () => {
+    if (window) {
+      navigator.clipboard.writeText(window?.location?.href);
+      setCopied(true);
+    }
+  };
 
   return (
     <main
@@ -144,18 +153,31 @@ export default function BlogDetailPage() {
                     <span className="mb-3">Share</span>
                     <div className={`${styles["share-icons"]} flex`}>
                       <span className="mr-3">
-                        <DiscordIcon />
+                        <a href="https://discord.com" target="_blank ">
+                          <DiscordIcon />
+                        </a>
                       </span>
                       <span className="mr-3">
-                        <TwitterIcon />
+                        <a href="https://twitter.com/home" target="_blank">
+                          <TwitterIcon />
+                        </a>
                       </span>
                       <span className="mr-3">
-                        <TelegramIcon />
+                        <a href="https://telegram.org/" target="_blank">
+                          <TelegramIcon />
+                        </a>
                       </span>
-                      <span className="">
+                      <span className="cursor-pointer" onClick={handleCopy}>
                         <LinkIcon />
                       </span>
                     </div>
+                    {copied ? (
+                      <span className="mt-3 font-coolvetica font-bold">
+                        Copied!!
+                      </span>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
 

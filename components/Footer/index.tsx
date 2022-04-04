@@ -84,17 +84,17 @@ function Footer() {
           <div className="flex flex-col py-10 md:py-0 md:ml-auto mt-auto md:text-xl">
             <a
               className="lg:text-2xl mb-3"
-              href="https://wa.me/2349087654321"
+              href="https://wa.me/2347063858045"
               target="_blank"
             >
-              Call &amp; whatsapp: +234(0)908 7654 321
+              Call &amp; whatsapp: +234(0)7063858045
             </a>
             <a
               className="lg:text-2xl"
-              href="mailto:info@blockchainhubafrica.com"
+              href="mailto:blockchainhubafrica@gmail.com"
               target="_blank"
             >
-              Email: info@blockchainhubafrica.com
+              Email: blockchainhubafrica@gmail.com
             </a>
           </div>
         </div>
