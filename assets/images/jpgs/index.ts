@@ -17,6 +17,10 @@ import featuredEventsImg2 from "./featuredEventsImg2.jpg";
 import featuredEventsImg3 from "./featuredEventsImg3.jpg";
 import featuredEventsImg4 from "./featuredEventsImg4.jpg";
 import featuredEventsImg5 from "./featuredEventsImg5.jpg";
+import featuredEventsImg6 from "./featuredEventsImg6.jpg";
+import featuredEventsImg7 from "./featuredEventsImg7.jpg";
+import featuredEventsImg8 from "./featuredEventsImg8.jpg";
+import featuredEventsImg9 from "./featuredEventsImg9.jpg";
 import event2022A from "./event2022A.jpg";
 import event2022B from "./event2022B.jpg";
 
@@ -40,6 +44,10 @@ export {
   featuredEventsImg3,
   featuredEventsImg4,
   featuredEventsImg5,
+  featuredEventsImg6,
+  featuredEventsImg7,
+  featuredEventsImg8,
+  featuredEventsImg9,
   event2022A,
   event2022B,
 };

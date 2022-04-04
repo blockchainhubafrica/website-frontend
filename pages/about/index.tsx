@@ -47,7 +47,7 @@ export default function AboutUs() {
             <div className="flex justify-between my-12 md:my-16 lg:my-20">
               <div className="md:w-8/12 lg:w-7/12 xl:w-8/12">
                 <h1 className="text-blue-600">
-                  Building Web3 <span>Talents</span> and
+                  Building Web3 <span>Talents</span> and{" "}
                   <span>Innovations</span>
                 </h1>
               </div>

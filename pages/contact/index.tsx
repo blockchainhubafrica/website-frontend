@@ -19,20 +19,23 @@ export default function ContactUsPage() {
           <h3
             className={`lg:w-3/4 mb-4 pb-5 md:pb-10 text-5xl md:text-7xl font-coolvetica text-blue-600 lg:mr-20 xl:mr-48`}
           >
-            We are glad you made it here. Feel free to reach out to us
+            We are glad you made it here. Feel free to contact us, Let's bring
+            your ideas to life.
           </h3>
 
           <div className={`${styles["social-accounts"]} ml-auto pt-5`}>
             <p className="mb-3">
-              <span className="text-blue-400">Call &amp; whatsapp:</span><br />
-              <a target="_blank" href="https://wa.me/23490876543210">
-                +234(0)9087 654 3210
+              <span className="text-blue-400">Call &amp; whatsapp:</span>
+              <br />
+              <a target="_blank" href="https://wa.me/2347063858045">
+                +234(0)7063858045
               </a>
             </p>
             <p className="mb-3">
-              <span className="text-blue-400">Email:</span><br />
-              <a target="_blank" href="mailto:info@blockchainhubafrica.com">
-                info@blockchainhubafrica.com
+              <span className="text-blue-400">Email:</span>
+              <br />
+              <a target="_blank" href="mailto:blockchainhubafrica@gmail.com">
+                blockchainhubafrica@gmail.com
               </a>
             </p>
             <p className={`${styles["social-icons"]} flex`}>
