@@ -1,6 +1,8 @@
 const VideoBackdropSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647008207/Company-website/video-backdrop_jgkzzq.jpg";
 
+const BuildSpaceLogoSrc =
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1649059705/Company-website/buildspace_vcesx3.png";
 const XendLogoSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648736454/Company-website/xend_y5nde2.png";
 
@@ -77,6 +79,7 @@ const PeopleGifSrc =
 
 export {
   VideoBackdropSrc,
+  BuildSpaceLogoSrc,
   XendLogoSrc,
   NearLogoSrc,
   AcexLogoSrc,
