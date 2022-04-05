@@ -98,9 +98,9 @@ function StorySection() {
             Leading blockchain innovations from Africa
           </h3>
           <p
-            className={`${styles["story-description"]} text-base lg:text-xl mb-12`}
+            className={`${styles["story-description"]} text-lg lg:text-xl mb-12`}
           >
-            Every idea begins with a problem. <br /> For us, it was simple:{" "}
+            Every idea begins with a problem. For us, it was simple:
             <br />
             As web3 expands, Africa is at a disadvantage of being left behind.
             This is why we have set out to expand Africa's web3 talent pipeline,
