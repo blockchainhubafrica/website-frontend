@@ -33,7 +33,7 @@ function Header({}) {
       <header className={`${styles.container} `}>
         <div className="container justify-between flex items-center py-5">
           <Link href="/" passHref>
-            <a>
+            <a className="scale-75 md:scale-100">
               <LogoIcon />
             </a>
           </Link>
@@ -72,7 +72,6 @@ function Header({}) {
             <MenuIcon />
           </button> */}
           <SideNav />
-          
         </div>
         {bannerIsActive && (
           <Banner
