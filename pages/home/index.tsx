@@ -134,16 +134,19 @@ function HomePage() {
               <h2 className="spaced-heading text-blue-400 uppercase">
                 UPCOMING EVENTS
               </h2>
-              <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-blue-600 w-full md:w-1/2 lg:w-1/3">
+              <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-blue-600 w-full md:w-1/2 lg:w-1/2 xmd:w-1/3">
                 What we have planned this year.
               </h3>
               <div style={{ width: "250px" }}>
-                <Button
-                  buttonType="secondary"
-                  text="View All Events"
-                  className="text-orange my-10"
-                  onClick={() => router.push("/events")}
-                />
+                <Link href="/events" passHref>
+                  <a tabIndex={-1}>
+                    <Button
+                      buttonType="tertiary"
+                      text="View All Events"
+                      className="text-orange my-10"
+                    />
+                  </a>
+                </Link>
               </div>
             </div>
             <Events eventList={demoEventsData.slice(0, 2)} />

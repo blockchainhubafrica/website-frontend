@@ -71,7 +71,10 @@ export default function ComponentsPage() {
         <Products />
       </section>
       <section>
-        <Marquee />
+        <Marquee>
+          Leading Hub for Africa's web3 talent and solutions. Helping Web3
+          companies build blockchain based solutions
+        </Marquee>
       </section>
       <section>
         <TestimonialSection />

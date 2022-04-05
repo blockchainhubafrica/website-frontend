@@ -1,5 +1,3 @@
-/** @format */
-
 import React from "react";
 import { TopRightArrowIcon } from "../../assets/images";
 import styles from "./button.module.css";
@@ -11,6 +9,7 @@ interface Props {
   type?: "button" | "submit" | "reset";
   text?: string | "";
   buttonType: string | "";
+  href?: string;
 }
 
 const Button: React.FC<Props> = ({
@@ -20,19 +19,33 @@ const Button: React.FC<Props> = ({
   type,
   text,
   buttonType,
+  href,
   ...rest
 }) => {
   let containerClass = styles.container;
   if (className) containerClass += ` ${className}`;
   containerClass += ` py-3 px-6 ${styles[buttonType]}`;
 
-
-  return (
-    <button type={type} onClick={onClick} className={containerClass} {...rest}>
+  const body = (
+    <>
       <span className="mr-3">{text || children}</span>
       <span>
         <TopRightArrowIcon />
       </span>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a href={href} className={containerClass} onClick={onClick} {...rest}>
+        {body}
+      </a>
+    );
+  }
+
+  return (
+    <button type={type} className={containerClass} onClick={onClick} {...rest}>
+      {body}
     </button>
   );
 };
