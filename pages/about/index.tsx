@@ -167,7 +167,10 @@ export default function AboutUs() {
         <Achievements />
       </section>
       <section>
-        <Marquee />
+        <Marquee>
+          Leading Hub for Africa's web3 talent and solutions. Helping Web3
+          companies build blockchain based solutions
+        </Marquee>
       </section>
       <section
         className={`${styles["values"]} bg-gray-100 pt-12 xl:pt-0  pb-12 md:pb-16 xl:pb-28`}

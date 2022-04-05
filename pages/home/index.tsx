@@ -1,17 +1,10 @@
 import Link from "next/link";
 import React from "react";
-import Ticker from "react-ticker";
 
 import {
-  CasperLogoSrc,
-  CrevatalLogoSrc,
   demoEventsData,
-  NearLogoSrc,
-  VestHubLogoSrc,
-  XendLogoSrc,
   VideoBackdropSrc,
   PeopleGifSrc,
-  BuildSpaceLogoSrc,
 } from "../../assets/images";
 
 import {
@@ -20,6 +13,7 @@ import {
   CloudinaryImage,
   Events,
   Marquee,
+  Partners,
   Products,
   StorySection,
   TestimonialSection,
@@ -73,7 +67,7 @@ function HomePage() {
                 src={PeopleGifSrc}
                 width={731}
                 height={695}
-                quality={100}
+                priority={true}
               />
             </div>
           </div>
@@ -110,104 +104,16 @@ function HomePage() {
           </div>
         </section>
         <section className={`${styles["partners"]}`}>
-          <div className="bg-gray-100 py-2 md:py-8">
-            <div className="xmd:hidden relative">
-              <Ticker offset={40} mode="chain">
-                {({ index }) => (
-                  <div
-                    className={`${styles.container} py-2 container pr-0 flex justify-center items-center gap-x-10 md:gap-x-20`}
-                  >
-                    <div className={`${styles["img-container"]}`}>
-                      <span className="text-3xl font-coolvetica">
-                        Trusted by
-                      </span>
-                    </div>
-                    <div className={`${styles["img-container"]}`}>
-                      <CloudinaryImage
-                        src={XendLogoSrc}
-                        width={174}
-                        height={69}
-                      />
-                    </div>
-                    <div className={`${styles["img-container"]}`}>
-                      <CloudinaryImage
-                        src={CrevatalLogoSrc}
-                        width={190}
-                        height={42}
-                      />
-                    </div>
-                    <div className={`${styles["img-container"]}`}>
-                      <CloudinaryImage
-                        src={CasperLogoSrc}
-                        width={130}
-                        height={35}
-                      />
-                    </div>
-                    <div className={`${styles["img-container"]}`}>
-                      <CloudinaryImage
-                        src={VestHubLogoSrc}
-                        width={121}
-                        height={79}
-                      />
-                    </div>
-                    <div className={`${styles["img-container"]}`}>
-                      <CloudinaryImage
-                        src={BuildSpaceLogoSrc}
-                        width={191}
-                        height={77}
-                      />
-                    </div>
-                    <div className={`${styles["img-container"]}`}>
-                      <CloudinaryImage
-                        src={NearLogoSrc}
-                        width={174}
-                        height={58}
-                      />
-                    </div>
-                  </div>
-                )}
-              </Ticker>
-            </div>
-            <div
-              className={`${styles.container} hidden xmd:flex py-2 container pr-0 xl:px-10 xlg:px-0 justify-center items-center md:gap-x-20 xl:gap-x-10 xlg:gap-x-20`}
-            >
-              <div>
-                <span className="text-3xl font-coolvetica">Trusted by</span>
-              </div>
-              <div>
-                <CloudinaryImage src={XendLogoSrc} width={174} height={69} />
-              </div>
-              <div>
-                <CloudinaryImage
-                  src={CrevatalLogoSrc}
-                  width={190}
-                  height={42}
-                />
-              </div>
-              <div>
-                <CloudinaryImage src={CasperLogoSrc} width={130} height={35} />
-              </div>
-              <div>
-                <CloudinaryImage src={VestHubLogoSrc} width={121} height={79} />
-              </div>
-              <div>
-                <CloudinaryImage
-                  src={BuildSpaceLogoSrc}
-                  width={191}
-                  height={77}
-                />
-              </div>
-              <div>
-                <CloudinaryImage src={NearLogoSrc} width={174} height={58} />
-              </div>
-            </div>
-          </div>
+          <Partners />
         </section>
         <section className="pt-32 pb-16">
           <StorySection />
         </section>
         <section className="mb-20">
-          <Marquee />
+          <Marquee>
+            Leading Hub for Africa's web3 talent and solutions. Helping Web3
+            companies build blockchain based solutions
+          </Marquee>
         </section>
         <section>
           <WhatWeOffer />

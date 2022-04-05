@@ -22,3 +22,4 @@ export * from "./SideNav";
 export * from "./menu";
 export * from "./overlay";
 export * from "./closeButton";
+export * from "./Partners";
