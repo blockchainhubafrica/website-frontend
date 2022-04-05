@@ -1,213 +1,156 @@
-import { achievementImage, eventTestImage } from "./pngs";
-import { NduImageSrc, BeimaImageSrc } from "./cloudinary";
+import { achievementImage } from "./pngs";
 import {
-  atoms,
-  chidiebere,
-  chukky,
-  ernest,
-  gospel,
-  joshua,
-  richmond,
-  uchenna,
-} from "./jpgs";
-
+  NduImageSrc,
+  BeimaImageSrc,
+  UcheNFTSrc,
+  JoshuaNFTSrc,
+  EmmanuelNFTSrc,
+  ChukkyNFTSrc,
+  ChidiNFTSrc,
+  AtomsNFTSrc,
+  IfeomaNFTSrc,
+  ErnestNFTSrc,
+  GospelNFTSrc,
+  DeborahNFTSrc,
+  ChimezieNFTSrc,
+} from "./cloudinary";
+import { event2022A, event2022B } from "./jpgs";
+ 
 export const demoProductsData = [
   {
     image: NduImageSrc,
     title: "Ndu",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam volutpat nibh nulla donec rutrum morbi. Sapien pulvinar eget",
-    link: "https://www.google.com",
+      "Ndu combines the decentralized power of the Blockchain to eradicate fake and counterfeit drugs. Users can be able to check counterfeit drugs and earn while doing that.",
+    link: "https://local-ndu.vercel.app",
     size: { width: 862, height: 752 },
   },
   {
     image: BeimaImageSrc,
     title: "Beima",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam volutpat nibh nulla donec rutrum morbi. Sapien pulvinar eget",
-    link: "https://www.google.com",
+      "Beima helps users secure their future with a transparent and high yielding interest pension plan that is truly theirs. Beima is the Future of Personal and Corporate finance",
+    link: "https://beima.app",
     size: { width: 868, height: 752 },
   },
 ];
 
 export const demoEventsData = [
   {
-    image: eventTestImage,
-    name: "Blockchain Conference '18",
-    link: "https://www.google.com",
-    year: "2018",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (2) '18",
-    link: "https://www.google.com",
-    year: "2018",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (3) '18",
-    link: "https://www.google.com",
-    year: "2018",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '19",
-    link: "https://www.google.com",
-    year: "2019",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (2) '19",
-    link: "https://www.google.com",
-    year: "2019",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '20",
-    link: "https://www.google.com",
-    year: "2020",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (2) '20",
-    link: "https://www.google.com",
-    year: "2020",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '21",
-    link: "https://www.google.com",
-    year: "2021",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (2) '21",
-    link: "https://www.google.com",
-    year: "2021",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (3) '21",
-    link: "https://www.google.com",
-    year: "2021",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '22",
-    link: "https://www.google.com",
+    image: event2022B,
+    name: "Web3 dev. Bootcamp '22",
+    link: "",
     year: "2022",
   },
   {
-    image: eventTestImage,
-    name: "Blockchain Conference (2) '22",
-    link: "https://www.google.com",
+    image: event2022A,
+    name: "Developer Conference '22",
+    link: "",
     year: "2022",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '23",
-    link: "https://www.google.com",
-    year: "2023",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference (2)'23",
-    link: "https://www.google.com",
-    year: "2023",
-  },
-  {
-    image: eventTestImage,
-    name: "Blockchain Conference '24",
-    link: "https://www.google.com",
-    year: "2024",
   },
 ];
 
 export const achievementData = [
   {
-    name: "1st position at Binance Hackathon, 2020",
+    name: "Partnership with Buildspace to run a Web3 Internship",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam veritatis aperiam sapiente aut officia, facilis vitae perspiciatis rerum unde quaerat! Officiis, sunt tenetur est",
+      "Blockchain Hub is Proud to announce a partnership with BuildSpace to grow web3 developers in Africa",
     link: "/",
     image: achievementImage,
   },
   {
     name: "2nd-Runner up at Xend Finance Hackathon, 2021",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam veritatis aperiam sapiente aut officia, facilis vitae perspiciatis rerum unde quaerat! Officiis, sunt tenetur est",
+      "With the mission to build Africa’s web3 talents. Our Maiden edition of the web3 development learning programme kicked-off and the participants competed in the Xend Finance hackathon 2021, winning the prize of $10,000 as the 2nd runner-up with their idea, Beima, a decentralized pension platform.",
     link: "/",
     image: achievementImage,
   },
   {
-    name: "1st position Polygon Hackathon, 2022",
+    name: "Hosted the first blockchain conference in the south-east",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam veritatis aperiam sapiente aut officia, facilis vitae perspiciatis rerum unde quaerat! Officiis, sunt tenetur est",
+      "Blockchain developers Conference 2021 was our first dev conference, and the first blockchain developers conference in Nigeria, that aimed at introducing a lot of web2 developers into the web3 ecosystem",
     link: "/",
     image: achievementImage,
   },
 ];
 
 export const theTeam = [
-  { name: "Uchenna", title: "Co-Founder, Daddy G.O", image: uchenna },
+  {
+    name: "Uchenna",
+    title: "Co-founder & CEO - Smart Contract Engr.",
+    image: UcheNFTSrc,
+  },
   {
     name: "Joshua",
-    title: "Co-Founder, Evangelist of the ministry",
-    image: joshua,
+    title: "Co-founder & Product Manager - Blockchain Dev.",
+    image: JoshuaNFTSrc,
   },
-  // { name: "Emmanuel", title: "Co-Founder, Money magnet", image: "" },
-  { name: "Atoms", title: "Mobile magician & Jack of all", image: atoms },
-  // { name: "Deborah", title: "Pixel pusher & Color mixer", image: "" },
+  {
+    name: "Emmanuel",
+    title: "Co-founder & Blockchain Business Developer",
+    image: EmmanuelNFTSrc,
+  },
+  {
+    name: "Chukky",
+    title: "CTO & Senior Blockchain Engr.",
+    image: ChukkyNFTSrc,
+  },
   {
     name: "Chidiebere",
-    title: "Assistant Fine boy with brains",
-    image: chidiebere,
+    title: "Ass. CTO & Blockchain Developer",
+    image: ChidiNFTSrc,
   },
-  { name: "Chukky", title: "Fine boy with brains", image: chukky },
-  // { name: "Ifeoma", title: "Seeker of knowledge", image: "" },
+  { name: "Deborah", title: "Visual Creative Designer", image: DeborahNFTSrc },
+  {
+    name: "Atoms",
+    title: "Mobile Developer Lead",
+    image: AtomsNFTSrc,
+  },
   {
     name: "Chiemezie",
-    title: "Dribbble diver, fellow pixel pusher",
-    image: richmond,
+    title: "Senior Product Designer",
+    image: ChimezieNFTSrc,
   },
-  { name: "Ernest", title: "Front End Magician", image: ernest },
-  { name: "Gospel", title: "Engineer without workshop", image: gospel },
+  { name: "Ernest", title: "Frontend Engineer", image: ErnestNFTSrc },
+  { name: "Gospel", title: "Frontend Engineer", image: GospelNFTSrc },
+  { name: "Ifeoma", title: "Web3 Content Strategist", image: IfeomaNFTSrc },
 ];
 
 export const values = [
   {
-    header: "Accountability",
+    header: "Community",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, odio non nunc eu. Adipiscing in neque mi nunc euismod morbi interdum.",
+      "We like to believe that we are first a community oriented company, because without the community there won’t be Blockchain Hub Africa. We like to think that we are first a people oriented company before a service or product based company. At the core of our operations, we value the community",
     strokeColor: "purple",
   },
   {
     header: "Excellence",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, odio non nunc eu. Adipiscing in neque mi nunc euismod morbi interdum.",
+      "We derive joy in building out excellent web3 products. Our passion for excellence is seen in every of our products built for clients or the company. ",
     strokeColor: "green",
   },
   {
     header: "Growth",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, odio non nunc eu. Adipiscing in neque mi nunc euismod morbi interdum.",
+      "Web3 is a growing technology and because of that we need to evolve as the tech evolves, this is what we believe at Blockchain Hub Africa, we are growth minded and this has been engrafted into the team members and our community at large.",
     strokeColor: "orange",
-  },
-  {
-    header: "Transparency",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, odio non nunc eu. Adipiscing in neque mi nunc euismod morbi interdum.",
-    strokeColor: "skyBlue",
-  },
-  {
-    header: "Trustworthy",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, odio non nunc eu. Adipiscing in neque mi nunc euismod morbi interdum.",
-    strokeColor: "blue",
   },
   {
     header: "Creativity",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, odio non nunc eu. Adipiscing in neque mi nunc euismod morbi interdum.",
+      "The amazing talents at Blockchain Hub Africa are always kin on delivering creative strategies into solutions being built by us. The team prides itself in building creative web3 solutions.",
     strokeColor: "black",
+  },
+  {
+    header: "Trustworthy",
+    paragraph:
+      "The team works hard to uphold this Value in making sure projects are delivered according to and above clients expectations, which in turn makes us trustworthy as a company.",
+    strokeColor: "blue",
+  },
+  {
+    header: "Integrity",
+    paragraph:
+      "At Blockchain Hub Africa we hold ourselves to our word, when we say we are building world class web3 talents and solutions, we mean every word of it. This is one foundation we are building on and don;’t joke with.",
+    strokeColor: "skyBlue",
   },
 ];

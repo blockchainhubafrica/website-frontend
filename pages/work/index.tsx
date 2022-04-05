@@ -1,9 +1,11 @@
 import React from "react";
+import { useRouter } from "next/router";
 import { demoEventsData } from "../../assets/images";
 import { Button, Events, Products, TestimonialSection } from "../../components";
 import styles from "./work-page.module.css";
 
 export default function OurWorkPage() {
+  const router = useRouter();
   return (
     <main className={styles["container"]}>
       <div className={styles.ellipse}></div>
@@ -28,6 +30,7 @@ export default function OurWorkPage() {
               buttonType="secondary"
               text="View All Events"
               className={`text-orange my-10 ${styles["events-button"]}`}
+              onClick={() => router.push("/events")}
             />
           </div>
           <Events eventList={demoEventsData.slice(0, 2)} />

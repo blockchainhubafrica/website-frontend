@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./blog.module.css";
-import { ContactForm } from "../../components";
-import Link from "next/link";
 import Image from "next/image";
-import { achievementImage } from "../../assets/images/pngs";
-import { RightArrowIcon } from "../../assets/images";
-import { articles } from "../../data/blog";
+import Link from "next/link";
 import { useRouter } from "next/router";
+
+import styles from "./blog.module.css";
+import { Loader } from "../../components";
+import { RightArrowIcon } from "../../assets/images";
 import {
   DiscordIcon,
   LinkIcon,
@@ -37,71 +36,81 @@ export default function BlogDetailPage() {
   const { allData, isLoading, isError } = useDataContext();
   const articles: ArticleType[] = allData.blog || [];
   const router = useRouter();
-  console.log({ router, articles });
   const currentArticleSlug = router.query.bid;
-  
-  // const currentArticle = articles.find(
-  //   (article: ArticleType) => article.slug === currentArticleSlug
-  //   )();
-    // if (isLoading || isError) return "";
-  const [activeArticle, setactiveArticle] =
-    useState<ArticleType>(articles[0]);
 
-  const subtract = (curr: any, num: number, min: number = 0) =>
-    parseInt(curr) === min ? curr : parseInt(curr) - num;
+  const getActiveIndex = () => {
+    if (!articles.length) return 0;
+    const index = articles.findIndex((x) => x.slug === currentArticleSlug);
 
-type Article = {
-  title: string,
-  body: string,
-  headshot: StaticImageData,
-  status: string,
-  date: string,
-  duration: string,
-  author: string,
-};
+    return index !== -1 ? index : 0;
+  };
 
+  const [copied, setCopied] = useState<boolean>(false);
+
+  const [activeIndex, setactiveIndex] = useState<number>(getActiveIndex() || 0);
+
+  const [activeArticle, setactiveArticle] = useState<ArticleType>(
+    articles[activeIndex]
+  );
+  const prevArticle = activeIndex > 0 ? articles[activeIndex - 1] : false;
+  const nextArticle =
+    activeIndex < articles.length ? articles[activeIndex + 1] : false;
+  console.log({ prevArticle, nextArticle });
+
+  useEffect(() => {
+    // if (!isLoading && articles.length && !activeArticle)
+    //   router.replace("/blog");
+
+    if (articles.length) {
+      setactiveIndex(getActiveIndex());
+      setactiveArticle(articles[activeIndex]);
+    }
+  });
 
   const [showLoader, setShowLoader] = useState<boolean>(true);
 
-export default function BlogDetailPage() {
-  const { query }: any = useRouter();
-  const [initialArticle] = useState(query?.bid && !isNaN(Number(query?.bid)) ? subtract(parseInt(query?.bid), 1) : 0);
-  console.log(query, initialArticle)
-  const [currentSlide, setCurrentSlide] = useState<number[]>([0, 1]);
   const containerRef = useRef<HTMLElement | null>(null);
 
-
-  const goRight = () => {
-    // router.push(`/blog/${add(query?.bid, 1, articles.length)}`);
-  };
-
-  const goLeft = () => {
-    // router.push(`/blog/${subtract(query?.bid, 1)}`);
+  const handleCopy = () => {
+    if (window) {
+      navigator.clipboard.writeText(window?.location?.href);
+      setCopied(true);
+    }
   };
 
   return (
-    <main className={`${styles["detail-container"]} md:py-5 px-5 md:px-10 lg:px-20`}>
+    <main
+      className={`${styles["detail-container"]} md:py-5 px-5 md:px-10 lg:px-20`}
+    >
       {articles.length > 1 ? (
         <div
           className={`${styles["button-container"]} flex mt-8 md-mt-14 w-full`}
         >
-          {articles.length > 1 ? (
+          {prevArticle ? (
             <div className="flex items-center">
-              <button id="article-slider-btn-1" className="" onClick={goLeft}>
-                <RightArrowIcon style={{ transform: "rotate(180deg)" }} />
-              </button>
-              <h3 className={`spaced-heading text-base font-coolvetica mx-5`}>BACK</h3>
+              <Link href={`/blog/${prevArticle.slug}`} passHref={true}>
+                <a className={`${styles["article-btn"]}`}>
+                  <RightArrowIcon style={{ transform: "rotate(180deg)" }} />
+                </a>
+              </Link>
+              <h3 className={`spaced-heading text-base font-coolvetica mx-5`}>
+                BACK
+              </h3>
             </div>
           ) : (
             ""
           )}
 
-          {parseInt("1") < articles.length ? (
+          {nextArticle ? (
             <div className="flex items-center ml-auto">
-              <h3 className={`spaced-heading text-base font-coolvetica mx-5`}>NEXT</h3>
-              <button id="article-slider-btn-2" onClick={goRight}>
-                <RightArrowIcon />
-              </button>
+              <h3 className={`spaced-heading text-base font-coolvetica mx-5`}>
+                NEXT
+              </h3>
+              <Link href={`/blog/${nextArticle.slug}`} passHref={true}>
+                <a className={`${styles["article-btn"]}`}>
+                  <RightArrowIcon />
+                </a>
+              </Link>
             </div>
           ) : (
             ""
@@ -120,53 +129,70 @@ export default function BlogDetailPage() {
               <h3
                 className={`mb-4 pb-5 md:pb-10 text-3xl md:text-7xl font-coolvetica text-blue-600 lg:w-3/4`}
               >
-                {activeArticle.title}
+                {activeArticle?.title}
               </h3>
 
               <div className="flex py-5">
                 {/* Article menu */}
                 <div
-                  className={`${styles["menu"]} sticky top-40 hidden md:block p-10 py-16`}
+                  className={`${styles["menu"]} sticky hidden md:block p-10 py-16`}
                 >
                   <div className="flex flex-col mb-8">
                     <span className="mb-3">Article written by</span>
-                    <strong>{activeArticle.author}</strong>
+                    <strong>{activeArticle?.author}</strong>
                   </div>
                   <div className="flex flex-col mb-8">
                     <span className="mb-3">Time of read</span>
-                    <strong>{activeArticle.readingTime} Minutes</strong>
+                    <strong>{activeArticle?.readingTime} Minutes</strong>
                   </div>
                   <div className="flex flex-col mb-8">
                     <span className="mb-3">Date posted</span>
-                    <strong>{formatDate(activeArticle.publishDate)}</strong>
+                    <strong>{formatDate(activeArticle?.publishDate)}</strong>
                   </div>
                   <div className="flex flex-col mb-8">
                     <span className="mb-3">Share</span>
                     <div className={`${styles["share-icons"]} flex`}>
                       <span className="mr-3">
-                        <DiscordIcon />
+                        <a href="https://discord.com" target="_blank ">
+                          <DiscordIcon />
+                        </a>
                       </span>
                       <span className="mr-3">
-                        <TwitterIcon />
+                        <a href="https://twitter.com/home" target="_blank">
+                          <TwitterIcon />
+                        </a>
                       </span>
                       <span className="mr-3">
-                        <TelegramIcon />
+                        <a href="https://telegram.org/" target="_blank">
+                          <TelegramIcon />
+                        </a>
                       </span>
-                      <span className="">
+                      <span className="cursor-pointer" onClick={handleCopy}>
                         <LinkIcon />
                       </span>
                     </div>
+                    {copied ? (
+                      <span className="mt-3 font-coolvetica font-bold">
+                        Copied!!
+                      </span>
+                    ) : (
+                      ""
+                    )}
                   </div>
+                </div>
 
                 {/* Article body */}
                 <div
                   className={`${styles["body"]} md:px-24`}
-                  dangerouslySetInnerHTML={{ __html: activeArticle.content }}
+                  dangerouslySetInnerHTML={{ __html: activeArticle?.content }}
                 ></div>
               </div>
-            ))}
-        </div>
-      </section>
+            </div>
+          </div>
+        </section>
+      ) : (
+        ""
+      )}
     </main>
   );
 }

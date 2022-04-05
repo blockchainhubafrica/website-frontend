@@ -5,7 +5,8 @@
   text-transform: uppercase;
   font-family: var(--app-secondary-font);
   letter-spacing: 4px;
-  white-space: nowrap;
+  text-align: center;
+  /* white-space: nowrap; */
 }
 
 .close-btn:hover svg {

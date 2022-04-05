@@ -36,9 +36,7 @@ function StorySection() {
     "1024": { slidesPerView: 3, spaceBetween: 15 },
   };
   return (
-    <div
-      className={`container px-0 xmd:pr-40 ${styles["container"]} `}
-    >
+    <div className={`container px-0 xmd:pr-40 ${styles["container"]} `}>
       <div className="grid grid-cols-1 xmd:grid-cols-5 gap-y-20">
         <div className="col-span-3 smd:container xmd:px-0 order-2 xmd:order-1 story-section-swiper">
           <Swiper
@@ -54,6 +52,7 @@ function StorySection() {
             <SwiperSlide>
               <div className={slideClass("slide-1")}>
                 <Image
+                  priority={true}
                   objectFit="cover"
                   unoptimized={true}
                   alt=""
@@ -66,6 +65,7 @@ function StorySection() {
             <SwiperSlide>
               <div className={slideClass("slide-2")}>
                 <Image
+                  priority={true}
                   objectFit="cover"
                   unoptimized={true}
                   alt=""
@@ -78,6 +78,7 @@ function StorySection() {
             <SwiperSlide>
               <div className={slideClass("slide-3")}>
                 <Image
+                  priority={true}
                   objectFit="cover"
                   unoptimized={true}
                   alt=""

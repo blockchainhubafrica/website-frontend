@@ -1,16 +1,17 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Ticker from "react-ticker";
 
 import {
-  AcexLogoSrc,
   CasperLogoSrc,
   CrevatalLogoSrc,
   demoEventsData,
   NearLogoSrc,
-  PeopleMapSvg,
   VestHubLogoSrc,
   XendLogoSrc,
+  VideoBackdropSrc,
+  PeopleGifSrc,
+  BuildSpaceLogoSrc,
 } from "../../assets/images";
 
 import {
@@ -18,39 +19,24 @@ import {
   CircleBanner,
   CloudinaryImage,
   Events,
-  Loader,
   Marquee,
   Products,
   StorySection,
   TestimonialSection,
+  Video,
 } from "../../components";
 
-import Video from "./components/Video";
 import WhatWeOffer from "./components/WhatWeOffer";
 import styles from "./home-page.module.css";
 
 function HomePage() {
-  const [showLoader, setShowLoader] = useState<boolean>(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLoader(false);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (showLoader) {
-    return <Loader />;
-  }
-
   return (
     <>
       <main className={`${styles["container"]} `}>
         <section className={`${styles["page-1"]} pb-24 lg:pb-10`}>
           <div className="pl-5 lg:container grid   lg:grid-cols-5 py-10 md:py-20 lg:py-32">
             <div className="w-4/5 md:w-full md:col-span-4 lg:col-span-3 relative z-10">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl xlg:text-8xl whitespace-nowrap gap-x-3 flex flex-wrap">
+              <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl xlg:text-8xl whitespace-nowrap gap-x-3 flex flex-wrap">
                 <span>Blockchain adoption </span>
                 <span className="px">through</span>
                 <span className={`${styles["underlined-text"]} pr`}>
@@ -62,18 +48,18 @@ function HomePage() {
                 </span>
                 <span>in Africa</span>
               </h1>
-              <p className="mt-10 mb-20 text-sm md:text-base md:w-2/3 xl:text-xl xlg:2xl lg:w-4/5 xlg:w-2/3">
+              <p className="mt-10 mb-40 md:mb-20 text-xl md:w-2/3 xl:text-xl xlg:2xl lg:w-4/5 xlg:w-2/3">
                 Advancing Web3 adoption through talent acceleration and
                 innovative blockchain-based solutions in Africa.
               </p>
               <div className="flex gap-x-5">
                 <Link href="/about" passHref>
-                  <a>
+                  <a tabIndex={-1}>
                     <Button buttonType="primary" text="Learn More" />
                   </a>
                 </Link>
                 <Link href="/hire-us" passHref>
-                  <a>
+                  <a tabIndex={-1}>
                     <Button buttonType="tertiary" text="Hire Us" />
                   </a>
                 </Link>
@@ -82,7 +68,13 @@ function HomePage() {
             <div
               className={`md:col-span-2 ${styles["people-svg"]} fix-img-height`}
             >
-              <CloudinaryImage src={peopleGif.src} width={731} height={695} />
+              <CloudinaryImage
+                unoptimized={true}
+                src={PeopleGifSrc}
+                width={731}
+                height={695}
+                quality={100}
+              />
             </div>
           </div>
           <div
@@ -92,8 +84,13 @@ function HomePage() {
           </div>
         </section>
         <section className={``}>
-          <div className="container pt-5 lg:pt-0">
-            <Video />
+          <div
+            className={`container pt-5 lg:pt-0 ${styles["video-container"]}`}
+          >
+            <Video
+              videoUrl="https://www.youtube.com/embed/92YhcyN1rH8"
+              imageUrl={VideoBackdropSrc}
+            />
           </div>
         </section>
         <section className="md:container py-28 lg:pt-0">
@@ -104,11 +101,10 @@ function HomePage() {
               </h2>
             </div>
             <div>
-              <p className="text-base  lg:text-xl 2xl:text-2xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus,
-                odio non nunc eu. Adipiscing in neque mi nunc euismod morbi
-                interdum. Vel orci est sodales in interdum quisque. Purus leo
-                porta volutpat adipiscing scelerisque id porttitor arcu.
+              <p className="text-lg  lg:text-xl 2xl:text-2xl">
+                The web3 space in Africa, is in dire need of talent and there is
+                little or no supply to match the demand of web3 talents in
+                africa. This is what we are trying to solve.
               </p>
             </div>
           </div>
@@ -156,7 +152,7 @@ function HomePage() {
                     </div>
                     <div className={`${styles["img-container"]}`}>
                       <CloudinaryImage
-                        src={AcexLogoSrc}
+                        src={BuildSpaceLogoSrc}
                         width={191}
                         height={77}
                       />
@@ -195,7 +191,11 @@ function HomePage() {
                 <CloudinaryImage src={VestHubLogoSrc} width={121} height={79} />
               </div>
               <div>
-                <CloudinaryImage src={AcexLogoSrc} width={191} height={77} />
+                <CloudinaryImage
+                  src={BuildSpaceLogoSrc}
+                  width={191}
+                  height={77}
+                />
               </div>
               <div>
                 <CloudinaryImage src={NearLogoSrc} width={174} height={58} />

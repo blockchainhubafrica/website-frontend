@@ -24,7 +24,7 @@ declare module "yup" {
 Yup.addMethod(Yup.string, "validMessage", function (errorMessage) {
   return this.test("message", errorMessage, function (value) {
     const { path, createError } = this;
-    return (value && getWordsLength(value) >= 1 && getWordsLength(value) <= 300) || createError({ path, message: errorMessage })
+    return (value && getWordsLength(value) >= 1) || createError({ path, message: errorMessage })
   })
 });
 
@@ -35,7 +35,7 @@ const validationSchema = Yup.object({
     .required("Email is required"),
   phone: Yup.string().required("Phone Number is required"),
   message: Yup.string().required("Message is required")
-    .validMessage("Message must be a minimum of 1 word and maximum of 300 words"),
+    .validMessage("Message must be a minimum of 1 word"),
 });
 
 const initialValues = {
@@ -57,7 +57,7 @@ const availableTopics = [
   { title: "Others", value: "others" },
 ]
 
-function ContactForm() {
+function ContactForm({ showTopics = true }) {
   // State management
   const [topics, setTopics] = useState(intialTopics);
 
@@ -84,14 +84,14 @@ function ContactForm() {
 
   return (
     <form onSubmit={formik.handleSubmit} className={`${styles["container"]} md:px-10`}>
-      <div className={`${styles["topics"]} flex mb-20 flex-wrap gap-6`}>
+      {showTopics && <div className={`${styles["topics"]} flex mb-20 flex-wrap gap-6`}>
         {availableTopics.map(topic => (
           <div key={topic.value} className={`${topicIsSelected(topic.value) ? styles["active"] : ""} flex items-center`}>
             <button type="button" autoFocus={false} onClick={() => handleClick(topic.value)}><span className="block"></span></button>
             <span className="ml-2 md:text-2xl">{topic.title}</span>
           </div>
         ))}
-      </div>
+      </div>}
       <div>
         <Input
           name="name"
@@ -129,7 +129,7 @@ function ContactForm() {
           type="submit"
           className={`${styles.submit} font-coolvetica justify-center flex items-center py-3 px-6`}
         >
-          <span className="mr-3">Register</span>
+          <span className="mr-3">Send Message</span>
           <span>
             <TopRightArrowIcon />
           </span>
