@@ -21,8 +21,8 @@ export const CloseButton = ({
   className?: string;
 }) => {
   className
-    ? (className = `menu_toggle ${className}`)
-    : (className = "menu_toggle");
+    ? (className = `menu_toggle ml-auto ${className}`)
+    : (className = "menu_toggle ml-auto");
   return (
     <button className={className} onClick={toggle}>
       <svg

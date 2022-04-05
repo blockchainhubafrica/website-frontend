@@ -206,7 +206,9 @@ function HomePage() {
             </div>
           </div>
         </section>
-        <section className="pt-32 pb-16">{/* <StorySection /> */}</section>
+        <section className="pt-32 pb-16">
+          <StorySection />
+        </section>
         <section className="mb-20">
           <Marquee />
         </section>

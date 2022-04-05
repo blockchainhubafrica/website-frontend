@@ -332,7 +332,7 @@ button:focus {
   -ms-user-select: none;
   background: transparent;
   cursor: pointer;
-  position: absolute;
+  /* position: absolute; */
   z-index: 1;
   right: 1.5rem;
   top: 1.4rem;
