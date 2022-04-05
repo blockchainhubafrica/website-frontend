@@ -55,7 +55,6 @@ export default function BlogDetailPage() {
   const prevArticle = activeIndex > 0 ? articles[activeIndex - 1] : false;
   const nextArticle =
     activeIndex < articles.length ? articles[activeIndex + 1] : false;
-  console.log({ prevArticle, nextArticle });
 
   useEffect(() => {
     // if (!isLoading && articles.length && !activeArticle)
@@ -74,8 +73,9 @@ export default function BlogDetailPage() {
   const handleCopy = () => {
     if (window) {
       navigator.clipboard.writeText(window?.location?.href);
-      setCopied(true);
+      return setCopied(true);
     }
+    return null;
   };
 
   return (
@@ -158,7 +158,10 @@ export default function BlogDetailPage() {
                         </a>
                       </span>
                       <span className="mr-3">
-                        <a href="https://twitter.com/home" target="_blank">
+                        <a
+                          href={`https://twitter.com/intent/tweet?text=${window?.location?.href}`}
+                          target="_blank"
+                        >
                           <TwitterIcon />
                         </a>
                       </span>
