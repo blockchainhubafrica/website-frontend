@@ -204,7 +204,7 @@ function HomePage() {
           </div>
         </section>
         <section className="pt-32 pb-16">
-          {/* <StorySection /> */}
+          <StorySection />
         </section>
         <section className="mb-20">
           <Marquee />
