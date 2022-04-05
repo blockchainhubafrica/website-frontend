@@ -5,26 +5,14 @@ import Ticker from "react-ticker";
 
 const Marquee = () => {
   return (
-    <section className={` ${styles.container}`}>
-      <div className="lg:hidden">
-        <Ticker offset={40} speed={20} mode="chain">
-          {({ index }) => (
-            <div>
-              Leading Hub for Africa's web3 talent and solutions. Helping Web3
-              companies build blockchain based solutions
-            </div>
-          )}
-        </Ticker>
+    <section className={` ${styles.container} flex items-center gap-x-10 pl-10`}>
+      <div className="">
+        Leading Hub for Africa's web3 talent and solutions. Helping Web3
+        companies build blockchain based solutions
       </div>
-      <div className="hidden lg:block">
-        <Ticker offset={40} speed={60} mode="chain">
-          {({ index }) => (
-            <div>
-              Leading Hub for Africa's web3 talent and solutions. Helping Web3
-              companies build blockchain based solutions
-            </div>
-          )}
-        </Ticker>
+      <div>
+        Leading Hub for Africa's web3 talent and solutions. Helping Web3
+        companies build blockchain based solutions
       </div>
     </section>
   );
