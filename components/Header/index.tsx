@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { Banner } from "../../components";
+import { Banner, SideNav } from "../../components";
 import { LogoIcon, MenuIcon, TopRightArrowIcon } from "../../assets/images";
 import styles from "./header.module.css";
 import { useAppContext } from "../../contexts/appContext";
 import { RegistrationModal } from "../RegistrationModal";
 
 function Header({}) {
+  const [isSideBarOpen, setisSideBarOpen] = useState<boolean>(false);
   const { isRegistrationFormActive, setIsRegistrationFormActive } =
     useAppContext();
 
@@ -32,7 +33,7 @@ function Header({}) {
       <header className={`${styles.container} `}>
         <div className="container justify-between flex items-center py-5">
           <Link href="/" passHref>
-            <a>
+            <a className="scale-75 md:scale-100">
               <LogoIcon />
             </a>
           </Link>
@@ -63,23 +64,28 @@ function Header({}) {
               </Link>
             </li>
           </ul>
-          <button className="lg:hidden" title="Open Menu">
+          {/* <button
+            className="lg:hidden"
+            title="Open Menu"
+            onClick={() => setisSideBarOpen(true)}
+          >
             <MenuIcon />
-          </button>
+          </button> */}
+          <SideNav />
         </div>
         {bannerIsActive && (
           <Banner
             onBannerIsActive={setBannerIsActive}
             isActive={bannerIsActive}
           >
-            Our Annual Internship Program Kicks Off This Summer, May, 2022. To
-            Register Click
+            Our Annual Internship Program Kicks off in May, 2022.
+            {/* To Register Click
             <button
               className={`${styles["register-btn"]} pl-2`}
               onClick={() => setIsRegistrationFormActive(true)}
             >
               Join The Web3 Internship 2022
-            </button>
+            </button> */}
           </Banner>
         )}
       </header>

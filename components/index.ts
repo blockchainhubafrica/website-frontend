@@ -17,3 +17,8 @@ export * from "./CircleBanner";
 export * from "./CloudinaryImage";
 export * from "./AboutUsComponentss";
 export * from "./Video";
+export * from "./SideMenu";
+export * from "./SideNav";
+export * from "./menu";
+export * from "./overlay";
+export * from "./closeButton";

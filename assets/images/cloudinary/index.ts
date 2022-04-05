@@ -2,7 +2,8 @@ const VideoBackdropSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647008207/Company-website/video-backdrop_jgkzzq.jpg";
 
 const BuildSpaceLogoSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1649059705/Company-website/buildspace_vcesx3.png";
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1649073399/Company-website/buildspace_vxuuux.png";
+  
 const XendLogoSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648736454/Company-website/xend_y5nde2.png";
 
@@ -31,9 +32,6 @@ const NduImageSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647705237/Company-website/ndu_xkivd1.png";
 
 const BeimaImageSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647705081/Company-website/beima_jndjti.png";
-
-const PeopleImageSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647705081/Company-website/beima_jndjti.png";
 
 const UcheNFTSrc =

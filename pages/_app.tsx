@@ -30,6 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         ></meta>
         <title>Blockchain Hub Africa | Home</title>
       </Head>
+
       <AppProvider>
         <DataProvider>
           {routeChanging ? (
