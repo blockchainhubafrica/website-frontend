@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import Ticker from "react-ticker";
 
@@ -30,6 +31,8 @@ import WhatWeOffer from "./components/WhatWeOffer";
 import styles from "./home-page.module.css";
 
 function HomePage() {
+  const router = useRouter();
+
   return (
     <>
       <main className={`${styles["container"]} `}>
@@ -233,6 +236,7 @@ function HomePage() {
                   buttonType="secondary"
                   text="View All Events"
                   className="text-orange my-10"
+                  onClick={() => router.push("/events")}
                 />
               </div>
             </div>
