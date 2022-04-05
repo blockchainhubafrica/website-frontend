@@ -263,3 +263,96 @@ button:focus {
     width: 5rem;
   }
 }
+
+.side-nav {
+  height: 100vh;
+  overflow: hidden auto;
+  width: 300px;
+  background-color: var(--app-blue-600);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 11;
+}
+
+.side-nav ul {
+  /* display: none; */
+  padding: 25px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /* margin-top: 50px; */
+  right: 0;
+  width: 300px;
+  overflow: hidden;
+}
+
+.side-nav .social-media {
+  padding: 25px;
+  width: 80%;
+}
+
+.side-nav ul li {
+  list-style: none;
+  cursor: pointer;
+  /* border-bottom: 1px solid hsl(242deg 16% 26%); */
+  margin-left: -25px;
+  margin-right: -25px;
+  color: #fff;
+}
+
+.side-nav ul li a:not(li:last-child a) {
+  display: block;
+  padding: 24px;
+  font-size: 24px;
+}
+
+.side-nav ul li:last-child {
+  display: block;
+  padding: 24px;
+  font-size: 16px;
+}
+
+.side-nav ul li:last-child a {
+  /* padding: 24px; */
+}
+
+
+.side-nav ul li a:hover {
+  color: var(--app-orange);
+}
+
+.menu_toggle,
+.menu_toggle:focus {
+  outline: none;
+  border: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  right: 1.5rem;
+  top: 1.4rem;
+  padding: 0.5rem;
+}
+
+.menu_toggle svg path {
+  stroke: #fff;
+}
+
+@media screen and (min-width: 576px) {
+  .menu_toggle {
+    top: 2.7rem;
+  }
+  .logo {
+    top: 2.6rem;
+  }
+}
+
+.cta {
+  border: 2px solid var(--app-orange);
+  border-radius: var(--app-border-radius-sm);
+}

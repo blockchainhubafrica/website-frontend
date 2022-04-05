@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { Banner } from "../../components";
+import { Banner, SideNav } from "../../components";
 import { LogoIcon, MenuIcon, TopRightArrowIcon } from "../../assets/images";
 import styles from "./header.module.css";
 import { useAppContext } from "../../contexts/appContext";
 import { RegistrationModal } from "../RegistrationModal";
 
 function Header({}) {
+  const [isSideBarOpen, setisSideBarOpen] = useState<boolean>(false);
   const { isRegistrationFormActive, setIsRegistrationFormActive } =
     useAppContext();
 
@@ -63,9 +64,15 @@ function Header({}) {
               </Link>
             </li>
           </ul>
-          <button className="lg:hidden" title="Open Menu">
+          {/* <button
+            className="lg:hidden"
+            title="Open Menu"
+            onClick={() => setisSideBarOpen(true)}
+          >
             <MenuIcon />
-          </button>
+          </button> */}
+          <SideNav />
+          
         </div>
         {bannerIsActive && (
           <Banner
