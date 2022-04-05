@@ -91,7 +91,7 @@ function HomePage() {
             className={`container pt-5 lg:pt-0 ${styles["video-container"]}`}
           >
             <Video
-              videoUrl="https://www.youtube.com/embed/92YhcyN1rH8"
+              videoUrl="https://www.youtube.com/embed/b8KF2sRyCNI"
               imageUrl={VideoBackdropSrc}
             />
           </div>
@@ -206,9 +206,7 @@ function HomePage() {
             </div>
           </div>
         </section>
-        <section className="pt-32 pb-16">
-          {/* <StorySection /> */}
-        </section>
+        <section className="pt-32 pb-16">{/* <StorySection /> */}</section>
         <section className="mb-20">
           <Marquee />
         </section>
