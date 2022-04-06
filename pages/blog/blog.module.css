@@ -122,7 +122,8 @@
   color: var(--app-blue-600);
 }
 
-.detail-container a {
+.detail-container a,
+.detail-container a * {
   color: var(--app-orange);
 }
 .detail-container h3 {
