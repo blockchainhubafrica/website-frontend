@@ -25,15 +25,15 @@ export const testimonials: Testimonial = [
   {
     name: "Clement Hugbo",
     role: "CEO/Co-Founder Crevatal",
-    title: "Glad to be part of what BHA is Building",
-    desc: "I love what the amazing team at Blockchain Hub is building, tackling one of the major issues in the blockchain space. I have had the opportunity to work/speak with the team, and I must say that the team is on fire.",
+    title: "Sponsor Blockchain Developers Conference 2021",
+    desc: "It was a pleasure to be part of the sponsors of the blockchain developers Conference 2021.",
     headshot: CodemathicsSrc,
   },
   {
     name: "Mr. Tony Emeka",
     role: "CEO, CryptoTvPlus.",
-    title: "Sponsor Blockchain Developers Conference 2021",
-    desc: "It was a pleasure to be part of the sponsors of the blockchain developers Conference 2021.",
+    title: "Part of the Sponsors of 2021 Blockchain Developer's Conf.",
+    desc: "We were part of the sponsors for the last Blockchain Developers Conference that was organised by Blockchain Hub Africa, and were honestly impressed with the team, and what they are building.",
     headshot: TonyCryptoTVSrc,
   },
 ];
