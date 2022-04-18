@@ -31,7 +31,7 @@ const Banner: React.FC<Props> = ({ children, isActive, onBannerIsActive }) => {
         <div
           className={`${styles.container} py-2 container flex justify-center items-center gap-x-10 xmd:gap-x-0`}
         >
-          {children}
+          <div>{children}</div>
           <button
             onClick={() => onBannerIsActive(false)}
             className={`${styles["close-btn"]} ml-3`}
