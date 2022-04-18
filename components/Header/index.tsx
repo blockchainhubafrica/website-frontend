@@ -78,7 +78,15 @@ function Header({}) {
             onBannerIsActive={setBannerIsActive}
             isActive={bannerIsActive}
           >
-            Our Annual Internship Program Kicks off in May, 2022.
+            Our Annual Internship Program Kicks off in May, 2022
+            {".   "}
+            <a
+              className="inline-block border-b-2 border-black hover:text-white"
+              target={"_blank"}
+              href="https://18mkftlgq7y.typeform.com/to/ymaZUHRI"
+            >
+              Register Here
+            </a>
             {/* To Register Click
             <button
               className={`${styles["register-btn"]} pl-2`}
