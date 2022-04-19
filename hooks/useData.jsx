@@ -7,8 +7,8 @@ import { toast } from "react-toastify";
 
 const backendUrl = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
 
-function useData(token) {
-  const initialState = { data: { media: [], blog: [] } };
+function useData(fallbackData) {
+  const initialState = fallbackData || { data: { blog: [] } };
   const router = useRouter();
   const [data, setData] = useState(null);
 
@@ -27,7 +27,7 @@ function useData(token) {
     data: allData,
     error,
     mutate,
-  } = useSWR(token ? `${backendUrl}/insights` : null, fetcher);
+  } = useSWR(`${backendUrl}/insights`, fetcher);
 
   useEffect(() => {
     if (allData) setData(allData);

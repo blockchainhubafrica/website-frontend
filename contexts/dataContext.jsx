@@ -6,9 +6,9 @@ import httpService from "../services/httpService";
 const dataContext = createContext();
 
 export function DataProvider({ children }) {
-  const router = useRouter();
-  
-  const { mutate, allData, isLoading, isError, isEmpty } = useData("token");
+  const [fallbackData, setfallbackData] = useState(null);
+
+  const { mutate, allData, isLoading, isError, isEmpty } = useData(fallbackData);
 
   return (
     <dataContext.Provider
@@ -18,6 +18,7 @@ export function DataProvider({ children }) {
         isError,
         isEmpty,
         mutate,
+        setfallbackData,
       }}
     >
       {children}

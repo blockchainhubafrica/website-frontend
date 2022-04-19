@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 import "tailwindcss/tailwind.css";
 
 import "slick-carousel/slick/slick.css";
@@ -22,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const currentArticleSlug = router?.query?.bid?.toString();
   let title = deslugify(router.pathname);
-  console.log(router.query, router);
+  // console.log(router.query, router);
   if (currentArticleSlug) {
     title = `${deslugify(currentArticleSlug)}`;
   }
@@ -70,10 +73,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           property="og:site_name"
           content="Blockchain Hub Africa"
         />
-        <title key={getRandomKey()}>Blockchain Hub Africa | {title}</title>
+        <title key={getRandomKey()}>
+          Blockchain Hub Africa | {title || "Home"}
+        </title>
       </Head>
 
       <AppProvider>
+      <ToastContainer position="top-center" autoClose={5000} />
+
         <DataProvider>
           {routeChanging ? (
             <Loader />

@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import styles from "./blog.module.css";
-import { Loader } from "../../components";
 import { RightArrowIcon } from "../../assets/images";
 import {
   DiscordIcon,
@@ -16,6 +14,7 @@ import { useDataContext } from "../../contexts/dataContext";
 import { formatDate } from "../../utils/formatDate";
 import Head from "next/head";
 import { getRandomKey } from "../../utils/randomKey";
+import { toast } from "react-toastify";
 
 type ArticleType = {
   noOfViews: number;
@@ -34,12 +33,13 @@ type ArticleType = {
   type: string;
 };
 
-function BlogDetailPage(props: any) {
-  const { allData, isLoading, isError } = useDataContext();
-  const articles: ArticleType[] = allData.blog || [];
+function BlogDetailPage({ fallback }: any) {
+  const { allData, isLoading, isError, setfallbackData } = useDataContext();
+
+  const articles: ArticleType[] = allData.blog;
   const router = useRouter();
   const currentArticleSlug = router.query.bid;
-  console.log(props, currentArticleSlug);
+  if (fallback) setfallbackData(fallback);
 
   const getActiveIndex = () => {
     if (!articles.length) return 0;
@@ -48,9 +48,7 @@ function BlogDetailPage(props: any) {
     return index !== -1 ? index : 0;
   };
 
-  const [copied, setCopied] = useState<boolean>(false);
-
-  const [activeIndex, setactiveIndex] = useState<number>(getActiveIndex() || 0);
+  const [activeIndex, setactiveIndex] = useState<number>(getActiveIndex());
 
   const [activeArticle, setactiveArticle] = useState<ArticleType>(
     articles[activeIndex]
@@ -60,25 +58,17 @@ function BlogDetailPage(props: any) {
     activeIndex < articles.length ? articles[activeIndex + 1] : false;
 
   useEffect(() => {
-    // if (!isLoading && articles.length && !activeArticle)
-    //   router.replace("/blog");
-
     if (articles.length) {
       setactiveIndex(getActiveIndex());
       setactiveArticle(articles[activeIndex]);
     }
   });
 
-  const [showLoader, setShowLoader] = useState<boolean>(true);
-
   const containerRef = useRef<HTMLElement | null>(null);
 
   const handleCopy = () => {
-    if (window) {
-      navigator.clipboard.writeText(window?.location?.href);
-      return setCopied(true);
-    }
-    return null;
+    navigator.clipboard.writeText(window?.location?.href);
+    toast.success("Link copied to clipboard");
   };
 
   return (
@@ -184,17 +174,13 @@ function BlogDetailPage(props: any) {
                             <TelegramIcon />
                           </a>
                         </span>
-                        <span className="cursor-pointer" onClick={handleCopy}>
+                        <span
+                          className="cursor-pointer flex items-center"
+                          onClick={handleCopy}
+                        >
                           <LinkIcon />
                         </span>
                       </div>
-                      {copied ? (
-                        <span className="mt-3 font-coolvetica font-bold">
-                          Copied!!
-                        </span>
-                      ) : (
-                        ""
-                      )}
                     </div>
                   </div>
 
@@ -213,6 +199,17 @@ function BlogDetailPage(props: any) {
       </main>
     </>
   );
+}
+
+export async function getServerSideProps(context: any) {
+  let data = await fetch("https://api.blockchainhub.africa/api/v1/insights");
+  let articles = await data.json();
+  const a = {
+    props: {
+      fallback: articles,
+    },
+  };
+  return a;
 }
 
 export default BlogDetailPage;
