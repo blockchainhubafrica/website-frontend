@@ -356,3 +356,8 @@ button:focus {
   border: 2px solid var(--app-orange);
   border-radius: var(--app-border-radius-sm);
 }
+
+.Toastify * {
+  font-family: var(--app-secondary-font) !important;
+  color: var(--app-secondary-font-color) !important;
+}
