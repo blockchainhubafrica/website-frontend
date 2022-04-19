@@ -1,7 +1,6 @@
 import React from "react";
 
 import styles from "./styles.module.css";
-import Ticker from "react-ticker";
 
 const Marquee = ({ children }: { children: React.ReactChild }) => {
   return (
