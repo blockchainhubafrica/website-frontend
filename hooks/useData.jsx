@@ -8,7 +8,8 @@ import { toast } from "react-toastify";
 const backendUrl = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
 
 function useData(fallbackData) {
-  const initialState = fallbackData || { data: { blog: [] } };
+  // console.log(fallbackData?.data);
+  const initialState = { data: { blog: [] } };
   const router = useRouter();
   const [data, setData] = useState(null);
 

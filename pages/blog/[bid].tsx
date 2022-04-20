@@ -16,6 +16,7 @@ import Head from "next/head";
 import { getRandomKey } from "../../utils/randomKey";
 import { toast } from "react-toastify";
 import { BlogItemPageHead } from "../../pageHeads";
+import { useData } from "../../hooks/useData";
 
 type ArticleType = {
   noOfViews: number;
@@ -35,9 +36,13 @@ type ArticleType = {
 };
 
 function BlogDetailPage({ fallback }: any) {
-  const { allData, isLoading, isError, setfallbackData } = useDataContext();
+  const { allData, isLoading, isError } = useData();
 
-  const articles: ArticleType[] = allData.blog;
+  let articles: ArticleType[];
+  articles = fallback?.data?.blog || [];
+  if (allData.data.blog.length) {
+    articles = allData.data.blog;
+  }
   const router = useRouter();
   const currentArticleSlug = router.query.bid;
 
@@ -58,8 +63,6 @@ function BlogDetailPage({ fallback }: any) {
     activeIndex < articles.length ? articles[activeIndex + 1] : false;
 
   useEffect(() => {
-    if (fallback) setfallbackData(fallback);
-
     if (articles.length) {
       setactiveIndex(getActiveIndex());
       setactiveArticle(articles[activeIndex]);
@@ -69,8 +72,10 @@ function BlogDetailPage({ fallback }: any) {
   const containerRef = useRef<HTMLElement | null>(null);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(window?.location?.href);
-    toast.success("Link copied to clipboard");
+    if (window) {
+      navigator.clipboard.writeText(window?.location?.href);
+      toast.success("Link copied to clipboard");
+    }
   };
 
   return (
@@ -156,7 +161,7 @@ function BlogDetailPage({ fallback }: any) {
                         </span>
                         <span className="mr-3">
                           <a
-                            href={`https://twitter.com/intent/tweet?text=${window?.location?.href}`}
+                            // href={`https://twitter.com/intent/tweet?text=${window?.location?.href}`}
                             target="_blank"
                           >
                             <TwitterIcon />
