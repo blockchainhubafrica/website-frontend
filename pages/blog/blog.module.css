@@ -87,7 +87,7 @@
 
 .container .article .body-text small {
   color: var(--app-white);
-  font-weight: 400;
+  /* font-weight: 400; */
   font-size: 8px;
   line-height: 10px;
   letter-spacing: 0.5em;
@@ -127,7 +127,7 @@
   color: var(--app-orange);
 }
 .detail-container h3 {
-  font-weight: 400 !important;
+  /* font-weight: 400; */
 }
 
 .detail-container a:hover {
@@ -218,36 +218,41 @@
 }
 
 .detail-container h2 * {
-  font-weight: 400 !important;
+  /* font-weight: 400; */
   font-size: 24px;
 }
 
 .detail-container .article .body p * {
-  font-weight: 400 !important;
+  /* font-weight: 400; */
   font-size: 16px;
 }
 
 @media screen and (min-width: 768px) {
   .detail-container h2 * {
-    font-weight: 400 !important;
+    font-weight: 400;
     font-size: 32px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .detail-container h2 * {
-    font-weight: 400 !important;
+    font-weight: 400;
     font-size: 32px;
   }
 }
 
+
+.container strong {
+  font-weight: bolder !important;
+}
+
 @media screen and (min-width: 1440px) {
   .detail-container .article .body p * {
-    font-weight: 400 !important;
+    /* font-weight: 400; */
     font-size: 18px;
   }
   .detail-container h2 * {
-    font-weight: 400 !important;
+    font-weight: 400;
     font-size: 40px;
   }
 }
