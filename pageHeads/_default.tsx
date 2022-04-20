@@ -8,14 +8,6 @@ function DefaultSEOHead() {
           type: "website",
           locale: "en_gb",
           url: "https://blockchainhub.africa",
-          images: [
-            {
-              url: "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1650293106/Company-website/bcha_logo_dark_pzqxcl.jpg",
-              width: 320,
-              height: 320,
-              alt: "Blockchain Hub Africa",
-            },
-          ],
           site_name: "Blockchain Hub Africa",
         }}
         additionalLinkTags={

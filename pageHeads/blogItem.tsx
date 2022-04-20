@@ -37,11 +37,11 @@ const BlogItemPageHead = () => {
   return (
     <>
       <NextSeo
-        title={`Blockchain Hub Africa | blockchain-hub-africa-partners-with-buildspace-to-build-web3-talents-in-africa-416}`}
+        title={`Blockchain Hub Africa | Blog}`}
         description="Blockchain Hub Africa Partners with Buildspace to Build Web3 Talents in Africa"
         openGraph={{
           title:
-            "Blockchain Hub Africa | blockchain-hub-africa-partners-with-buildspace-to-build-web3-talents-in-africa-416",
+            "Blockchain Hub Africa | Blog",
           description:
             "Blockchain Hub Africa Partners with Buildspace to Build Web3 Talents in Africa",
           images: [
