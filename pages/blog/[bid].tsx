@@ -39,7 +39,6 @@ function BlogDetailPage({ fallback }: any) {
   const articles: ArticleType[] = allData.blog;
   const router = useRouter();
   const currentArticleSlug = router.query.bid;
-  if (fallback) setfallbackData(fallback);
 
   const getActiveIndex = () => {
     if (!articles.length) return 0;
@@ -58,6 +57,8 @@ function BlogDetailPage({ fallback }: any) {
     activeIndex < articles.length ? articles[activeIndex + 1] : false;
 
   useEffect(() => {
+    if (fallback) setfallbackData(fallback);
+
     if (articles.length) {
       setactiveIndex(getActiveIndex());
       setactiveArticle(articles[activeIndex]);
@@ -73,16 +74,6 @@ function BlogDetailPage({ fallback }: any) {
 
   return (
     <>
-      <Head>
-        <meta
-          key={getRandomKey()}
-          property="og:image"
-          content={
-            activeArticle?.url ||
-            "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1650293106/Company-website/bcha_logo_dark_pzqxcl.jpg"
-          }
-        />
-      </Head>
       <main
         className={`${styles["detail-container"]} md:py-5 px-5 md:px-10 lg:px-20`}
       >

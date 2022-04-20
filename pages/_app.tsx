@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../index.css";
 import "../story-section.css";
 
+import PageHead from "../pageHeads";
 import { Footer, Header, Loader } from "../components";
 import { AppProvider } from "../contexts/appContext";
 import { DataProvider } from "../contexts/dataContext";
@@ -33,55 +34,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link key={getRandomKey()} rel="icon" href="./favicon.svg" />
-        <meta
-          key={getRandomKey()}
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        />
-        <meta key={getRandomKey()} name="theme-color" content="#000000" />
-        <meta
-          key={getRandomKey()}
-          name="description"
-          content="Blockchain Hub Africa."
-        />
-        <meta
-          key={getRandomKey()}
-          name="keywords"
-          content="Blockchain Hub Africa, Blockchain, Smart Contract, Africa, Talent, Cryptocurrency"
-        />
-        <meta
-          key={getRandomKey()}
-          property="og:url"
-          content="https://blockchainhub.africa"
-        />
-        <meta key={getRandomKey()} property="og:type" content="website" />
-        <meta
-          key={getRandomKey()}
-          property="og:image"
-          content="https://res.cloudinary.com/blockchainhub-africa/image/upload/v1650293106/Company-website/bcha_logo_dark_pzqxcl.jpg"
-        />
-        <meta property="og:image:width" content="640" />
-        <meta property="og:image:height" content="640" />
-        <meta
-          key={getRandomKey()}
-          property="og:image:alt"
-          content="Blockchain Hub Africa"
-        />
-        <meta key={getRandomKey()} property="og:locale" content="en_gb" />
-        <meta
-          key={getRandomKey()}
-          property="og:site_name"
-          content="Blockchain Hub Africa"
-        />
-        <title key={getRandomKey()}>
-          Blockchain Hub Africa | {title || "Home"}
-        </title>
       </Head>
 
       <AppProvider>
-      <ToastContainer position="top-center" autoClose={5000} />
-
+        <ToastContainer position="top-center" autoClose={5000} />
         <DataProvider>
+          <PageHead />
+
           {routeChanging ? (
             <Loader />
           ) : (
