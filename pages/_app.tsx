@@ -12,7 +12,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "../index.css";
 import "../story-section.css";
 
-import PageHead from "../pageHeads";
 import { Footer, Header, Loader } from "../components";
 import { AppProvider } from "../contexts/appContext";
 import { DataProvider } from "../contexts/dataContext";
@@ -20,6 +19,7 @@ import { useRouteChangeHandler } from "../hooks";
 import { getRandomKey } from "../utils/randomKey";
 import { useRouter } from "next/router";
 import { deslugify } from "../utils/deslugify";
+import PageHeadSetup from "../pageHeads/pageHeadSetup";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { routeChanging } = useRouteChangeHandler();
@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <AppProvider>
         <ToastContainer position="top-center" autoClose={5000} />
         <DataProvider>
-          <PageHead />
+          <PageHeadSetup />
 
           {routeChanging ? (
             <Loader />

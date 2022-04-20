@@ -15,6 +15,7 @@ import { formatDate } from "../../utils/formatDate";
 import Head from "next/head";
 import { getRandomKey } from "../../utils/randomKey";
 import { toast } from "react-toastify";
+import { BlogItemPageHead } from "../../pageHeads";
 
 type ArticleType = {
   noOfViews: number;
@@ -74,6 +75,7 @@ function BlogDetailPage({ fallback }: any) {
 
   return (
     <>
+      <BlogItemPageHead article={activeArticle} />
       <main
         className={`${styles["detail-container"]} md:py-5 px-5 md:px-10 lg:px-20`}
       >
