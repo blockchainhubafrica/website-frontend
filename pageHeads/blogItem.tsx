@@ -21,35 +21,39 @@ type ArticleType = {
   type: string;
 };
 
-const BlogItemPageHead = ({ article }: { article: ArticleType }) => {
+const BlogItemPageHead = () => {
   // console.log(article);
-  const currentArticleSlug = article?.slug;
-  let title = deslugify(currentArticleSlug || "");
+  // const activeIndex = (() => {
+  //   if (!articles.length) return 0;
+  //   const index = articles.findIndex((x) => x.slug === currentArticleSlug);
+
+  //   return index !== -1 ? index : 0;
+  // })();
+  // const article = articles[activeIndex];
+  // const currentArticleSlug = article?.slug;
+  // let title = deslugify(currentArticleSlug || "");
 
   // console.log({ allData });
   return (
     <>
-      {article ? (
-        <NextSeo
-          title={`Blockchain Hub Africa | ${title || "Blog"}`}
-          description="Get news, blockchain and web3 updates and the latest on Blockchain Hub Africa."
-          openGraph={{
-            title: "Blockchain Hub Africa | Blog",
-            description:
-              "Get news, blockchain and web3 updates and the latest on Blockchain Hub Africa.",
-            images: [
-              {
-                url: article?.url,
-                width: 320,
-                height: 320,
-                alt: article?.altText,
-              },
-            ],
-          }}
-        />
-      ) : (
-        ""
-      )}
+      <NextSeo
+        title={`Blockchain Hub Africa | blockchain-hub-africa-partners-with-buildspace-to-build-web3-talents-in-africa-416}`}
+        description="Blockchain Hub Africa Partners with Buildspace to Build Web3 Talents in Africa"
+        openGraph={{
+          title:
+            "Blockchain Hub Africa | blockchain-hub-africa-partners-with-buildspace-to-build-web3-talents-in-africa-416",
+          description:
+            "Blockchain Hub Africa Partners with Buildspace to Build Web3 Talents in Africa",
+          images: [
+            {
+              url: "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1650461794/Company-website/bcha_and_buildspace_bhwlk9.png",
+              width: 360,
+              height: 360,
+              alt: "Blockchain Hub Africa x Buildspace",
+            },
+          ],
+        }}
+      />
     </>
   );
 };

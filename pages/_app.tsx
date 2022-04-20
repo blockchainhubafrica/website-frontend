@@ -20,13 +20,16 @@ import { getRandomKey } from "../utils/randomKey";
 import { useRouter } from "next/router";
 import { deslugify } from "../utils/deslugify";
 import PageHeadSetup from "../pageHeads/pageHeadSetup";
+import { useData } from "../hooks/useData";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { allData, isLoading, isError } = useData();
+
   const { routeChanging } = useRouteChangeHandler();
   const router = useRouter();
   const currentArticleSlug = router?.query?.bid?.toString();
   let title = deslugify(router.pathname);
-  // console.log(router.query, router);
+  console.log(allData);
   if (currentArticleSlug) {
     title = `${deslugify(currentArticleSlug)}`;
   }
@@ -39,7 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <AppProvider>
         <ToastContainer position="top-center" autoClose={5000} />
         <DataProvider>
-          <PageHeadSetup />
+          <PageHeadSetup data={allData} />
 
           {routeChanging ? (
             <Loader />

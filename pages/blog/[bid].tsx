@@ -45,7 +45,6 @@ function BlogDetailPage({ fallback }: any) {
   }
   const router = useRouter();
   const currentArticleSlug = router.query.bid;
-
   const getActiveIndex = () => {
     if (!articles.length) return 0;
     const index = articles.findIndex((x) => x.slug === currentArticleSlug);
@@ -63,6 +62,7 @@ function BlogDetailPage({ fallback }: any) {
     activeIndex < articles.length ? articles[activeIndex + 1] : false;
 
   useEffect(() => {
+    console.log(window.location, router);
     if (articles.length) {
       setactiveIndex(getActiveIndex());
       setactiveArticle(articles[activeIndex]);
@@ -80,7 +80,7 @@ function BlogDetailPage({ fallback }: any) {
 
   return (
     <>
-      <BlogItemPageHead article={activeArticle} />
+      {/* <BlogItemPageHead /> */}
       <main
         className={`${styles["detail-container"]} md:py-5 px-5 md:px-10 lg:px-20`}
       >

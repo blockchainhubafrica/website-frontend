@@ -14,21 +14,21 @@ import {
 } from "./index";
 type headsType = { [key: string]: JSX.Element | string };
 
-const heads: headsType = {
-  "/": <HomePageHead />,
-  "/about": <AboutUsPageHead />,
-  "/work": <WorkPageHead />,
-  "/events": <EventsPageHead />,
-  "/blog": <BlogPageHead />,
-  "/blog/[bid]": "",
-  "/contact": <ContactUsPageHead />,
-  "/hire-us": <HireUsPageHead />,
-  "/components": <HomePageHead />,
-  "/_error": <NotFoundPageHead />,
-};
-
-const PageHeadSetup = () => {
+const PageHeadSetup = ({ data }: { data: object }) => {
+  const heads: headsType = {
+    "/": <HomePageHead />,
+    "/about": <AboutUsPageHead />,
+    "/work": <WorkPageHead />,
+    "/events": <EventsPageHead />,
+    "/blog": <BlogPageHead />,
+    "/blog/[bid]": <BlogItemPageHead />,
+    "/contact": <ContactUsPageHead />,
+    "/hire-us": <HireUsPageHead />,
+    "/components": <HomePageHead />,
+    "/_error": <NotFoundPageHead />,
+  };
   let route = useRouter().pathname;
+  let A = `${heads[route]}`;
   return (
     <>
       {heads[route] || heads["/"]}
