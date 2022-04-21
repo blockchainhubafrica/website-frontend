@@ -62,7 +62,7 @@
   filter: grayscale(0%);
 }
 
-.container .article .body-text.latest small:first-child {
+.container .article .body-text small:first-child {
   background-color: var(--app-orange);
   border-radius: 10px;
   width: fit-content;
@@ -88,21 +88,22 @@
 .container .article .body-text small {
   color: var(--app-white);
   /* font-weight: 400; */
+  text-transform: uppercase;
   font-size: 8px;
   line-height: 10px;
   letter-spacing: 0.5em;
 }
 
-.container .article .body-text.latest small.latest {
+.container .article .body-text small.Latest {
   background-color: var(--app-blue-400);
 }
 
-.container .article .body-text.latest small.popular {
+.container .article .body-text small.Popular {
   color: var(--app-blue-600);
   background-color: var(--app-green-200);
 }
 
-.container .article .body-text.latest small.casual {
+.container .article .body-text small.Casual {
   background-color: var(--app-blue-200);
 }
 

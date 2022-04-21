@@ -7,40 +7,53 @@ import { achievementImage } from "../../assets/images/pngs";
 import { RightArrowIcon } from "../../assets/images";
 import { useDataContext } from "../../contexts/dataContext";
 import { formatDate } from "../../utils/formatDate";
+import useSWR, { SWRConfig } from "swr";
+import { getArticles } from "../../services/getArticles";
+import { APIFormat } from "../../utils/getAPIFormat";
 
-type Article = {
-  slug: string;
-  title: string;
-  body: string;
-  url: string;
+type ArticleType = {
   noOfViews: number;
-  status: string;
-  publishDate: string;
+  altText: string;
+  _id: string;
+  title: string;
+  author: string;
   readingTime: number;
+  content: string;
+  publishDate: string;
+  status: "Draft" | "Published";
+  url: string;
+  createdAt: string;
+  updatedAt: string;
+  slug: string;
+  type: string;
 };
 
-export default function BlogPage() {
-  const { allData } = useDataContext();
-  const articles = allData.blog;
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+function Blog() {
+  const { data, error } = useSWR("/api/articles", fetcher);
+  const { allData, isError } = APIFormat(data, error);
+
+  const articles = allData.data.blog;
   let latestDate: string;
   if (articles.length) latestDate = articles[0].publishDate;
   const [currentSlide, setCurrentSlide] = useState<number[]>([0, 6]);
   const containerRef = useRef<HTMLElement | null>(null);
 
-  const goRight = () => {
-    setCurrentSlide([currentSlide[0] + 6, currentSlide[1] + 6]);
-    containerRef?.current?.scrollIntoView({
+  const scrollToTop = () => {
+    return containerRef?.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   };
+  const goRight = () => {
+    setCurrentSlide([currentSlide[0] + 6, currentSlide[1] + 6]);
+    scrollToTop();
+  };
 
   const goLeft = () => {
     setCurrentSlide([currentSlide[0] - 6, currentSlide[1] - 6]);
-    containerRef?.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    scrollToTop();
   };
 
   return (
@@ -65,12 +78,16 @@ export default function BlogPage() {
           <span className="font-coolvetica py-2 px-5">FEATURED ARTICLE</span>
           <h3 className="text-3xl md:text-5xl my-5 md:my-10">
             {articles.length && (
-              <Link href={`/blog/${articles[0].slug}`}>{articles[0].title}</Link>
+              <Link href={`/blog/${articles[0].slug}`}>
+                {articles[0].title}
+              </Link>
             )}
           </h3>
           <span className="">
             {articles.length && formatDate(articles[0].publishDate)}{" "}
-            {articles.length && <strong>{articles[0].readingTime} min Read</strong>}
+            {articles.length && (
+              <strong>{articles[0].readingTime} min Read</strong>
+            )}
           </span>
         </div>
         <div className={`hidden lg:block col-span-1`}>
@@ -85,12 +102,9 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-12 py-10 md:px-10 lg:px-20">
           {articles
             .slice(currentSlide[0], currentSlide[1])
-            .map((article: Article, index: number) => {
+            .map((article: ArticleType, index: number) => {
               const date = formatDate(article.publishDate);
-
-              let status = "CASUAL";
-              if (article.publishDate === latestDate) status = "LATEST";
-              if (article.noOfViews > 5) status = "POPULAR";
+              const type = article.type;
 
               return (
                 <div
@@ -100,18 +114,14 @@ export default function BlogPage() {
                   <div className="mb-5">
                     <Image src={article.url} layout="fill" />
                   </div>
-                  <div
-                    className={`${styles["body-text"]} ${styles["latest"]} flex flex-col`}
-                  >
-                    {status && (
-                      <small
-                        className={`${
-                          styles[status.toLowerCase()]
-                        } py-2 px-4 text-center my-2`}
-                      >
-                        {status} {status === "LATEST" ? "ARTICLE" : "READ"}
-                      </small>
-                    )}
+                  <div className={`${styles["body-text"]} flex flex-col`}>
+                    <small
+                      className={`${
+                        styles[article.type]
+                      } py-2 px-4 text-center my-2`}
+                    >
+                      {type + ` ${type === "Latest" ? "Article" : "Read"}`}
+                    </small>
                     <Link href={`/blog/${article.slug}`}>{article.title}</Link>
                     <span>
                       {date} <strong>{article.readingTime} min Read</strong>
@@ -154,3 +164,26 @@ export default function BlogPage() {
     </main>
   );
 }
+
+function BlogPage({ fallback }: any) {
+  return (
+    <SWRConfig value={{ fallback }}>
+      <Blog />
+    </SWRConfig>
+  );
+}
+
+export async function getStaticProps(context: any) {
+  let articles = await getArticles();
+  // console.log({ context });
+  const a = {
+    props: {
+      fallback: {
+        "/api/articles": articles,
+      },
+    },
+  };
+  return a;
+}
+
+export default BlogPage;

@@ -10,29 +10,37 @@ function DefaultSEOHead() {
           url: "https://blockchainhub.africa",
           site_name: "Blockchain Hub Africa",
         }}
-        additionalLinkTags={
-          [
-            // {
-            //   rel: "icon",
-            //   href: "https://blockchainhub.africa/favicon.ico",
-            //   type: "image/x-icon",
-            // },
-            // {
-            //   rel: "apple-touch-icon",
-            //   href: "https://blockchainhub.africa/apple-touch-icon-76.png",
-            //   sizes: "76x76",
-            // },
-            // {
-            //   rel: "apple-touch-icon",
-            //   href: "https://blockchainhub.africa/apple-touch-icon-156.png",
-            //   sizes: "156x156",
-            // },
-            // {
-            //   rel: "manifest",
-            //   href: "/manifest.json",
-            // },
-          ]
-        }
+        additionalLinkTags={[
+          {
+            rel: "icon",
+            href: "https://blockchainhub.africa/favicon.svg",
+            type: "image/x-icon",
+          },
+          {
+            rel: "apple-touch-icon",
+            href: "https://blockchainhub.africa/apple-touch-icon-iphone-60x60.png",
+            sizes: "60x60",
+          },
+          {
+            rel: "apple-touch-icon",
+            href: "https://blockchainhub.africa/apple-touch-icon-ipad-76x76.png",
+            sizes: "76x76",
+          },
+          {
+            rel: "apple-touch-icon",
+            href: "https://blockchainhub.africa/apple-touch-icon-ipad-retina-152x152.png",
+            sizes: "144x144",
+          },
+          {
+            rel: "apple-touch-icon",
+            href: "https://blockchainhub.africa/apple-touch-icon-iphone-retina-120x120.png",
+            sizes: "114x114",
+          },
+          // {
+          //   rel: "manifest",
+          //   href: "/manifest.json",
+          // },
+        ]}
         additionalMetaTags={[
           // {
           //   name: "google-site-verification",

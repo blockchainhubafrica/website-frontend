@@ -27,4 +27,18 @@ async function DeleteBlogPost(id) {
   return await httpService.delete(`${route}/${id}`);
 }
 
-export { UpdateBlogPost, CreateBlogPost, AddViewToBlogPost, DeleteBlogPost };
+async function getArticles() {
+  const url = process.env.NEXT_PUBLIC_BACKEND_BASE_URL + "/insights";
+  let data = await fetch(url);
+  data = await data.json();
+
+  return data;
+}
+
+export {
+  UpdateBlogPost,
+  CreateBlogPost,
+  AddViewToBlogPost,
+  DeleteBlogPost,
+  getArticles,
+};

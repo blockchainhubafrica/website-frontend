@@ -14,14 +14,14 @@ import {
 } from "./index";
 type headsType = { [key: string]: JSX.Element | string };
 
-const PageHeadSetup = ({ data }: { data: object }) => {
+const PageHeadSetup = () => {
   const heads: headsType = {
     "/": <HomePageHead />,
     "/about": <AboutUsPageHead />,
     "/work": <WorkPageHead />,
     "/events": <EventsPageHead />,
     "/blog": <BlogPageHead />,
-    "/blog/[bid]": <BlogItemPageHead />,
+    "/blog/[id]": "",
     "/contact": <ContactUsPageHead />,
     "/hire-us": <HireUsPageHead />,
     "/components": <HomePageHead />,
