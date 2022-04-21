@@ -144,7 +144,7 @@ function BlogDetail() {
             <div className="md:py-10">
               <div className={`${styles["article"]} mb-10`}>
                 <h3
-                  className={`mb-4 pb-5 md:pb-10 text-3xl md:text-7xl font-coolvetica text-blue-600 lg:w-3/4`}
+                  className={`mb-4 pb-5 md:pb-10 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-coolvetica text-blue-600 2xl:w-4/5`}
                 >
                   {article?.title}
                 </h3>
