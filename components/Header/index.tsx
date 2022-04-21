@@ -83,7 +83,7 @@ function Header({}) {
             <a
               className="inline-block border-b-2 border-black hover:text-white"
               target={"_blank"}
-              href="https://18mkftlgq7y.typeform.com/to/ymaZUHRI"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScfEPQaHTbXL7Cq8eJelzIcDyxsVhpLhsl77CFv0UXmsTt_0w/viewform"
             >
               Register Here
             </a>
