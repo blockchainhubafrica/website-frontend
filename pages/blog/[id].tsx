@@ -58,11 +58,9 @@ function BlogDetail() {
   const router = useRouter();
   const slug = router.query.id;
   if (router.isFallback) {
-    console.log("isFallback");
     return <div>Loading...</div>;
   }
 
-  // console.log(slug);
   const { data, error } = useSWR(`/api/articles/${slug}`, fetcher);
   const { allData, isError } = APIFormat(data, error, null);
   const { article, prevArticle, nextArticle }: allDataType = allData;
@@ -97,9 +95,7 @@ function BlogDetail() {
       />
       <DefaultSEOHead />
       <div>
-        <main
-          className={`${styles["detail-container"]} md:py-5 px-5 md:px-10 lg:px-20`}
-        >
+        <main className={`${styles["detail-container"]} md:py-5 container`}>
           {hasMultipleArticles ? (
             <div
               className={`${styles["button-container"]} flex mt-8 md-mt-14 w-full`}
@@ -200,7 +196,7 @@ function BlogDetail() {
 
                   {/* Article body */}
                   <div
-                    className={`${styles["body"]} md:px-24`}
+                    className={`${styles["body"]} md:pl-12 lg:pl-14 xl:pl-16 2xl:pl-20 xlg:px-28`}
                     dangerouslySetInnerHTML={{
                       __html: article?.content,
                     }}
