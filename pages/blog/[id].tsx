@@ -73,6 +73,10 @@ function BlogDetail() {
     }
   }, [isBrowser]);
 
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <NextSeo
@@ -244,7 +248,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
