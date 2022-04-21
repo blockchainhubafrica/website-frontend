@@ -14,7 +14,7 @@ import { Footer, Header, Loader } from "../components";
 import { AppProvider } from "../contexts/appContext";
 import { DataProvider } from "../contexts/dataContext";
 import { useRouteChangeHandler } from "../hooks";
-import PageHeadSetup from "../pageHeads/pageHeadSetup";
+// import PageHeadSetup from "../pageHeads/pageHeadSetup";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { routeChanging } = useRouteChangeHandler();
@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <AppProvider>
         <ToastContainer position="top-center" autoClose={5000} />
         <DataProvider>
-          <PageHeadSetup />
+          {/* <PageHeadSetup /> */}
 
           {routeChanging ? (
             <Loader />

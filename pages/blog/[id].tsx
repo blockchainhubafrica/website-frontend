@@ -13,7 +13,7 @@ import {
 import { formatDate } from "../../utils/formatDate";
 import Head from "next/head";
 import { toast } from "react-toastify";
-import { BlogItemPageHead } from "../../pageHeads";
+import { BlogItemPageHead, DefaultSEOHead } from "../../pageHeads";
 import { useData } from "../../hooks/useData";
 import { getArticles } from "../../services/getArticles";
 import useSWR, { SWRConfig } from "swr";
@@ -48,8 +48,20 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 function BlogDetail() {
   const { isBrowser } = useSsr();
+  const [twitterMessage, settwitterMessage] = useState<string>("");
+  useEffect(() => {
+    if (isBrowser) {
+      const twitterMessage = `https://twitter.com/intent/tweet?text=Hey guys. Check out this article on blockchain Hub Africa's blog: ${window.location.href}`;
+      settwitterMessage(twitterMessage);
+    }
+  }, [isBrowser]);
   const router = useRouter();
   const slug = router.query.id;
+  if (router.isFallback) {
+    console.log("isFallback");
+    return <div>Loading...</div>;
+  }
+
   // console.log(slug);
   const { data, error } = useSWR(`/api/articles/${slug}`, fetcher);
   const { allData, isError } = APIFormat(data, error, null);
@@ -64,18 +76,6 @@ function BlogDetail() {
       toast.success("Link copied to clipboard");
     }
   };
-
-  const [twitterMessage, settwitterMessage] = useState<string>("");
-  useEffect(() => {
-    if (isBrowser) {
-      const twitterMessage = `https://twitter.com/intent/tweet?text=Hey guys. Check out this article on blockchain Hub Africa's blog: ${window.location.href}`;
-      settwitterMessage(twitterMessage);
-    }
-  }, [isBrowser]);
-
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <>
@@ -95,6 +95,7 @@ function BlogDetail() {
           ],
         }}
       />
+      <DefaultSEOHead />
       <div>
         <main
           className={`${styles["detail-container"]} md:py-5 px-5 md:px-10 lg:px-20`}
@@ -248,7 +249,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
