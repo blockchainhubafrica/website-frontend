@@ -32,10 +32,10 @@ type ArticleType = {
   publishDate: string;
   status: "Draft" | "Published";
   url: string;
-  createdAt: string;
-  updatedAt: string;
   slug: string;
   type: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
 type allDataType = {
@@ -74,7 +74,7 @@ function BlogDetail() {
       toast.success("Link copied to clipboard");
     }
   };
-
+  
   return (
     <>
       <NextSeo
