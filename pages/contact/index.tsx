@@ -38,8 +38,8 @@ export default function ContactUsPage() {
               <p className="mb-3">
                 <span className="text-blue-400">Email:</span>
                 <br />
-                <a target="_blank" href="mailto:blockchainhubafrica@gmail.com">
-                  blockchainhubafrica@gmail.com
+                <a target="_blank" href="mailto:hello@blockchainhub.africa">
+                  hello@blockchainhub.africa
                 </a>
               </p>
               <p className={`${styles["social-icons"]} flex`}>

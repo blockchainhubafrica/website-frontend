@@ -56,7 +56,7 @@ const Products = () => {
           <span className="font-coolvetica">
             Need to know more about our work?{" "}
           </span>
-          <a href="mailto:blockchainhubafrica@gmail.com&subject=Hello, I would love to learn more about your work">
+          <a href="mailto:hello@blockchainhub.africa&subject=Hello, I would love to learn more about your work">
             <span className="ml-1 md:ml-2">
               Shoot us a mail <ArrowTilt />
             </span>

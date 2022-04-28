@@ -91,10 +91,10 @@ function Footer() {
             </a>
             <a
               className="lg:text-2xl"
-              href="mailto:blockchainhubafrica@gmail.com"
+              href="mailto:hello@blockchainhub.africa"
               target="_blank"
             >
-              Email: blockchainhubafrica@gmail.com
+              Email: hello@blockchainhub.africa
             </a>
           </div>
         </div>
