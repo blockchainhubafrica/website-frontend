@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import * as Yup from "yup";
-import { Calendar2, Ticket, TopRightArrowIcon } from "../../../assets/images";
+import {
+  Calendar2,
+  Ticket,
+  TopRightArrowIcon,
+  values,
+} from "../../../assets/images";
 import { useFormik } from "formik";
+import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 
 import {
   Button,
@@ -13,14 +19,13 @@ import {
 
 import styles from "./styles.module.css";
 import { DefaultSEOHead, EventsPageHead } from "../../../pageHeads";
-type ModalProps = {
-  isActive: boolean;
-  setIsActive: (status: boolean) => void;
-};
+import httpService from "../../../services/httpService";
+
 type ValuesType = {
   name: string;
   email: string;
   phone: string;
+  coupon: string;
 };
 
 const validationSchema = Yup.object({
@@ -29,24 +34,56 @@ const validationSchema = Yup.object({
     .email("Invalid Email Address")
     .required("Email is required"),
   phone: Yup.string().required("Phone Number is required"),
+  coupon: Yup.string(),
 });
 
 const initialValues = {
   name: "",
   email: "",
   phone: "",
+  coupon: "",
 };
 export default function BDC2022() {
   const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false);
   const [selectedTicket, setselectedTicket] = useState("VIP Ticket ($5)");
-
-  const handleSubmit = (values: ValuesType) => void {};
-
+  const nairaTicketPrice = selectedTicket === "VIP Ticket ($5)" ? 5000 : 1000;
+  const config = {
+    public_key: "FLWPUBK_TEST-a9aad3948218738605d14d6428a21f0c-X",
+    tx_ref: "1234",
+    amount: nairaTicketPrice,
+    currency: "NGN",
+    payment_options: "card,mobilemoney,ussd",
+    customizations: {
+      title: "Blockchain Developers Conference 2022",
+      description: `Payment for ${selectedTicket}`,
+      logo: "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1667651791/blockchainhubafrica/logo_phap95.svg",
+    },
+  };
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: handleSubmit,
   });
+  const handleFlutterPayment = useFlutterwave({
+    ...config,
+    customer: {
+      email: formik.values.email,
+      phone_number: formik.values.phone,
+      name: formik.values.name,
+    },
+  });
+  async function handleSubmit(values: ValuesType) {
+    handleFlutterPayment({
+      callback: (response) => {
+        console.log(response);
+        closePaymentModal(); // this will close the modal programmatically
+      },
+      onClose: () => {
+        closePaymentModal(); // this will close the modal programmatically
+      },
+    });
+  }
+
   return (
     <>
       <EventsPageHead />
@@ -109,7 +146,7 @@ export default function BDC2022() {
                   </span>
                   <div>
                     <span className="text-2xl font-medium">Regular - </span>
-                    <span className="text-2xl">$3 (N2,500)</span>
+                    <span className="text-2xl">$2 (N1,500)</span>
                   </div>
                 </div>
               </div>
@@ -125,7 +162,7 @@ export default function BDC2022() {
                       name="name"
                       formik={formik}
                       label="Name"
-                      className={`mb-6`}
+                      className={`mb-4`}
                     />
                   </div>
                   <div>
@@ -133,7 +170,7 @@ export default function BDC2022() {
                       name="email"
                       formik={formik}
                       label="Email"
-                      className={`mb-6`}
+                      className={`mb-4`}
                     />
                   </div>
                   <div>
@@ -141,7 +178,15 @@ export default function BDC2022() {
                       name="phone"
                       formik={formik}
                       label="Phone No."
-                      className={`mb-16`}
+                      className={`mb-4`}
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      name="coupon"
+                      formik={formik}
+                      label="Coupon Code"
+                      className={`mb-10`}
                     />
                   </div>
                   <div>
@@ -151,7 +196,7 @@ export default function BDC2022() {
                     <div className="flex flex-wrap gap-10 justify-between ">
                       <FancyCheckbox
                         className="text-black"
-                        value="Regular Ticket ($3)"
+                        value="Regular Ticket ($2)"
                         selectedValue={selectedTicket}
                         onSelect={setselectedTicket}
                       />
@@ -163,7 +208,7 @@ export default function BDC2022() {
                       />
                     </div>
                   </div>
-                  <div className="mt-20">
+                  <div className="mt-16">
                     <Button buttonType="primary" text="Register" />
                   </div>
                 </form>
