@@ -15,10 +15,13 @@ import CircleArrowIcon from "./circle-arrow.svg";
 import PlayIcon from "./play-icon.svg";
 import NearLogo from "./near-logo.svg";
 import Calendar from "./calendar.svg";
+import Calendar2 from "./calendar-2.svg";
 import TangledArrow from "./tangledArrow.svg";
 import Ellipse from "./ellipse.svg";
 import LinkIcon from "./link.svg";
 import Close from "./close.svg";
+import Location from "./location.svg";
+import Ticket from "./ticket.svg";
 
 export {
   LogoIcon,
@@ -38,8 +41,11 @@ export {
   PlayIcon,
   NearLogo,
   Calendar,
+  Calendar2,
   TangledArrow,
   Ellipse,
   LinkIcon,
   Close,
+  Location,
+  Ticket,
 };

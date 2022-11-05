@@ -7,7 +7,6 @@ import { TopRightArrowIcon } from "../../assets/images";
 import styles from "./contact-form.module.css";
 import { Input, TextArea } from "..";
 
-
 type ValuesType = {
   name: string;
   email: string;
@@ -24,8 +23,11 @@ declare module "yup" {
 Yup.addMethod(Yup.string, "validMessage", function (errorMessage) {
   return this.test("message", errorMessage, function (value) {
     const { path, createError } = this;
-    return (value && getWordsLength(value) >= 1) || createError({ path, message: errorMessage })
-  })
+    return (
+      (value && getWordsLength(value) >= 1) ||
+      createError({ path, message: errorMessage })
+    );
+  });
 });
 
 const validationSchema = Yup.object({
@@ -34,7 +36,8 @@ const validationSchema = Yup.object({
     .email("Invalid Email Address")
     .required("Email is required"),
   phone: Yup.string().required("Phone Number is required"),
-  message: Yup.string().required("Message is required")
+  message: Yup.string()
+    .required("Message is required")
     .validMessage("Message must be a minimum of 1 word"),
 });
 
@@ -55,7 +58,7 @@ const availableTopics = [
   { title: "DApp Front End Dev.", value: "dapp" },
   { title: "Smart Contract Dev.", value: "smart_contract" },
   { title: "Others", value: "others" },
-]
+];
 
 function ContactForm({ showTopics = true }) {
   // State management
@@ -70,7 +73,7 @@ function ContactForm({ showTopics = true }) {
     let topicsClone = Array.from(topics);
 
     if (topicsClone.includes(value)) {
-      topicsClone = topicsClone.filter(topic => topic !== value);
+      topicsClone = topicsClone.filter((topic) => topic !== value);
     } else topicsClone.push(value);
 
     setTopics(topicsClone);
@@ -83,30 +86,36 @@ function ContactForm({ showTopics = true }) {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} className={`${styles["container"]} md:px-10`}>
-      {showTopics && <div className={`${styles["topics"]} flex mb-20 flex-wrap gap-6`}>
-        {availableTopics.map(topic => (
-          <div key={topic.value} className={`${topicIsSelected(topic.value) ? styles["active"] : ""} flex items-center`}>
-            <button type="button" autoFocus={false} onClick={() => handleClick(topic.value)}><span className="block"></span></button>
-            <span className="ml-2 md:text-2xl">{topic.title}</span>
-          </div>
-        ))}
-      </div>}
+    <form
+      onSubmit={formik.handleSubmit}
+      className={`${styles["container"]} md:px-10`}
+    >
+      {showTopics && (
+        <div className={`${styles["topics"]} flex mb-20 flex-wrap gap-6`}>
+          {availableTopics.map((topic) => (
+            <div
+              key={topic.value}
+              className={`${
+                topicIsSelected(topic.value) ? styles["active"] : ""
+              } flex items-center`}
+            >
+              <button
+                type="button"
+                autoFocus={false}
+                onClick={() => handleClick(topic.value)}
+              >
+                <span className="block"></span>
+              </button>
+              <span className="ml-2 md:text-2xl">{topic.title}</span>
+            </div>
+          ))}
+        </div>
+      )}
       <div>
-        <Input
-          name="name"
-          formik={formik}
-          label="Name"
-          className={`mb-6`}
-        />
+        <Input name="name" formik={formik} label="Name" className={`mb-6`} />
       </div>
       <div>
-        <Input
-          name="email"
-          formik={formik}
-          label="Email"
-          className={`mb-6`}
-        />
+        <Input name="email" formik={formik} label="Email" className={`mb-6`} />
       </div>
       <div>
         <Input

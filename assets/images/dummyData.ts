@@ -46,7 +46,7 @@ export const demoEventsData = [
 	{
 		image: event2022A,
 		name: "Developer Conference '22",
-		link: "",
+		link: "/events/bdc-2022",
 		year: "2022",
 	},
 ];

@@ -25,6 +25,11 @@ module.exports = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/bdc-2022",
+        destination: "/events/bdc-2022",
+        permanent: true,
+      },
     ];
   },
 };

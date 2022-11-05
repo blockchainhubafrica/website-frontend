@@ -7,6 +7,7 @@
   padding: 0px 0px 10px 0px;
   background-color: transparent;
   border-bottom: 1px solid var(--app-pink-100);
+  color: var(--app-black);
   /* min-height: 46px; */
 }
 
@@ -16,10 +17,14 @@
   font-size: 30px;
   font-weight: 500;
   font-family: Coolvetica;
+  position: relative;
+  display: inline-block;
 }
 
 .container label.active {
   color: var(--app-blue-400);
+  transform: scale(1.2);
+  left: 8px;
 }
 
 .container input:focus {
@@ -43,6 +48,6 @@
 .error-message {
   position: absolute;
   margin-top: 3px;
-  color: red;
+  color: red !important;
   font-size: 0.8rem;
 }
