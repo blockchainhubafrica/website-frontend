@@ -10,7 +10,7 @@
 
 .hero-section {
   background: linear-gradient(180deg, rgba(0, 8, 31, 0.74) 0%, #00081f 37.46%),
-    url("../../../assets/images/jpgs/featuredEventsImg3.jpg");
+    url("https://res.cloudinary.com/blockchainhub-africa/image/upload/v1667644699/blockchainhubafrica/bg-image-bcha_afgttx.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 120vh;
