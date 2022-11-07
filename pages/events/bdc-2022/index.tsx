@@ -146,7 +146,7 @@ export default function BDC2022() {
                   </span>
                   <div>
                     <span className="text-2xl font-medium">Regular - </span>
-                    <span className="text-2xl">$2 (N1,500)</span>
+                    <span className="text-2xl">$2 (N1,000)</span>
                   </div>
                 </div>
               </div>
@@ -196,13 +196,13 @@ export default function BDC2022() {
                     <div className="flex flex-wrap gap-10 justify-between ">
                       <FancyCheckbox
                         className="text-black"
-                        value="Regular Ticket ($2)"
+                        value="Regular (N1000)"
                         selectedValue={selectedTicket}
                         onSelect={setselectedTicket}
                       />
                       <FancyCheckbox
                         className="text-black"
-                        value="VIP Ticket ($5)"
+                        value="VIP (N5000)"
                         selectedValue={selectedTicket}
                         onSelect={setselectedTicket}
                       />
