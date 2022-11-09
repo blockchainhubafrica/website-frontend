@@ -52,7 +52,7 @@ export default function BDC2022() {
   const nairaTicketPrice = selectedTicket === "VIP (N5000)" ? 5000 : 1000;
   const [txRef, setTxRef] = useState("");
   const config = {
-    public_key: "FLWPUBK_TEST-a9aad3948218738605d14d6428a21f0c-X",
+    public_key: process.env.NEXT_PUBLIC_FLW_PUBLIC_KEY || "",
     tx_ref: txRef,
     amount: nairaTicketPrice,
     currency: "NGN",
