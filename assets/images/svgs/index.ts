@@ -22,8 +22,18 @@ import LinkIcon from "./link.svg";
 import Close from "./close.svg";
 import Location from "./location.svg";
 import Ticket from "./ticket.svg";
+import ModalCloseIcon from "./modal-close.svg";
+import DangerIcon from "./danger.svg";
+import SuccessIcon from "./success.svg";
+import WarningIcon from "./warning.svg";
+import InfoIcon from "./info.svg";
 
 export {
+  ModalCloseIcon,
+  DangerIcon,
+  SuccessIcon,
+  WarningIcon,
+  InfoIcon,
   LogoIcon,
   SmallLogoIcon,
   TopRightArrowIcon,

@@ -16,6 +16,7 @@ import { DataProvider } from "../contexts/dataContext";
 import { useRouteChangeHandler } from "../hooks";
 import Head from "next/head";
 import { getRandomKey } from "../utils/randomKey";
+import { ActionModal } from "components/ActionModal";
 // import PageHeadSetup from "../pageHeads/pageHeadSetup";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -26,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link key={getRandomKey()} rel="icon" href="./favicon.svg" />
       </Head>
-
+      <ActionModal />
       <AppProvider>
         <ToastContainer position="top-center" autoClose={5000} />
         <DataProvider>

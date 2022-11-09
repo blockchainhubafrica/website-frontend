@@ -1,11 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
-import {
-  Calendar2,
-  Ticket,
-  TopRightArrowIcon,
-  values,
-} from "../../../assets/images";
+import { Calendar2, Ticket } from "../../../assets/images";
 import { useFormik } from "formik";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 
@@ -19,13 +14,20 @@ import {
 
 import styles from "./styles.module.css";
 import { DefaultSEOHead, EventsPageHead } from "../../../pageHeads";
-import httpService from "../../../services/httpService";
+import { CreateEventRegistrationAPI } from "../../../services/registrationService";
+import { apiErrorMessage } from "../../../utils/handleAPIErrors";
+import { toast } from "react-toastify";
+import action from "services/actionService";
+import {
+  paymentFailModalContent,
+  registrationSuccessModalContent,
+} from "./meta";
 
 type ValuesType = {
   name: string;
   email: string;
   phone: string;
-  coupon: string;
+  couponCode?: string;
 };
 
 const validationSchema = Yup.object({
@@ -34,22 +36,24 @@ const validationSchema = Yup.object({
     .email("Invalid Email Address")
     .required("Email is required"),
   phone: Yup.string().required("Phone Number is required"),
-  coupon: Yup.string(),
+  couponCode: Yup.string(),
 });
 
 const initialValues = {
   name: "",
   email: "",
   phone: "",
-  coupon: "",
+  couponCode: "",
 };
+
 export default function BDC2022() {
   const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false);
-  const [selectedTicket, setselectedTicket] = useState("VIP Ticket ($5)");
-  const nairaTicketPrice = selectedTicket === "VIP Ticket ($5)" ? 5000 : 1000;
+  const [selectedTicket, setselectedTicket] = useState("VIP (N5000)");
+  const nairaTicketPrice = selectedTicket === "VIP (N5000)" ? 5000 : 1000;
+  const [txRef, setTxRef] = useState("");
   const config = {
     public_key: "FLWPUBK_TEST-a9aad3948218738605d14d6428a21f0c-X",
-    tx_ref: "1234",
+    tx_ref: txRef,
     amount: nairaTicketPrice,
     currency: "NGN",
     payment_options: "card,mobilemoney,ussd",
@@ -73,16 +77,52 @@ export default function BDC2022() {
     },
   });
   async function handleSubmit(values: ValuesType) {
+    const toastId = toast.loading("Registering User...");
+    const payload = { ...values };
+    try {
+      if (!payload.couponCode) delete payload.couponCode;
+      const registration = await CreateEventRegistrationAPI({
+        ...payload,
+        eventCode: "BDC-2022",
+        ticket: selectedTicket.split(" ")[0],
+      });
+      const validCoupon = registration.data.data.transaction.hasPaid;
+      if (validCoupon) {
+        toast.dismiss(toastId);
+        action.success(registrationSuccessModalContent);
+        return;
+      }
+      const paymentId = registration.data.data.transaction.paymentId;
+      setTxRef(paymentId);
+      toast.dismiss(toastId);
+    } catch (error) {
+      const message = apiErrorMessage(error);
+      toast.update(toastId, {
+        render: message,
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+        pauseOnFocusLoss: false,
+      });
+    }
+  }
+
+  useEffect(() => {
+    if (!txRef) return;
+    console.log(txRef);
     handleFlutterPayment({
       callback: (response) => {
         console.log(response);
+        action.success(registrationSuccessModalContent);
+
         closePaymentModal(); // this will close the modal programmatically
       },
       onClose: () => {
         closePaymentModal(); // this will close the modal programmatically
+        action.warning(paymentFailModalContent);
       },
     });
-  }
+  }, [txRef]);
 
   return (
     <>
@@ -183,7 +223,7 @@ export default function BDC2022() {
                   </div>
                   <div>
                     <Input
-                      name="coupon"
+                      name="couponCode"
                       formik={formik}
                       label="Coupon Code"
                       className={`mb-10`}
@@ -209,7 +249,11 @@ export default function BDC2022() {
                     </div>
                   </div>
                   <div className="mt-16">
-                    <Button buttonType="primary" text="Register" />
+                    <Button
+                      type="submit"
+                      buttonType="primary"
+                      text="Register"
+                    />
                   </div>
                 </form>
               </div>
