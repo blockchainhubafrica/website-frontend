@@ -24,8 +24,6 @@
 
 .container label.active {
   color: var(--app-blue-400);
-  transform: scale(1.2);
-  left: 8px;
 }
 
 .container input:focus {
