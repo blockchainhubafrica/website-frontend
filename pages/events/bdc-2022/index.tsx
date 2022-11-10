@@ -309,7 +309,7 @@ export default function BDC2022() {
             </div>
           </div>
         </section>
-        <section className={`${styles["gallery"]} `}>
+        <section className={`${styles["speakers-gallery"]} `}>
           <div className={`${styles["conference-speakers"]} container`}>
             <div>
               <h2
@@ -360,7 +360,6 @@ export default function BDC2022() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

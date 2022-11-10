@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { ArrowTilt, RightArrowIcon } from "../../assets/images";
 
@@ -9,6 +10,7 @@ export interface EventList {
   link: string;
   image: StaticImageData;
   year: string;
+  hasBeenHeld: boolean;
 }
 
 const Events: React.FC<{ eventList: EventList[] }> = ({ eventList }) => {
@@ -52,20 +54,25 @@ const Events: React.FC<{ eventList: EventList[] }> = ({ eventList }) => {
                 <Image src={event.image} layout="fill" />
                 <div className={`${styles["text-container"]}`}>
                   <h1>{event.name}</h1>
-                  <a
-                    href={event.link !== "" ? event.link : ""}
-                    style={event.link === "" ? { cursor: "not-allowed" } : {}}
-                  >
-                    <span>
-                      {event.link !== "" ? (
+                  {!!!event.link && <span>"Coming Soon ♥"</span>}
+                  {!!event.link && !!event.hasBeenHeld && (
+                    <Link href={event.link}>
+                      <a>
                         <span>
-                          Register For Event <ArrowTilt className="ml-2" />
+                          Learn more about it <ArrowTilt className="ml-2" />
                         </span>
-                      ) : (
-                        "Coming Soon ♥"
-                      )}
-                    </span>
-                  </a>
+                      </a>
+                    </Link>
+                  )}
+                  {!!event.link && !!!event.hasBeenHeld && (
+                    <Link href={event.link}>
+                      <a>
+                        <span>
+                          Register For This Event <ArrowTilt className="ml-2" />
+                        </span>
+                      </a>
+                    </Link>
+                  )}
                 </div>
               </div>
             );

@@ -48,14 +48,16 @@ export const demoEventsData = [
   {
     image: event2022B,
     name: "Web3 dev. Bootcamp '22",
-    link: "",
+    link: "/blog/blockchain-hub-africa-partners-with-buildspace-to-train-web3-talents-in-africa-656",
     year: "2022",
+    hasBeenHeld: true,
   },
   {
     image: event2022A,
     name: "Developer Conference '22",
     link: "/events/bdc-2022",
     year: "2022",
+    hasBeenHeld: false,
   },
 ];
 
