@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
-import { Calendar2, Ticket } from "../../../assets/images";
+import {
+  BDC2022ConferenceSpeakers,
+  BDC2022WorkshopSpeakers,
+  Calendar2,
+  Ticket,
+} from "../../../assets/images";
 import { useFormik } from "formik";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 
@@ -9,6 +14,7 @@ import {
   Button,
   FancyCheckbox,
   Footer,
+  ImageCard,
   Input,
 } from "../../../components";
 
@@ -27,7 +33,7 @@ export const registrationSuccessModalContent = {
 export const paymentFailModalContent = {
   title: "Payment Unsuccessful",
   content:
-    "Looks like you did not complete the payment, that's okay, we will be here if you change your mind.",
+    "Looks like something went wrong with the payment, that's okay, we will be here when you're ready to try again.",
 };
 
 type ValuesType = {
@@ -122,7 +128,6 @@ export default function BDC2022() {
     if (!txRef) return;
     handleFlutterPayment({
       callback: (response) => {
-        console.log(response);
         action.success(registrationSuccessModalContent);
         setIsMobileFormOpen(false);
         closePaymentModal(); // this will close the modal programmatically
@@ -148,7 +153,7 @@ export default function BDC2022() {
       </div>
       <main className={styles["container"]}>
         <section
-          className={`bg-blue-600 pt-1 pb-20 lg:pb-28 ${styles["hero-section"]}`}
+          className={`bg-blue-600 pb-20 lg:pb-28 ${styles["hero-section"]}`}
         >
           <div className="container">
             <div className="py-12 md:py-20 lg:py-24 xl:grid xl:grid-cols-7 items-center place-items-center gap-x-8">
@@ -197,30 +202,36 @@ export default function BDC2022() {
                     onClick={() => setIsMobileFormOpen(true)}
                   />
                   <p
-                    className={`${styles["urgent-text"]} font-coolvetica text-base text-white my-3 text-center`}
+                    className={`${styles["urgent-text"]} font-coolvetica text-base text-white my-3 text-center lg:text-left`}
                   >
                     REGISTRATION ENDS ON 20TH NOVEMBER, 2022!
                   </p>
                 </div>
-                <h4 className={`${styles["orange-heading"]} mb-3`}>
+                <h4
+                  className={`${styles["orange-heading"]} text-center lg:text-left mb-6`}
+                >
                   REGISTRATION FEE
                 </h4>
-                <div className="flex gap-x-4 items-center mb-3">
-                  <span>
-                    <Ticket />
-                  </span>
-                  <div>
-                    <span className="text-2xl font-medium">VIP - </span>
-                    <span className="text-2xl">$5 (N5,000)</span>
-                  </div>
-                </div>
-                <div className="flex gap-x-4 items-center">
-                  <span>
-                    <Ticket />
-                  </span>
-                  <div>
-                    <span className="text-2xl font-medium">Regular - </span>
-                    <span className="text-2xl">$2 (N1,000)</span>
+                <div className="flex justify-center lg:justify-start">
+                  <div className="w-75 lg:w-100">
+                    <div className="flex gap-x-4 items-center mb-3">
+                      <span>
+                        <Ticket />
+                      </span>
+                      <div>
+                        <span className="text-2xl font-medium">VIP - </span>
+                        <span className="text-2xl">$5 (N5,000)</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-x-4 items-center">
+                      <span>
+                        <Ticket />
+                      </span>
+                      <div>
+                        <span className="text-2xl font-medium">Regular - </span>
+                        <span className="text-2xl">$2 (N1,000)</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -295,6 +306,56 @@ export default function BDC2022() {
                   </div>
                 </form>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className={`${styles["gallery"]} `}>
+          <div className={`${styles["conference-speakers"]} container`}>
+            <div>
+              <h2
+                className={`${styles["orange-heading"]} text-base text-orange uppercase`}
+              >
+                Conference Speakers
+              </h2>
+              <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-white w-full md:w-1/2 lg:w-1/3">
+                Meet our Speakers
+              </h3>
+            </div>
+            <div className=" mt-10 md:mt-14 xl:mt-20 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 gap-y-10 md:gap-y-14 lg:gap-y-20 xl:gap-y-24">
+              {BDC2022ConferenceSpeakers.map((member, index) => {
+                return (
+                  <ImageCard
+                    key={member.name + index}
+                    name={member.name}
+                    image={member.image}
+                    title={member.title}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className={`${styles["workshop-speakers"]} container`}>
+            <div>
+              <h2
+                className={`${styles["orange-heading"]} text-base text-orange uppercase`}
+              >
+                Workshop Instructors
+              </h2>
+              <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-white w-full md:w-1/2 lg:w-1/3">
+                Meet our Instructors
+              </h3>
+            </div>
+            <div className=" mt-10 md:mt-14 xl:mt-20 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 gap-y-10 md:gap-y-14 lg:gap-y-20 xl:gap-y-24">
+              {BDC2022WorkshopSpeakers.map((member, index) => {
+                return (
+                  <ImageCard
+                    key={member.name + index}
+                    name={member.name}
+                    image={member.image}
+                    title={member.title}
+                  />
+                );
+              })}
             </div>
           </div>
         </section>

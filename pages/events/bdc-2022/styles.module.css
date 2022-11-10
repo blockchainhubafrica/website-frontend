@@ -13,7 +13,7 @@
     url("https://res.cloudinary.com/blockchainhub-africa/image/upload/v1667644699/blockchainhubafrica/bg-image-bcha_afgttx.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 120vh;
+  /* height: 110vh; */
 }
 
 .hero-section * {
@@ -62,7 +62,7 @@
 
 @media screen and (min-width: 1280px) {
   .hero-section {
-    height: 130vh;
+    /* height: 115vh; */
   }
   .hero-section form {
     background-color: var(--app-white);
@@ -101,7 +101,7 @@
   padding: 14px;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1024px) {
   .registration-form-btn {
     max-width: 450px;
   }
@@ -109,4 +109,132 @@
 
 .urgent-text {
   letter-spacing: 1.5px;
+}
+
+.second-section h4 {
+  color: var(--app-black);
+  font-family: var(--app-secondary-font);
+  font-size: 1.9375rem;
+  line-height: 1.8125rem;
+}
+
+.third-section h4 {
+  color: var(--app-blue-400);
+  font-family: var(--app-secondary-font);
+  font-size: 1.7375rem;
+  line-height: 1.5125rem;
+}
+
+.second-section p,
+.third-section p {
+  color: var(--app-black);
+  font-family: var(--app-primary-font);
+  font-size: 1rem;
+  line-height: 1.575rem;
+}
+
+.values {
+  position: relative;
+}
+
+.values svg {
+  position: relative;
+  top: 60px;
+  left: -30px;
+  transform: scale(0.5);
+}
+
+.gallery h4 {
+  color: var(--app-white) !important;
+}
+
+.events h2,
+.events h3,
+.gallery h2,
+.gallery h3,
+.values h2,
+.values h3 {
+  font-family: var(--app-secondary-font);
+  font-weight: 400;
+}
+
+.events h2,
+.gallery h2,
+.values h2 {
+  letter-spacing: 0.25rem;
+  font-size: 1rem;
+  letter-spacing: var(--app-letter-spacing-lg);
+}
+
+.events-button {
+  width: 200px;
+}
+
+@media screen and (min-width: 768px) {
+  .first-section h1 {
+    font-size: 3rem;
+    line-height: 53px;
+  }
+
+  .vision-mission-card p {
+    font-size: 1rem;
+    color: var(--app-gray-600);
+    font-family: var(--app-primary-font);
+    font-size: 1.375rem;
+    line-height: 2.15rem;
+  }
+
+  .second-section h4 {
+    font-size: 3.125rem;
+    line-height: 3.5rem;
+  }
+
+  .third-section h4 {
+    font-size: 2.525rem;
+    line-height: 2.8rem;
+  }
+
+  .second-section p,
+  .third-section p {
+    font-size: 1.175rem;
+    line-height: 1.75rem;
+  }
+
+  .ellipse {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background: var(--app-orange);
+    border-radius: 50%;
+    right: 1rem;
+    top: 300px;
+    filter: blur(200px);
+    box-shadow: 42px 10px 128px 115px rgba(255, 153, 0, 0.9);
+    -webkit-box-shadow: 42px 10px 128px 115px rgba(255, 153, 0, 0.9);
+    -moz-box-shadow: 42px 10px 128px 115px rgba(255, 153, 0, 0.9);
+  }
+
+  .stats-card h5 {
+    font-size: 3rem;
+  }
+
+  .stats-card h6 {
+    font-size: 1.2rem;
+  }
+}
+
+.gallery {
+  background-color: #000920;
+}
+
+.gallery .workshop-speakers {
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .gallery .workshop-speakers {
+    padding-top: 150px !important;
+    padding-bottom: 200px !important;
+  }
 }

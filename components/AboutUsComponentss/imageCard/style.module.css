@@ -9,17 +9,14 @@
 .container h4 {
   color: var(--app-black);
   font-family: var(--app-secondary-font);
-  font-size: 0.9375rem;
+  font-size: 1.5rem;
+  margin-top: 15px;
 }
 
 .container h5 {
   color: var(--app-gray-600);
   font-family: var(--app-primary-font);
-  font-size: 0.5625rem;
-}
-
-.container:hover {
-  transform: scale(1.085);
+  /* font-size: 0.9rem; */
 }
 
 @media screen and (min-width: 768px) {
