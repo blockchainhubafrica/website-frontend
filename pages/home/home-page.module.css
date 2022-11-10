@@ -34,17 +34,17 @@
 .container .people-svg {
   display: flex;
   align-items: center;
-  position: absolute;
-  right: -165px;
-  margin-top: -10px;
+  /* position: absolute; */
+  /* right: -165px; */
+  /* margin-top: -10px; */
   width: 307px;
   height: 321px;
 }
 
 .container .people-svg > span {
   position: relative;
-  right: 20px;
-  margin-top: 20px !important;
+  /* right: 20px; */
+  /* margin-top: 20px !important; */
   transform: rotate(18deg);
 }
 

@@ -34,8 +34,13 @@
 }
 
 .bottom-bar {
-  width: 80%;
   border-color: #626262;
+}
+
+@media screen and (min-width: 1024px) {
+  .bottom-bar {
+    width: 80%;
+  }
 }
 
 .container button.submit {
@@ -85,4 +90,23 @@
   letter-spacing: var(--app-letter-spacing-lg);
   font-family: var(--app-secondary-font);
   text-transform: uppercase;
+}
+
+.registration-form-btn {
+  max-width: 100%;
+}
+
+.registration-form-btn button {
+  font-size: 16px;
+  padding: 14px;
+}
+
+@media screen and (min-width: 640px) {
+  .registration-form-btn {
+    max-width: 450px;
+  }
+}
+
+.urgent-text {
+  letter-spacing: 1.5px;
 }

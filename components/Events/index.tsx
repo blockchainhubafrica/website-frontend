@@ -16,7 +16,6 @@ const Events: React.FC<{ eventList: EventList[] }> = ({ eventList }) => {
   const containerRef = useRef<HTMLElement | null>(null);
   const [activeEventIndex, setactiveEventIndex] = useState<number>(0);
 
-
   const EventsClass = (currentCard: number) => {
     if (activeEventIndex === currentCard)
       return `${styles["vision-mission-card"]} ${styles["active"]} py-8 px-6 md:py-10 md:px-8 xl:py-20 xl:px-12`;
@@ -45,15 +44,16 @@ const Events: React.FC<{ eventList: EventList[] }> = ({ eventList }) => {
         {eventList
           .slice(currentSlide[0], currentSlide[1])
           .map((event: EventList, index: number) => {
-            let className = `${styles.event}`
-            if (index -1 === activeEventIndex) className += ` ${styles.active}`;
+            let className = `${styles.event}`;
+            if (index - 1 === activeEventIndex)
+              className += ` ${styles.active}`;
             return (
               <div className={className} key={`${event.name}+${index}`}>
                 <Image src={event.image} layout="fill" />
                 <div className={`${styles["text-container"]}`}>
                   <h1>{event.name}</h1>
                   <a
-                    href={event.link !== "" ? event.link : "javascript:void(0)"}
+                    href={event.link !== "" ? event.link : ""}
                     style={event.link === "" ? { cursor: "not-allowed" } : {}}
                   >
                     <span>

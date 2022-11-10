@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: calc(var(--toast-z-index) + 1);
+  z-index: var(--modal-z-index);
   transition: all 0.3s ease-in-out;
 }
 
@@ -23,7 +23,7 @@
   border-radius: var(--app-border-radius-sm);
   width: 100%;
   max-width: 360px;
-  margin-top: 0px;
+  margin-top: -70px;
   position: relative;
 }
 
@@ -38,4 +38,34 @@
   .container .modal-body {
     margin-top: 50px;
   }
+}
+
+.registration-btn {
+  max-width: 100%;
+}
+
+.registration-btn button {
+  font-size: 16px;
+  padding: 12px;
+}
+
+@media screen and (min-width: 640px) {
+  .registration-btn {
+    max-width: 450px;
+  }
+}
+
+.smaller-inputs label {
+  font-size: 20px;
+  font-weight: 500;
+}
+.smaller-inputs input {
+  /* border-bottom: 1px solid var(--app-grey); */
+}
+
+.ticket-label {
+  color: var(--app-orange);
+  letter-spacing: var(--app-letter-spacing-lg);
+  font-family: var(--app-secondary-font);
+  text-transform: uppercase;
 }

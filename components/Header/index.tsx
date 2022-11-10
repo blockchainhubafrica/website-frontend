@@ -2,20 +2,28 @@
 
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Banner, SideNav } from "../../components";
 import { LogoIcon, MenuIcon, TopRightArrowIcon } from "../../assets/images";
 import styles from "./header.module.css";
 import { useAppContext } from "../../contexts/appContext";
 import { RegistrationModal } from "../RegistrationModal";
+import { useRouteChangeHandler } from "hooks";
 
 function Header({}) {
   const [isSideBarOpen, setisSideBarOpen] = useState<boolean>(false);
   const { isRegistrationFormActive, setIsRegistrationFormActive } =
     useAppContext();
-
-  const activeRoute = useRouter().asPath;
+  const router = useRouter();
+  const activeRoute = router.asPath;
+  const bannerRoute = "/events/bdc-2022";
   const [bannerIsActive, setBannerIsActive] = useState<boolean>(true);
+
+  const { routeChanging } = useRouteChangeHandler();
+  useEffect(() => {
+    if (bannerRoute === activeRoute) return setBannerIsActive(false);
+    setBannerIsActive(true);
+  }, [routeChanging]);
 
   const activeRouteClass = (route: string) => {
     if (activeRoute.includes(route))
@@ -78,21 +86,26 @@ function Header({}) {
             onBannerIsActive={setBannerIsActive}
             isActive={bannerIsActive}
           >
-            The Blockchain Developer conference kicks off on December 3rd, 2022
-            {".   "}
-            <a
-              className="inline-block border-b-2 border-black hover:text-white"
-              href="/events/bdc-2022"
-            >
-              Register Here
-            </a>
-            {/* To Register Click
-            <button
-              className={`${styles["register-btn"]} pl-2`}
-              onClick={() => setIsRegistrationFormActive(true)}
-            >
-              Join The Web3 Internship 2022
-            </button> */}
+            <div className="lg:hidden flex gap-x-3">
+              <span className="inline-block ">
+                The Blockchain Developer conference 2022.
+                <Link href="/events/bdc-2022">
+                  <a className="inline-block border-b-2 border-white">
+                    Register Here
+                  </a>
+                </Link>
+              </span>
+            </div>
+            <div className="hidden lg:block">
+              The Blockchain Developer conference kicks off on December 3rd,
+              2022
+              {".   "}
+              <Link href="/events/bdc-2022">
+                <a className="inline-block border-b-2 border-black hover:text-white">
+                  Register Here
+                </a>
+              </Link>
+            </div>
           </Banner>
         )}
       </header>

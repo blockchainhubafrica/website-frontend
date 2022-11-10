@@ -5,11 +5,11 @@ import { useFormik } from "formik";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 
 import {
+  BDCFormModal,
   Button,
   FancyCheckbox,
   Footer,
   Input,
-  RegistrationModal,
 } from "../../../components";
 
 import styles from "./styles.module.css";
@@ -35,6 +35,7 @@ type ValuesType = {
   email: string;
   phone: string;
   couponCode?: string;
+  ticket: string;
 };
 
 const validationSchema = Yup.object({
@@ -44,6 +45,7 @@ const validationSchema = Yup.object({
     .required("Email is required"),
   phone: Yup.string().required("Phone Number is required"),
   couponCode: Yup.string(),
+  ticket: Yup.string().required("Please select a ticket"),
 });
 
 const initialValues = {
@@ -51,30 +53,32 @@ const initialValues = {
   email: "",
   phone: "",
   couponCode: "",
+  ticket: "VIP (N5,000)",
 };
 
 export default function BDC2022() {
-  const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false);
-  const [selectedTicket, setselectedTicket] = useState("VIP (N5000)");
-  const nairaTicketPrice = selectedTicket === "VIP (N5000)" ? 5000 : 1000;
-  const [txRef, setTxRef] = useState("");
-  const config = {
-    public_key: process.env.NEXT_PUBLIC_FLW_PUBLIC_KEY || "",
-    tx_ref: txRef,
-    amount: nairaTicketPrice,
-    currency: "NGN",
-    payment_options: "card,mobilemoney,ussd",
-    customizations: {
-      title: "Blockchain Developers Conference 2022",
-      description: `Payment for ${selectedTicket}`,
-      logo: "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1667651791/blockchainhubafrica/logo_phap95.svg",
-    },
-  };
+  const [isMobileFormOpen, setIsMobileFormOpen] = useState(false);
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: handleSubmit,
   });
+  const nairaPrice = formik.values["ticket"] === "VIP (N5,000)" ? 5000 : 1000;
+  const [txRef, setTxRef] = useState("");
+
+  const config = {
+    public_key: process.env.NEXT_PUBLIC_FLW_PUBLIC_KEY || "",
+    tx_ref: txRef,
+    amount: nairaPrice,
+    currency: "NGN",
+    payment_options: "card,mobilemoney,ussd",
+    customizations: {
+      title: "Blockchain Developers Conference 2022",
+      description: `Payment for ${formik.values["ticket"]}`,
+      logo: "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1667651791/blockchainhubafrica/logo_phap95.svg",
+    },
+  };
+
   const handleFlutterPayment = useFlutterwave({
     ...config,
     customer: {
@@ -91,7 +95,7 @@ export default function BDC2022() {
       const registration = await CreateEventRegistrationAPI({
         ...payload,
         eventCode: "BDC-2022",
-        ticket: selectedTicket.split(" ")[0],
+        ticket: formik.values["ticket"].split(" ")[0],
       });
       const validCoupon = registration.data.data.transaction.hasPaid;
       if (validCoupon) {
@@ -116,15 +120,15 @@ export default function BDC2022() {
 
   useEffect(() => {
     if (!txRef) return;
-    console.log(txRef);
     handleFlutterPayment({
       callback: (response) => {
         console.log(response);
         action.success(registrationSuccessModalContent);
-
+        setIsMobileFormOpen(false);
         closePaymentModal(); // this will close the modal programmatically
       },
       onClose: () => {
+        setIsMobileFormOpen(false);
         closePaymentModal(); // this will close the modal programmatically
         action.warning(paymentFailModalContent);
       },
@@ -135,10 +139,13 @@ export default function BDC2022() {
     <>
       <EventsPageHead />
       <DefaultSEOHead />
-      <RegistrationModal
-        isActive={isRegistrationFormOpen}
-        setIsActive={setIsRegistrationFormOpen}
-      />
+      <div>
+        <BDCFormModal
+          isOpen={isMobileFormOpen}
+          setIsOpen={setIsMobileFormOpen}
+          formik={formik}
+        />
+      </div>
       <main className={styles["container"]}>
         <section
           className={`bg-blue-600 pt-1 pb-20 lg:pb-28 ${styles["hero-section"]}`}
@@ -146,14 +153,16 @@ export default function BDC2022() {
           <div className="container">
             <div className="py-12 md:py-20 lg:py-24 xl:grid xl:grid-cols-7 items-center place-items-center gap-x-8">
               <div className="xl:col-span-4">
-                <h1 className={`${styles["header"]} text-5xl mb-2`}>
+                <h1
+                  className={`${styles["header"]} text-3xl md:text-4xl lg:5xl mb-2`}
+                >
                   Blockchain Developers Conference, 2022
                 </h1>
                 <h3 className={`${styles["subtitle"]} text-lg`}>
                   A 2 day tech conference
                 </h3>
                 <h4 className={`${styles["orange-heading"]} mt-6`}>Theme</h4>
-                <p className="font-coolvetica text-6xl text-white mt-3">
+                <p className="font-coolvetica text-4xl md:text-5xl lg:text-6xl text-white mt-3">
                   Leveraging the blockchain infrastructure for adoption in
                   Africa
                 </p>
@@ -174,7 +183,25 @@ export default function BDC2022() {
                     The Base Landmarks, independence layout Enugu.
                   </span>
                 </div>
+
                 <hr className={`${styles["bottom-bar"]} my-8`} />
+
+                <div
+                  className={`my-8 xl:hidden ${styles["registration-form-btn"]}`}
+                >
+                  <Button
+                    className="text-base"
+                    type="submit"
+                    buttonType="primary"
+                    text="Click to Register Now"
+                    onClick={() => setIsMobileFormOpen(true)}
+                  />
+                  <p
+                    className={`${styles["urgent-text"]} font-coolvetica text-base text-white my-3 text-center`}
+                  >
+                    REGISTRATION ENDS ON 20TH NOVEMBER, 2022!
+                  </p>
+                </div>
                 <h4 className={`${styles["orange-heading"]} mb-3`}>
                   REGISTRATION FEE
                 </h4>
@@ -197,7 +224,7 @@ export default function BDC2022() {
                   </div>
                 </div>
               </div>
-              <div className="hidden xl:block xl:col-span-3 ml-auto">
+              <div className={`hidden xl:block xl:col-span-3 ml-auto`}>
                 <form onSubmit={formik.handleSubmit} className="py-8 px-8">
                   <div className="flex justify-between items-center">
                     <h3 className={`${styles["spaced-heading"]} text-3xl mb-8`}>
@@ -243,15 +270,19 @@ export default function BDC2022() {
                     <div className="flex flex-wrap gap-10 justify-between ">
                       <FancyCheckbox
                         className="text-black"
-                        value="Regular (N1000)"
-                        selectedValue={selectedTicket}
-                        onSelect={setselectedTicket}
+                        value="Regular (N1,000)"
+                        selectedValue={formik.values["ticket"]}
+                        onSelect={(value) =>
+                          formik.setFieldValue("ticket", value)
+                        }
                       />
                       <FancyCheckbox
                         className="text-black"
-                        value="VIP (N5000)"
-                        selectedValue={selectedTicket}
-                        onSelect={setselectedTicket}
+                        value="VIP (N5,000)"
+                        selectedValue={formik.values["ticket"]}
+                        onSelect={(value) =>
+                          formik.setFieldValue("ticket", value)
+                        }
                       />
                     </div>
                   </div>

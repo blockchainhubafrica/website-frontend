@@ -6,6 +6,8 @@
   font-family: var(--app-secondary-font);
   letter-spacing: 4px;
   text-align: center;
+  transition: 0s all ease-in-out;
+
   /* white-space: nowrap; */
 }
 
@@ -30,6 +32,6 @@
     position: static;
     top: 0;
     right: 0;
-    height: auto
+    height: auto;
   }
 }

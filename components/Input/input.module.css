@@ -8,6 +8,7 @@
   background-color: transparent;
   border-bottom: 1px solid var(--app-pink-100);
   color: var(--app-black);
+  border-radius: 0px;
   /* min-height: 46px; */
 }
 

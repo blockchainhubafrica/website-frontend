@@ -58,7 +58,7 @@ export function ActionModal() {
   }, []);
 
   useModal(isOpen, modalRef, closeModal);
-  const [locked, setLocked] = useLockedBody(false, "root");
+  const [locked, setLocked] = useLockedBody(false, "body");
 
   useEffect(() => {
     setLocked(isOpen);

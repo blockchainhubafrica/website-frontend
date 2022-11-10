@@ -25,7 +25,7 @@ export function FancyCheckbox({
       onClick={() => onSelect(value)}
     >
       <div className={`${styles['checkbox']}`}></div>
-      <span className="ml-2 md:text-2xl">{value}</span>
+      <span className="ml-2 text-xl md:text-2xl">{value}</span>
     </button>
   );
 }

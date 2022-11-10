@@ -31,8 +31,8 @@ function HomePage() {
     <>
       <main className={`${styles["container"]} `}>
         <section className={`${styles["page-1"]} pb-24 lg:pb-10`}>
-          <div className="pl-5 lg:container grid lg:grid-cols-5 py-10 md:py-20 lg:py-32">
-            <div className="w-4/5 md:w-full md:col-span-4 lg:col-span-3 relative z-10">
+          <div className="container grid lg:grid-cols-5 py-10 md:py-20 lg:py-32">
+            <div className="md:w-full col-span-1 md:col-span-4 lg:col-span-3 relative z-10">
               <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl xlg:text-8xl whitespace-nowrap gap-x-3 flex flex-wrap">
                 <span>Blockchain adoption </span>
                 <span className="px">through</span>
@@ -45,11 +45,11 @@ function HomePage() {
                 </span>
                 <span>in Africa</span>
               </h1>
-              <p className="mt-10 mb-40 md:mb-20 text-xl md:w-2/3 xl:text-xl xlg:2xl lg:w-4/5 xlg:w-2/3">
-                Advancing Web3 adoption through talent acceleration and
+              <p className=" mt-10 mb-10 md:mb-20 text-xl md:w-2/3 xl:text-xl xlg:2xl lg:w-4/5 xlg:w-2/3">
+                Our goal is to advance Web3 adoption through talent acceleration and
                 innovative blockchain-based solutions in Africa.
               </p>
-              <div className="flex gap-x-5">
+              <div className="hidden md:flex gap-x-5">
                 <Link href="/about" passHref>
                   <a tabIndex={-1}>
                     <Button buttonType="primary" text="Learn More" />
@@ -63,7 +63,7 @@ function HomePage() {
               </div>
             </div>
             <div
-              className={`md:col-span-2 ${styles["people-svg"]} fix-img-height`}
+              className={`hidden col-span-1 md:col-span-2 ${styles["people-svg"]} fix-img-height`}
             >
               <CloudinaryImage
                 unoptimized={true}
@@ -72,6 +72,18 @@ function HomePage() {
                 height={695}
                 priority={true}
               />
+            </div>
+            <div className="grid grid-cols-2 md:hidden gap-8  ">
+              <Link href="/about" passHref>
+                <a tabIndex={-1} className="col-span-1">
+                  <Button buttonType="primary" text="Learn More" />
+                </a>
+              </Link>
+              <Link href="/hire-us" passHref>
+                <a tabIndex={-1} className="col-span-1">
+                  <Button buttonType="tertiary" text="Hire Us" />
+                </a>
+              </Link>
             </div>
           </div>
           <div
