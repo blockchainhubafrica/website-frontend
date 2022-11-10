@@ -155,11 +155,7 @@ function Blog() {
 													Read
 												</strong>
 											</span>
-											{/* <a href={article.link}>
-                <span>
-                  Register For Events <ArrowTilt className="ml-2" />
-                </span>
-              </a> */}
+											
 										</div>
 									</div>
 								);

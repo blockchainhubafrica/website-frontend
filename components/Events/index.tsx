@@ -59,7 +59,7 @@ const Events: React.FC<{ eventList: EventList[] }> = ({ eventList }) => {
                     <span>
                       {event.link !== "" ? (
                         <span>
-                          Register For Events <ArrowTilt className="ml-2" />
+                          Register For Event <ArrowTilt className="ml-2" />
                         </span>
                       ) : (
                         "Coming Soon ♥"
