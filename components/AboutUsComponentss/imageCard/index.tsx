@@ -8,13 +8,9 @@ const ImageCard: React.FC<{
   name: string;
   title: string;
   image?: StaticImageData | string;
-  key: string;
-}> = ({ name, title, image, key }) => {
+}> = ({ name, title, image }) => {
   return (
-    <div
-      className={`${styles["container"]} text-center inline-block`}
-      key={key}
-    >
+    <div className={`${styles["container"]} text-center inline-block`}>
       {typeof image === "string" ? (
         <CloudinaryImage
           src={image ? image : ""}

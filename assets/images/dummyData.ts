@@ -190,7 +190,6 @@ export const BDC2022ConferenceSpeakers = [
     title: "Senior Ethereum Blockchain Developer.",
     image: MayowaSrc,
   },
-  ,
   {
     name: "Emeka Nweke",
     title: "CTO Wicrypt.",

@@ -99,7 +99,7 @@ const EmekaNwekeSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1668074339/Company-website/Emeka_Nweke_zupcdx.jpg";
 
 const MayowaSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1668074340/Company-website/Mayowa_Tuduno_qccmxj.jpg";
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1668078777/Company-website/mayowa_agfubs.jpg";
 
 const MakweQuintinSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1668074592/Company-website/Makwe-quintin_q9sbit.jpg";

@@ -118,7 +118,6 @@ export default function EventsPage() {
                     src={imageSliderData[sliderIndex]}
                     alt="featured-events-img-1"
                     layout="fill"
-                    height={500}
                     priority={true}
                   />
                   <button
