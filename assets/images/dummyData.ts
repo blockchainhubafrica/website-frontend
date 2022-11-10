@@ -19,8 +19,9 @@ import {
   GTIgweSrc,
   ChrisAniSrc,
   MakweQuintinSrc,
-	EkeneMarkAnthony,
-	MayowaSrc,
+  EkeneMarkAnthony,
+  MayowaSrc,
+  EmekaNwekeSrc,
 } from "./cloudinary";
 import { event2022A, event2022B } from "./jpgs";
 
@@ -171,40 +172,46 @@ export const values = [
 export const BDC2022ConferenceSpeakers = [
   {
     name: "Chris Ani",
-    title: "CEO, Digital Abundance",
+    title: "CEO, Digital Abundance.",
     image: ChrisAniSrc,
   },
   {
     name: "Deborah Afen",
-    title: "CEO, Afen Blockchain",
+    title: "CEO, Afen Blockchain.",
     image: DeborahOjengbedeSrc,
   },
   {
-    name: "Mayowa",
-    title: "Senior Ethereum Blockchain Developer",
-    image: MayowaSrc,
+    name: "GT Igwe Chrisent",
+    title: "CEO, Truzact.",
+    image: GTIgweSrc,
   },
   {
-    name: "GT Igwe Chrisent",
-    title: "CEO, Truzact",
-    image: GTIgweSrc,
+    name: "Mayowa",
+    title: "Senior Ethereum Blockchain Developer.",
+    image: MayowaSrc,
+  },
+  ,
+  {
+    name: "Emeka Nweke",
+    title: "CTO Wicrypt.",
+    image: EmekaNwekeSrc,
   },
 ];
 
 export const BDC2022WorkshopSpeakers = [
   {
     name: "Trust Onyekwere",
-    title: "Developer Relations, Bunzz",
+    title: "Developer Relations, Bunzz.",
     image: TrustOnyekwereSrc,
   },
   {
     name: "Markanthony Ekene",
-    title: "Senior Blockchain Engineer XendFinance",
+    title: "Senior Blockchain Engineer XendFinance.",
     image: EkeneMarkAnthony,
   },
   {
     name: "Makwe Quintin",
-    title: "Blockchain Engineer at Bitpowr",
+    title: "Blockchain Engineer at Bitpowr.",
     image: MakweQuintinSrc,
   },
 ];
