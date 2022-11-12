@@ -79,7 +79,7 @@ export default function BDC2022() {
     currency: "NGN",
     payment_options: "card,mobilemoney,ussd",
     customizations: {
-      title: "Blockchain Developers Conference 2022",
+      title: "Blockchain Tech Conference 2022",
       description: `Payment for ${formik.values["ticket"]}`,
       logo: "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1667651791/blockchainhubafrica/logo_phap95.svg",
     },
@@ -161,7 +161,7 @@ export default function BDC2022() {
                 <h1
                   className={`${styles["header"]} text-3xl md:text-4xl lg:5xl mb-2`}
                 >
-                  Blockchain Developers Conference, 2022
+                  Blockchain Tech Conference, 2022
                 </h1>
                 <h3 className={`${styles["subtitle"]} text-lg`}>
                   A 2 day tech conference

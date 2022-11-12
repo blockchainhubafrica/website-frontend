@@ -88,7 +88,7 @@ function Header({}) {
           >
             <div className="lg:hidden flex gap-x-3">
               <span className="inline-block ">
-                The Blockchain Developer conference 2022.
+                The Blockchain Tech conference 2022.
                 <Link href="/events/bdc-2022">
                   <a className="inline-block border-b-2 border-white">
                     Register Here
@@ -97,8 +97,7 @@ function Header({}) {
               </span>
             </div>
             <div className="hidden lg:block">
-              The Blockchain Developer conference kicks off on December 3rd,
-              2022
+              The Blockchain Tech conference kicks off on December 3rd, 2022
               {".   "}
               <Link href="/events/bdc-2022">
                 <a className="inline-block border-b-2 border-black hover:text-white">

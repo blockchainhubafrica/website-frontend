@@ -130,7 +130,7 @@ export default function EventsPage() {
                 <div className="xl:w-2/3">
                   <h1 className="uppercase">Featured Events</h1>
                   <h2 className="capitailize mt-4">
-                    Blockchain Developers Conference, 2021
+                    Blockchain Tech Conference, 2021
                   </h2>
                 </div>
                 {/* <div className="flex mt-8 lg:mt-0">
@@ -155,14 +155,14 @@ export default function EventsPage() {
               <div className="bg-blackd">
                 <h3 className="mb-4">About the event</h3>
                 <p>
-                  Blockchain developers Conference 2021 was our first dev
-                  conference, and the first blockchain developers conference in
-                  Nigeria, that aimed at introducing a lot of web2 developers
-                  into the web3 ecosystem. The event was held in Coal City,
-                  Enugu State, Nigeria; attracted more than 300 persons from
-                  more than three continents learning and connecting for about
-                  eight hours. It was so successful and has led to more projects
-                  that will be shared here over time.
+                  Blockchain Tech Conference 2021 was our first dev conference,
+                  and the first Blockchain Tech Conference in Nigeria, that
+                  aimed at introducing a lot of web2 developers into the web3
+                  ecosystem. The event was held in Coal City, Enugu State,
+                  Nigeria; attracted more than 300 persons from more than three
+                  continents learning and connecting for about eight hours. It
+                  was so successful and has led to more projects that will be
+                  shared here over time.
                 </p>
                 <div className="mt-10">
                   <h3 className="mb-4">Event breakdown</h3>

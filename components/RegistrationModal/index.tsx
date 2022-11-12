@@ -81,7 +81,9 @@ function RegistrationModal({ isActive, setIsActive }: ModalProps) {
       >
         <form onSubmit={formik.handleSubmit}>
           <div className="flex justify-between items-center">
-            <h3 className={`${styles["spaced-heading"]} text-base`}>Registration Form</h3>
+            <h3 className={`${styles["spaced-heading"]} text-base`}>
+              Registration Form
+            </h3>
             <button
               onClick={closeModal}
               title="Close Registration Form"
@@ -91,8 +93,10 @@ function RegistrationModal({ isActive, setIsActive }: ModalProps) {
             </button>
           </div>
           <div className="py-8 lg:py-16">
-            <h3 className={`mb-4 text-3xl md:text-5xl font-coolvetica text-blue-600`}>
-              Blockchain Developer's Conference, 2022
+            <h3
+              className={`mb-4 text-3xl md:text-5xl font-coolvetica text-blue-600`}
+            >
+              Blockchain Tech Conference, 2022
             </h3>
             <div className={`${styles["subtitle"]} font-open-sans`}>
               <span>Event Date - </span>
