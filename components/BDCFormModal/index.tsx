@@ -99,7 +99,7 @@ export function BDCFormModal({
             <div className="flex flex-wrap gap-10 justify-between ">
               <FancyCheckbox
                 className="text-black"
-                value="Regular (N1,000)"
+                value="Regular (FREE)"
                 selectedValue={formik.values["ticket"]}
                 onSelect={(value) => formik.setFieldValue("ticket", value)}
               />

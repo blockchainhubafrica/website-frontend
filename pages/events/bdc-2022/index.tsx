@@ -229,7 +229,7 @@ export default function BDC2022() {
                       </span>
                       <div>
                         <span className="text-2xl font-medium">Regular - </span>
-                        <span className="text-2xl">$2 (N1,000)</span>
+                        <span className="text-2xl">FREE</span>
                       </div>
                     </div>
                   </div>
@@ -281,7 +281,7 @@ export default function BDC2022() {
                     <div className="flex flex-wrap gap-10 justify-between ">
                       <FancyCheckbox
                         className="text-black"
-                        value="Regular (N1,000)"
+                        value="Regular (FREE)"
                         selectedValue={formik.values["ticket"]}
                         onSelect={(value) =>
                           formik.setFieldValue("ticket", value)
