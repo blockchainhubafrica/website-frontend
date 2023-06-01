@@ -195,6 +195,7 @@ export default function BDC2022() {
                   className={`my-8 xl:hidden ${styles["registration-form-btn"]}`}
                 >
                   <Button
+                    disabled={true}
                     className="text-base"
                     type="submit"
                     buttonType="primary"
