@@ -43,3 +43,8 @@
   border: 2px solid var(--app-orange);
   border-radius: var(--app-border-radius-sm);
 }
+
+.container:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

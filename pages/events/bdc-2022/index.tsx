@@ -297,8 +297,12 @@ export default function BDC2022() {
                       />
                     </div>
                   </div>
-                  <div className="mt-16">
+                  <div
+                    className="mt-16"
+                    onClick={() => toast.error("Registration has ended")}
+                  >
                     <Button
+                      disabled={true}
                       type="submit"
                       buttonType="primary"
                       text="Register"

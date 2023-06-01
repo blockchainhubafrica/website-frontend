@@ -10,6 +10,7 @@ interface Props {
   text?: string | "";
   buttonType: string | "";
   href?: string;
+  [key: string]: any;
 }
 
 const Button: React.FC<Props> = ({
