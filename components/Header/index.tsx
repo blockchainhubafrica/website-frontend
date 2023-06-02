@@ -81,7 +81,7 @@ function Header({}) {
           </button> */}
           <SideNav />
         </div>
-        {bannerIsActive && (
+        {false && (
           <Banner
             onBannerIsActive={setBannerIsActive}
             isActive={bannerIsActive}
