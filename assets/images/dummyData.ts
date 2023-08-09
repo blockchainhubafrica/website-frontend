@@ -22,6 +22,7 @@ import {
   EkeneMarkAnthony,
   MayowaSrc,
   EmekaNwekeSrc,
+  IfunanyaNFTSrc,
 } from "./cloudinary";
 import { event2022A, event2022B } from "./jpgs";
 
@@ -129,6 +130,7 @@ export const theTeam = [
   { name: "Ernest", title: "Frontend Engineer", image: ErnestNFTSrc },
   { name: "Gospel", title: "Frontend Engineer", image: GospelNFTSrc },
   { name: "Claret", title: "Backend Engineer", image: ClaretNFTSrc },
+  { name: "Ifunanya", title: "Content Lead", image: IfunanyaNFTSrc },
   { name: "Ifeoma", title: "Web3 Content Strategist", image: IfeomaNFTSrc },
 ];
 
