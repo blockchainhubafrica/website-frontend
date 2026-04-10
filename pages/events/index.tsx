@@ -91,9 +91,70 @@ export default function EventsPage() {
       <EventsPageHead />
       <DefaultSEOHead />
       <main className={styles["container"]}>
-        <section
-          className={`bg-blue-600 pt-1 pb-20 lg:pb-28 ${styles["featured-events"]}`}
-        >
+                <section className={`${styles["events"]} my-8 md:my-12 lg:my-14`}>
+                  <div className="container">
+                    <div className="flex flex-wrap md:flex-nowrap items-center justify-between mb-10  md:mb-16">
+                      <div className="">
+                        <h2 className="text-base text-blue-400 uppercase">
+                          UPCOMING EVENTS
+                        </h2>
+                        <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-blue-600 w-full md:w-9/12 xl:w-3/5">
+                          What we have planned this year.
+                        </h3>
+                      </div>
+                      <div className="flex flex-wrap items-center mt-7 md:mt-0">
+                        <span className="mr-8 uppercase font-bold mb-2 xl:mb-0 ">
+                          Filter by year
+                        </span>
+                        <button
+                          className={styles.dropdown}
+                          style={
+                            showFilterDropDown
+                              ? {
+                                  borderBottomLeftRadius: "0px",
+                                  borderBottomRightRadius: "0px",
+                                }
+                              : {}
+                          }
+                          onClick={() => setShowFilterDropDown(!showFilterDropDown)}
+                          ref={eventsDropdownRef}
+                        >
+                          <Calendar /> <span>Years</span> |{" "}
+                          <span>{currentFilterYear}</span>
+                          {showFilterDropDown ? (
+                            <div className={styles["dropdown-list"]}>
+                              <ul>
+                                {filteredEvents.map((item, index) => (
+                                  <li
+                                    key={index + item.name}
+                                    onClick={() => {
+                                      setShowFilterDropDown(false);
+                                      setCurrentFilterYear(parseInt(item.year));
+                                    }}
+                                  >
+                                    {item.year}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ) : (
+                            ""
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                    <Events
+                      eventList={useMemo(
+                        () =>
+                          eventsData.filter(
+                            (event) => parseInt(event.year) === currentFilterYear
+                          ),
+                        [currentFilterYear]
+                      )}
+                    />
+                  </div>
+                </section>
+        <section className={`bg-blue-600 pt-1 pb-20 lg:pb-28 ${styles["featured-events"]}`}>
           <div className={`${styles["featured-events-header"]}`}>
             <div className="container">
               <div
@@ -134,13 +195,13 @@ export default function EventsPage() {
                   </h2>
                 </div>
                 {/* <div className="flex mt-8 lg:mt-0">
-      <button className={`${styles["arrow-button"]} mr-8`}>
-        <RightArrowIcon style={{ transform: "rotate(180deg)" }} />
-      </button>
-      <button className={`${styles["arrow-button"]}`}>
-        <RightArrowIcon />
-      </button>
-    </div> */}
+                  <button className={`${styles["arrow-button"]} mr-8`}>
+                    <RightArrowIcon style={{ transform: "rotate(180deg)" }} />
+                  </button>
+                  <button className={`${styles["arrow-button"]}`}>
+                    <RightArrowIcon />
+                  </button>
+                </div> */}
               </div>
             </div>
           </div>
@@ -184,7 +245,7 @@ export default function EventsPage() {
               </div>
             </div>
           </div>
-          <div className="container">
+          {/* <div className="container">
             <div className={`${styles["featured-images-container"]}`}>
               {imageSliderData.map((image, index) => (
                 <div key={index + "img"}>
@@ -199,70 +260,7 @@ export default function EventsPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-        <section className={`${styles["events"]} my-8 md:my-12 lg:my-14`}>
-          <div className="container">
-            <div className="flex flex-wrap md:flex-nowrap items-center justify-between mb-10  md:mb-16">
-              <div className="">
-                <h2 className="text-base text-blue-400 uppercase">
-                  UPCOMING EVENTS
-                </h2>
-                <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-blue-600 w-full md:w-9/12 xl:w-3/5">
-                  What we have planned this year.
-                </h3>
-              </div>
-              <div className="flex flex-wrap items-center mt-7 md:mt-0">
-                <span className="mr-8 uppercase font-bold mb-2 xl:mb-0 ">
-                  Filter by year
-                </span>
-                <button
-                  className={styles.dropdown}
-                  style={
-                    showFilterDropDown
-                      ? {
-                          borderBottomLeftRadius: "0px",
-                          borderBottomRightRadius: "0px",
-                        }
-                      : {}
-                  }
-                  onClick={() => setShowFilterDropDown(!showFilterDropDown)}
-                  ref={eventsDropdownRef}
-                >
-                  <Calendar /> <span>Years</span> |{" "}
-                  <span>{currentFilterYear}</span>
-                  {showFilterDropDown ? (
-                    <div className={styles["dropdown-list"]}>
-                      <ul>
-                        {filteredEvents.map((item, index) => (
-                          <li
-                            key={index + item.name}
-                            onClick={() => {
-                              setShowFilterDropDown(false);
-                              setCurrentFilterYear(parseInt(item.year));
-                            }}
-                          >
-                            {item.year}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : (
-                    ""
-                  )}
-                </button>
-              </div>
-            </div>
-            <Events
-              eventList={useMemo(
-                () =>
-                  eventsData.filter(
-                    (event) => parseInt(event.year) === currentFilterYear
-                  ),
-                [currentFilterYear]
-              )}
-            />
-          </div>
+          </div> */}
         </section>
       </main>
     </>

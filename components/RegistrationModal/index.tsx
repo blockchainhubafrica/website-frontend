@@ -76,7 +76,7 @@ function RegistrationModal({ isActive, setIsActive }: ModalProps) {
   return (
     <div ref={containerRef} className={containerClass} onClick={closeModal}>
       <div
-        className={`${styles["modal-body"]} p-8 lg:p-16 `}
+        className={`${styles["modal-body"]} ${styles["form-shell"]}`}
         onClick={(e) => e.stopPropagation()}
       >
         <form onSubmit={formik.handleSubmit}>
@@ -92,9 +92,9 @@ function RegistrationModal({ isActive, setIsActive }: ModalProps) {
               <CircleCloseIcon />
             </button>
           </div>
-          <div className="py-8 lg:py-16">
+          <div className="py-5 md:py-6">
             <h3
-              className={`mb-4 text-3xl md:text-5xl font-coolvetica text-blue-600`}
+              className={`mb-3 text-2xl md:text-4xl font-coolvetica text-blue-600`}
             >
               Blockchain Tech Conference, 2022
             </h3>
@@ -127,7 +127,7 @@ function RegistrationModal({ isActive, setIsActive }: ModalProps) {
               className={`mb-6`}
             />
           </div>
-          <div className="mt-28">
+          <div className="mt-8 md:mt-10">
             <button
               className={`${styles.submit} font-coolvetica justify-center flex items-center py-3 px-6`}
             >

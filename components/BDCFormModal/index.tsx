@@ -54,10 +54,10 @@ export function BDCFormModal({
       >
         <form
           onSubmit={formik.handleSubmit}
-          className={`${styles["smaller-inputs"]} py-8 px-8`}
+          className={`${styles["smaller-inputs"]} ${styles["form"]}`}
         >
           <div className="flex justify-between items-start">
-            <h3 className={`${styles["spaced-heading"]} text-3xl mb-8`}>
+            <h3 className={`${styles["spaced-heading"]} text-2xl md:text-3xl mb-5 md:mb-6`}>
               Registration Form
             </h3>
             <ModalCloseIcon onClick={() => setIsOpen(false)} />
@@ -95,8 +95,8 @@ export function BDCFormModal({
             />
           </div>
           <div>
-            <p className={`${styles["ticket-label"]} mb-5`}>Ticket type</p>
-            <div className="flex flex-wrap gap-10 justify-between ">
+            <p className={`${styles["ticket-label"]} mb-4`}>Ticket type</p>
+            <div className="flex flex-wrap gap-4 md:gap-6 justify-between">
               <FancyCheckbox
                 className="text-black"
                 value="Regular (FREE)"
@@ -111,7 +111,7 @@ export function BDCFormModal({
               />
             </div>
           </div>
-          <div className={`${styles["registration-btn"]} mt-16`}>
+          <div className={`${styles["registration-btn"]} mt-8 md:mt-10`}>
             <Button type="submit" buttonType="primary" text="Register" />
           </div>
         </form>

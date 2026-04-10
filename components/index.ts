@@ -25,3 +25,4 @@ export * from "./closeButton";
 export * from "./Partners";
 export * from "./FancyCheckbox";
 export * from "./BDCFormModal";
+export * from "./EventBanner";
