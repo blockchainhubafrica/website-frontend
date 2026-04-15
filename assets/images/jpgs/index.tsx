@@ -1,6 +1,9 @@
 import storySectionSlide1 from "./story-section-1.jpg";
 import storySectionSlide2 from "./story-section-2.jpg";
 import storySectionSlide3 from "./story-section-3.jpg";
+import storySectionSlide4 from "./story-section-4.jpg";
+import storySectionSlide5 from "./story-section-5.jpg";
+import storySectionSlide6 from "./story-section-6.jpg";
 import uchenna from "./uchenna.jpg";
 import chidiebere from "./chidiebere.jpg";
 import ernest from "./ernest.jpg";
@@ -28,6 +31,9 @@ export {
   storySectionSlide1,
   storySectionSlide2,
   storySectionSlide3,
+  storySectionSlide4,
+  storySectionSlide5,
+  storySectionSlide6,
   uchenna,
   chidiebere,
   ernest,

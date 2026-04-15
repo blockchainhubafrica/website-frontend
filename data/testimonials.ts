@@ -3,7 +3,7 @@ import {
   TestimonialHeadshot1,
   TestimonialHeadshot2,
   TestimonialHeadshot3,
-  TonyCryptoTVSrc,
+  TonyEnuguTechFestSrc,
 } from "../assets/images";
 
 type Testimonial = {
@@ -34,6 +34,6 @@ export const testimonials: Testimonial = [
     role: "CEO, CryptoTvPlus.",
     title: "Part of the Sponsors of 2021 Blockchain Developer's Conf.",
     desc: "We were part of the sponsors for the last Blockchain Developers Conference that was organised by Blockchain Hub Africa, and were honestly impressed with the team, and what they are building.",
-    headshot: TonyCryptoTVSrc,
+    headshot: TonyEnuguTechFestSrc,
   },
 ];

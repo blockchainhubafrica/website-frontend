@@ -2,10 +2,10 @@ import React from "react";
 import { CloudinaryImage, Marquee } from "../index";
 import {
 	BuildSpaceLogoSrc,
-	CasperLogoSrc,
+	EnuguSmeSrc,
 	CrevatalLogoSrc,
-	CryptoTVSrc,
-	NearLogoSrc,
+	EnuguTechFestSrc,
+	SuperTeamSrc,
 	VestHubLogoSrc,
 	XendLogoSrc,
 } from "../../assets/images";
@@ -30,12 +30,12 @@ export function Partners() {
 					height={42}
 				/>
 			</div>
-			<div className={`flex`}>
+			<div className={`flex grayscale`}>
 				<CloudinaryImage
-					src={CasperLogoSrc}
+					src={EnuguSmeSrc}
 					priority={true}
-					width={130}
-					height={35}
+					width={200}
+					height={200}
 				/>
 			</div>
 			<div className={`flex`}>
@@ -56,18 +56,19 @@ export function Partners() {
 			</div>
 			<div className={`flex`}>
 				<CloudinaryImage
-					src={NearLogoSrc}
+					src={SuperTeamSrc}
 					priority={true}
-					width={174}
-					height={58}
+					width={200}
+					height={80}
 				/>
 			</div>
-			<div className={`flex`}>
+			<div className={`flex grayscale`}>
 				<CloudinaryImage
-					src={CryptoTVSrc}
+					src={EnuguTechFestSrc}
 					priority={true}
-					width={87}
-					height={69}
+					width={260}
+					height={260}
+				
 				/>
 			</div>
 		</>

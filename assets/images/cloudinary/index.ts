@@ -1,5 +1,5 @@
 export const VideoBackdropSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647008207/Company-website/video-backdrop_jgkzzq.jpg";
+  "https://res.cloudinary.com/dg7wnxh2o/image/upload/q_auto/f_auto/v1775658485/Copy_of_IMG_2032_ji2kxx.jpg";
 
 export const BuildSpaceLogoSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1649073399/Company-website/buildspace_vxuuux.png";
@@ -7,14 +7,14 @@ export const BuildSpaceLogoSrc =
 export const XendLogoSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648736454/Company-website/xend_y5nde2.png";
 
-export const NearLogoSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648761725/Company-website/near_gwidgk.png";
+export const SuperTeamSrc =
+  "https://res.cloudinary.com/dg7wnxh2o/image/upload/q_auto/f_auto/v1775656084/1_okinf8.png";
 
 export const AcexLogoSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648761726/Company-website/acex_h3vzls.png";
 
-export const CasperLogoSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647059957/Company-website/casper-logo_wv1t84.png";
+export const EnuguSmeSrc =
+  "https://res.cloudinary.com/dg7wnxh2o/image/upload/q_auto/f_auto/v1775656117/2_vlkwwh.png";
 
 export const VestHubLogoSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648736203/Company-website/vesthub_oiaffh.png";
@@ -69,7 +69,7 @@ export const DeborahNFTSrc =
 
 export const GospelNFTSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648732450/Company-website/Emmanuel3_gztwdi.png";
-export const TonyCryptoTVSrc =
+export const TonyEnuguTechFestSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648786164/Company-website/FB_IMG_1646037401121_bbzwwv.jpg";
 
 export const CodemathicsSrc =
@@ -78,8 +78,8 @@ export const CodemathicsSrc =
 export const PeopleGifSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647914843/Company-website/people_t4i1ml.gif";
 
-export const CryptoTVSrc =
-  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1653469692/Company-website/crypotv_hckdrt.png";
+export const EnuguTechFestSrc =
+  "https://res.cloudinary.com/dg7wnxh2o/image/upload/q_auto/f_auto/v1775656475/ENUGU-FEST_l9dslv.webp";
 
 export const ClaretNFTSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1653469693/Company-website/claret_xd45qr.jpg";

@@ -10,6 +10,10 @@ import {
   storySectionSlide1,
   storySectionSlide2,
   storySectionSlide3,
+  storySectionSlide4,
+  storySectionSlide5,
+  storySectionSlide6,
+
 } from "../../assets/images/jpgs";
 import Link from "next/link";
 
@@ -25,7 +29,7 @@ function StorySection() {
 
   const onSlideChange = (swiper: any) => {
     const breakpoint = swiper.currentBreakpoint;
-    const indexes: number[] = breakpoint < 1024 ? [1, 2, 3] : [1, 2, 3];
+    const indexes: number[] = breakpoint < 1024 ? [1, 2, 3, 4, 5, 6] : [1, 2, 3, 4, 5, 6];
 
     const realIndex = swiper.realIndex;
     setactiveIndex(indexes[realIndex]);
@@ -49,6 +53,19 @@ function StorySection() {
             loop={true}
             onSlideChange={onSlideChange}
           >
+             <SwiperSlide>
+              <div className={slideClass("slide-5")}>
+                <Image
+                  priority={true}
+                  objectFit="cover"
+                  unoptimized={true}
+                  alt=""
+                  width={640}
+                  height={960}
+                  src={storySectionSlide5}
+                />
+              </div>
+            </SwiperSlide>
             <SwiperSlide>
               <div className={slideClass("slide-1")}>
                 <Image
@@ -62,6 +79,7 @@ function StorySection() {
                 />
               </div>
             </SwiperSlide>
+            
             <SwiperSlide>
               <div className={slideClass("slide-2")}>
                 <Image
@@ -76,6 +94,21 @@ function StorySection() {
               </div>
             </SwiperSlide>
             <SwiperSlide>
+              <div className={slideClass("slide-4")}>
+                <Image
+                  priority={true}
+                  objectFit="cover"
+                  unoptimized={true}
+                  alt=""
+                  width={640}
+                  height={960}
+                  src={storySectionSlide4}
+                />
+              </div>
+            </SwiperSlide>
+            
+            
+            <SwiperSlide>
               <div className={slideClass("slide-3")}>
                 <Image
                   priority={true}
@@ -88,6 +121,21 @@ function StorySection() {
                 />
               </div>
             </SwiperSlide>
+            
+           <SwiperSlide>
+              <div className={slideClass("slide-6")}>
+                <Image
+                  priority={true}
+                  objectFit="cover"
+                  unoptimized={true}
+                  alt=""
+                  width={640}
+                  height={960}
+                  src={storySectionSlide6}
+                />
+              </div>
+            </SwiperSlide>
+            
           </Swiper>
         </div>
         <div className="col-span-2 container xmd:px-0 xmd:pl-20 flex flex-col justify-center order-1 xmd:order-2">
