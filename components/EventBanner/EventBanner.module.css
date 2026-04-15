@@ -1,0 +1,106 @@
+.bannerSection {
+  background: transparent;
+  padding-top: 1.5rem;
+}
+
+.bannerContainer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  background: var(--app-orange);
+  border-radius: 0.5rem;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.slide {
+  outline: none;
+}
+
+.slideContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 1.75rem;
+  padding: 1rem 1.25rem 1rem;
+}
+
+.slideTitle {
+  margin: 0;
+  color: var(--app-white);
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.slideButton {
+  border: 0;
+  border-radius: 9999px;
+  background: var(--app-white);
+  color: var(--app-orange);
+  padding: 0.75rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.slideButton:hover {
+  background: #f3f4f6;
+}
+
+.customDots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.55rem;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.customDots li {
+  margin: 0;
+  cursor: pointer;
+}
+
+.customDots li button {
+  display: block;
+  width: 3rem;
+  height: 0.35rem;
+  padding: 0;
+  font-size: 0;
+  color: transparent;
+  border: 0;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.customDots li[class*="slick-active"] button {
+  background: var(--app-white);
+}
+
+@media screen and (max-width: 767px) {
+  .bannerSection {
+    padding-top: 1rem;
+  }
+
+  .slideContent {
+    flex-direction: column;
+    gap: 0.875rem;
+    min-height: auto;
+    padding: 1rem 1rem 1.75rem;
+  }
+
+  .slideTitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}

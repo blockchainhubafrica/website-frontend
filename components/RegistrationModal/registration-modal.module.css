@@ -24,41 +24,52 @@
 }
 
 .container .modal-body {
-  /* min-height: 100vh; */
   opacity: 0;
   margin: auto;
   background-color: var(--app-white);
   border-radius: var(--app-border-radius-sm);
   width: 100%;
-  max-width: 360px;
+  max-width: 340px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
   margin-top: 0px;
   position: relative;
 }
 
 .container.active .modal-body {
   opacity: 1;
-  margin-top: 40px;
+  margin-top: 16px;
 }
 
 @media screen and (min-width: 640px) {
   .container .modal-body {
-    max-width: 600px;
+    max-width: 460px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container.active .modal-body {
     opacity: 1;
-    margin-top: 90px;
+    margin-top: 24px;
   }
   .container .modal-body {
-    max-width: 650px;
+    max-width: 500px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .container .modal-body {
-    max-width: 730px;
+    max-width: 540px;
+  }
+}
+
+.container .form-shell {
+  padding: 24px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container .form-shell {
+    padding: 28px 24px;
   }
 }
 .container .spaced-heading {

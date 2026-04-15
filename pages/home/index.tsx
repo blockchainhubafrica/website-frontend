@@ -12,6 +12,7 @@ import {
   Button,
   CircleBanner,
   CloudinaryImage,
+  EventBanner,
   Events,
   Marquee,
   Partners,
@@ -31,6 +32,7 @@ function HomePage() {
     <>
       <main className={`${styles["container"]} `}>
         <section className={`${styles["page-1"]} pb-24 lg:pb-10`}>
+          <EventBanner />
           <div className="container grid lg:grid-cols-5 py-10 md:py-20 lg:py-32">
             <div className="md:w-full col-span-1 md:col-span-4 lg:col-span-3 relative z-10">
               <h1 className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl xlg:text-8xl whitespace-nowrap gap-x-3 flex flex-wrap">
