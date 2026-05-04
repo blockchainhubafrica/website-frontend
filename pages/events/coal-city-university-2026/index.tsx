@@ -122,7 +122,7 @@ export default function CoalCityUniversity2026() {
                 <h1
                   className={`${styles["header"]} text-3xl md:text-4xl lg:text-5xl mb-2`}
                 >
-                  Intro to Blockchain
+                  Intro to blockchain development
                 </h1>
                 <h3 className={`${styles["subtitle"]} text-lg`}>
                   Coal City University, Enugu State
