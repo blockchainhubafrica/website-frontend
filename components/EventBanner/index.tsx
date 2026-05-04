@@ -27,30 +27,28 @@ export const EventBanner = () => {
 
   return (
     <section className={styles.bannerSection}>
-      <div className="container">
-        <div className={styles.bannerContainer}>
-          <Slider {...settings}>
-            {slides.map((slide) => (
-              <div key={slide.title} className={styles.slide}>
-                <div className={styles.slideContent}>
-                  <p className={styles.slideTitle}>{slide.title}</p>
-                  <button
-                    type="button"
-                    onClick={() => setIsModalActive(true)}
-                    className={styles.slideButton}
-                  >
-                    {slide.buttonText}
-                  </button>
-                </div>
+      <div className={styles.bannerContainer}>
+        <Slider {...settings}>
+          {slides.map((slide) => (
+            <div key={slide.title} className={styles.slide}>
+              <div className={styles.slideContent}>
+                <p className={styles.slideTitle}>{slide.title}</p>
+                <button
+                  type="button"
+                  onClick={() => setIsModalActive(true)}
+                  className={styles.slideButton}
+                >
+                  {slide.buttonText}
+                </button>
               </div>
-            ))}
-          </Slider>
-        </div>
+            </div>
+          ))}
+        </Slider>
       </div>
       <RegistrationModal
         isActive={isModalActive}
         setIsActive={setIsModalActive}
       />
     </section>
-  );
+  ); {/*Campus Developer Club (Peaceland University)*/}
 };

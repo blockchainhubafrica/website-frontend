@@ -48,6 +48,27 @@ export const demoProductsData = [
 export const demoEventsData = [
   {
     image: event2022B,
+    name: "Intro to Blockchain — Peaceland University",
+    link: "/events/peaceland-university-2026",
+    year: "2026",
+    hasBeenHeld: false,
+  },
+  {
+    image: event2022A,
+    name: "Intro to Blockchain — Coal City University",
+    link: "/events/coal-city-university-2026",
+    year: "2026",
+    hasBeenHeld: false,
+  },
+  {
+    image: event2022B,
+    name: "BlockchainHub Africa Web3 Class",
+    link: "#",
+    year: "2023",
+    hasBeenHeld: false,
+  },
+  {
+    image: event2022B,
     name: "Web3 dev. Bootcamp '22",
     link: "/blog/blockchain-hub-africa-partners-with-buildspace-to-train-web3-talents-in-africa-656",
     year: "2022",

@@ -30,6 +30,16 @@ module.exports = {
         destination: "/events/bdc-2022",
         permanent: true,
       },
+      {
+        source: "/peaceland-2026",
+        destination: "/events/peaceland-university-2026",
+        permanent: true,
+      },
+      {
+        source: "/coalcity-2026",
+        destination: "/events/coal-city-university-2026",
+        permanent: true,
+      },
     ];
   },
 };

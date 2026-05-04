@@ -26,3 +26,4 @@ export * from "./Partners";
 export * from "./FancyCheckbox";
 export * from "./BDCFormModal";
 export * from "./EventBanner";
+export * from "./FreeEventFormModal";

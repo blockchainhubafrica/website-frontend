@@ -1,0 +1,100 @@
+.header {
+  color: var(--app-white);
+  font-weight: 400;
+  line-height: 3.7rem;
+}
+
+.subtitle {
+  color: var(--app-white);
+}
+
+.hero-section {
+  background: linear-gradient(180deg, rgba(0, 8, 31, 0.74) 0%, #00081f 37.46%),
+    url("https://res.cloudinary.com/blockchainhub-africa/image/upload/v1667644699/blockchainhubafrica/bg-image-bcha_afgttx.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-section * {
+  color: var(--app-white);
+}
+
+.orange-heading {
+  text-transform: uppercase;
+  color: var(--app-orange);
+  letter-spacing: var(--app-letter-spacing-lg);
+  font-family: var(--app-secondary-font);
+  font-size: 1rem;
+}
+
+.bottom-bar {
+  border-color: #626262;
+}
+
+@media screen and (min-width: 1024px) {
+  .bottom-bar {
+    width: 80%;
+  }
+}
+
+.container button.submit {
+  width: 100%;
+  background-color: var(--app-orange);
+  border-radius: var(--app-border-radius-sm);
+  color: var(--app-white);
+}
+
+.hero-section form {
+  background-color: var(--app-white);
+  border-radius: var(--app-border-radius-sm);
+  width: 550px;
+}
+
+@media screen and (min-width: 1280px) {
+  .hero-section form {
+    background-color: var(--app-white);
+    border-radius: var(--app-border-radius-sm);
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero-section form {
+    background-color: var(--app-white);
+    border-radius: var(--app-border-radius-sm);
+    width: 550px;
+  }
+}
+
+.container .spaced-heading {
+  letter-spacing: var(--app-letter-spacing-sm);
+  color: var(--app-black);
+  font-family: var(--app-secondary-font);
+}
+
+.registration-form-btn {
+  max-width: 100%;
+}
+
+.registration-form-btn button {
+  font-size: 16px;
+  padding: 14px;
+}
+
+@media screen and (min-width: 1024px) {
+  .registration-form-btn {
+    max-width: 450px;
+  }
+}
+
+.free-badge {
+  display: inline-block;
+  background-color: var(--app-orange);
+  color: var(--app-white);
+  font-family: var(--app-secondary-font);
+  letter-spacing: var(--app-letter-spacing-lg);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  padding: 6px 16px;
+  border-radius: 4px;
+}
