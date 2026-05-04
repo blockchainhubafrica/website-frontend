@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
-import { Calendar2 } from "../../../assets/images";
+import { Calendar2, Location } from "../../../assets/images";
 import { useFormik } from "formik";
 
 import {
@@ -129,7 +129,7 @@ export default function CoalCityUniversity2026() {
                 </h3>
                 <h4 className={`${styles["orange-heading"]} mt-6`}>About</h4>
                 <p className="font-coolvetica text-3xl md:text-4xl lg:text-5xl text-white mt-3">
-                  A free introductory blockchain cohort for Coal City University students
+                  Kickstart your journey into blockchain development with our Rust for Solana Virtual Machine series. This course introduces you to the fundamentals of building scalable, high-performance decentralized applications using Rust on the Solana ecosystem.
                 </p>
                 <hr className={`${styles["bottom-bar"]} my-8`} />
                 <div className="flex gap-x-4 items-center mb-5">
@@ -140,7 +140,7 @@ export default function CoalCityUniversity2026() {
                 </div>
                 <div className="flex gap-x-4 items-center mb-5">
                   <span>
-                    <Calendar2 />
+                    <Location />
                   </span>
                   <span className="text-2xl">
                     Coal City University, Enugu State
