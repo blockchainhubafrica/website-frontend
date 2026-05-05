@@ -10,6 +10,13 @@ import { Input } from "components/Input";
 import { Button } from "components/Button";
 import { ModalCloseIcon } from "assets/images";
 
+const TECH_STACK_OPTIONS = [
+  { label: "Frontend", value: "Frontend" },
+  { label: "Backend", value: "Backend" },
+  { label: "Fullstack", value: "Fullstack" },
+  { label: "Nil", value: "Nil" },
+];
+
 export function FreeEventFormModal({
   isOpen,
   setIsOpen,
@@ -56,13 +63,46 @@ export function FreeEventFormModal({
             <ModalCloseIcon onClick={() => setIsOpen(false)} />
           </div>
           <div>
-            <Input name="name" formik={formik} label="Name" className="mb-5" />
+            <Input name="firstName" formik={formik} label="First Name" className="mb-5" />
+          </div>
+          <div>
+            <Input name="surname" formik={formik} label="Surname" className="mb-5" />
           </div>
           <div>
             <Input name="email" formik={formik} label="Email" className="mb-5" />
           </div>
           <div>
-            <Input name="phone" formik={formik} label="Phone No." className="mb-8" />
+            <Input name="phone" formik={formik} label="Phone No." className="mb-5" />
+          </div>
+          <div>
+            <Input
+              as="select"
+              name="techStack"
+              formik={formik}
+              label="Tech Stack"
+              options={TECH_STACK_OPTIONS}
+              placeholder="Select tech stack"
+              className="mb-5"
+            />
+          </div>
+          <div>
+            <Input
+              type="number"
+              min={0}
+              name="yearsOfExperience"
+              formik={formik}
+              label="Years of Experience"
+              className="mb-5"
+            />
+          </div>
+          <div>
+            <Input
+              name="portfolio"
+              formik={formik}
+              label="Portfolio / GitHub"
+              placeholder="https://github.com/your-handle"
+              className="mb-8"
+            />
           </div>
           <div className={`${styles["registration-btn"]}`}>
             <Button

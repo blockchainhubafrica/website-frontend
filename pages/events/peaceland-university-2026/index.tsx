@@ -29,13 +29,25 @@ export const registrationSuccessModalContent = {
 };
 
 type ValuesType = {
-  name: string;
+  firstName: string;
+  surname: string;
   email: string;
   phone: string;
+  techStack: string;
+  yearsOfExperience: string;
+  portfolio: string;
 };
 
+const TECH_STACK_OPTIONS = [
+  { label: "Frontend", value: "Frontend" },
+  { label: "Backend", value: "Backend" },
+  { label: "Fullstack", value: "Fullstack" },
+  { label: "Nil", value: "Nil" },
+];
+
 const validationSchema = Yup.object({
-  name: Yup.string().required("Name is required"),
+  firstName: Yup.string().required("First Name is required"),
+  surname: Yup.string().required("Surname is required"),
   email: Yup.string()
     .email("Invalid Email Address")
     .required("Email is required"),
@@ -45,12 +57,24 @@ const validationSchema = Yup.object({
       "Enter a valid Nigerian number (e.g. 08012345678)"
     )
     .required("Phone Number is required"),
+  techStack: Yup.string()
+    .oneOf(TECH_STACK_OPTIONS.map((o) => o.value))
+    .required("Tech Stack is required"),
+  yearsOfExperience: Yup.number()
+    .typeError("Years of experience must be a number")
+    .min(0, "Cannot be negative")
+    .required("Years of experience is required"),
+  portfolio: Yup.string(),
 });
 
 const initialValues: ValuesType = {
-  name: "",
+  firstName: "",
+  surname: "",
   email: "",
   phone: "",
+  techStack: "",
+  yearsOfExperience: "",
+  portfolio: "",
 };
 
 export default function PeacelandUniversity2026() {
@@ -81,9 +105,14 @@ export default function PeacelandUniversity2026() {
     const toastId = toast.loading("Registering...");
     try {
       await RegisterForEventAPI(eventId, {
-        name: values.name,
+        name: `${values.firstName} ${values.surname}`.trim(),
         email: values.email,
         phone: values.phone,
+        responses: {
+          tech_stack: values.techStack,
+          years_of_experience: values.yearsOfExperience,
+          portfolio: values.portfolio,
+        },
       });
       toast.dismiss(toastId);
       formik.resetForm();
@@ -175,9 +204,17 @@ export default function PeacelandUniversity2026() {
                   </div>
                   <div>
                     <Input
-                      name="name"
+                      name="firstName"
                       formik={formik}
-                      label="Name"
+                      label="First Name"
+                      className="mb-4"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      name="surname"
+                      formik={formik}
+                      label="Surname"
                       className="mb-4"
                     />
                   </div>
@@ -194,6 +231,36 @@ export default function PeacelandUniversity2026() {
                       name="phone"
                       formik={formik}
                       label="Phone No."
+                      className="mb-4"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      as="select"
+                      name="techStack"
+                      formik={formik}
+                      label="Tech Stack"
+                      options={TECH_STACK_OPTIONS}
+                      placeholder="Select tech stack"
+                      className="mb-4"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      type="number"
+                      min={0}
+                      name="yearsOfExperience"
+                      formik={formik}
+                      label="Years of Experience"
+                      className="mb-4"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      name="portfolio"
+                      formik={formik}
+                      label="Portfolio / GitHub"
+                      placeholder="https://github.com/your-handle"
                       className="mb-10"
                     />
                   </div>
