@@ -14,6 +14,7 @@ type InputType = {
   as?: "input" | "select";
   options?: { label: string; value: string }[];
   min?: number;
+  required?: boolean;
   step?: number;
 };
 
@@ -27,6 +28,7 @@ function Input({
   formik,
   as = "input",
   options = [],
+  required,
   ...rest
 }: InputType) {
   const [isFocused, setIsFocused] = useState(false);
@@ -52,6 +54,7 @@ function Input({
           htmlFor={name}
         >
           {label}
+          {required && <sup style={{ color: "red", marginLeft: 2 }}>*</sup>}
         </label>
       )}
       {as === "select" ? (

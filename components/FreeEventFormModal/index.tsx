@@ -63,16 +63,16 @@ export function FreeEventFormModal({
             <ModalCloseIcon onClick={() => setIsOpen(false)} />
           </div>
           <div>
-            <Input name="firstName" formik={formik} label="First Name" className="mb-5" />
+            <Input name="firstName" formik={formik} label="First Name" required className="mb-5" />
           </div>
           <div>
-            <Input name="surname" formik={formik} label="Surname" className="mb-5" />
+            <Input name="surname" formik={formik} label="Surname" required className="mb-5" />
           </div>
           <div>
-            <Input name="email" formik={formik} label="Email" className="mb-5" />
+            <Input name="email" formik={formik} label="Email" required className="mb-5" />
           </div>
           <div>
-            <Input name="phone" formik={formik} label="Phone No." className="mb-5" />
+            <Input name="phone" formik={formik} label="Phone No." required className="mb-5" />
           </div>
           <div>
             <Input
@@ -82,6 +82,7 @@ export function FreeEventFormModal({
               label="Tech Stack"
               options={TECH_STACK_OPTIONS}
               placeholder="Select tech stack"
+              required
               className="mb-5"
             />
           </div>
@@ -92,6 +93,7 @@ export function FreeEventFormModal({
               name="yearsOfExperience"
               formik={formik}
               label="Years of Experience"
+              required
               className="mb-5"
             />
           </div>

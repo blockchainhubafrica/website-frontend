@@ -208,6 +208,7 @@ export default function CoalCityUniversity2026() {
                       name="firstName"
                       formik={formik}
                       label="First Name"
+                      required
                       className="mb-4"
                     />
                   </div>
@@ -216,6 +217,7 @@ export default function CoalCityUniversity2026() {
                       name="surname"
                       formik={formik}
                       label="Surname"
+                      required
                       className="mb-4"
                     />
                   </div>
@@ -224,6 +226,7 @@ export default function CoalCityUniversity2026() {
                       name="email"
                       formik={formik}
                       label="Email"
+                      required
                       className="mb-4"
                     />
                   </div>
@@ -232,6 +235,7 @@ export default function CoalCityUniversity2026() {
                       name="phone"
                       formik={formik}
                       label="Phone No."
+                      required
                       className="mb-4"
                     />
                   </div>
@@ -243,6 +247,7 @@ export default function CoalCityUniversity2026() {
                       label="Tech Stack"
                       options={TECH_STACK_OPTIONS}
                       placeholder="Select tech stack"
+                      required
                       className="mb-4"
                     />
                   </div>
@@ -253,6 +258,7 @@ export default function CoalCityUniversity2026() {
                       name="yearsOfExperience"
                       formik={formik}
                       label="Years of Experience"
+                      required
                       className="mb-4"
                     />
                   </div>
