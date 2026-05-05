@@ -98,14 +98,29 @@ export default function PeacelandUniversity2026() {
     onSubmit: handleSubmit,
   });
 
+  async function resolveEventId(): Promise<string | null> {
+    if (eventId) return eventId;
+    try {
+      const res = await GetPublishedEventsAPI();
+      const events: any[] = res.data?.data ?? [];
+      const match = events.find((e) => e.event_name === EVENT_NAME);
+      if (match) {
+        setEventId(match._id);
+        return match._id;
+      }
+    } catch {}
+    return null;
+  }
+
   async function handleSubmit(values: ValuesType) {
-    if (!eventId) {
+    const id = await resolveEventId();
+    if (!id) {
       toast.error("Event not found. Please try again later.");
       return;
     }
     const toastId = toast.loading("Registering...");
     try {
-      await RegisterForEventAPI(eventId, {
+      await RegisterForEventAPI(id, {
         name: `${values.firstName} ${values.surname}`.trim(),
         email: values.email,
         phone: values.phone,
