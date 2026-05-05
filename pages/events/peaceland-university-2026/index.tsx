@@ -128,7 +128,7 @@ export default function PeacelandUniversity2026() {
                   Peaceland University, Enugu State
                 </h3>
                 <h4 className={`${styles["orange-heading"]} mt-6`}>About</h4>
-                <p className="font-coolvetica text-3xl md:text-4xl lg:text-5xl text-white mt-3">
+                <p className="text-base md:text-lg text-white mt-3 font-normal">
                   Kickstart your journey into blockchain development with our Rust for Solana Virtual Machine series. This course introduces you to the fundamentals of building scalable, high-performance decentralized applications using Rust on the Solana ecosystem.
                 </p>
                 <hr className={`${styles["bottom-bar"]} my-8`} />
