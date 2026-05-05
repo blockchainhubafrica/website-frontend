@@ -126,7 +126,7 @@ export default function CoalCityUniversity2026() {
         phone: values.phone,
         responses: {
           tech_stack: values.techStack,
-          years_of_experience: values.yearsOfExperience,
+          years_of_experience: String(values.yearsOfExperience),
           portfolio: values.portfolio,
         },
       });
