@@ -21,10 +21,12 @@ export function FreeEventFormModal({
   isOpen,
   setIsOpen,
   formik,
+  logoSrc,
 }: {
   isOpen: boolean;
   setIsOpen: Function;
   formik: FormikProps<any>;
+  logoSrc?: string;
 }) {
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -56,10 +58,19 @@ export function FreeEventFormModal({
           onSubmit={formik.handleSubmit}
           className={`${styles["smaller-inputs"]} ${styles["form"]}`}
         >
-          <div className="flex justify-between items-start">
-            <h3 className={`${styles["spaced-heading"]} text-2xl md:text-3xl mb-5 md:mb-6`}>
-              Registration Form
-            </h3>
+          <div className={styles["form-heading-row"]}>
+            <div className={styles["form-title-group"]}>
+              <h3 className={`${styles["spaced-heading"]} text-2xl md:text-3xl`}>
+                Registration Form
+              </h3>
+              {logoSrc && (
+                <img
+                  src={logoSrc}
+                  alt="Peaceland University logo"
+                  className={styles["form-logo"]}
+                />
+              )}
+            </div>
             <ModalCloseIcon onClick={() => setIsOpen(false)} />
           </div>
           <div>

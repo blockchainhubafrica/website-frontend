@@ -2,6 +2,7 @@
   color: var(--app-white);
   font-weight: 900;
   line-height: 3.7rem;
+  text-shadow: 0 0 0 var(--app-white), 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .subtitle {
@@ -70,6 +71,35 @@
   letter-spacing: var(--app-letter-spacing-sm);
   color: var(--app-black);
   font-family: var(--app-secondary-font);
+  margin-bottom: 0;
+  font-weight: 900;
+}
+
+.registration-countdown {
+  display: inline-block;
+  margin-left: 14px;
+  color: var(--app-orange);
+  font-family: var(--app-secondary-font);
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: var(--app-letter-spacing-sm);
+  white-space: nowrap;
+}
+
+.form-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.form-logo {
+  display: block;
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .registration-form-btn {

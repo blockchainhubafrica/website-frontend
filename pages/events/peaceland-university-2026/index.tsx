@@ -21,6 +21,9 @@ import { toast } from "react-toastify";
 import action from "services/actionService";
 
 const EVENT_NAME = "Intro to Blockchain - Peaceland University 2026";
+const REGISTRATION_CLOSE_DATE = new Date("2026-05-19T00:00:00+01:00");
+const REGISTRATION_CLOSE_TIME = REGISTRATION_CLOSE_DATE.getTime();
+const PEACELAND_LOGO_SRC = "/PlandLogo.png";
 
 export const registrationSuccessModalContent = {
   title: "Registration Successful",
@@ -81,6 +84,7 @@ const initialValues: ValuesType = {
 export default function PeacelandUniversity2026() {
   const [isMobileFormOpen, setIsMobileFormOpen] = useState(false);
   const [eventId, setEventId] = useState<string | null>(null);
+  const [registrationCountdown, setRegistrationCountdown] = useState("");
 
   useEffect(() => {
     GetPublishedEventsAPI()
@@ -90,6 +94,30 @@ export default function PeacelandUniversity2026() {
         if (match) setEventId(match._id);
       })
       .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    const updateCountdown = () => {
+      const difference = REGISTRATION_CLOSE_TIME - Date.now();
+      if (difference <= 0) {
+        setRegistrationCountdown("Registration closed");
+        return;
+      }
+
+      const totalMinutes = Math.floor(difference / (1000 * 60));
+      const days = Math.floor(totalMinutes / (60 * 24));
+      const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
+      const minutes = totalMinutes % 60;
+
+      setRegistrationCountdown(
+        `Registration closes in ${days}d ${hours}h ${minutes}m`
+      );
+    };
+
+    updateCountdown();
+    const interval = window.setInterval(updateCountdown, 60 * 1000);
+
+    return () => window.clearInterval(interval);
   }, []);
 
   const formik = useFormik({
@@ -155,6 +183,7 @@ export default function PeacelandUniversity2026() {
           isOpen={isMobileFormOpen}
           setIsOpen={setIsMobileFormOpen}
           formik={formik}
+          logoSrc={PEACELAND_LOGO_SRC}
         />
       </div>
       <main className={styles["container"]}>
@@ -167,7 +196,7 @@ export default function PeacelandUniversity2026() {
                 <h1
                   className={`${styles["header"]} text-3xl md:text-4xl lg:text-5xl mb-2`}
                 >
-                  Intro to blockchain development
+                  Intro To Blockchain Development
                 </h1>
                 <h3 className={`${styles["subtitle"]} text-lg`}>
                   Peaceland University, Enugu State
@@ -181,7 +210,14 @@ export default function PeacelandUniversity2026() {
                   <span>
                     <Calendar2 />
                   </span>
-                  <span className="text-2xl">9AM, Wednesday 6th May, 2026</span>
+                  <span className="text-2xl">
+                    9AM, Wednesday 6th May, 2026
+                    {registrationCountdown && (
+                      <strong className={styles["registration-countdown"]}>
+                        {registrationCountdown}
+                      </strong>
+                    )}
+                  </span>
                 </div>
                 <div className="flex gap-x-4 items-center mb-5">
                   <span>
@@ -213,10 +249,15 @@ export default function PeacelandUniversity2026() {
 
               <div className={`hidden xl:block xl:col-span-3 ml-auto`}>
                 <form onSubmit={formik.handleSubmit} className="py-8 px-8">
-                  <div className="flex justify-between items-center">
-                    <h3 className={`${styles["spaced-heading"]} text-3xl mb-8`}>
+                  <div className={styles["form-heading-row"]}>
+                    <h3 className={`${styles["spaced-heading"]} text-3xl`}>
                       Registration Form
                     </h3>
+                    <img
+                      src={PEACELAND_LOGO_SRC}
+                      alt="Peaceland University logo"
+                      className={styles["form-logo"]}
+                    />
                   </div>
                   <div>
                     <Input
