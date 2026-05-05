@@ -20,6 +20,14 @@
   background-repeat: no-repeat;
   background-position: right 4px center;
   padding-right: 20px;
+  color: var(--app-black);
+  font-weight: 700;
+}
+
+.container select option {
+  color: var(--app-black);
+  font-weight: 700;
+  background-color: var(--app-white);
 }
 
 .container select:focus {
