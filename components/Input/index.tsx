@@ -14,6 +14,7 @@ type InputType = {
   as?: "input" | "select";
   options?: { label: string; value: string }[];
   min?: number;
+  max?: number;
   required?: boolean;
   step?: number;
 };

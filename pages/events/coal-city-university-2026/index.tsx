@@ -63,6 +63,7 @@ const validationSchema = Yup.object({
   yearsOfExperience: Yup.number()
     .typeError("Years of experience must be a number")
     .min(0, "Cannot be negative")
+    .max(5, "Maximum 5 years")
     .required("Years of experience is required"),
   portfolio: Yup.string(),
 });
@@ -255,6 +256,7 @@ export default function CoalCityUniversity2026() {
                     <Input
                       type="number"
                       min={0}
+                      max={5}
                       name="yearsOfExperience"
                       formik={formik}
                       label="Years of Experience"

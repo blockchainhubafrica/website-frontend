@@ -90,6 +90,7 @@ export function FreeEventFormModal({
             <Input
               type="number"
               min={0}
+              max={5}
               name="yearsOfExperience"
               formik={formik}
               label="Years of Experience"
