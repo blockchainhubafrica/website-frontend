@@ -24,6 +24,16 @@ const EVENT_NAME = "Intro to Blockchain - Peaceland University 2026";
 const REGISTRATION_CLOSE_DATE = new Date("2026-05-19T00:00:00+01:00");
 const REGISTRATION_CLOSE_TIME = REGISTRATION_CLOSE_DATE.getTime();
 const PEACELAND_LOGO_SRC = "/PlandLogo.png";
+const X_SOCIAL_URL = "https://twitter.com/blockhubafrica";
+const INSTAGRAM_SOCIAL_URL = "https://instagram.com/blockchainhubafrica";
+
+type CountdownTime = {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  isClosed: boolean;
+};
 
 export const registrationSuccessModalContent = {
   title: "Registration Successful",
@@ -83,8 +93,20 @@ const initialValues: ValuesType = {
 
 export default function PeacelandUniversity2026() {
   const [isMobileFormOpen, setIsMobileFormOpen] = useState(false);
+  const [isSocialFollowModalOpen, setIsSocialFollowModalOpen] = useState(false);
+  const [isCompletingRegistration, setIsCompletingRegistration] =
+    useState(false);
+  const [pendingRegistrationValues, setPendingRegistrationValues] =
+    useState<ValuesType | null>(null);
   const [eventId, setEventId] = useState<string | null>(null);
-  const [registrationCountdown, setRegistrationCountdown] = useState("");
+  const [registrationCountdown, setRegistrationCountdown] =
+    useState<CountdownTime>({
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      isClosed: false,
+    });
 
   useEffect(() => {
     GetPublishedEventsAPI()
@@ -100,22 +122,27 @@ export default function PeacelandUniversity2026() {
     const updateCountdown = () => {
       const difference = REGISTRATION_CLOSE_TIME - Date.now();
       if (difference <= 0) {
-        setRegistrationCountdown("Registration closed");
+        setRegistrationCountdown({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+          isClosed: true,
+        });
         return;
       }
 
-      const totalMinutes = Math.floor(difference / (1000 * 60));
-      const days = Math.floor(totalMinutes / (60 * 24));
-      const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
-      const minutes = totalMinutes % 60;
+      const totalSeconds = Math.floor(difference / 1000);
+      const days = Math.floor(totalSeconds / (60 * 60 * 24));
+      const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+      const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+      const seconds = totalSeconds % 60;
 
-      setRegistrationCountdown(
-        `Registration closes in ${days}d ${hours}h ${minutes}m`
-      );
+      setRegistrationCountdown({ days, hours, minutes, seconds, isClosed: false });
     };
 
     updateCountdown();
-    const interval = window.setInterval(updateCountdown, 60 * 1000);
+    const interval = window.setInterval(updateCountdown, 1000);
 
     return () => window.clearInterval(interval);
   }, []);
@@ -140,13 +167,19 @@ export default function PeacelandUniversity2026() {
     return null;
   }
 
-  async function handleSubmit(values: ValuesType) {
+  function handleSubmit(values: ValuesType) {
+    setPendingRegistrationValues({ ...values });
+    setIsSocialFollowModalOpen(true);
+  }
+
+  async function completeRegistration(values: ValuesType) {
     const id = await resolveEventId();
     if (!id) {
       toast.error("Event not found. Please try again later.");
       return;
     }
     const toastId = toast.loading("Registering...");
+    setIsCompletingRegistration(true);
     try {
       await RegisterForEventAPI(id, {
         name: `${values.firstName} ${values.surname}`.trim(),
@@ -161,6 +194,9 @@ export default function PeacelandUniversity2026() {
       toast.dismiss(toastId);
       formik.resetForm();
       setIsMobileFormOpen(false);
+      setIsSocialFollowModalOpen(false);
+      setIsCompletingRegistration(false);
+      setPendingRegistrationValues(null);
       action.success(registrationSuccessModalContent);
     } catch (error) {
       const message = apiErrorMessage(error);
@@ -171,8 +207,15 @@ export default function PeacelandUniversity2026() {
         autoClose: 5000,
         pauseOnFocusLoss: false,
       });
+      setIsCompletingRegistration(false);
     }
   }
+
+  const handleCompleteRegistration = () => {
+    if (pendingRegistrationValues) {
+      completeRegistration(pendingRegistrationValues);
+    }
+  };
 
   return (
     <>
@@ -185,6 +228,63 @@ export default function PeacelandUniversity2026() {
           formik={formik}
           logoSrc={PEACELAND_LOGO_SRC}
         />
+        {isSocialFollowModalOpen && (
+          <div
+            className={styles["social-follow-modal"]}
+            onClick={() => setIsSocialFollowModalOpen(false)}
+          >
+            <div
+              className={styles["social-follow-card"]}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                className={styles["social-follow-close"]}
+                onClick={() => setIsSocialFollowModalOpen(false)}
+              >
+                x
+              </button>
+              <p className={styles["social-follow-eyebrow"]}>
+                BlockchainHub Africa
+              </p>
+              <h3 className={styles["social-follow-title"]}>
+                Follow us on our socials
+              </h3>
+              <p className={styles["social-follow-copy"]}>
+                Stay connected for event updates, learning resources, and
+                community announcements.
+              </p>
+              <div className={styles["social-follow-actions"]}>
+                <a
+                  href={X_SOCIAL_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles["social-follow-link"]}
+                >
+                  Follow on X
+                </a>
+                <a
+                  href={INSTAGRAM_SOCIAL_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles["social-follow-link"]}
+                >
+                  Follow on Instagram
+                </a>
+              </div>
+              <button
+                type="button"
+                className={styles["social-follow-submit"]}
+                onClick={handleCompleteRegistration}
+                disabled={isCompletingRegistration}
+              >
+                {isCompletingRegistration
+                  ? "Registering..."
+                  : "Complete registration"}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
       <main className={styles["container"]}>
         <section
@@ -206,18 +306,47 @@ export default function PeacelandUniversity2026() {
                   Kickstart your journey into blockchain development with our Rust for Solana Virtual Machine series. This course introduces you to the fundamentals of building scalable, high-performance decentralized applications using Rust on the Solana ecosystem.
                 </p>
                 <hr className={`${styles["bottom-bar"]} my-8`} />
-                <div className="flex gap-x-4 items-center mb-5">
+                <div className="flex gap-x-4 items-start mb-5">
                   <span>
                     <Calendar2 />
                   </span>
-                  <span className="text-2xl">
-                    9AM, Wednesday 6th May, 2026
-                    {registrationCountdown && (
-                      <strong className={styles["registration-countdown"]}>
-                        {registrationCountdown}
+                  <div className={styles["registration-countdown"]}>
+                    {registrationCountdown.isClosed ? (
+                      <strong className={styles["registration-closed"]}>
+                        Registration closed
                       </strong>
+                    ) : (
+                      <>
+                        <h4 className={styles["countdown-title"]}>
+                          Registration closes
+                        </h4>
+                        <div className={styles["countdown-row"]}>
+                          {[
+                            ["DAYS", registrationCountdown.days],
+                            ["HOURS", registrationCountdown.hours],
+                            ["MINS", registrationCountdown.minutes],
+                            ["SECS", registrationCountdown.seconds],
+                          ].map(([label, value], index) => (
+                            <React.Fragment key={label}>
+                              <div className={styles["countdown-unit"]}>
+                                <span className={styles["countdown-value"]}>
+                                  {value}
+                                </span>
+                                <span className={styles["countdown-label"]}>
+                                  {label}
+                                </span>
+                              </div>
+                              {index < 3 && (
+                                <span className={styles["countdown-separator"]}>
+                                  :
+                                </span>
+                              )}
+                            </React.Fragment>
+                          ))}
+                        </div>
+                      </>
                     )}
-                  </span>
+                  </div>
                 </div>
                 <div className="flex gap-x-4 items-center mb-5">
                   <span>
