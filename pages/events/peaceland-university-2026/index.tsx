@@ -297,7 +297,7 @@ export default function PeacelandUniversity2026() {
                 <h1
                   className={`${styles["header"]} text-3xl md:text-4xl lg:text-5xl mb-2`}
                 >
-                  Intro To Blockchain Development
+                  Intro to Blockchain Development
                 </h1>
                 <h3 className={`${styles["subtitle"]} text-lg`}>
                   Peaceland University, Enugu State
