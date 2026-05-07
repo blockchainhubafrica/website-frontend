@@ -56,14 +56,14 @@ export const demoEventsData = [
     name: "Intro to Blockchain — Peaceland University",
     link: "/events/peaceland-university-2026",
     year: "2026",
-    hasBeenHeld: true,
+    hasBeenHeld: false,
   },
   {
     image: COAL_CITY_EVENT_COVER_SRC,
     name: "Intro to Blockchain — Coal City University",
     link: "/events/coal-city-university-2026",
     year: "2026",
-    hasBeenHeld: true,
+    hasBeenHeld: false,
   },
   {
     image: event2022B,

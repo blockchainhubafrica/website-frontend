@@ -25,6 +25,11 @@ import { useOnClickOutside } from "../../hooks";
 import styles from "./styles.module.css";
 import { DefaultSEOHead, EventsPageHead } from "../../pageHeads";
 
+const CURRENT_EVENT_LINKS = [
+  "/events/peaceland-university-2026",
+  "/events/coal-city-university-2026",
+];
+
 export default function EventsPage() {
   const [showFilterDropDown, setShowFilterDropDown] = useState<boolean>(false);
   const [showSlider, setShowSlider] = useState<boolean>(false);
@@ -86,6 +91,26 @@ export default function EventsPage() {
     []
   );
 
+  const currentEvents = useMemo(
+    () =>
+      eventsData.filter(
+        (event) =>
+          parseInt(event.year) === currentFilterYear &&
+          CURRENT_EVENT_LINKS.includes(event.link)
+      ),
+    [currentFilterYear, eventsData]
+  );
+
+  const upcomingEvents = useMemo(
+    () =>
+      eventsData.filter(
+        (event) =>
+          parseInt(event.year) === currentFilterYear &&
+          !CURRENT_EVENT_LINKS.includes(event.link)
+      ),
+    [currentFilterYear, eventsData]
+  );
+
   return (
     <>
       <EventsPageHead />
@@ -144,13 +169,7 @@ export default function EventsPage() {
                       )}
                     </div>
                     <Events
-                      eventList={useMemo(
-                        () =>
-                          eventsData.filter(
-                            (event) => parseInt(event.year) === currentFilterYear
-                          ),
-                        [currentFilterYear]
-                      )}
+                      eventList={currentEvents}
                     />
                   </div>
                 </section>
@@ -207,13 +226,7 @@ export default function EventsPage() {
                       )}
                     </div>
                     <Events
-                      eventList={useMemo(
-                        () =>
-                          eventsData.filter(
-                            (event) => parseInt(event.year) === currentFilterYear
-                          ),
-                        [currentFilterYear]
-                      )}
+                      eventList={upcomingEvents}
                     />
                   </div>
                 </section>
