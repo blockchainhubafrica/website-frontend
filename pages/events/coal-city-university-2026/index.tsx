@@ -23,6 +23,8 @@ import action from "services/actionService";
 const EVENT_NAME = "Intro to Blockchain - Coal City University 2026";
 const REGISTRATION_CLOSE_DATE = new Date("2026-05-06T09:00:00+01:00");
 const REGISTRATION_CLOSE_TIME = REGISTRATION_CLOSE_DATE.getTime();
+const COAL_CITY_LOGO_SRC =
+  "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778180172/download_4_1_m1rxkz.png";
 const X_SOCIAL_URL = "https://twitter.com/blockhubafrica";
 const INSTAGRAM_SOCIAL_URL = "https://instagram.com/blockchainhubafrica";
 
@@ -225,6 +227,7 @@ export default function CoalCityUniversity2026() {
           isOpen={isMobileFormOpen}
           setIsOpen={setIsMobileFormOpen}
           formik={formik}
+          logoSrc={COAL_CITY_LOGO_SRC}
         />
         {isSocialFollowModalOpen && (
           <div
@@ -377,10 +380,15 @@ export default function CoalCityUniversity2026() {
 
               <div className={`hidden xl:block xl:col-span-3 ml-auto`}>
                 <form onSubmit={formik.handleSubmit} className="py-8 px-8">
-                  <div className="flex justify-between items-center">
-                    <h3 className={`${styles["spaced-heading"]} text-3xl mb-8`}>
+                  <div className={styles["form-heading-row"]}>
+                    <h3 className={`${styles["spaced-heading"]} text-3xl`}>
                       Registration Form
                     </h3>
+                    <img
+                      src={COAL_CITY_LOGO_SRC}
+                      alt="Coal City University logo"
+                      className={styles["form-logo"]}
+                    />
                   </div>
                   <div>
                     <Input

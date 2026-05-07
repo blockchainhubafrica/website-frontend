@@ -23,7 +23,8 @@ import action from "services/actionService";
 const EVENT_NAME = "Intro to Blockchain - Peaceland University 2026";
 const REGISTRATION_CLOSE_DATE = new Date("2026-05-19T00:00:00+01:00");
 const REGISTRATION_CLOSE_TIME = REGISTRATION_CLOSE_DATE.getTime();
-const PEACELAND_LOGO_SRC = "/PlandLogo.png";
+const PEACELAND_LOGO_SRC =
+  "https://res.cloudinary.com/drj2hpt8p/image/upload/f_auto,q_auto/PlandLogo_cctbv5";
 const X_SOCIAL_URL = "https://twitter.com/blockhubafrica";
 const INSTAGRAM_SOCIAL_URL = "https://instagram.com/blockchainhubafrica";
 

@@ -10,7 +10,7 @@
 
 .hero-section {
   background: linear-gradient(180deg, rgba(0, 8, 31, 0.74) 0%, #00081f 37.46%),
-    url("https://res.cloudinary.com/blockchainhub-africa/image/upload/v1667644699/blockchainhubafrica/bg-image-bcha_afgttx.jpg");
+    url("https://res.cloudinary.com/drj2hpt8p/image/upload/v1778179515/IMG_1766_gd6wjj.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -70,6 +70,24 @@
   letter-spacing: var(--app-letter-spacing-sm);
   color: var(--app-black);
   font-family: var(--app-secondary-font);
+  margin-bottom: 0;
+  font-weight: 900;
+}
+
+.form-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.form-logo {
+  display: block;
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .registration-countdown {

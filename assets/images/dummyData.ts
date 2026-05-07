@@ -24,7 +24,12 @@ import {
   EmekaNwekeSrc,
   IfunanyaNFTSrc,
 } from "./cloudinary";
-import { event2022A, event2022B } from "./jpgs";
+import { event2022B } from "./jpgs";
+
+const PEACELAND_EVENT_COVER_SRC =
+  "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778179535/PU_event_dm5gtv.jpg";
+const COAL_CITY_EVENT_COVER_SRC =
+  "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778179515/IMG_1766_gd6wjj.jpg";
 
 export const demoProductsData = [
   {
@@ -47,25 +52,18 @@ export const demoProductsData = [
 
 export const demoEventsData = [
   {
-    image: event2022B,
+    image: PEACELAND_EVENT_COVER_SRC,
     name: "Intro to Blockchain — Peaceland University",
     link: "/events/peaceland-university-2026",
     year: "2026",
-    hasBeenHeld: false,
+    hasBeenHeld: true,
   },
   {
-    image: event2022A,
+    image: COAL_CITY_EVENT_COVER_SRC,
     name: "Intro to Blockchain — Coal City University",
     link: "/events/coal-city-university-2026",
     year: "2026",
-    hasBeenHeld: false,
-  },
-  {
-    image: event2022B,
-    name: "BlockchainHub Africa Web3 Class",
-    link: "#",
-    year: "2023",
-    hasBeenHeld: false,
+    hasBeenHeld: true,
   },
   {
     image: event2022B,
@@ -73,13 +71,6 @@ export const demoEventsData = [
     link: "/blog/blockchain-hub-africa-partners-with-buildspace-to-train-web3-talents-in-africa-656",
     year: "2022",
     hasBeenHeld: true,
-  },
-  {
-    image: event2022A,
-    name: "Developer Conference '22",
-    link: "/events/bdc-2022",
-    year: "2022",
-    hasBeenHeld: false,
   },
 ];
 
