@@ -18,9 +18,13 @@
 }
 
 .content {
-  width: min(100% - 32px, 760px);
+  width: min(100% - 32px, 1120px);
   margin: 0 auto;
   padding: 72px 0;
+}
+
+.content > * {
+  max-width: 680px;
 }
 
 .eyebrow {
@@ -53,6 +57,7 @@
 }
 
 .actions {
+  max-width: 580px;
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
