@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import * as Yup from "yup";
 import { Calendar2, Location } from "../../../assets/images";
 import { useFormik } from "formik";
@@ -18,15 +19,14 @@ import {
 } from "../../../services/registrationService";
 import { apiErrorMessage } from "../../../utils/handleAPIErrors";
 import { toast } from "react-toastify";
-import action from "services/actionService";
 
 const EVENT_NAME = "Intro to Blockchain - Coal City University 2026";
+const EVENT_LOCATION_KEYWORDS = ["coal city", "caol city"];
 const REGISTRATION_CLOSE_DATE = new Date("2026-05-06T09:00:00+01:00");
 const REGISTRATION_CLOSE_TIME = REGISTRATION_CLOSE_DATE.getTime();
 const COAL_CITY_LOGO_SRC =
   "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778180172/download_4_1_m1rxkz.png";
-const X_SOCIAL_URL = "https://twitter.com/blockhubafrica";
-const INSTAGRAM_SOCIAL_URL = "https://instagram.com/blockchainhubafrica";
+const FOLLOW_US_ROUTE = "/follow-us";
 
 type CountdownTime = {
   days: number;
@@ -93,12 +93,8 @@ const initialValues: ValuesType = {
 };
 
 export default function CoalCityUniversity2026() {
+  const router = useRouter();
   const [isMobileFormOpen, setIsMobileFormOpen] = useState(false);
-  const [isSocialFollowModalOpen, setIsSocialFollowModalOpen] = useState(false);
-  const [isCompletingRegistration, setIsCompletingRegistration] =
-    useState(false);
-  const [pendingRegistrationValues, setPendingRegistrationValues] =
-    useState<ValuesType | null>(null);
   const [eventId, setEventId] = useState<string | null>(null);
   const [registrationCountdown, setRegistrationCountdown] =
     useState<CountdownTime>({
@@ -113,7 +109,7 @@ export default function CoalCityUniversity2026() {
     GetPublishedEventsAPI()
       .then((res) => {
         const events: any[] = res.data?.data ?? [];
-        const match = events.find((e) => e.event_name === EVENT_NAME);
+        const match = findRegistrationEvent(events);
         if (match) setEventId(match._id);
       })
       .catch(() => {});
@@ -159,7 +155,7 @@ export default function CoalCityUniversity2026() {
     try {
       const res = await GetPublishedEventsAPI();
       const events: any[] = res.data?.data ?? [];
-      const match = events.find((e) => e.event_name === EVENT_NAME);
+      const match = findRegistrationEvent(events);
       if (match) {
         setEventId(match._id);
         return match._id;
@@ -168,19 +164,26 @@ export default function CoalCityUniversity2026() {
     return null;
   }
 
-  function handleSubmit(values: ValuesType) {
-    setPendingRegistrationValues({ ...values });
-    setIsSocialFollowModalOpen(true);
+  function findRegistrationEvent(events: any[]) {
+    return events.find((event) => {
+      const eventName = String(event.event_name ?? "").toLowerCase();
+      const location = String(event.location ?? "").toLowerCase();
+
+      return (
+        event.event_name === EVENT_NAME ||
+        (eventName.includes("intro to blockchain") &&
+          EVENT_LOCATION_KEYWORDS.some((keyword) => location.includes(keyword)))
+      );
+    });
   }
 
-  async function completeRegistration(values: ValuesType) {
+  async function handleSubmit(values: ValuesType) {
     const id = await resolveEventId();
     if (!id) {
       toast.error("Event not found. Please try again later.");
       return;
     }
     const toastId = toast.loading("Registering...");
-    setIsCompletingRegistration(true);
     try {
       await RegisterForEventAPI(id, {
         name: `${values.firstName} ${values.surname}`.trim(),
@@ -195,10 +198,7 @@ export default function CoalCityUniversity2026() {
       toast.dismiss(toastId);
       formik.resetForm();
       setIsMobileFormOpen(false);
-      setIsSocialFollowModalOpen(false);
-      setIsCompletingRegistration(false);
-      setPendingRegistrationValues(null);
-      action.success(registrationSuccessModalContent);
+      router.push(FOLLOW_US_ROUTE);
     } catch (error) {
       const message = apiErrorMessage(error);
       toast.update(toastId, {
@@ -208,15 +208,8 @@ export default function CoalCityUniversity2026() {
         autoClose: 5000,
         pauseOnFocusLoss: false,
       });
-      setIsCompletingRegistration(false);
     }
   }
-
-  const handleCompleteRegistration = () => {
-    if (pendingRegistrationValues) {
-      completeRegistration(pendingRegistrationValues);
-    }
-  };
 
   return (
     <>
@@ -229,63 +222,6 @@ export default function CoalCityUniversity2026() {
           formik={formik}
           logoSrc={COAL_CITY_LOGO_SRC}
         />
-        {isSocialFollowModalOpen && (
-          <div
-            className={styles["social-follow-modal"]}
-            onClick={() => setIsSocialFollowModalOpen(false)}
-          >
-            <div
-              className={styles["social-follow-card"]}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <button
-                type="button"
-                className={styles["social-follow-close"]}
-                onClick={() => setIsSocialFollowModalOpen(false)}
-              >
-                x
-              </button>
-              <p className={styles["social-follow-eyebrow"]}>
-                BlockchainHub Africa
-              </p>
-              <h3 className={styles["social-follow-title"]}>
-                Follow us on our socials
-              </h3>
-              <p className={styles["social-follow-copy"]}>
-                Stay connected for event updates, learning resources, and
-                community announcements.
-              </p>
-              <div className={styles["social-follow-actions"]}>
-                <a
-                  href={X_SOCIAL_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles["social-follow-link"]}
-                >
-                  Follow on X
-                </a>
-                <a
-                  href={INSTAGRAM_SOCIAL_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles["social-follow-link"]}
-                >
-                  Follow on Instagram
-                </a>
-              </div>
-              <button
-                type="button"
-                className={styles["social-follow-submit"]}
-                onClick={handleCompleteRegistration}
-                disabled={isCompletingRegistration}
-              >
-                {isCompletingRegistration
-                  ? "Registering..."
-                  : "Complete registration"}
-              </button>
-            </div>
-          </div>
-        )}
       </div>
       <main className={styles["container"]}>
         <section
