@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import * as Yup from "yup";
 import { Calendar2, Location } from "../../../assets/images";
 import { useFormik } from "formik";
@@ -18,9 +19,22 @@ import {
 } from "../../../services/registrationService";
 import { apiErrorMessage } from "../../../utils/handleAPIErrors";
 import { toast } from "react-toastify";
-import action from "services/actionService";
 
 const EVENT_NAME = "Intro to Blockchain - Coal City University 2026";
+const EVENT_LOCATION_KEYWORDS = ["coal city", "caol city"];
+const REGISTRATION_CLOSE_DATE = new Date("2026-05-06T09:00:00+01:00");
+const REGISTRATION_CLOSE_TIME = REGISTRATION_CLOSE_DATE.getTime();
+const COAL_CITY_LOGO_SRC =
+  "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778180172/download_4_1_m1rxkz.png";
+const FOLLOW_US_ROUTE = "/follow-us";
+
+type CountdownTime = {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  isClosed: boolean;
+};
 
 export const registrationSuccessModalContent = {
   title: "Registration Successful",
@@ -79,17 +93,55 @@ const initialValues: ValuesType = {
 };
 
 export default function CoalCityUniversity2026() {
+  const router = useRouter();
   const [isMobileFormOpen, setIsMobileFormOpen] = useState(false);
   const [eventId, setEventId] = useState<string | null>(null);
+  const [registrationCountdown, setRegistrationCountdown] =
+    useState<CountdownTime>({
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      isClosed: false,
+    });
 
   useEffect(() => {
     GetPublishedEventsAPI()
       .then((res) => {
         const events: any[] = res.data?.data ?? [];
-        const match = events.find((e) => e.event_name === EVENT_NAME);
+        const match = findRegistrationEvent(events);
         if (match) setEventId(match._id);
       })
       .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    const updateCountdown = () => {
+      const difference = REGISTRATION_CLOSE_TIME - Date.now();
+      if (difference <= 0) {
+        setRegistrationCountdown({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+          isClosed: true,
+        });
+        return;
+      }
+
+      const totalSeconds = Math.floor(difference / 1000);
+      const days = Math.floor(totalSeconds / (60 * 60 * 24));
+      const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+      const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+      const seconds = totalSeconds % 60;
+
+      setRegistrationCountdown({ days, hours, minutes, seconds, isClosed: false });
+    };
+
+    updateCountdown();
+    const interval = window.setInterval(updateCountdown, 1000);
+
+    return () => window.clearInterval(interval);
   }, []);
 
   const formik = useFormik({
@@ -103,13 +155,26 @@ export default function CoalCityUniversity2026() {
     try {
       const res = await GetPublishedEventsAPI();
       const events: any[] = res.data?.data ?? [];
-      const match = events.find((e) => e.event_name === EVENT_NAME);
+      const match = findRegistrationEvent(events);
       if (match) {
         setEventId(match._id);
         return match._id;
       }
     } catch {}
     return null;
+  }
+
+  function findRegistrationEvent(events: any[]) {
+    return events.find((event) => {
+      const eventName = String(event.event_name ?? "").toLowerCase();
+      const location = String(event.location ?? "").toLowerCase();
+
+      return (
+        event.event_name === EVENT_NAME ||
+        (eventName.includes("intro to blockchain") &&
+          EVENT_LOCATION_KEYWORDS.some((keyword) => location.includes(keyword)))
+      );
+    });
   }
 
   async function handleSubmit(values: ValuesType) {
@@ -133,7 +198,7 @@ export default function CoalCityUniversity2026() {
       toast.dismiss(toastId);
       formik.resetForm();
       setIsMobileFormOpen(false);
-      action.success(registrationSuccessModalContent);
+      router.push(FOLLOW_US_ROUTE);
     } catch (error) {
       const message = apiErrorMessage(error);
       toast.update(toastId, {
@@ -155,6 +220,7 @@ export default function CoalCityUniversity2026() {
           isOpen={isMobileFormOpen}
           setIsOpen={setIsMobileFormOpen}
           formik={formik}
+          logoSrc={COAL_CITY_LOGO_SRC}
         />
       </div>
       <main className={styles["container"]}>
@@ -167,7 +233,7 @@ export default function CoalCityUniversity2026() {
                 <h1
                   className={`${styles["header"]} text-3xl md:text-4xl lg:text-5xl mb-2`}
                 >
-                  Intro to blockchain development
+                  Intro to Blockchain Development
                 </h1>
                 <h3 className={`${styles["subtitle"]} text-lg`}>
                   Coal City University, Enugu State
@@ -177,11 +243,47 @@ export default function CoalCityUniversity2026() {
                   Kickstart your journey into blockchain development with our Rust for Solana Virtual Machine series. This course introduces you to the fundamentals of building scalable, high-performance decentralized applications using Rust on the Solana ecosystem.
                 </p>
                 <hr className={`${styles["bottom-bar"]} my-8`} />
-                <div className="flex gap-x-4 items-center mb-5">
+                <div className="flex gap-x-4 items-start mb-5">
                   <span>
                     <Calendar2 />
                   </span>
-                  <span className="text-2xl">9AM, Wednesday 6th May, 2026</span>
+                  <div className={styles["registration-countdown"]}>
+                    {registrationCountdown.isClosed ? (
+                      <strong className={styles["registration-closed"]}>
+                        Registration closed
+                      </strong>
+                    ) : (
+                      <>
+                        <h4 className={styles["countdown-title"]}>
+                          Registration closes
+                        </h4>
+                        <div className={styles["countdown-row"]}>
+                          {[
+                            ["DAYS", registrationCountdown.days],
+                            ["HOURS", registrationCountdown.hours],
+                            ["MINS", registrationCountdown.minutes],
+                            ["SECS", registrationCountdown.seconds],
+                          ].map(([label, value], index) => (
+                            <React.Fragment key={label}>
+                              <div className={styles["countdown-unit"]}>
+                                <span className={styles["countdown-value"]}>
+                                  {value}
+                                </span>
+                                <span className={styles["countdown-label"]}>
+                                  {label}
+                                </span>
+                              </div>
+                              {index < 3 && (
+                                <span className={styles["countdown-separator"]}>
+                                  :
+                                </span>
+                              )}
+                            </React.Fragment>
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
                 <div className="flex gap-x-4 items-center mb-5">
                   <span>
@@ -214,10 +316,15 @@ export default function CoalCityUniversity2026() {
 
               <div className={`hidden xl:block xl:col-span-3 ml-auto`}>
                 <form onSubmit={formik.handleSubmit} className="py-8 px-8">
-                  <div className="flex justify-between items-center">
-                    <h3 className={`${styles["spaced-heading"]} text-3xl mb-8`}>
+                  <div className={styles["form-heading-row"]}>
+                    <h3 className={`${styles["spaced-heading"]} text-3xl`}>
                       Registration Form
                     </h3>
+                    <img
+                      src={COAL_CITY_LOGO_SRC}
+                      alt="Coal City University logo"
+                      className={styles["form-logo"]}
+                    />
                   </div>
                   <div>
                     <Input
