@@ -24,7 +24,7 @@ import {
   EmekaNwekeSrc,
   IfunanyaNFTSrc,
 } from "./cloudinary";
-import { event2022A, event2022B } from "./jpgs";
+import { event2022A, event2022B, superteam, Techfest } from "./jpgs";
 
 export const demoProductsData = [
   {
@@ -59,6 +59,20 @@ export const demoEventsData = [
     link: "/events/coal-city-university-2026",
     year: "2026",
     hasBeenHeld: false,
+  },
+    {
+  image: Techfest, // or ETF image
+  name: "Enugu Tech Festival 2026 x BlockchainHub Africa Web3 Day",
+  link: "https://enugutechfest.com/",
+  year: "2026",
+  hasBeenHeld: true,
+},
+  {
+    image: superteam, 
+    name: "Builders’ Cohort: Intermediate Level- SuperteamNG X BlokchainHubAfrica 16th March - 25 April, 2026",
+    link: "#",
+    year: "2026",
+    hasBeenHeld: true,
   },
   {
     image: event2022B,
