@@ -22,7 +22,7 @@ import { toast } from "react-toastify";
 
 const EVENT_NAME = "Intro to Blockchain - Peaceland University 2026";
 const EVENT_LOCATION_KEYWORD = "peaceland";
-const REGISTRATION_CLOSE_DATE = new Date("2026-05-19T00:00:00+01:00");
+const REGISTRATION_CLOSE_DATE = new Date("2026-05-20T00:00:00+01:00");
 const REGISTRATION_CLOSE_TIME = REGISTRATION_CLOSE_DATE.getTime();
 const PEACELAND_LOGO_SRC =
   "https://res.cloudinary.com/drj2hpt8p/image/upload/f_auto,q_auto/PlandLogo_cctbv5";

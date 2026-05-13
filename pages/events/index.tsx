@@ -111,26 +111,6 @@ export default function EventsPage() {
     [currentFilterYear, eventsData]
   );
 
-  const currentEvents = useMemo(
-    () =>
-      eventsData.filter(
-        (event) =>
-          parseInt(event.year) === currentFilterYear &&
-          CURRENT_EVENT_LINKS.includes(event.link)
-      ),
-    [currentFilterYear, eventsData]
-  );
-
-  const upcomingEvents = useMemo(
-    () =>
-      eventsData.filter(
-        (event) =>
-          parseInt(event.year) === currentFilterYear &&
-          !CURRENT_EVENT_LINKS.includes(event.link)
-      ),
-    [currentFilterYear, eventsData]
-  );
-
   return (
     <>
       <EventsPageHead />
