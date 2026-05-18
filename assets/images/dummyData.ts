@@ -65,17 +65,17 @@ export const demoEventsData = [
     year: "2026",
     hasBeenHeld: false,
   },
-    {
+  {
   image: Techfest, // or ETF image
   name: "Enugu Tech Festival 2026 x BlockchainHub Africa Web3 Day",
-  link: "https://enugutechfest.com/",
+  link: "/blog/enugu-tech-festival-2026-blockchainhub-africa-web3-day",
   year: "2026",
   hasBeenHeld: true,
 },
   {
     image: superteam, 
     name: "Builders’ Cohort: Intermediate Level- SuperteamNG X BlokchainHubAfrica 16th March - 25 April, 2026",
-    link: "#",
+    link: "/blog/builders-cohort-superteamng-blockchainhub-africa",
     year: "2026",
     hasBeenHeld: true,
   },

@@ -106,6 +106,18 @@ export default function EventsPage() {
       eventsData.filter(
         (event) =>
           parseInt(event.year) === currentFilterYear &&
+          !event.hasBeenHeld &&
+          !CURRENT_EVENT_LINKS.includes(event.link)
+      ),
+    [currentFilterYear, eventsData]
+  );
+
+  const pastEvents = useMemo(
+    () =>
+      eventsData.filter(
+        (event) =>
+          parseInt(event.year) === currentFilterYear &&
+          event.hasBeenHeld &&
           !CURRENT_EVENT_LINKS.includes(event.link)
       ),
     [currentFilterYear, eventsData]
@@ -173,6 +185,7 @@ export default function EventsPage() {
                     />
                   </div>
                 </section>
+                {upcomingEvents.length > 0 && (
                 <section className={`${styles["events"]} my-8 md:my-12 lg:my-14`}>
                   <div className="container">
                     <div className="flex flex-wrap md:flex-nowrap items-center justify-between mb-10  md:mb-16">
@@ -230,6 +243,26 @@ export default function EventsPage() {
                     />
                   </div>
                 </section>
+                )}
+                {pastEvents.length > 0 && (
+                <section className={`${styles["events"]} my-8 md:my-12 lg:my-14`}>
+                  <div className="container">
+                    <div className="flex flex-wrap md:flex-nowrap items-center justify-between mb-10  md:mb-16">
+                      <div className="">
+                        <h2 className="text-base text-blue-400 uppercase">
+                          PAST EVENTS
+                        </h2>
+                        <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-blue-600 w-full md:w-9/12 xl:w-3/5">
+                          Stories from programs we have hosted.
+                        </h3>
+                      </div>
+                    </div>
+                    <Events
+                      eventList={pastEvents}
+                    />
+                  </div>
+                </section>
+                )}
         <section className={`bg-blue-600 pt-1 pb-20 lg:pb-28 ${styles["featured-events"]}`}>
           <div className={`${styles["featured-events-header"]}`}>
             <div className="container">

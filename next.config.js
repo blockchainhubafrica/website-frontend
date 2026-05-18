@@ -11,7 +11,7 @@ module.exports = {
     BACKEND_URL: process.env.NEXT_PUBLIC_BACKEND_BASE_URL,
   },
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ["res.cloudinary.com", "images.lumacdn.com"],
   },
   async redirects() {
     return [
