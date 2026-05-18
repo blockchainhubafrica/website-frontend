@@ -170,6 +170,55 @@
   padding: 60px 0 !important;
 }
 
+.detail-container .body p {
+  margin-bottom: 1.35rem;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.detail-container .body p.article-lede {
+  margin-bottom: 2rem;
+  color: var(--app-blue-800);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.detail-container .body h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+  color: var(--app-blue-800);
+  font-family: var(--app-secondary-font);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.detail-container .body h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--app-blue-800);
+  font-family: var(--app-secondary-font);
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+
+.detail-container .body ul {
+  margin-left: 1.2rem;
+  padding-left: 1rem;
+}
+
+.detail-container .body li {
+  margin-bottom: 0.65rem;
+  list-style: disc;
+  line-height: 1.65;
+}
+
+.detail-container .body .article-sources {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--app-gray-400);
+}
+
 .detail-container .button-container {
   width: 100%;
   position: sticky;
@@ -259,6 +308,18 @@
     /* font-weight: 400; */
     font-size: 18px;
   }
+  .detail-container .body p {
+    font-size: 1.08rem;
+  }
+
+  .detail-container .body p.article-lede {
+    font-size: 1.25rem;
+  }
+
+  .detail-container .body h2 {
+    font-size: 2.45rem;
+  }
+
   .detail-container h2 * {
     font-weight: 400;
     font-size: 40px;
