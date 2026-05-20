@@ -21,6 +21,7 @@ import { apiErrorMessage } from "../../../utils/handleAPIErrors";
 import { toast } from "react-toastify";
 
 const EVENT_NAME = "Intro to Blockchain - Coal City University 2026";
+const EVENT_ID = "69f8e5bcf5db59aa1e8dcf83";
 const EVENT_LOCATION_KEYWORDS = ["coal city", "caol city"];
 const REGISTRATION_CLOSE_DATE = new Date("2026-05-06T09:00:00+01:00");
 const REGISTRATION_CLOSE_TIME = REGISTRATION_CLOSE_DATE.getTime();
@@ -95,7 +96,7 @@ const initialValues: ValuesType = {
 export default function CoalCityUniversity2026() {
   const router = useRouter();
   const [isMobileFormOpen, setIsMobileFormOpen] = useState(false);
-  const [eventId, setEventId] = useState<string | null>(null);
+  const [eventId, setEventId] = useState<string | null>(EVENT_ID);
   const [registrationCountdown, setRegistrationCountdown] =
     useState<CountdownTime>({
       days: 0,
@@ -151,7 +152,6 @@ export default function CoalCityUniversity2026() {
   });
 
   async function resolveEventId(): Promise<string | null> {
-    if (eventId) return eventId;
     try {
       const res = await GetPublishedEventsAPI();
       const events: any[] = res.data?.data ?? [];
@@ -160,8 +160,10 @@ export default function CoalCityUniversity2026() {
         setEventId(match._id);
         return match._id;
       }
-    } catch {}
-    return null;
+    } catch (error) {
+      console.error("Unable to resolve event from events API", error);
+    }
+    return eventId || EVENT_ID;
   }
 
   function findRegistrationEvent(events: any[]) {
