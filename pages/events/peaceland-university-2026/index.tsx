@@ -398,11 +398,10 @@ export default function PeacelandUniversity2026() {
                   </div>
                   <div className="mt-4">
                     <Button
-                      // type="submit"
-                      // buttonType="primary"
-                      // text={formik.isSubmitting ? "Registering..." : "Register"}
-                      // disabled={formik.isSubmitting}
-                      disabled: true
+                      type="submit"
+                      buttonType="primary"
+                      text={formik.isSubmitting ? "Registering..." : "Register"}
+                      disabled={true}
                     />
                   </div>
                 </form>
