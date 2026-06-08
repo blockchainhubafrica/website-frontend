@@ -252,7 +252,7 @@ export default function PeacelandUniversity2026() {
                   <div className={styles["registration-countdown"]}>
                     {registrationCountdown.isClosed ? (
                       <strong className={styles["registration-closed"]}>
-                        Registration closed
+                        Registration closed. Check your emails for further info!
                       </strong>
                     ) : (
                       <>
@@ -398,10 +398,11 @@ export default function PeacelandUniversity2026() {
                   </div>
                   <div className="mt-4">
                     <Button
-                      type="submit"
-                      buttonType="primary"
-                      text={formik.isSubmitting ? "Registering..." : "Register"}
-                      disabled={formik.isSubmitting}
+                      // type="submit"
+                      // buttonType="primary"
+                      // text={formik.isSubmitting ? "Registering..." : "Register"}
+                      // disabled={formik.isSubmitting}
+                      disabled
                     />
                   </div>
                 </form>

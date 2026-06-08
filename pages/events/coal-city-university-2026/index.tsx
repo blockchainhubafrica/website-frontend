@@ -252,7 +252,7 @@ export default function CoalCityUniversity2026() {
                   <div className={styles["registration-countdown"]}>
                     {registrationCountdown.isClosed ? (
                       <strong className={styles["registration-closed"]}>
-                        Registration closed
+                        Registration closed. Check your emails for further info!
                       </strong>
                     ) : (
                       <>
