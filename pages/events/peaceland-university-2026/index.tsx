@@ -402,7 +402,7 @@ export default function PeacelandUniversity2026() {
                       // buttonType="primary"
                       // text={formik.isSubmitting ? "Registering..." : "Register"}
                       // disabled={formik.isSubmitting}
-                      disabled
+                      disabled: true
                     />
                   </div>
                 </form>
