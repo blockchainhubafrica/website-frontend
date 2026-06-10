@@ -23,6 +23,8 @@ import {
   MayowaSrc,
   EmekaNwekeSrc,
   IfunanyaNFTSrc,
+  AjentlySrc,
+  SolinfraSrc,
 } from "./cloudinary";
 import { event2022B, superteam, Techfest } from "./jpgs";
 
@@ -33,19 +35,19 @@ const COAL_CITY_EVENT_COVER_SRC =
 
 export const demoProductsData = [
   {
-    image: NduImageSrc,
-    title: "Ndu",
+    image: AjentlySrc,
+    title: "Ajently",
     description:
-      "Ndu combines the decentralized power of the Blockchain to eradicate fake and counterfeit drugs. Users can be able to check counterfeit drugs and earn while doing that.",
-    link: "https://local-ndu.vercel.app",
+      "An AI agent marketplace where you can discover, hire, and run specialized AI agents for any workflow from email campaigns and lead nurturing to coding and research. No complex setup required; just find an agent, run it instantly, and get results. You can also build and publish your own agents to the marketplace and earn every time someone uses them.",
+    link: "https://agently-waitlist.vercel.app",
     size: { width: 862, height: 752 },
   },
   {
-    image: BeimaImageSrc,
-    title: "Beima",
+    image: SolinfraSrc,
+    title: "Solinfra",
     description:
-      "Beima helps users secure their future with a transparent and high yielding interest pension plan that is truly theirs. Beima is the Future of Personal and Corporate finance",
-    link: "https://beima.app",
+      "Solana infrastructure platform built for developer teams  offering reserved RPC nodes, Yellowstone gRPC streaming, parsed transactions, and non-custodial wallet support, all accessible through a single API key. It's designed to give teams the reliable, high-performance backend they need to build and ship on Solana without managing complex node infrastructure themselves.",
+    link: "https://solinfra.dev/", 
     size: { width: 868, height: 752 },
   },
 ];
