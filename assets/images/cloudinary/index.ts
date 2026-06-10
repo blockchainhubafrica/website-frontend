@@ -28,11 +28,11 @@ export const Shapes1Src =
 export const Shapes2Src =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647102398/Company-website/shapes-2_v5ktbs.png";
 
-export const AjentlySrc =
-  "https://res.cloudinary.com/dg7wnxh2o/image/upload/q_auto/f_auto/v1780069541/Ajentlyyyy_t2kwx6.png";
+export const NduImageSrc =
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647705237/Company-website/ndu_xkivd1.png";
 
-export const SolinfraSrc =
-  "https://res.cloudinary.com/dg7wnxh2o/image/upload/q_auto/f_auto/v1780069593/Solinfraaa_dkq4ao.png";
+export const BeimaImageSrc =
+  "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1647705081/Company-website/beima_jndjti.png";
 
 export const UcheNFTSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1648732451/Company-website/Hazemonkey_we05si.png";
