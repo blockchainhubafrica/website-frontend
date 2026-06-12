@@ -17,7 +17,7 @@ const getNextArticle = (articles: any, slug: string) => {
 };
 
 async function getArticles(id: string = "") {
-	const url = process.env.NEXT_PUBLIC_BACKEND_BASE_URL + "/insights";
+	const url = process.env.NEXT_PUBLIC_BACKEND_BASE_URL + "/insights" || " ";
 	try {
 		let data = await fetch(url);
 		let result = await data.json();
@@ -31,7 +31,7 @@ async function getArticles(id: string = "") {
 		return result;
 	} catch (error) {
 		console.log(error);
-		return null;
+		return error;
 	}
 }
 
