@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
 
+const AnySlider = Slider as any;
+
 import { achievementData, RightArrowIcon } from "../../assets/images";
 import { Button } from "../Button";
 
@@ -40,7 +42,7 @@ const Achievements = () => {
       <div className={`container ${styles["sub-container"]}`}>
         <div className={`${styles.display}`}>
           <div className={`${styles["current-display"]}`}>
-            <Slider
+            <AnySlider
               dots={true}
               infinite={true}
               slidesToShow={1}
@@ -75,7 +77,7 @@ const Achievements = () => {
                   </div>
                 </div>
               ))}
-            </Slider>
+            </AnySlider>
           </div>
         </div>
       </div>
