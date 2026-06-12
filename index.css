@@ -11,13 +11,19 @@
 
 @font-face {
   font-family: "Coolvetica";
-  src: local("Coolvetica"), url(./fonts/coolvetica_rg.otf) format("truetype");
+  src: local("Coolvetica"), url(./fonts/coolvetica_rg.otf) format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Open Sans";
   src: local("Open Sans"),
-    url(./fonts/OpenSans-Light-webfont.woff) format("truetype");
+    url(./fonts/OpenSans-Light-webfont.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {

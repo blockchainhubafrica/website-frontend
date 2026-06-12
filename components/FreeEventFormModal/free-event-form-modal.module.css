@@ -76,4 +76,39 @@
   letter-spacing: var(--app-letter-spacing-sm);
   color: var(--app-black);
   font-family: var(--app-secondary-font);
+  font-weight: 900;
+}
+
+.form-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.form-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.form-logo {
+  display: block;
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+@media screen and (min-width: 640px) {
+  .form-heading-row {
+    margin-bottom: 24px;
+  }
+
+  .form-logo {
+    width: 64px;
+    height: 64px;
+  }
 }

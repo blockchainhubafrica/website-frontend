@@ -25,6 +25,11 @@ import { useOnClickOutside } from "../../hooks";
 import styles from "./styles.module.css";
 import { DefaultSEOHead, EventsPageHead } from "../../pageHeads";
 
+const CURRENT_EVENT_LINKS = [
+  "/events/peaceland-university-2026",
+  "/events/coal-city-university-2026",
+];
+
 export default function EventsPage() {
   const [showFilterDropDown, setShowFilterDropDown] = useState<boolean>(false);
   const [showSlider, setShowSlider] = useState<boolean>(false);
@@ -41,7 +46,7 @@ export default function EventsPage() {
   ]);
   const [sliderIndex, setSliderIndex] = useState<any>(0);
   const [currentFilterYear, setCurrentFilterYear] = useState<number | null>(
-    new Date().getFullYear()
+    new Date().getFullYear(),
   );
   const [eventsData] = useState<EventList[]>(demoEventsData);
 
@@ -80,10 +85,42 @@ export default function EventsPage() {
       eventsData.filter(
         (currentItem, index) =>
           eventsData.findIndex(
-            (indexedItem) => currentItem.year === indexedItem.year
-          ) === index
+            (indexedItem) => currentItem.year === indexedItem.year,
+          ) === index,
       ),
-    []
+    [],
+  );
+
+  const currentEvents = useMemo(
+    () =>
+      eventsData.filter(
+        (event) =>
+          parseInt(event.year) === currentFilterYear &&
+          CURRENT_EVENT_LINKS.includes(event.link)
+      ),
+    [currentFilterYear, eventsData]
+  );
+
+  const upcomingEvents = useMemo(
+    () =>
+      eventsData.filter(
+        (event) =>
+          parseInt(event.year) === currentFilterYear &&
+          !event.hasBeenHeld &&
+          !CURRENT_EVENT_LINKS.includes(event.link)
+      ),
+    [currentFilterYear, eventsData]
+  );
+
+  const pastEvents = useMemo(
+    () =>
+      eventsData.filter(
+        (event) =>
+          parseInt(event.year) === currentFilterYear &&
+          event.hasBeenHeld &&
+          !CURRENT_EVENT_LINKS.includes(event.link)
+      ),
+    [currentFilterYear, eventsData]
   );
 
   return (
@@ -144,16 +181,11 @@ export default function EventsPage() {
                       )}
                     </div>
                     <Events
-                      eventList={useMemo(
-                        () =>
-                          eventsData.filter(
-                            (event) => parseInt(event.year) === currentFilterYear
-                          ),
-                        [currentFilterYear]
-                      )}
+                      eventList={currentEvents}
                     />
                   </div>
                 </section>
+                {upcomingEvents.length > 0 && (
                 <section className={`${styles["events"]} my-8 md:my-12 lg:my-14`}>
                   <div className="container">
                     <div className="flex flex-wrap md:flex-nowrap items-center justify-between mb-10  md:mb-16">
@@ -207,16 +239,30 @@ export default function EventsPage() {
                       )}
                     </div>
                     <Events
-                      eventList={useMemo(
-                        () =>
-                          eventsData.filter(
-                            (event) => parseInt(event.year) === currentFilterYear
-                          ),
-                        [currentFilterYear]
-                      )}
+                      eventList={upcomingEvents}
                     />
                   </div>
                 </section>
+                )}
+                {pastEvents.length > 0 && (
+                <section className={`${styles["events"]} my-8 md:my-12 lg:my-14`}>
+                  <div className="container">
+                    <div className="flex flex-wrap md:flex-nowrap items-center justify-between mb-10  md:mb-16">
+                      <div className="">
+                        <h2 className="text-base text-blue-400 uppercase">
+                          PAST EVENTS
+                        </h2>
+                        <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-blue-600 w-full md:w-9/12 xl:w-3/5">
+                          Stories from programs we have hosted.
+                        </h3>
+                      </div>
+                    </div>
+                    <Events
+                      eventList={pastEvents}
+                    />
+                  </div>
+                </section>
+                )}
         <section className={`bg-blue-600 pt-1 pb-20 lg:pb-28 ${styles["featured-events"]}`}>
           <div className={`${styles["featured-events-header"]}`}>
             <div className="container">

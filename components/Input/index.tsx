@@ -11,6 +11,12 @@ type InputType = {
   name: string;
   formik: FormikProps<any>;
   placeholder?: string | "";
+  as?: "input" | "select";
+  options?: { label: string; value: string }[];
+  min?: number;
+  max?: number;
+  required?: boolean;
+  step?: number;
 };
 
 function Input({
@@ -21,6 +27,9 @@ function Input({
   id,
   name,
   formik,
+  as = "input",
+  options = [],
+  required,
   ...rest
 }: InputType) {
   const [isFocused, setIsFocused] = useState(false);
@@ -46,17 +55,37 @@ function Input({
           htmlFor={name}
         >
           {label}
+          {required && <sup style={{ color: "red", marginLeft: 2 }}>*</sup>}
         </label>
       )}
-      <input
-        id={id ?? name}
-        name={name}
-        type={type}
-        onClick={onClick}
-        onFocus={() => setIsFocused(true)}
-        {...rest}
-        placeholder={placeholder}
-      />
+      {as === "select" ? (
+        <select
+          id={id ?? name}
+          name={name}
+          onClick={onClick}
+          onFocus={() => setIsFocused(true)}
+          {...rest}
+        >
+          <option value="" disabled>
+            {placeholder ?? "Select..."}
+          </option>
+          {options.map((o) => (
+            <option key={o.value} value={o.value}>
+              {o.label}
+            </option>
+          ))}
+        </select>
+      ) : (
+        <input
+          id={id ?? name}
+          name={name}
+          type={type}
+          onClick={onClick}
+          onFocus={() => setIsFocused(true)}
+          {...rest}
+          placeholder={placeholder}
+        />
+      )}
       {error && <div className={`${styles["error-message"]}`}>{error}</div>}
     </div>
   );

@@ -26,6 +26,10 @@ import featuredEventsImg8 from "./featuredEventsImg8.jpg";
 import featuredEventsImg9 from "./featuredEventsImg9.jpg";
 import event2022A from "./event2022A.jpg";
 import event2022B from "./event2022B.jpg";
+import superteam from "./superteam.jpeg";
+import collage from "./collage.jpeg";
+import Techfest from "./Techfest.jpeg";
+
 
 export {
   storySectionSlide1,
@@ -56,4 +60,7 @@ export {
   featuredEventsImg9,
   event2022A,
   event2022B,
+  superteam,
+  collage,
+  Techfest,
 };

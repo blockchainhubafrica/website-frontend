@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 export interface EventList {
   name: string;
   link: string;
-  image: StaticImageData;
+  image: StaticImageData | string;
   year: string;
   hasBeenHeld: boolean;
 }

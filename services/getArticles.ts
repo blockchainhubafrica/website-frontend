@@ -1,3 +1,5 @@
+import { localArticles } from "./localArticles";
+
 const findArticle = (articles: any, slug: string) => {
 	const article = articles.find((article: any) => article.slug === slug);
 	return article;
@@ -21,17 +23,30 @@ async function getArticles(id: string = "") {
 	try {
 		let data = await fetch(url);
 		let result = await data.json();
-		const articles: any = result.data.blog;
+		const remoteArticles: any = result?.data?.blog ?? [];
+		const articles: any = [...localArticles, ...remoteArticles];
 		if (id) {
 			const article = findArticle(articles, id);
 			const prevArticle = getPrevArticle(articles, id);
 			const nextArticle = getNextArticle(articles, id);
 			return { article, prevArticle, nextArticle };
 		}
-		return result;
+		return {
+			...result,
+			data: {
+				...result.data,
+				blog: articles,
+			},
+		};
 	} catch (error) {
 		console.log(error);
-		return null;
+		if (id) {
+			const article = findArticle(localArticles, id);
+			const prevArticle = getPrevArticle(localArticles, id);
+			const nextArticle = getNextArticle(localArticles, id);
+			return { article, prevArticle, nextArticle };
+		}
+		return { data: { blog: localArticles } };
 	}
 }
 
