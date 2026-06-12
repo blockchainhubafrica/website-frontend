@@ -1,7 +1,7 @@
 import { achievementImage } from "./pngs";
 import {
-  NduImageSrc,
-  BeimaImageSrc,
+  // NduImageSrc,
+  // BeimaImageSrc,
   UcheNFTSrc,
   JoshuaNFTSrc,
   EmmanuelNFTSrc,
