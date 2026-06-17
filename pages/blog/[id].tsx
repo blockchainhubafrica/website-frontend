@@ -234,19 +234,18 @@ export async function getStaticProps(context: any) {
 }
 
 export async function getStaticPaths() {
-  let response: any = await getArticles();
-  let articles = response.data.blog;
+  try {
+    let response: any = await getArticles();
+    let articles = response?.data?.blog ?? [];
 
-  const paths = articles.map((post: any) => {
-    return {
+    const paths = articles.map((post: any) => ({
       params: { id: `${post.slug}` },
-    };
-  });
+    }));
 
-  return {
-    paths,
-    fallback: true,
-  };
+    return { paths, fallback: true };
+  } catch {
+    return { paths: [], fallback: true };
+  }
 }
 
 export default BlogDetailPage;

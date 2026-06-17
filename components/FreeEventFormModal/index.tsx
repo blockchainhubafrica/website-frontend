@@ -10,14 +10,23 @@ import { Input } from "components/Input";
 import { Button } from "components/Button";
 import { ModalCloseIcon } from "assets/images";
 
+const TECH_STACK_OPTIONS = [
+  { label: "Frontend", value: "Frontend" },
+  { label: "Backend", value: "Backend" },
+  { label: "Fullstack", value: "Fullstack" },
+  { label: "Nil", value: "Nil" },
+];
+
 export function FreeEventFormModal({
   isOpen,
   setIsOpen,
   formik,
+  logoSrc,
 }: {
   isOpen: boolean;
   setIsOpen: Function;
   formik: FormikProps<any>;
+  logoSrc?: string;
 }) {
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -49,20 +58,65 @@ export function FreeEventFormModal({
           onSubmit={formik.handleSubmit}
           className={`${styles["smaller-inputs"]} ${styles["form"]}`}
         >
-          <div className="flex justify-between items-start">
-            <h3 className={`${styles["spaced-heading"]} text-2xl md:text-3xl mb-5 md:mb-6`}>
-              Registration Form
-            </h3>
+          <div className={styles["form-heading-row"]}>
+            <div className={styles["form-title-group"]}>
+              <h3 className={`${styles["spaced-heading"]} text-2xl md:text-3xl`}>
+                Registration Form
+              </h3>
+              {logoSrc && (
+                <img
+                  src={logoSrc}
+                  alt="Peaceland University logo"
+                  className={styles["form-logo"]}
+                />
+              )}
+            </div>
             <ModalCloseIcon onClick={() => setIsOpen(false)} />
           </div>
           <div>
-            <Input name="name" formik={formik} label="Name" className="mb-5" />
+            <Input name="firstName" formik={formik} label="First Name" required className="mb-5" />
           </div>
           <div>
-            <Input name="email" formik={formik} label="Email" className="mb-5" />
+            <Input name="surname" formik={formik} label="Surname" required className="mb-5" />
           </div>
           <div>
-            <Input name="phone" formik={formik} label="Phone No." className="mb-8" />
+            <Input name="email" formik={formik} label="Email" required className="mb-5" />
+          </div>
+          <div>
+            <Input name="phone" formik={formik} label="Phone No." required className="mb-5" />
+          </div>
+          <div>
+            <Input
+              as="select"
+              name="techStack"
+              formik={formik}
+              label="Tech Stack"
+              options={TECH_STACK_OPTIONS}
+              placeholder="Select tech stack"
+              required
+              className="mb-5"
+            />
+          </div>
+          <div>
+            <Input
+              type="number"
+              min={0}
+              max={5}
+              name="yearsOfExperience"
+              formik={formik}
+              label="Years of Experience"
+              required
+              className="mb-5"
+            />
+          </div>
+          <div>
+            <Input
+              name="portfolio"
+              formik={formik}
+              label="Portfolio / GitHub"
+              placeholder="https://github.com/your-handle"
+              className="mb-8"
+            />
           </div>
           <div className={`${styles["registration-btn"]}`}>
             <Button

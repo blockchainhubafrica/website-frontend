@@ -23,51 +23,61 @@ import {
   MayowaSrc,
   EmekaNwekeSrc,
   IfunanyaNFTSrc,
-  AjentlySrc,
-  SolinfraSrc,
 } from "./cloudinary";
-import { event2022A, event2022B } from "./jpgs";
+import { event2022B, superteam, Techfest } from "./jpgs";
+
+const PEACELAND_EVENT_COVER_SRC =
+  "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778179535/PU_event_dm5gtv.jpg";
+const COAL_CITY_EVENT_COVER_SRC =
+  "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778179515/IMG_1766_gd6wjj.jpg";
 
 export const demoProductsData = [
   {
-    image: AjentlySrc,
-    title: "Ajently",
+    image: NduImageSrc,
+    title: "Ndu",
     description:
-      "An AI agent marketplace where you can discover, hire, and run specialized AI agents for any workflow from email campaigns and lead nurturing to coding and research. No complex setup required; just find an agent, run it instantly, and get results. You can also build and publish your own agents to the marketplace and earn every time someone uses them.",
-    link: "https://agently-waitlist.vercel.app",
+      "Ndu combines the decentralized power of the Blockchain to eradicate fake and counterfeit drugs. Users can be able to check counterfeit drugs and earn while doing that.",
+    link: "https://local-ndu.vercel.app",
     size: { width: 862, height: 752 },
   },
   {
-    image: SolinfraSrc,
-    title: "Solinfra",
+    image: BeimaImageSrc,
+    title: "Beima",
     description:
-      "Solana infrastructure platform built for developer teams  offering reserved RPC nodes, Yellowstone gRPC streaming, parsed transactions, and non-custodial wallet support, all accessible through a single API key. It's designed to give teams the reliable, high-performance backend they need to build and ship on Solana without managing complex node infrastructure themselves.",
-    link: "https://solinfra.dev/", 
+      "Beima helps users secure their future with a transparent and high yielding interest pension plan that is truly theirs. Beima is the Future of Personal and Corporate finance",
+    link: "https://beima.app",
     size: { width: 868, height: 752 },
   },
 ];
 
 export const demoEventsData = [
   {
-    image: event2022B,
+    image: PEACELAND_EVENT_COVER_SRC,
     name: "Intro to Blockchain — Peaceland University",
     link: "/events/peaceland-university-2026",
     year: "2026",
     hasBeenHeld: false,
   },
   {
-    image: event2022A,
+    image: COAL_CITY_EVENT_COVER_SRC,
     name: "Intro to Blockchain — Coal City University",
     link: "/events/coal-city-university-2026",
     year: "2026",
     hasBeenHeld: false,
   },
   {
-    image: event2022B,
-    name: "BlockchainHub Africa Web3 Class",
-    link: "#",
-    year: "2023",
-    hasBeenHeld: false,
+  image: Techfest, // or ETF image
+  name: "Enugu Tech Festival 2026 x BlockchainHub Africa Web3 Day",
+  link: "/blog/enugu-tech-festival-2026-blockchainhub-africa-web3-day",
+  year: "2026",
+  hasBeenHeld: true,
+},
+  {
+    image: superteam, 
+    name: "Builders’ Cohort: Intermediate Level- SuperteamNG X BlokchainHubAfrica 16th March - 25 April, 2026",
+    link: "/blog/builders-cohort-superteamng-blockchainhub-africa",
+    year: "2026",
+    hasBeenHeld: true,
   },
   {
     image: event2022B,
@@ -75,13 +85,6 @@ export const demoEventsData = [
     link: "/blog/blockchain-hub-africa-partners-with-buildspace-to-train-web3-talents-in-africa-656",
     year: "2022",
     hasBeenHeld: true,
-  },
-  {
-    image: event2022A,
-    name: "Developer Conference '22",
-    link: "/events/bdc-2022",
-    year: "2022",
-    hasBeenHeld: false,
   },
 ];
 

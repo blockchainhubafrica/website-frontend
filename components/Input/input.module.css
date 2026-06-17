@@ -2,7 +2,8 @@
   position: relative;
 }
 
-.container input {
+.container input,
+.container select {
   width: 100%;
   padding: 0px 0px 10px 0px;
   background-color: transparent;
@@ -10,6 +11,32 @@
   color: var(--app-black);
   border-radius: 0px;
   /* min-height: 46px; */
+}
+
+.container select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23999' d='M6 8L0 0h12z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 20px;
+  color: var(--app-black);
+  font-weight: 700;
+}
+
+.container select option {
+  color: var(--app-black);
+  font-weight: 700;
+  background-color: var(--app-white);
+}
+
+.container select:focus {
+  outline: none;
+  border-bottom: 1px solid var(--app-blue-400);
+}
+
+.container.error select {
+  border-bottom: 1px solid var(--app-red);
 }
 
 .container label {

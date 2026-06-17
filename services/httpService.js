@@ -1,6 +1,8 @@
 import axios from "axios";
 
-axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
+axios.defaults.baseURL =
+  process.env.NEXT_PUBLIC_BACKEND_BASE_URL ||
+  "https://website-api-lime.vercel.app/api/v1";
 
 axios.interceptors.response.use(null, (error) => {
   const expectedError =
