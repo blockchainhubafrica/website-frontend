@@ -1,4 +1,5 @@
 import httpService from "./httpService";
+import { localArticles } from "./localArticles";
 
 const route = `/blog`;
 
@@ -28,7 +29,16 @@ async function DeleteBlogPost(id) {
 }
 
 async function getArticles() {
-  const url = process.env.NEXT_PUBLIC_BACKEND_BASE_URL + "/insights" || "";
+  const baseUrl = process.env.NEXT_PUBLIC_BACKEND_BASE_URL?.trim();
+  if (!baseUrl) {
+    return {
+      data: {
+        blog: [...localArticles],
+      },
+    };
+  }
+
+  const url = new URL("/insights", baseUrl).toString();
   let data = await fetch(url);
   data = await data.json();
 

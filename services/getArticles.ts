@@ -18,29 +18,74 @@ const getNextArticle = (articles: any, slug: string) => {
 	return nextArticle;
 };
 
-async function getArticles(id: string = "") {
-	const url = process.env.NEXT_PUBLIC_BACKEND_BASE_URL + "/insights" || " ";
+const getInsightsUrl = () => {
+	const baseUrl = process.env.NEXT_PUBLIC_BACKEND_BASE_URL?.trim();
+	if (!baseUrl) return null;
+
 	try {
-		let data = await fetch(url);
-		let result = await data.json();
-		const remoteArticles: any = result?.data?.blog ?? [];
-		const articles: any = [...localArticles, ...remoteArticles];
+		return new URL("/insights", baseUrl).toString();
+	} catch {
+		return null;
+	}
+};
+
+const buildListResponse = (remoteArticles: any[] = [], result: any = {}) => ({
+	...result,
+	data: {
+		...(result?.data ?? {}),
+		blog: [...localArticles, ...remoteArticles],
+	},
+});
+
+async function getArticles(id: string = "") {
+	const url = getInsightsUrl();
+
+	if (!url) {
+		const articles = [...localArticles];
+
 		if (id) {
-			const article = findArticle(articles, id);
-			const prevArticle = getPrevArticle(articles, id);
-			const nextArticle = getNextArticle(articles, id);
+			const article = findArticle(articles, id) ?? null;
+			const prevArticle = getPrevArticle(articles, id) ?? null;
+			const nextArticle = getNextArticle(articles, id) ?? null;
 			return { article, prevArticle, nextArticle };
 		}
+
 		return {
-			...result,
 			data: {
-				...result.data,
 				blog: articles,
 			},
 		};
+	}
+
+	try {
+		let data = await fetch(url);
+		let result = await data.json();
+		const remoteArticles: any[] = Array.isArray(result?.data?.blog)
+			? result.data.blog
+			: [];
+		const articles: any = [...localArticles, ...remoteArticles];
+		if (id) {
+			const article = findArticle(articles, id) ?? null;
+			const prevArticle = getPrevArticle(articles, id) ?? null;
+			const nextArticle = getNextArticle(articles, id) ?? null;
+			return { article, prevArticle, nextArticle };
+		}
+		return buildListResponse(remoteArticles, result);
 	} catch (error) {
 		console.log(error);
-		return error;
+
+		if (id) {
+			const article = findArticle(localArticles, id) ?? null;
+			const prevArticle = getPrevArticle(localArticles, id) ?? null;
+			const nextArticle = getNextArticle(localArticles, id) ?? null;
+			return { article, prevArticle, nextArticle };
+		}
+
+		return {
+			data: {
+				blog: [...localArticles],
+			},
+		};
 	}
 }
 
