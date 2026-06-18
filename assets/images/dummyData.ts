@@ -34,6 +34,14 @@ const COAL_CITY_EVENT_COVER_SRC =
   "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778179515/IMG_1766_gd6wjj.jpg";
 
 export const demoProductsData = [
+    {
+    image: SolinfraImageSrc,
+    title: "Solinfra",
+    description:
+      "Solana infrastructure platform built for developer teams  offering reserved RPC nodes, Yellowstone gRPC streaming, parsed transactions, and non-custodial wallet support, all accessible through a single API key. It's designed to give teams the reliable, high-performance backend they need to build and ship on Solana without managing complex node infrastructure themselves.",
+    link: "https://solinfra.dev/",
+    size: { width: 868, height: 752 },
+  },
   {
     image: AjentlyImageSrc,
     title: "Ajently",
@@ -41,14 +49,6 @@ export const demoProductsData = [
       "An AI agent marketplace where you can discover, hire, and run specialized AI agents for any workflow from email campaigns and lead nurturing to coding and research. No complex setup required; just find an agent, run it instantly, and get results. You can also build and publish your own agents to the marketplace and earn every time someone uses them.",
     link: "https://agently-waitlist.vercel.app",
     size: { width: 862, height: 752 },
-  },
-  {
-    image: SolinfraImageSrc,
-    title: "Solinfra",
-    description:
-      "Solana infrastructure platform built for developer teams  offering reserved RPC nodes, Yellowstone gRPC streaming, parsed transactions, and non-custodial wallet support, all accessible through a single API key. It's designed to give teams the reliable, high-performance backend they need to build and ship on Solana without managing complex node infrastructure themselves.",
-    link: "https://solinfra.dev/",
-    size: { width: 868, height: 752 },
   },
 ];
 
