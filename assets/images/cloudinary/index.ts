@@ -106,3 +106,9 @@ export const MayowaSrc =
 
 export const MakweQuintinSrc =
   "https://res.cloudinary.com/blockchainhub-africa/image/upload/v1668074592/Company-website/Makwe-quintin_q9sbit.jpg";
+
+export const SolinfraImageSrc = 
+  "https://res.cloudinary.com/dlczo9et1/image/upload/q_auto/f_auto/v1781885132/Screenshot_from_2026-06-19_17-05-07_eydnju.png";
+
+export const AjentlyImageSrc = 
+  "https://res.cloudinary.com/dlczo9et1/image/upload/v1781881039/Screenshot_from_2026-06-19_14-52-02_dwxghj.png";  
