@@ -19,7 +19,7 @@ const getNextArticle = (articles: any, slug: string) => {
 };
 
 async function getArticles(id: string = "") {
-	const url = process.env.NEXT_PUBLIC_BACKEND_BASE_URL + "/insights" || " ";
+	const url = process.env.NEXT_PUBLIC_BACKEND_BASE_URL + "/insights";
 	try {
 		let data = await fetch(url);
 		let result = await data.json();
@@ -40,7 +40,13 @@ async function getArticles(id: string = "") {
 		};
 	} catch (error) {
 		console.log(error);
-		return error;
+		if (id) {
+			const article = findArticle(localArticles, id);
+			const prevArticle = getPrevArticle(localArticles, id);
+			const nextArticle = getNextArticle(localArticles, id);
+			return { article, prevArticle, nextArticle };
+		}
+		return { data: { blog: localArticles } };
 	}
 }
 
