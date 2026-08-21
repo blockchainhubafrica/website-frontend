@@ -24,7 +24,7 @@ import {
   EmekaNwekeSrc,
   IfunanyaNFTSrc,
 } from "./cloudinary";
-import { event2022B, superteam, Techfest } from "./jpgs";
+import { buildNPitchSession, event2022B, superteam, Techfest } from "./jpgs";
 
 const PEACELAND_EVENT_COVER_SRC =
   "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778179535/PU_event_dm5gtv.jpg";
@@ -52,6 +52,13 @@ export const demoProductsData = [
 
 export const demoEventsData = [
   {
+    image: buildNPitchSession,
+    name: "Build and Pitch Sessions",
+    link: "/events/Build-n-Pitch",
+    year: "2026",
+    hasBeenHeld: false,
+  },
+  {
     image: PEACELAND_EVENT_COVER_SRC,
     name: "Intro to Blockchain — Peaceland University",
     link: "/events/peaceland-university-2026",
@@ -74,7 +81,7 @@ export const demoEventsData = [
 },
   {
     image: superteam, 
-    name: "Builders’ Cohort: Intermediate Level- SuperteamNG X BlokchainHubAfrica 16th March - 25 April, 2026",
+    name: "Builders’ Cohort: Intermediate Level- SuperteamNG X BlockchainHubAfrica 16th March - 25 April, 2026",
     link: "/blog/builders-cohort-superteamng-blockchainhub-africa",
     year: "2026",
     hasBeenHeld: true,

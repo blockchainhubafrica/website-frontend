@@ -1,0 +1,205 @@
+.header {
+  color: var(--app-white);
+  font-weight: 900;
+  line-height: 3.7rem;
+  text-shadow: 0 0 0 var(--app-white), 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.subtitle {
+  color: var(--app-white);
+}
+
+.hero-section {
+  background: linear-gradient(180deg, rgba(0, 8, 31, 0.74) 0%, #00081f 37.46%),
+    url("https://res.cloudinary.com/drj2hpt8p/image/upload/v1778179515/IMG_1766_gd6wjj.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-section * {
+  color: var(--app-white);
+}
+
+.orange-heading {
+  text-transform: uppercase;
+  color: var(--app-orange);
+  letter-spacing: var(--app-letter-spacing-lg);
+  font-family: var(--app-secondary-font);
+  font-size: 1rem;
+}
+
+.bottom-bar {
+  border-color: #626262;
+}
+
+@media screen and (min-width: 1024px) {
+  .bottom-bar {
+    width: 80%;
+  }
+}
+
+.container button.submit {
+  width: 100%;
+  background-color: var(--app-orange);
+  border-radius: var(--app-border-radius-sm);
+  color: var(--app-white);
+}
+
+.hero-section form {
+  background-color: var(--app-white);
+  border-radius: var(--app-border-radius-sm);
+  width: 550px;
+}
+
+@media screen and (min-width: 1280px) {
+  .hero-section form {
+    background-color: var(--app-white);
+    border-radius: var(--app-border-radius-sm);
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero-section form {
+    background-color: var(--app-white);
+    border-radius: var(--app-border-radius-sm);
+    width: 550px;
+  }
+}
+
+.container .spaced-heading {
+  letter-spacing: var(--app-letter-spacing-sm);
+  color: var(--app-black);
+  font-family: var(--app-secondary-font);
+  margin-bottom: 0;
+  font-weight: 900;
+}
+
+.form-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.form-logo {
+  display: block;
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.registration-countdown {
+  width: min(100%, 720px);
+  padding: 6px 0 0;
+  font-family: var(--app-secondary-font);
+}
+
+.countdown-title {
+  margin: 0 0 14px;
+  color: var(--app-white);
+  font-family: var(--app-secondary-font);
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.countdown-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(54px, 1fr));
+  align-items: start;
+  gap: 10px 28px;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.countdown-value {
+  color: var(--app-orange);
+  font-family: var(--app-secondary-font);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  margin-top: 6px;
+  color: var(--app-white);
+  font-family: var(--app-primary-font);
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+.countdown-separator {
+  align-self: start;
+  color: var(--app-orange);
+  font-family: var(--app-secondary-font);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 400;
+  line-height: 0.9;
+  transform: translateX(calc(-50% - 14px));
+}
+
+.registration-closed {
+  display: block;
+  color: var(--app-white);
+  font-family: var(--app-secondary-font);
+  font-size: clamp(1.4rem, 3.2vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+@media screen and (min-width: 640px) {
+  .countdown-row {
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .registration-countdown {
+    padding-top: 4px;
+  }
+
+  .countdown-title {
+    margin-bottom: 12px;
+  }
+
+  .countdown-separator {
+    display: none;
+  }
+}
+
+.registration-form-btn {
+  max-width: 100%;
+}
+
+.registration-form-btn button {
+  font-size: 16px;
+  padding: 14px;
+}
+
+@media screen and (min-width: 1024px) {
+  .registration-form-btn {
+    max-width: 450px;
+  }
+}
+
+.free-badge {
+  display: inline-block;
+  background-color: var(--app-orange);
+  color: var(--app-white);
+  font-family: var(--app-secondary-font);
+  letter-spacing: var(--app-letter-spacing-lg);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  padding: 6px 16px;
+  border-radius: 4px;
+}

@@ -29,6 +29,7 @@ import event2022B from "./event2022B.jpg";
 import superteam from "./superteam.jpeg";
 import collage from "./collage.jpeg";
 import Techfest from "./Techfest.jpeg";
+import buildNPitchSession from "./build-n-pitch_session.jpg";
 
 
 export {
@@ -63,4 +64,5 @@ export {
   superteam,
   collage,
   Techfest,
+  buildNPitchSession,
 };
