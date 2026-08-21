@@ -28,7 +28,7 @@ async function DeleteBlogPost(id) {
 }
 
 async function getArticles() {
-  const url = process.env.NEXT_PUBLIC_BACKEND_BASE_URL + "/insights";
+  const url = process.env.NEXT_PUBLIC_BACKEND_BASE_URL + "/insights" || "";
   let data = await fetch(url);
   data = await data.json();
 

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 
+const AnySlider = Slider as any;
+
 import { demoEventsData } from "../../assets/images";
 import { RegistrationModal } from "../RegistrationModal";
 import styles from "./EventBanner.module.css";
@@ -28,7 +30,7 @@ export const EventBanner = () => {
   return (
     <section className={styles.bannerSection}>
       <div className={styles.bannerContainer}>
-        <Slider {...settings}>
+        <AnySlider {...settings}>
           {slides.map((slide) => (
             <div key={slide.title} className={styles.slide}>
               <div className={styles.slideContent}>
@@ -43,7 +45,7 @@ export const EventBanner = () => {
               </div>
             </div>
           ))}
-        </Slider>
+        </AnySlider>
       </div>
       <RegistrationModal
         isActive={isModalActive}

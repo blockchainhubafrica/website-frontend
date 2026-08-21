@@ -23,6 +23,8 @@ import {
   MayowaSrc,
   EmekaNwekeSrc,
   IfunanyaNFTSrc,
+  SolinfraImageSrc,
+  AjentlyImageSrc,
 } from "./cloudinary";
 import { buildNPitchSession, event2022B, superteam, Techfest } from "./jpgs";
 
@@ -33,20 +35,20 @@ const COAL_CITY_EVENT_COVER_SRC =
 
 export const demoProductsData = [
   {
-    image: NduImageSrc,
-    title: "Ndu",
+    image: SolinfraImageSrc,
+    title: "Solinfra",
     description:
-      "Ndu combines the decentralized power of the Blockchain to eradicate fake and counterfeit drugs. Users can be able to check counterfeit drugs and earn while doing that.",
-    link: "https://local-ndu.vercel.app",
-    size: { width: 862, height: 752 },
+      "Ship Solana apps faster with Solinfra. Get reserved RPC, Yellowstone gRPC, parsed transactions, and non-custodial wallets, all through a single API",
+    link: "https://solinfra.dev/",
+    size: { width: 862, height: 500 }, // The height was 52 before now.
   },
   {
-    image: BeimaImageSrc,
-    title: "Beima",
+    image: AjentlyImageSrc,
+    title: "Ajently",
     description:
-      "Beima helps users secure their future with a transparent and high yielding interest pension plan that is truly theirs. Beima is the Future of Personal and Corporate finance",
-    link: "https://beima.app",
-    size: { width: 868, height: 752 },
+      "A marketplace where users discover, run, build, and monetize AI agents for automating various workflows",
+    link: "https://agently-waitlist.vercel.app/",
+    size: { width: 868, height: 500 }, // The height was 752 before now.
   },
 ];
 
