@@ -1,5 +1,59 @@
 .container {
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper img {
+  border-radius: 9.375rem;
+}
+
+.circle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.circle-image-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media screen and (min-width: 640px) {
+  .circle-image-wrapper {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .circle-image-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+.circle-image-wrapper img,
+.circle-image-wrapper span {
+  border-radius: 50% !important;
+  object-fit: cover !important;
 }
 
 .container img {
@@ -11,12 +65,13 @@
   font-family: var(--app-secondary-font);
   font-size: 1.5rem;
   margin-top: 15px;
+  text-align: center;
 }
 
 .container h5 {
   color: var(--app-gray-600);
   font-family: var(--app-primary-font);
-  /* font-size: 0.9rem; */
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {

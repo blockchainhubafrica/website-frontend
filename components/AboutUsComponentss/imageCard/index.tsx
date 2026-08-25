@@ -8,26 +8,40 @@ const ImageCard: React.FC<{
   name: string;
   title: string;
   image?: StaticImageData | string;
-}> = ({ name, title, image }) => {
+  shape?: "pill" | "circle";
+  className?: string;
+}> = ({ name, title, image, shape = "pill", className = "" }) => {
+  const isCircle = shape === "circle";
+
   return (
-    <div className={`${styles["container"]} text-center inline-block`}>
-      {typeof image === "string" ? (
-        <CloudinaryImage
-          src={image ? image : ""}
-          alt={name}
-          height={455}
-          width={323}
-        />
-      ) : (
-        <Image
-          src={image ? image : ""}
-          alt={name}
-          height={379}
-          width={269}
-          objectFit="cover"
-          quality={100}
-        />
-      )}
+    <div
+      className={`${styles["container"]} ${
+        isCircle ? styles["circle-card"] : ""
+      } ${className}`}
+    >
+      <div
+        className={
+          isCircle ? styles["circle-image-wrapper"] : styles["image-wrapper"]
+        }
+      >
+        {typeof image === "string" ? (
+          <CloudinaryImage
+            src={image ? image : ""}
+            alt={name}
+            height={isCircle ? 320 : 455}
+            width={isCircle ? 320 : 323}
+          />
+        ) : (
+          <Image
+            src={image ? image : ""}
+            alt={name}
+            height={isCircle ? 320 : 379}
+            width={isCircle ? 320 : 269}
+            objectFit="cover"
+            quality={100}
+          />
+        )}
+      </div>
 
       <h4>{name}</h4>
       <h5>{title}</h5>
@@ -36,3 +50,4 @@ const ImageCard: React.FC<{
 };
 
 export { ImageCard };
+

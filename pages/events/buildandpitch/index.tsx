@@ -293,20 +293,16 @@ export default function BuildNPitch() {
             </div>
           </div>
         </section>
-        <section className={`${styles["speakers-gallery"]} `}>
+        <section className={`${styles["speakers-gallery"]} py-12 md:py-16`}>
           <div className={`${styles["conference-speakers"]} container`}>
-            <div>
-              <br />
+            <div className="text-center mb-8 md:mb-12">
               <h2
                 className={`${styles["orange-heading"]} text-base text-orange uppercase`}
               >
                 Conference Speakers
               </h2>
-              <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-white w-full md:w-1/2 lg:w-1/3">
-                Meet our Speakers
-              </h3>
             </div>
-            <div className=" mt-10 md:mt-14 xl:mt-20 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 gap-y-10 md:gap-y-14 lg:gap-y-20 xl:gap-y-24">
+            <div className="flex flex-wrap justify-center items-start gap-8 md:gap-12 lg:gap-16">
               {BuildNPitch2026Speakers.map((member, index) => {
                 return (
                   <ImageCard
@@ -314,11 +310,13 @@ export default function BuildNPitch() {
                     name={member.name}
                     image={member.image}
                     title={member.title}
+                    shape="circle"
                   />
                 );
               })}
             </div>
           </div>
+        </section>
           {/* <div className={`${styles["workshop-speakers"]} container`}>
             <div>
               <h2
@@ -343,7 +341,6 @@ export default function BuildNPitch() {
               })}
             </div>
           </div> */}
-        </section>
       </main>
     </>
   );
