@@ -8,8 +8,9 @@ import RightArrowIcon from "./right-arrow.svg";
 import DiscordIcon from "./discord.svg";
 import InstagramIcon from "./instagram.svg";
 import TelegramIcon from "./telegram.svg";
-import TwitterIcon from "./twitter.svg";
+import TwitterIcon from "./twitter-x.svg";
 import YoutubeIcon from "./youtube.svg";
+import LinkedinIcon from "./linkedin.svg";
 import CircleTextIcon from "./circle-text.svg";
 import CircleArrowIcon from "./circle-arrow.svg";
 import PlayIcon from "./play-icon.svg";
@@ -45,6 +46,7 @@ export {
   InstagramIcon,
   TelegramIcon,
   TwitterIcon,
+  LinkedinIcon,
   YoutubeIcon,
   CircleTextIcon,
   CircleArrowIcon,

@@ -3,11 +3,11 @@ import { useRouter } from "next/router";
 import React from "react";
 import {
   LogoIcon,
-  DiscordIcon,
   InstagramIcon,
   TwitterIcon,
   YoutubeIcon,
   RightArrowIcon,
+  LinkedinIcon,
 } from "../../assets/images";import styles from "./footer.module.css";
 import { HugeiconsIcon } from '@hugeicons/react';
 function Footer() {
@@ -91,10 +91,10 @@ function Footer() {
 
             <div className={`${styles["social-icons"]} ${styles["footer-social"]}`}>
               <a href="https://www.linkedin.com/company/blockchchainhubafrica/" target="_blank" rel="noreferrer">
-              <img width="50" height="50" src="https://img.icons8.com/ios/50/linkedin.png" alt="linkedin"/>
+                <LinkedinIcon />
               </a>
               <a href="https://twitter.com/blockhubafrica" target="_blank" rel="noreferrer">
-              <img width="50" height="50" src="https://img.icons8.com/ios/50/twitterx--v2.png" alt="twitterx--v2"/>
+                <TwitterIcon />
               </a>
               <a href="https://youtube.com/c/BlockchainHubAfrica" target="_blank" rel="noreferrer">
                 <YoutubeIcon />
