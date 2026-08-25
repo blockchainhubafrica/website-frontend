@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@hugeicons/core-free-icons':
+        specifier: ^4.3.0
+        version: 4.3.0
+      '@hugeicons/react':
+        specifier: ^1.1.10
+        version: 1.1.10(react@17.0.2)
       axios:
         specifier: 0.24.0
         version: 0.24.0(debug@4.4.3(supports-color@7.2.0))
@@ -644,6 +650,14 @@ packages:
 
   '@emotion/memoize@0.7.4':
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+
+  '@hugeicons/core-free-icons@4.3.0':
+    resolution: {integrity: sha512-5DC5gq2psNDKBQThOjpuFCtMco8nl2FkrBzZgG15cFGM0kSwUoych/pw0DmjBygF9qRDITdBPtmzJqLsOeImMg==}
+
+  '@hugeicons/react@1.1.10':
+    resolution: {integrity: sha512-9tAsd92yMVVGP+E+d8cM+wc0VnXuYZHNbWQi7TOe8k2neawmhiaFmVFbzyruejhOMa197/LbgvSED32ayUo3ZA==}
+    peerDependencies:
+      react: '>=16.0.0'
 
   '@jest/environment@29.7.0':
     resolution: {integrity: sha512-aQIfHDq33ExsN4jP1NWGXhxgQ/wixs60gDiKO+XVMd8Mn0NWPWgc34ZQDTb2jKaUWQ7MuwoitXAsN2XVXNMpAw==}
@@ -3340,6 +3354,12 @@ snapshots:
 
   '@emotion/memoize@0.7.4':
     optional: true
+
+  '@hugeicons/core-free-icons@4.3.0': {}
+
+  '@hugeicons/react@1.1.10(react@17.0.2)':
+    dependencies:
+      react: 17.0.2
 
   '@jest/environment@29.7.0':
     dependencies:

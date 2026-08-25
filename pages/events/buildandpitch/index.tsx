@@ -157,27 +157,27 @@ export default function BuildNPitch() {
                 </h4>
                 <ul className="text-base md:text-lg text-white font-normal space-y-2 list-none">
                   <li>
-                    <strong>Prepare for Fundraising</strong> — Understand how
+                    <p className="font-extrabold">Prepare for Fundraising</p> : Understand how
                     to approach the fundraising process and what investors
                     evaluate at the early stage.
                   </li>
                   <li>
-                    <strong>Refine Your Story &amp; Pitch</strong> —
+                    <p className="font-extrabold">Refine Your Story &amp; Pitch</p> :
                     Strengthen your narrative, positioning, and ability to
                     clearly communicate your opportunity.
                   </li>
                   <li>
-                    <strong>Get Investor Perspectives</strong> — Hear
+                    <p className="font-extrabold">Get Investor Perspectives</p> : Hear
                     directly from VCs and industry professionals and what
                     makes a compelling investment opportunity.
                   </li>
                   <li>
-                    <strong>Build with Expert Guidance</strong> — Receive
+                    <p className="font-extrabold">Build with Expert Guidance</p> : Receive
                     practical feedback to help sharpen your product,
                     strategy, and overall readiness.
                   </li>
                   <li>
-                    <strong>Connect with the Ecosystem</strong> — Engage
+                    <p className="font-extrabold">Connect with the Ecosystem</p> : Engage
                     with investors, other founders, and relevant ecosystem
                     players.
                   </li>
@@ -299,7 +299,7 @@ export default function BuildNPitch() {
               <h2
                 className={`${styles["orange-heading"]} text-base text-orange uppercase`}
               >
-                Conference Speakers
+                Featuring
               </h2>
             </div>
             <div className="flex flex-wrap justify-center items-start gap-8 md:gap-12 lg:gap-16">

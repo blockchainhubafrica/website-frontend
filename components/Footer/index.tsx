@@ -9,6 +9,8 @@ import {
   YoutubeIcon,
   RightArrowIcon,
 } from "../../assets/images";import styles from "./footer.module.css";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Linkedin02Icon, NewTwitterIcon } from '@hugeicons/core-free-icons';
 
 function Footer() {
   const activeRoute = useRouter().asPath;
@@ -90,11 +92,11 @@ function Footer() {
             </div>
 
             <div className={`${styles["social-icons"]} ${styles["footer-social"]}`}>
-              <a href="https://discord.gg/hdBkVnXBZV" target="_blank" rel="noreferrer">
-                <DiscordIcon />
+              <a href="https://www.linkedin.com/company/blockchchainhubafrica/" target="_blank" rel="noreferrer">
+              <HugeiconsIcon icon={Linkedin02Icon} size={24} />
               </a>
               <a href="https://twitter.com/blockhubafrica" target="_blank" rel="noreferrer">
-                <TwitterIcon />
+              <HugeiconsIcon icon={NewTwitterIcon} size={24}/>
               </a>
               <a href="https://youtube.com/c/BlockchainHubAfrica" target="_blank" rel="noreferrer">
                 <YoutubeIcon />
