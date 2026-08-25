@@ -10,7 +10,7 @@ import InstagramIcon from "./instagram.svg";
 import TelegramIcon from "./telegram.svg";
 import TwitterIcon from "./newtwitterlogo.svg";
 import YoutubeIcon from "./youtube.svg";
-import LinkedinIcon from "./linkedin.svg";
+import LinkedinIcon from "./mainlinkedin.svg";
 import CircleTextIcon from "./circle-text.svg";
 import CircleArrowIcon from "./circle-arrow.svg";
 import PlayIcon from "./play-icon.svg";
