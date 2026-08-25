@@ -29,7 +29,7 @@ import event2022B from "./event2022B.jpg";
 import superteam from "./superteam.jpeg";
 import collage from "./collage.jpeg";
 import Techfest from "./Techfest.jpeg";
-import buildNPitchSession from "./bnp-main.jpg";
+import buildNPitchSession from "./PitchandBuild1.png";
 
 import uchenna2026 from "./uchenna2026.jpeg";
 
