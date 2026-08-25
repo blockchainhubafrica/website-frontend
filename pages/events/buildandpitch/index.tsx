@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
-import { Calendar2, Location } from "../../../assets/images";
+import { BuildNPitch2026Speakers, Calendar2, Location } from "../../../assets/images";
 import { useFormik } from "formik";
 
-import { Button, FreeEventFormModal, Input } from "../../../components";
+import { Button, FreeEventFormModal, ImageCard, Input } from "../../../components";
 
 import styles from "./styles.module.css";
 import { DefaultSEOHead, EventsPageHead } from "../../../pageHeads";
@@ -129,10 +129,59 @@ export default function BuildNPitch() {
                 </h3>
                 <h4 className={`${styles["orange-heading"]} mt-6`}>About</h4>
                 <p className="text-base md:text-lg text-white mt-3 font-normal">
-                  A focused founder session for early stage builders to refine
-                  their startup story, sharpen their pitch, and gain access to 
-                  funding from top-tier VC Firms.
+                  <strong>Build &amp; Pitch Sessions</strong> is an exclusive
+                  series designed for early-stage founders building across
+                  onchain, AI, fintech, consumer, and other emerging
+                  technology sectors.
                 </p>
+                <p className="text-base md:text-lg text-white mt-3 font-normal">
+                  The sessions bring founders into focused conversations with
+                  industry experts, experienced builders, investors, and
+                  ecosystem leaders to help sharpen their products, strengthen
+                  their fundraising narrative, and refine how they
+                  communicate their vision.
+                </p>
+                <p className="text-base md:text-lg text-white mt-3 font-normal">
+                  <strong>
+                    The first edition takes place on September 4, 2026 at
+                    Blockchain Hub Africa
+                  </strong>
+                  , bringing together early-stage founders for an intimate
+                  session focused on refining narrative, fundraising
+                  preparedness, and learning directly from experienced
+                  investors and ecosystem leaders.
+                </p>
+                <hr className={`${styles["bottom-bar"]} my-8`} />
+                <h4 className={`${styles["orange-heading"]} mb-3`}>
+                  What to Expect
+                </h4>
+                <ul className="text-base md:text-lg text-white font-normal space-y-2 list-none">
+                  <li>
+                    <strong>Prepare for Fundraising</strong> — Understand how
+                    to approach the fundraising process and what investors
+                    evaluate at the early stage.
+                  </li>
+                  <li>
+                    <strong>Refine Your Story &amp; Pitch</strong> —
+                    Strengthen your narrative, positioning, and ability to
+                    clearly communicate your opportunity.
+                  </li>
+                  <li>
+                    <strong>Get Investor Perspectives</strong> — Hear
+                    directly from VCs and industry professionals and what
+                    makes a compelling investment opportunity.
+                  </li>
+                  <li>
+                    <strong>Build with Expert Guidance</strong> — Receive
+                    practical feedback to help sharpen your product,
+                    strategy, and overall readiness.
+                  </li>
+                  <li>
+                    <strong>Connect with the Ecosystem</strong> — Engage
+                    with investors, other founders, and relevant ecosystem
+                    players.
+                  </li>
+                </ul>
                 <hr className={`${styles["bottom-bar"]} my-8`} />
                 <div className="flex gap-x-4 items-center mb-5">
                   <span>
@@ -243,6 +292,57 @@ export default function BuildNPitch() {
               </div>
             </div>
           </div>
+        </section>
+        <section className={`${styles["speakers-gallery"]} `}>
+          <div className={`${styles["conference-speakers"]} container`}>
+            <div>
+              <br />
+              <h2
+                className={`${styles["orange-heading"]} text-base text-orange uppercase`}
+              >
+                Conference Speakers
+              </h2>
+              <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-white w-full md:w-1/2 lg:w-1/3">
+                Meet our Speakers
+              </h3>
+            </div>
+            <div className=" mt-10 md:mt-14 xl:mt-20 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 gap-y-10 md:gap-y-14 lg:gap-y-20 xl:gap-y-24">
+              {BuildNPitch2026Speakers.map((member, index) => {
+                return (
+                  <ImageCard
+                    key={member.name + index}
+                    name={member.name}
+                    image={member.image}
+                    title={member.title}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          {/* <div className={`${styles["workshop-speakers"]} container`}>
+            <div>
+              <h2
+                className={`${styles["orange-heading"]} text-base text-orange uppercase`}
+              >
+                Workshop Instructors
+              </h2>
+              <h3 className="mt-2 text-3xl md:text-5xl font-coolvetica text-white w-full md:w-1/2 lg:w-1/3">
+                Meet our Instructors
+              </h3>
+            </div>
+            <div className=" mt-10 md:mt-14 xl:mt-20 grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 gap-y-10 md:gap-y-14 lg:gap-y-20 xl:gap-y-24">
+              {BuildNPitch2026Speakers.map((member, index) => {
+                return (
+                  <ImageCard
+                    key={member.name + index}
+                    name={member.name}
+                    image={member.image}
+                    title={member.title}
+                  />
+                );
+              })}
+            </div>
+          </div> */}
         </section>
       </main>
     </>

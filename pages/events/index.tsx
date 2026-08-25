@@ -26,7 +26,7 @@ import styles from "./styles.module.css";
 import { DefaultSEOHead, EventsPageHead } from "../../pageHeads";
 
 const CURRENT_EVENT_LINKS = [
-  "/events/Build-n-Pitch",
+  "/events/Build&Pitch",
   "/events/peaceland-university-2026",
   "/events/coal-city-university-2026",
 ];

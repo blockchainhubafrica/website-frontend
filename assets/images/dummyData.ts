@@ -26,7 +26,15 @@ import {
   SolinfraImageSrc,
   AjentlyImageSrc,
 } from "./cloudinary";
-import { buildNPitchSession, event2022B, superteam, Techfest } from "./jpgs";
+import {
+  buildNPitchSession,
+  event2022B,
+  superteam,
+  Techfest,
+  ryanTasie,
+  seeEunHa,
+  uchenna2026,
+} from "./jpgs";
 
 const PEACELAND_EVENT_COVER_SRC =
   "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778179535/PU_event_dm5gtv.jpg";
@@ -47,7 +55,7 @@ export const demoProductsData = [
     title: "Ajently",
     description:
       "A marketplace where users discover, run, build, and monetize AI agents for automating various workflows",
-    link: "https://agently-waitlist.vercel.app/",
+    link: "https://ajently.com/",
     size: { width: 868, height: 500 }, // The height was 752 before now.
   },
 ];
@@ -56,7 +64,7 @@ export const demoEventsData = [
   {
     image: buildNPitchSession,
     name: "Build and Pitch Sessions",
-    link: "/events/Build-n-Pitch",
+    link: "/events/Build&Pitch",
     year: "2026",
     hasBeenHeld: false,
   },
@@ -235,6 +243,24 @@ export const BDC2022ConferenceSpeakers = [
     image: EmekaNwekeSrc,
   },
 ];
+
+export const BuildNPitch2026Speakers = [
+  {
+    name: "Uche Edeoga",
+    title: "Associate, Hashed Emergent",
+    image: uchenna2026,
+  },
+  {
+    name: "See Eun Ha",
+    title: "Venture Partner, Lava VC",
+    image: seeEunHa,
+  },
+  {
+    name: "Ryan K. Uche-Tasie",
+    title: "Intelligence Analyst, Lava VC",
+    image: ryanTasie,
+  },
+]
 
 export const BDC2022WorkshopSpeakers = [
   {

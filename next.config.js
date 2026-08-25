@@ -13,6 +13,18 @@ module.exports = {
   images: {
     domains: ["res.cloudinary.com", "images.lumacdn.com"],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/events/Build&Pitch",
+        destination: "/events/buildandpitch",
+      },
+      {
+        source: "/events/Build%26Pitch",
+        destination: "/events/buildandpitch",
+      },
+    ];
+  },
   async redirects() {
     return [
       {
