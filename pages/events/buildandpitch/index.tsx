@@ -157,27 +157,26 @@ export default function BuildNPitch() {
                 </h4>
                 <ul className="text-base md:text-lg text-white font-normal space-y-2 list-none">
                   <li>
-                    <p className="font-extrabold">Prepare for Fundraising</p> : Understand how
+                    <p className="font-extrabold">Prepare for Fundraising :</p> Understand how
                     to approach the fundraising process and what investors
                     evaluate at the early stage.
                   </li>
                   <li>
-                    <p className="font-extrabold">Refine Your Story &amp; Pitch</p> :
-                    Strengthen your narrative, positioning, and ability to
+                    <p className="font-extrabold">Refine Your Story &amp; Pitch:</p> Strengthen your narrative, positioning, and ability to
                     clearly communicate your opportunity.
                   </li>
                   <li>
-                    <p className="font-extrabold">Get Investor Perspectives</p> : Hear
+                    <p className="font-extrabold">Get Investor Perspectives:</p> Hear
                     directly from VCs and industry professionals and what
                     makes a compelling investment opportunity.
                   </li>
                   <li>
-                    <p className="font-extrabold">Build with Expert Guidance</p> : Receive
+                    <p className="font-extrabold">Build with Expert Guidance:</p> Receive
                     practical feedback to help sharpen your product,
                     strategy, and overall readiness.
                   </li>
                   <li>
-                    <p className="font-extrabold">Connect with the Ecosystem</p> : Engage
+                    <p className="font-extrabold">Connect with the Ecosystem:</p> Engage
                     with investors, other founders, and relevant ecosystem
                     players.
                   </li>

@@ -41,8 +41,8 @@
 }
 
 .container .footer-inner {
-  width: 100%;
-  padding: 2.5rem 1.5rem 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .container .footer-main {
@@ -157,7 +157,8 @@
   }
 
   .container .footer-inner {
-    padding: 2.75rem 0 1.75rem;
+    padding-top: 2.75rem;
+    padding-bottom: 1.75rem;
   }
 
   .container .footer-main {
@@ -186,7 +187,8 @@
 
 @media screen and (min-width: 1024px) {
   .container .footer-inner {
-    padding: 3rem 0 2rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
   }
 
   .container .footer-main {
@@ -205,12 +207,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .container .footer-inner {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 3rem 1.5rem 2rem;
-  }
-
   .container .footer-main {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr) auto;
     gap: 4rem;

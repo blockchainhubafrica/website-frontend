@@ -31,10 +31,9 @@ import {
   event2022B,
   superteam,
   Techfest,
-  ryanTasie,
-  seeEunHa,
   uchenna2026,
 } from "./jpgs";
+import { ryanTasie, seeEunHa } from "./pngs";
 
 const PEACELAND_EVENT_COVER_SRC =
   "https://res.cloudinary.com/drj2hpt8p/image/upload/v1778179535/PU_event_dm5gtv.jpg";

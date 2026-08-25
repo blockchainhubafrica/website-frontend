@@ -29,9 +29,8 @@ import event2022B from "./event2022B.jpg";
 import superteam from "./superteam.jpeg";
 import collage from "./collage.jpeg";
 import Techfest from "./Techfest.jpeg";
-import buildNPitchSession from "./build-n-pitch_session.jpg";
-import ryanTasie from "./ryan-tasie.jpeg";
-import seeEunHa from "./see-eun-ha.jpeg";
+import buildNPitchSession from "./bnp-main.jpg";
+
 import uchenna2026 from "./uchenna2026.jpeg";
 
 
@@ -68,7 +67,5 @@ export {
   collage,
   Techfest,
   buildNPitchSession,
-  ryanTasie,
-  seeEunHa,
   uchenna2026,
 };

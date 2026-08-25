@@ -6,6 +6,8 @@ import TestimonialHeadshot3 from "./headshots/testimonial3.png";
 import eventTestImage from "./eventTestImage.png";
 import achievementImage from "./achievement.png";
 import coolEmoji from "./coolEmoji.png";
+import ryanTasie from "./headshots/ryan-tasie-new.png"
+import seeEunHa from "./headshots/see-eun-ha-new.png"
 
 export {
   productsDemoImg1,
@@ -16,4 +18,6 @@ export {
   eventTestImage,
   achievementImage,
   coolEmoji,
+  ryanTasie,
+  seeEunHa,
 };
