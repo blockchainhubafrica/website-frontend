@@ -8,7 +8,7 @@ import RightArrowIcon from "./right-arrow.svg";
 import DiscordIcon from "./discord.svg";
 import InstagramIcon from "./instagram.svg";
 import TelegramIcon from "./telegram.svg";
-import TwitterIcon from "./twitter-x.svg";
+import TwitterIcon from "./newtwitterlogo.svg";
 import YoutubeIcon from "./youtube.svg";
 import LinkedinIcon from "./linkedin.svg";
 import CircleTextIcon from "./circle-text.svg";
