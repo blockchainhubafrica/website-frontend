@@ -71,7 +71,7 @@ function Footer() {
               </a>
             </div>
 
-            <div className={`${styles["links"]} ${styles["footer-links"]}`}>
+            {/* <div className={`${styles["links"]} ${styles["footer-links"]}`}>
               <span className={activeRouteClass("/about")}>
                 <Link href="/about">About Us</Link>
               </span>
@@ -87,7 +87,7 @@ function Footer() {
               <span className={activeRouteClass("/contact")}>
                 <Link href="/contact">Contact Us</Link>
               </span>
-            </div>
+            </div> */}
 
             <div className={`${styles["social-icons"]} ${styles["footer-social"]}`}>
               <a href="https://www.linkedin.com/company/blockchchainhubafrica/" target="_blank" rel="noreferrer">
