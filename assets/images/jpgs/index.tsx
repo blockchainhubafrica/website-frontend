@@ -30,7 +30,7 @@ import superteam from "./superteam.jpeg";
 import collage from "./collage.jpeg";
 import Techfest from "./Techfest.jpeg";
 import buildNPitchSession from "./PitchandBuild1.png";
-
+import mrEmmanuel from "./mremma.jpg";
 import uchenna2026 from "./uchenna2026.jpeg";
 
 
@@ -68,4 +68,5 @@ export {
   Techfest,
   buildNPitchSession,
   uchenna2026,
+  mrEmmanuel,
 };

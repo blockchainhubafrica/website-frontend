@@ -32,6 +32,7 @@ import {
   superteam,
   Techfest,
   uchenna2026,
+  mrEmmanuel,
 } from "./jpgs";
 import { ryanTasie, seeEunHa } from "./pngs";
 
@@ -253,6 +254,11 @@ export const BuildNPitch2026Speakers = [
     name: "See Eun Ha",
     title: "Venture Partner, Lava VC",
     image: seeEunHa,
+  },
+  {
+    name: "Emmanuel Nwafor",
+    title: "Co-founder, BlockchainHub Africa",
+    image: mrEmmanuel,
   },
   {
     name: "Ryan K. Uche-Tasie",
