@@ -28,15 +28,15 @@ const ImageCard: React.FC<{
           <CloudinaryImage
             src={image ? image : ""}
             alt={name}
-            height={isCircle ? 320 : 455}
-            width={isCircle ? 320 : 323}
+            height={isCircle ? 200 : 455}
+            width={isCircle ? 200 : 323}
           />
         ) : (
           <Image
             src={image ? image : ""}
             alt={name}
-            height={isCircle ? 320 : 379}
-            width={isCircle ? 320 : 269}
+            height={isCircle ? 200 : 379}
+            width={isCircle ? 200 : 269}
             objectFit="cover"
             quality={100}
           />

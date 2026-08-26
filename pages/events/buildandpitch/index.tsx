@@ -17,6 +17,14 @@ import action from "services/actionService";
 
 const EVENT_NAME = "Build and Pitch Sessions";
 
+export const STAGE_OPTIONS = [
+  { label: "Idea/Pre-MVP", value: "Idea/Pre-MVP" },
+  { label: "MVP/Early-users", value: "MVP/Early-users" },
+  { label: "Product-Market-Fit", value: "Product-Market-Fit" },
+  { label: "Generating Revenue", value: "Generating Revenue" },
+  { label: "Scaling", value: "Scaling" },
+];
+
 export const registrationSuccessModalContent = {
   title: "Registration Successful",
   content:
@@ -27,6 +35,11 @@ type ValuesType = {
   name: string;
   email: string;
   phone: string;
+  startupName: string;
+  description: string;
+  startupLocation: string;
+  stage: string;
+  pitchDeckLink: string;
 };
 
 const validationSchema = Yup.object({
@@ -40,12 +53,22 @@ const validationSchema = Yup.object({
       "Enter a valid Nigerian number (e.g. 08012345678)"
     )
     .required("Phone Number is required"),
+  startupName: Yup.string().required("Startup Name is required"),
+  description: Yup.string().required("Brief Description is required"),
+  startupLocation: Yup.string().required("Startup Location is required"),
+  stage: Yup.string().required("Stage is required"),
+  pitchDeckLink: Yup.string().url("Enter a valid URL").optional(),
 });
 
 const initialValues: ValuesType = {
   name: "",
   email: "",
   phone: "",
+  startupName: "",
+  description: "",
+  startupLocation: "",
+  stage: "",
+  pitchDeckLink: "",
 };
 
 export default function BuildNPitch() {
@@ -84,6 +107,11 @@ export default function BuildNPitch() {
         name: values.name,
         email: values.email,
         phone: values.phone,
+        startupName: values.startupName,
+        description: values.description,
+        startupLocation: values.startupLocation,
+        stage: values.stage,
+        pitchDeckLink: values.pitchDeckLink,
       });
       toast.dismiss(toastId);
       formik.resetForm();
@@ -256,23 +284,41 @@ export default function BuildNPitch() {
                       placeholder="08012345678"
                     />
                     <Input
-                      name="company"
+                      name="startupName"
                       formik={formik}
-                      label="Company Name"
+                      label="Startup Name"
                       required
                       className="mb-10"
                       placeholder="Hooli Inc."
                     />
                     <Input
-                      name="Location"
+                      name="description"
                       formik={formik}
-                      label="Company Location"
+                      label="Brief Description of your startup"
+                      required
+                      className="mb-10"
+                      placeholder="We deal in cloud computing services."
+                    />
+                    <Input
+                      name="startupLocation"
+                      formik={formik}
+                      label="Startup Location"
                       required
                       className="mb-10"
                       placeholder="123 Main Street, City, Country"
                     />
                     <Input
-                      name="Pitch Deck Link"
+                      as="select"
+                      name="stage"
+                      formik={formik}
+                      label="What stage are you in?"
+                      options={STAGE_OPTIONS}
+                      placeholder="Select your stage"
+                      required
+                      className="mb-10"
+                    />
+                    <Input
+                      name="pitchDeckLink"
                       formik={formik}
                       label="Pitch Deck Link"
                       className="mb-10"
