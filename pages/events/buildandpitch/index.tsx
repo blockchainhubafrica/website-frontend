@@ -43,6 +43,9 @@ type ValuesType = {
   pitchDeckLink: string;
 };
 
+const URL_REGEX =
+  /^(https?:\/\/)?([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/i;
+
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
   email: Yup.string()
@@ -58,8 +61,18 @@ const validationSchema = Yup.object({
   description: Yup.string().required("Brief Description is required"),
   startupLocation: Yup.string().required("Startup Location is required"),
   stage: Yup.string().required("Stage is required"),
-  website: Yup.string().url("Enter a valid URL").optional(),
-  pitchDeckLink: Yup.string().url("Enter a valid URL").optional(),
+  website: Yup.string()
+    .matches(URL_REGEX, {
+      message: "Enter a valid website (e.g. something.com, www.something.com, or https://something.com)",
+      excludeEmptyString: true,
+    })
+    .optional(),
+  pitchDeckLink: Yup.string()
+    .matches(URL_REGEX, {
+      message: "Enter a valid URL",
+      excludeEmptyString: true,
+    })
+    .optional(),
 });
 
 const initialValues: ValuesType = {
@@ -327,7 +340,7 @@ export default function BuildNPitch() {
                       formik={formik}
                       label="Startup Website"
                       className="mb-5"
-                      placeholder="https://www.hooli.com"
+                      placeholder="something.com or https://something.com"
                     />
                     <Input
                       name="pitchDeckLink"

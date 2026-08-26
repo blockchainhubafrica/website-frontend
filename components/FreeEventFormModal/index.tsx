@@ -113,7 +113,7 @@ export function FreeEventFormModal({
               formik={formik}
               label="Startup Website"
               className="mb-5"
-              placeholder="https://www.hooli.com"
+              placeholder="something.com or https://something.com"
             />
           </div>
           <div>
