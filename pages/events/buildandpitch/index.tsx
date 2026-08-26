@@ -39,6 +39,7 @@ type ValuesType = {
   description: string;
   startupLocation: string;
   stage: string;
+  website?: string;
   pitchDeckLink: string;
 };
 
@@ -57,6 +58,7 @@ const validationSchema = Yup.object({
   description: Yup.string().required("Brief Description is required"),
   startupLocation: Yup.string().required("Startup Location is required"),
   stage: Yup.string().required("Stage is required"),
+  website: Yup.string().url("Enter a valid URL").optional(),
   pitchDeckLink: Yup.string().url("Enter a valid URL").optional(),
 });
 
@@ -68,6 +70,7 @@ const initialValues: ValuesType = {
   description: "",
   startupLocation: "",
   stage: "",
+  website: "",
   pitchDeckLink: "",
 };
 
@@ -111,6 +114,7 @@ export default function BuildNPitch() {
         description: values.description,
         startupLocation: values.startupLocation,
         stage: values.stage,
+        website: values.website,
         pitchDeckLink: values.pitchDeckLink,
       });
       toast.dismiss(toastId);
@@ -138,6 +142,7 @@ export default function BuildNPitch() {
           isOpen={isMobileFormOpen}
           setIsOpen={setIsMobileFormOpen}
           formik={formik}
+          eventId={eventId}
         />
       </div>
       <main className={styles["container"]}>
@@ -300,7 +305,7 @@ export default function BuildNPitch() {
                       placeholder="We deal in cloud computing services."
                     />
                     <Input
-                      name="startuplocation"
+                      name="startupLocation"
                       formik={formik}
                       label="Startup Location"
                       required

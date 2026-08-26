@@ -45,9 +45,10 @@ export function BDCFormModal({
       onClick={closeModal}
     >
       <motion.div
-        initial={{ y: "-100%" }}
-        animate={isOpen ? { y: `100px` } : { y: "-100%" }}
-        exit={{ y: "-100%" }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={isOpen ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.2 }}
         ref={modalRef}
         className={`${styles["modal-body"]}`}
         onClick={(e) => e.stopPropagation()}

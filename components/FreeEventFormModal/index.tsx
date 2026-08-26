@@ -16,11 +16,13 @@ export function FreeEventFormModal({
   setIsOpen,
   formik,
   logoSrc,
+  eventId,
 }: {
   isOpen: boolean;
   setIsOpen: Function;
   formik: FormikProps<any>;
   logoSrc?: string;
+  eventId?: string | null;
 }) {
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -41,9 +43,10 @@ export function FreeEventFormModal({
       onClick={closeModal}
     >
       <motion.div
-        initial={{ y: "-100%" }}
-        animate={isOpen ? { y: `100px` } : { y: "-100%" }}
-        exit={{ y: "-100%" }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={isOpen ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.2 }}
         ref={modalRef}
         className={`${styles["modal-body"]}`}
         onClick={(e) => e.stopPropagation()}
@@ -77,7 +80,7 @@ export function FreeEventFormModal({
             <Input name="phone" formik={formik} label="Phone No." required className="mb-5" />
           </div>
           <div>
-            <Input name="company" formik={formik} label="Startup Name" required className="mb-5" placeholder="Hooli Inc." />
+            <Input name="startupName" formik={formik} label="Startup Name" required className="mb-5" placeholder="Hooli Inc." />
           </div>
           <div>
             <Input
@@ -90,19 +93,19 @@ export function FreeEventFormModal({
             />
           </div>
           <div>
-            <Input name="location" formik={formik} label="Startup Location" required className="mb-5" placeholder="123 Main Street, City, Country" />
+            <Input name="startupLocation" formik={formik} label="Startup Location" required className="mb-5" placeholder="123 Main Street, City, Country" />
           </div>
           <div>
             <Input
-                                  as="select"
-                                  name="stage"
-                                  formik={formik}
-                                  label="What stage are you in?"
-                                  options={STAGE_OPTIONS}
-                                  placeholder="Select your stage"
-                                  required
-                                  className="mb-10"
-                                />
+              as="select"
+              name="stage"
+              formik={formik}
+              label="What stage are you in?"
+              options={STAGE_OPTIONS}
+              placeholder="Select your stage"
+              required
+              className="mb-10"
+            />
           </div>
           <div>
             <Input
@@ -144,7 +147,7 @@ export function FreeEventFormModal({
               type="submit"
               buttonType="primary"
               text={formik.isSubmitting ? "Registering..." : "Register"}
-              disabled={formik.isSubmitting}
+              disabled={formik.isSubmitting || (eventId !== undefined && !eventId)}
             />
           </div>
         </form>

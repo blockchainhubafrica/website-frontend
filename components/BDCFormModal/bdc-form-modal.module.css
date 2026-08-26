@@ -1,7 +1,9 @@
 .container {
   height: 100vh;
+  height: 100dvh;
   width: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
@@ -9,7 +11,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: var(--modal-z-index);
+  padding: 16px 12px;
+  box-sizing: border-box;
+  z-index: var(--modal-z-index, 1000);
   transition: all 0.3s ease-in-out;
 }
 
@@ -22,23 +26,42 @@
   background-color: var(--app-white);
   border-radius: var(--app-border-radius-sm);
   width: 100%;
-  max-width: 340px;
-  max-height: calc(100vh - 32px);
+  max-width: 440px;
+  max-height: calc(100dvh - 32px);
   overflow-y: auto;
-  margin-top: -40px;
+  -webkit-overflow-scrolling: touch;
   position: relative;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-orange, #ea580c) #f1f5f9;
+}
+
+.container .modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.container .modal-body::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.container .modal-body::-webkit-scrollbar-thumb {
+  background: var(--app-orange, #ea580c);
+  border-radius: 4px;
+}
+
+.container .modal-body::-webkit-scrollbar-thumb:hover {
+  background: #c2410c;
 }
 
 @media screen and (min-width: 640px) {
-  .container .modal-body {
-    max-width: 420px;
-    margin-top: 20px;
+  .container {
+    padding: 24px 16px;
   }
-}
 
-@media screen and (min-width: 1024px) {
   .container .modal-body {
-    margin-top: 20px;
+    max-width: 480px;
+    max-height: calc(100dvh - 48px);
   }
 }
 
