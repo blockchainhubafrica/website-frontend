@@ -9,6 +9,7 @@ import { FormikProps } from "formik";
 import { Input } from "components/Input";
 import { Button } from "components/Button";
 import { ModalCloseIcon } from "assets/images";
+import { STAGE_OPTIONS } from "pages/events/buildandpitch";
 
 export function FreeEventFormModal({
   isOpen,
@@ -76,10 +77,41 @@ export function FreeEventFormModal({
             <Input name="phone" formik={formik} label="Phone No." required className="mb-5" />
           </div>
           <div>
-            <Input name="company" formik={formik} label="Company Name" required className="mb-5" placeholder="Hooli Inc." />
+            <Input name="company" formik={formik} label="Startup Name" required className="mb-5" placeholder="Hooli Inc." />
           </div>
           <div>
-            <Input name="location" formik={formik} label="Company Location" required className="mb-5" placeholder="123 Main Street, City, Country" />
+            <Input
+              name="description"
+              formik={formik}
+              label="Brief Description of your startup"
+              required
+              className="mb-10"
+              placeholder="We deal in cloud computing services."
+            />
+          </div>
+          <div>
+            <Input name="location" formik={formik} label="Startup Location" required className="mb-5" placeholder="123 Main Street, City, Country" />
+          </div>
+          <div>
+            <Input
+                                  as="select"
+                                  name="stage"
+                                  formik={formik}
+                                  label="What stage are you in?"
+                                  options={STAGE_OPTIONS}
+                                  placeholder="Select your stage"
+                                  required
+                                  className="mb-10"
+                                />
+          </div>
+          <div>
+            <Input
+              name="website"
+              formik={formik}
+              label="Startup Website"
+              className="mb-5"
+              placeholder="https://www.hooli.com"
+            />
           </div>
           <div>
             <Input
@@ -87,7 +119,7 @@ export function FreeEventFormModal({
               formik={formik}
               label="Pitch Deck Link"
               className="mb-2"
-              placeholder="https://drive.google.com/..."
+              placeholder="https://drive.google.com/hooli-pitch-deck-v1"
             />
             <div
               style={{
@@ -99,18 +131,8 @@ export function FreeEventFormModal({
               }}
             >
               <p style={{ color: "#92400e", fontSize: "0.75rem", margin: 0 }}>
-                📎 Upload your pitch deck to{" "}
-                <a
-                  href="https://drive.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#1d4ed8", textDecoration: "underline" }}
-                >
-                  Google Drive
-                </a>{" "}
-                and paste the shareable link here.
-                <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> Pitch Upload Instructions</p>
-               <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> 1.  Upload your pitch to Google Drive  </p>
+                 Pitch Upload Instructions
+                <p style={{ fontSize: "0.75rem", margin: 0 }}> 1.  Upload your pitch to Google Drive  </p>
                <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> 2.  Click Share → General access → Select "Anyone with the link"  </p>
                <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> 3.  Copy the link and paste in the space provide above.  </p>
                <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> Note: Links with restricted access will not be reviewed. </p>

@@ -318,11 +318,18 @@ export default function BuildNPitch() {
                       className="mb-10"
                     />
                     <Input
+                      name="website"
+                      formik={formik}
+                      label="Startup Website"
+                      className="mb-5"
+                      placeholder="https://www.hooli.com"
+                    />
+                    <Input
                       name="pitchDeckLink"
                       formik={formik}
                       label="Pitch Deck Link"
                       className="mb-2"
-                      placeholder="https://drive.google.com/..."
+                      placeholder="https://drive.google.com/hooli-pitch-deck-v1"
                     />
                     <div
                       style={{
@@ -334,16 +341,11 @@ export default function BuildNPitch() {
                       }}
                     >
                       <p style={{ color: "#92400e", fontSize: "0.75rem", margin: 0 }}>
-                        📎 Upload your pitch deck to{" "}
-                        <a
-                          href="https://drive.google.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: "#1d4ed8", textDecoration: "underline" }}
-                        >
-                          Google Drive
-                        </a>{" "}
-                        and paste the shareable link here.
+                          Pitch Upload Instructions
+                          <p style={{ fontSize: "0.75rem", margin: 0 }}> 1.  Upload your pitch to Google Drive  </p>
+                          <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> 2.  Click Share → General access → Select "Anyone with the link"  </p>
+                          <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> 3.  Copy the link and paste in the space provide above.  </p>
+                          <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> Note: Links with restricted access will not be reviewed. </p>
                       </p>
                     </div>
                   </div>
