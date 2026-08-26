@@ -342,10 +342,10 @@ export default function BuildNPitch() {
                     >
                       <p style={{ color: "#92400e", fontSize: "0.75rem", margin: 0 }}>
                           Pitch Upload Instructions
-                          <p style={{ fontSize: "0.75rem", margin: 0 }}> 1.  Upload your pitch to Google Drive  </p>
-                          <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> 2.  Click Share → General access → Select "Anyone with the link"  </p>
-                          <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> 3.  Copy the link and paste in the space provide above.  </p>
-                          <br/> <p style={{ fontSize: "0.75rem", margin: 0 }}> Note: Links with restricted access will not be reviewed. </p>
+                          <br/> 1.  Upload your pitch to Google Drive 
+                          <br/> 2.  Click Share → General access → Select "Anyone with the link" 
+                          <br/> 3.  Copy the link and paste in the space provide above.  
+                          <br/> Note: Links with restricted access will not be reviewed. 
                       </p>
                     </div>
                   </div>
