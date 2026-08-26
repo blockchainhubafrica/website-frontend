@@ -27,6 +27,9 @@ type ValuesType = {
   name: string;
   email: string;
   phone: string;
+  company: string;
+  location: string;
+  pitchDeckLink: string;
 };
 
 const validationSchema = Yup.object({
@@ -40,12 +43,18 @@ const validationSchema = Yup.object({
       "Enter a valid Nigerian number (e.g. 08012345678)"
     )
     .required("Phone Number is required"),
+  company: Yup.string().required("Company Name is required"),
+  location: Yup.string().required("Company Location is required"),
+  pitchDeckLink: Yup.string().url("Enter a valid URL"),
 });
 
 const initialValues: ValuesType = {
   name: "",
   email: "",
   phone: "",
+  company: "",
+  location: "",
+  pitchDeckLink: "",
 };
 
 export default function BuildNPitch() {
@@ -84,6 +93,9 @@ export default function BuildNPitch() {
         name: values.name,
         email: values.email,
         phone: values.phone,
+        company: values.company,
+        location: values.location,
+        pitchDeckLink: values.pitchDeckLink,
       });
       toast.dismiss(toastId);
       formik.resetForm();
@@ -252,7 +264,7 @@ export default function BuildNPitch() {
                       formik={formik}
                       label="Phone No."
                       required
-                      className="mb-10"
+                      className="mb-4"
                       placeholder="08012345678"
                     />
                     <Input
@@ -260,24 +272,46 @@ export default function BuildNPitch() {
                       formik={formik}
                       label="Company Name"
                       required
-                      className="mb-10"
+                      className="mb-4"
                       placeholder="Hooli Inc."
                     />
                     <Input
-                      name="Location"
+                      name="location"
                       formik={formik}
                       label="Company Location"
                       required
-                      className="mb-10"
+                      className="mb-4"
                       placeholder="123 Main Street, City, Country"
                     />
                     <Input
-                      name="Pitch Deck Link"
+                      name="pitchDeckLink"
                       formik={formik}
                       label="Pitch Deck Link"
-                      className="mb-10"
-                      placeholder="https://example.com/pitch-deck"
+                      className="mb-2"
+                      placeholder="https://drive.google.com/..."
                     />
+                    <div
+                      style={{
+                        background: "#fff8e1",
+                        border: "1px solid #f59e0b",
+                        borderRadius: "6px",
+                        padding: "8px 12px",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      <p style={{ color: "#92400e", fontSize: "0.75rem", margin: 0 }}>
+                        📎 Upload your pitch deck to{" "}
+                        <a
+                          href="https://drive.google.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#1d4ed8", textDecoration: "underline" }}
+                        >
+                          Google Drive
+                        </a>{" "}
+                        and paste the shareable link here.
+                      </p>
+                    </div>
                   </div>
                   <div className="mt-4">
                     <Button
