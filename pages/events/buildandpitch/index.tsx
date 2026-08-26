@@ -280,7 +280,7 @@ export default function BuildNPitch() {
                       formik={formik}
                       label="Phone No."
                       required
-                      className="mb-10"
+                      className="mb-4"
                       placeholder="08012345678"
                     />
                     <Input
@@ -288,7 +288,7 @@ export default function BuildNPitch() {
                       formik={formik}
                       label="Startup Name"
                       required
-                      className="mb-10"
+                      className="mb-4"
                       placeholder="Hooli Inc."
                     />
                     <Input
@@ -300,11 +300,11 @@ export default function BuildNPitch() {
                       placeholder="We deal in cloud computing services."
                     />
                     <Input
-                      name="startupLocation"
+                      name="startuplocation"
                       formik={formik}
                       label="Startup Location"
                       required
-                      className="mb-10"
+                      className="mb-4"
                       placeholder="123 Main Street, City, Country"
                     />
                     <Input
@@ -321,9 +321,31 @@ export default function BuildNPitch() {
                       name="pitchDeckLink"
                       formik={formik}
                       label="Pitch Deck Link"
-                      className="mb-10"
-                      placeholder="https://example.com/pitch-deck"
+                      className="mb-2"
+                      placeholder="https://drive.google.com/..."
                     />
+                    <div
+                      style={{
+                        background: "#fff8e1",
+                        border: "1px solid #f59e0b",
+                        borderRadius: "6px",
+                        padding: "8px 12px",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      <p style={{ color: "#92400e", fontSize: "0.75rem", margin: 0 }}>
+                        📎 Upload your pitch deck to{" "}
+                        <a
+                          href="https://drive.google.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#1d4ed8", textDecoration: "underline" }}
+                        >
+                          Google Drive
+                        </a>{" "}
+                        and paste the shareable link here.
+                      </p>
+                    </div>
                   </div>
                   <div className="mt-4">
                     <Button

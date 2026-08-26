@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "./free-event-form-modal.module.css";
 
 import { motion } from "framer-motion";
@@ -9,13 +9,6 @@ import { FormikProps } from "formik";
 import { Input } from "components/Input";
 import { Button } from "components/Button";
 import { ModalCloseIcon } from "assets/images";
-
-const TECH_STACK_OPTIONS = [
-  { label: "Frontend", value: "Frontend" },
-  { label: "Backend", value: "Backend" },
-  { label: "Fullstack", value: "Fullstack" },
-  { label: "Nil", value: "Nil" },
-];
 
 export function FreeEventFormModal({
   isOpen,
@@ -74,10 +67,7 @@ export function FreeEventFormModal({
             <ModalCloseIcon onClick={() => setIsOpen(false)} />
           </div>
           <div>
-            <Input name="firstName" formik={formik} label="First Name" required className="mb-5" />
-          </div>
-          <div>
-            <Input name="surname" formik={formik} label="Surname" required className="mb-5" />
+            <Input name="name" formik={formik} label="Full Name" required className="mb-5" placeholder="Gavin Belson" />
           </div>
           <div>
             <Input name="email" formik={formik} label="Email" required className="mb-5" />
@@ -86,37 +76,41 @@ export function FreeEventFormModal({
             <Input name="phone" formik={formik} label="Phone No." required className="mb-5" />
           </div>
           <div>
-            <Input
-              as="select"
-              name="techStack"
-              formik={formik}
-              label="Tech Stack"
-              options={TECH_STACK_OPTIONS}
-              placeholder="Select tech stack"
-              required
-              className="mb-5"
-            />
+            <Input name="company" formik={formik} label="Company Name" required className="mb-5" placeholder="Hooli Inc." />
+          </div>
+          <div>
+            <Input name="location" formik={formik} label="Company Location" required className="mb-5" placeholder="123 Main Street, City, Country" />
           </div>
           <div>
             <Input
-              type="number"
-              min={0}
-              max={5}
-              name="yearsOfExperience"
+              name="pitchDeckLink"
               formik={formik}
-              label="Years of Experience"
-              required
-              className="mb-5"
+              label="Pitch Deck Link"
+              className="mb-2"
+              placeholder="https://drive.google.com/..."
             />
-          </div>
-          <div>
-            <Input
-              name="portfolio"
-              formik={formik}
-              label="Portfolio / GitHub"
-              placeholder="https://github.com/your-handle"
-              className="mb-8"
-            />
+            <div
+              style={{
+                background: "#fff8e1",
+                border: "1px solid #f59e0b",
+                borderRadius: "6px",
+                padding: "8px 12px",
+                marginBottom: "20px",
+              }}
+            >
+              <p style={{ color: "#92400e", fontSize: "0.75rem", margin: 0 }}>
+                📎 Upload your pitch deck to{" "}
+                <a
+                  href="https://drive.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#1d4ed8", textDecoration: "underline" }}
+                >
+                  Google Drive
+                </a>{" "}
+                and paste the shareable link here.
+              </p>
+            </div>
           </div>
           <div className={`${styles["registration-btn"]}`}>
             <Button
